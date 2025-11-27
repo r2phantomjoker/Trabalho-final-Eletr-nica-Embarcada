@@ -53,11 +53,12 @@
 #include <stdbool.h>
 #include <conio.h>
 #include "interrupt_manager.h"
-#include "fvr.h"
-#include "pwm3.h"
+#include "tmr4.h"
 #include "cmp2.h"
 #include "tmr2.h"
 #include "cmp1.h"
+#include "fvr.h"
+#include "pwm3.h"
 #include "adc.h"
 
 
