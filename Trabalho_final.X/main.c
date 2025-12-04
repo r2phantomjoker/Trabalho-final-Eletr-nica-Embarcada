@@ -21,14 +21,10 @@ void main(void)
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
 
-    // =========================================================
-    // TESTE 1: CALIBRAÇÃO (HOMING)
-    // =========================================================
-    // O código vai parar aqui e ligar o motor para DESCER.
-    // [AÇÃO NO STIMULUS]: Coloque o pino RB0 (S1) em LOW (0) para simular chegada no chão.
+    
     MOTOR_reset(); 
 
-    // Se passou daqui, 'andar_atual' deve ser 0 e 'posicao_mm' deve ser 0.
+    
 
     while (1)
     {

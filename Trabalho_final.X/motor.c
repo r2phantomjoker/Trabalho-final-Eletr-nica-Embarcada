@@ -8,7 +8,7 @@
  */
 
 #include "motor.h"
-#include "globals.h"               // Para atualizar estado_motor (M na tabela)
+#include "globals.h"               // Para atualizar estado_motor 
 #include "mcc_generated_files/mcc.h" // Para usar PWM e Delay
 
 /** * @brief Armazena a última direção aplicada para evitar reversão brusca.
@@ -35,7 +35,7 @@ static uint8_t ultimo_valor_timer0 = 0;
 
 /**
  * @brief Fator de conversão de Pulsos para Milímetros.
- * Cálculo: 180mm (curso total) / 215 pulsos (total) = ~0.8372 mm/pulso.
+ * Cálculo: 180mm  / 215 pulsos  = 0.8372 mm/pulso.
  */
 #define MM_POR_PULSO  0.8372f 
 
@@ -45,16 +45,12 @@ static uint8_t ultimo_valor_timer0 = 0;
  */
 #define TEMPO_TMR4    0.1f
 
-// ==========================================
-// FUNÇÕES DE CONTROLE DE MOVIMENTO
-// ==========================================
 
 /**
  * @brief Para o motor imediatamente.
  * Define o Duty Cycle do PWM para 0 e atualiza o estado global.
  */
 void MOTOR_parar(void){
-    // Nota: Verifique se o MCC gerou 'PWM3_LoadDutyValue' ou 'CCP1_LoadDutyValue'
     PWM3_LoadDutyValue(MOTOR_OFF); 
     estado_motor = MOTOR_PARADO;
 }
@@ -68,7 +64,7 @@ void MOTOR_parar(void){
  */
 void MOTOR_reset(void){
     
-    // --- 1. DETECÇÃO INICIAL DE POSIÇÃO ---
+    // 1. DETECÇÃO INICIAL DE POSIÇÃO 
     // Verifica os sensores físicos para estimar onde o elevador ligou.
     // S1/S2 são Active Low (0). S3/S4 são Active High (1) via Comparador.
     
@@ -89,18 +85,18 @@ void MOTOR_reset(void){
         andar_atual = 255; 
     }
    
-    // --- 2. MOVIMENTAÇÃO PARA O TÉRREO ---
+    // 2. MOVIMENTAÇÃO PARA O TÉRREO
     if(andar_atual != 0){
         andar_destino = 0;
         
-        // Se estiver "perdido" (255), simulamos que estamos no topo (4)
+        // Se estiver perdido, simulamos que estamos no topo (4)
         // para garantir que a lógica decida DESCER.
         uint8_t origem_simulada = (andar_atual == 255) ? 4 : andar_atual;
         
         MOTOR_mover(andar_destino, origem_simulada);
     }
     
-    // --- 3. RESET DE VARIÁVEIS ---
+    // 3. RESET DE VARIÁVEIS
     MOTOR_parar();
     andar_atual = 0;
     posicao_mm = 0;
@@ -108,7 +104,7 @@ void MOTOR_reset(void){
     estado_motor = MOTOR_PARADO;
     andar_destino = 0;
     
-    // Zera o hardware do Timer 0 também para começar limpo
+    // Zera o hardware do Timer 0 
     TMR0_WriteTimer(0);
     ultimo_valor_timer0 = 0;
     
@@ -130,15 +126,15 @@ void MOTOR_reset(void){
  */
 void MOTOR_mover (uint8_t destino, uint8_t atual)
 {
-    // --- 1. VALIDAÇÕES DE SEGURANÇA (BOUNDS CHECK) ---
-    if (atual > 3 && atual != 255) { // Proteção contra valores corrompidos
+    //1. VALIDAÇÕES DE SEGURANÇA 
+    if (atual > 3 && atual != 255) { // Proteção contra valores desconhecidos
         MOTOR_parar(); return;
     }
     if (destino == atual){ // O elevador está no andar do destino
         MOTOR_parar(); return;
     }
    
-    // --- 2. DECISÃO DE DIREÇÃO ---
+    // 2. DECISÃO DE DIREÇÃO ---
     // Apenas decide a intenção, NÃO aplica no pino ainda.
     uint8_t nova_direcao;
 
@@ -149,15 +145,14 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
         nova_direcao = DIRECAO_DESCER;
     }
    
-    // --- 3. PROTEÇÃO DE HARDWARE (PONTE H) ---
-    // Regra do Roteiro: Esperar 500ms se inverter o sentido em movimento.
+    //3. PROTEÇÃO DE HARDWARE
+    // Esperar 500ms se inverter o sentido em movimento
     if ((estado_motor != MOTOR_PARADO) && (nova_direcao != ultima_direcao_aplicada)) {
         MOTOR_parar();      
-        __delay_ms(500); // Delay comum é seguro agora (TMR0 conta no fundo)
+        __delay_ms(500); 
     }
    
-    // --- 4. APLICAÇÃO NO HARDWARE ---
-    // Agora é seguro mudar o pino DIR.
+    // 4. APLICAÇÃO NO HARDWARE 
     if(nova_direcao == DIRECAO_SUBIR){
         DIR = DIRECAO_SUBIR;
         estado_motor = MOTOR_SUBINDO;
@@ -169,13 +164,12 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
    
     ultima_direcao_aplicada = nova_direcao;
    
-    // --- 5. LOOP DE MOVIMENTO (BLOQUEANTE) ---
-    // Mantém o motor ligado até chegar no destino final.
+    // 5. LOOP DE MOVIMENTO 
     while(atual != destino){
        
-        PWM3_LoadDutyValue(MOTOR_ON); // Liga o motor (~60%)
+        PWM3_LoadDutyValue(MOTOR_ON); // Liga o motor (40%)
        
-        // Loop de Espera: Aguarda até ALGUM sensor ser acionado
+        // Aguarda até ALGUM sensor ser acionado
         // S1/S2 = 1 (Desativado), S3/S4 = 0 (Desativado)
         while( (SENSOR_S1 == 1) && (SENSOR_S2 == 1) && 
                (SENSOR_S3 == 0) && (SENSOR_S4 == 0) ) 
@@ -192,7 +186,7 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
         // Sensor detectado! Para o motor para atualizar posição.
         MOTOR_parar();
         
-        // Atualiza a variável 'atual' matematicamente para o próximo passo
+        // Atualiza a variável 'atual' para o próximo passo
         if(DIR == DIRECAO_DESCER) atual--;
         else if (DIR == DIRECAO_SUBIR) atual++;
        
@@ -204,13 +198,8 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
     andar_atual = atual; // Sincroniza a variável global
 }
 
-// ==========================================
-// FUNÇÃO DE CÁLCULO FÍSICO (CALLBACK)
-// ==========================================
-
 /**
  * @brief Calcula Velocidade e Posição lendo o Hardware (TMR0).
- * @note Deve ser chamada periodicamente (ex: Timer 4 a cada 100ms).
  * * Funcionamento:
  * 1. Lê o registrador TMR0 (que conta pulsos do pino RA4).
  * 2. Calcula a diferença (Delta) desde a última leitura.
@@ -218,11 +207,10 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
  */
 void SENSORES_CalcularVelocidade(void){
     
-    // 1. Lê o registrador de hardware do Timer 0 (0-255)
+    // 1. Lê o registrador de hardware do Timer 0 
     uint8_t valor_atual_timer0 = TMR0_ReadTimer();
     
-    // 2. Calcula quantos pulsos ocorreram desde a última vez (100ms atrás)
-    // A subtração uint8 lida com overflow (ex: 5 - 250 = 11) automaticamente.
+    // 2. Calcula quantos pulsos ocorreram desde a última vez 
     uint8_t delta_pulsos = valor_atual_timer0 - ultimo_valor_timer0;
     
     // Atualiza a memória para o próximo ciclo
@@ -231,23 +219,23 @@ void SENSORES_CalcularVelocidade(void){
     // 3. Calcula Distância percorrida na janela (mm)
     float distancia_janela = (float)delta_pulsos * MM_POR_PULSO;
     
-    // 4. Atualização da Posição Global (Odometria)
+    // 4. Atualização da Posição Global 
     if (estado_motor == MOTOR_SUBINDO) {
         posicao_mm_fina += distancia_janela;
         
-        // Trava lógica no teto (180mm)
+        // Trava lógica se chegar no teto 
         if (posicao_mm_fina > 180.0f) posicao_mm_fina = 180.0f;
     } 
     else if (estado_motor == MOTOR_DESCENDO) {
         posicao_mm_fina -= distancia_janela;
         
-        // Trava lógica no chão (0mm)
+        // Trava lógica se chegar no chão 
         if (posicao_mm_fina < 0.0f) posicao_mm_fina = 0.0f;
     }
     
-    // Atualiza variável global inteira (para Telemetria)
+    // Atualiza variável global inteira 
     posicao_mm = (uint8_t)posicao_mm_fina;
 
-    // 5. Cálculo da Velocidade Instantânea (mm/s)
+    // 5. Cálculo da Velocidade Instantânea 
     velocidade_atual = (uint8_t)((distancia_janela / TEMPO_TMR4)*100);
 }
