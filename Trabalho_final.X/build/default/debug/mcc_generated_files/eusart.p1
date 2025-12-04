@@ -1,24 +1,17 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"357 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 357:     struct {
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
-"367
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 367:     struct {
-[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S32 . . T0IF . T0IE ]
-"356
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 356: typedef union {
-[u S30 `S31 1 `S32 1 ]
-[n S30 . . . ]
-"374
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"200 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 200: void PIN_MANAGER_IOC(void);
-[v _PIN_MANAGER_IOC `(v ~T0 @X0 0 ef ]
+"76 mcc_generated_files/eusart.h
+[; ;mcc_generated_files/eusart.h: 76:     struct {
+[s S355 :1 `uc 1 :1 `uc 1 :1 `uc 1 :5 `uc 1 ]
+[n S355 . perr ferr oerr reserved ]
+"75
+[; ;mcc_generated_files/eusart.h: 75: typedef union {
+[u S354 `S355 1 `uc 1 ]
+[n S354 . . status ]
+[v F2547 `(v ~T0 @X0 0 tf ]
+[v F2549 `(v ~T0 @X0 0 tf ]
+[v F2551 `(v ~T0 @X0 0 tf ]
+[v F2553 `(v ~T0 @X0 0 tf ]
+[v F2555 `(v ~T0 @X0 0 tf ]
 "1282 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1282:     struct {
 [s S75 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -30,81 +23,97 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1293
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1293: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x091)));
 [v _PIE1bits `VS74 ~T0 @X0 0 e@145 ]
-"559
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 559:     struct {
-[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S38 . TMR1IF TMR2IF CCP1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
-"558
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 558: typedef union {
-[u S37 `S38 1 ]
-[n S37 . . ]
-"570
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 570: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x011)));
-[v _PIR1bits `VS37 ~T0 @X0 0 e@17 ]
-[v F2909 `(v ~T0 @X0 0 tf ]
-"94 mcc_generated_files/eusart.h
-[; ;mcc_generated_files/eusart.h: 94: extern void (*EUSART_TxDefaultInterruptHandler)(void);
-[v _EUSART_TxDefaultInterruptHandler `*F2909 ~T0 @X0 0 e ]
-[v F2911 `(v ~T0 @X0 0 tf ]
-"95
-[; ;mcc_generated_files/eusart.h: 95: extern void (*EUSART_RxDefaultInterruptHandler)(void);
-[v _EUSART_RxDefaultInterruptHandler `*F2911 ~T0 @X0 0 e ]
-"1344 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1344:     struct {
-[s S77 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S77 . CCP2IE . BCL1IE EEIE C1IE C2IE OSFIE ]
-"1343
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1343: typedef union {
-[u S76 `S77 1 ]
-[n S76 . . ]
-"1354
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1354: extern volatile PIE2bits_t PIE2bits __attribute__((address(0x092)));
-[v _PIE2bits `VS76 ~T0 @X0 0 e@146 ]
-"621
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 621:     struct {
-[s S40 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S40 . CCP2IF . BCL1IF EEIF C1IF C2IF OSFIF ]
-"620
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 620: typedef union {
-[u S39 `S40 1 ]
-[n S39 . . ]
-"631
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 631: extern volatile PIR2bits_t PIR2bits __attribute__((address(0x012)));
-[v _PIR2bits `VS39 ~T0 @X0 0 e@18 ]
-"148 mcc_generated_files/cmp2.h
-[; ;mcc_generated_files/cmp2.h: 148: void CMP2_ISR(void);
-[v _CMP2_ISR `(v ~T0 @X0 0 ef ]
-"148 mcc_generated_files/cmp1.h
-[; ;mcc_generated_files/cmp1.h: 148: void CMP1_ISR(void);
-[v _CMP1_ISR `(v ~T0 @X0 0 ef ]
-"1395 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1395:     struct {
-[s S79 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S79 . . TMR4IE . TMR6IE CCP3IE CCP4IE ]
-"1394
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1394: typedef union {
-[u S78 `S79 1 ]
-[n S78 . . ]
-"1404
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1404: extern volatile PIE3bits_t PIE3bits __attribute__((address(0x093)));
-[v _PIE3bits `VS78 ~T0 @X0 0 e@147 ]
-"672
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 672:     struct {
-[s S42 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S42 . . TMR4IF . TMR6IF CCP3IF CCP4IF ]
-"671
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 671: typedef union {
-[u S41 `S42 1 ]
-[n S41 . . ]
-"681
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 681: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x013)));
-[v _PIR3bits `VS41 ~T0 @X0 0 e@19 ]
-"308 mcc_generated_files/tmr4.h
-[; ;mcc_generated_files/tmr4.h: 308: void TMR4_ISR(void);
-[v _TMR4_ISR `(v ~T0 @X0 0 ef ]
-"308 mcc_generated_files/tmr2.h
-[; ;mcc_generated_files/tmr2.h: 308: void TMR2_ISR(void);
-[v _TMR2_ISR `(v ~T0 @X0 0 ef ]
+[v F2533 `(v ~T0 @X0 0 tf ]
+"505 mcc_generated_files/eusart.h
+[; ;mcc_generated_files/eusart.h: 505: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
+[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F2533 ]
+"390
+[; ;mcc_generated_files/eusart.h: 390: void EUSART_Receive_ISR(void);
+[v _EUSART_Receive_ISR `(v ~T0 @X0 0 ef ]
+[v F2529 `(v ~T0 @X0 0 tf ]
+"485
+[; ;mcc_generated_files/eusart.h: 485: void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
+[v _EUSART_SetTxInterruptHandler `(v ~T0 @X0 0 ef1`*F2529 ]
+"369
+[; ;mcc_generated_files/eusart.h: 369: void EUSART_Transmit_ISR(void);
+[v _EUSART_Transmit_ISR `(v ~T0 @X0 0 ef ]
+"3435 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3435: extern volatile unsigned char BAUDCON __attribute__((address(0x19F)));
+[v _BAUDCON `Vuc ~T0 @X0 0 e@415 ]
+"3311
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3311: extern volatile unsigned char RCSTA __attribute__((address(0x19D)));
+[v _RCSTA `Vuc ~T0 @X0 0 e@413 ]
+"3373
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3373: extern volatile unsigned char TXSTA __attribute__((address(0x19E)));
+[v _TXSTA `Vuc ~T0 @X0 0 e@414 ]
+"3228
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3228: extern volatile unsigned char SPBRGL __attribute__((address(0x19B)));
+[v _SPBRGL `Vuc ~T0 @X0 0 e@411 ]
+"3278
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3278: extern volatile unsigned char SPBRGH __attribute__((address(0x19C)));
+[v _SPBRGH `Vuc ~T0 @X0 0 e@412 ]
+[v F2517 `(v ~T0 @X0 0 tf ]
+"429 mcc_generated_files/eusart.h
+[; ;mcc_generated_files/eusart.h: 429: void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
+[v _EUSART_SetFramingErrorHandler `(v ~T0 @X0 0 ef1`*F2517 ]
+"84 mcc_generated_files/eusart.c
+[; ;mcc_generated_files/eusart.c: 84: void EUSART_DefaultFramingErrorHandler(void);
+[v _EUSART_DefaultFramingErrorHandler `(v ~T0 @X0 0 ef ]
+[v F2521 `(v ~T0 @X0 0 tf ]
+"447 mcc_generated_files/eusart.h
+[; ;mcc_generated_files/eusart.h: 447: void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
+[v _EUSART_SetOverrunErrorHandler `(v ~T0 @X0 0 ef1`*F2521 ]
+"85 mcc_generated_files/eusart.c
+[; ;mcc_generated_files/eusart.c: 85: void EUSART_DefaultOverrunErrorHandler(void);
+[v _EUSART_DefaultOverrunErrorHandler `(v ~T0 @X0 0 ef ]
+[v F2525 `(v ~T0 @X0 0 tf ]
+"465 mcc_generated_files/eusart.h
+[; ;mcc_generated_files/eusart.h: 465: void EUSART_SetErrorHandler(void (* interruptHandler)(void));
+[v _EUSART_SetErrorHandler `(v ~T0 @X0 0 ef1`*F2525 ]
+"86 mcc_generated_files/eusart.c
+[; ;mcc_generated_files/eusart.c: 86: void EUSART_DefaultErrorHandler(void);
+[v _EUSART_DefaultErrorHandler `(v ~T0 @X0 0 ef ]
+"3379 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3379:     struct {
+[s S182 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S182 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"3378
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3378: typedef union {
+[u S181 `S182 1 ]
+[n S181 . . ]
+"3390
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3390: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0x19E)));
+[v _TXSTAbits `VS181 ~T0 @X0 0 e@414 ]
+"3192
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3192: extern volatile unsigned char TXREG __attribute__((address(0x19A)));
+[v _TXREG `Vuc ~T0 @X0 0 e@410 ]
+"3317
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3317:     struct {
+[s S180 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S180 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"3316
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3316: typedef union {
+[u S179 `S180 1 ]
+[n S179 . . ]
+"3328
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3328: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0x19D)));
+[v _RCSTAbits `VS179 ~T0 @X0 0 e@413 ]
+"411 mcc_generated_files/eusart.h
+[; ;mcc_generated_files/eusart.h: 411: void EUSART_RxDataHandler(void);
+[v _EUSART_RxDataHandler `(v ~T0 @X0 0 ef ]
+"3172 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3172: extern volatile unsigned char RCREG __attribute__((address(0x199)));
+[v _RCREG `Vuc ~T0 @X0 0 e@409 ]
+[v F2580 `(v ~T0 @X0 0 tf ]
+[v F2582 `(v ~T0 @X0 0 tf ]
+[v F2585 `(v ~T0 @X0 0 tf ]
+[v F2587 `(v ~T0 @X0 0 tf ]
+[v F2590 `(v ~T0 @X0 0 tf ]
+[v F2592 `(v ~T0 @X0 0 tf ]
+[v F2595 `(v ~T0 @X0 0 tf ]
+[v F2597 `(v ~T0 @X0 0 tf ]
+[v F2600 `(v ~T0 @X0 0 tf ]
+[v F2602 `(v ~T0 @X0 0 tf ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -579,149 +588,590 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6748
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 6748: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"52 mcc_generated_files/interrupt_manager.c
-[; ;mcc_generated_files/interrupt_manager.c: 52: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
-[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
-"53
-[; ;mcc_generated_files/interrupt_manager.c: 53: {
-{
-[e :U _INTERRUPT_InterruptManager ]
-[f ]
-"55
-[; ;mcc_generated_files/interrupt_manager.c: 55:     if(INTCONbits.IOCIE == 1 && INTCONbits.IOCIF == 1)
-[e $ ! && == -> . . _INTCONbits 0 3 `i -> 1 `i == -> . . _INTCONbits 0 0 `i -> 1 `i 360  ]
-"56
-[; ;mcc_generated_files/interrupt_manager.c: 56:     {
-{
-"57
-[; ;mcc_generated_files/interrupt_manager.c: 57:         PIN_MANAGER_IOC();
-[e ( _PIN_MANAGER_IOC ..  ]
-"58
-[; ;mcc_generated_files/interrupt_manager.c: 58:     }
-}
-[e $U 361  ]
-"59
-[; ;mcc_generated_files/interrupt_manager.c: 59:     else if(INTCONbits.PEIE == 1)
-[e :U 360 ]
-[e $ ! == -> . . _INTCONbits 0 6 `i -> 1 `i 362  ]
-"60
-[; ;mcc_generated_files/interrupt_manager.c: 60:     {
-{
-"61
-[; ;mcc_generated_files/interrupt_manager.c: 61:         if(PIE1bits.TXIE == 1 && PIR1bits.TXIF == 1)
-[e $ ! && == -> . . _PIE1bits 0 4 `i -> 1 `i == -> . . _PIR1bits 0 4 `i -> 1 `i 363  ]
-"62
-[; ;mcc_generated_files/interrupt_manager.c: 62:         {
-{
+"62 mcc_generated_files/eusart.c
+[; ;mcc_generated_files/eusart.c: 62: volatile uint8_t eusartTxHead = 0;
+[v _eusartTxHead `Vuc ~T0 @X0 1 e ]
+[i _eusartTxHead
+-> -> 0 `i `uc
+]
 "63
-[; ;mcc_generated_files/interrupt_manager.c: 63:             EUSART_TxDefaultInterruptHandler();
-[e ( *U _EUSART_TxDefaultInterruptHandler ..  ]
+[; ;mcc_generated_files/eusart.c: 63: volatile uint8_t eusartTxTail = 0;
+[v _eusartTxTail `Vuc ~T0 @X0 1 e ]
+[i _eusartTxTail
+-> -> 0 `i `uc
+]
 "64
-[; ;mcc_generated_files/interrupt_manager.c: 64:         }
-}
-[e $U 364  ]
+[; ;mcc_generated_files/eusart.c: 64: volatile uint8_t eusartTxBuffer[8];
+[v _eusartTxBuffer `Vuc ~T0 @X0 -> 8 `i e ]
 "65
-[; ;mcc_generated_files/interrupt_manager.c: 65:         else if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)
-[e :U 363 ]
-[e $ ! && == -> . . _PIE1bits 0 5 `i -> 1 `i == -> . . _PIR1bits 0 5 `i -> 1 `i 365  ]
-"66
-[; ;mcc_generated_files/interrupt_manager.c: 66:         {
-{
+[; ;mcc_generated_files/eusart.c: 65: volatile uint8_t eusartTxBufferRemaining;
+[v _eusartTxBufferRemaining `Vuc ~T0 @X0 1 e ]
 "67
-[; ;mcc_generated_files/interrupt_manager.c: 67:             EUSART_RxDefaultInterruptHandler();
-[e ( *U _EUSART_RxDefaultInterruptHandler ..  ]
+[; ;mcc_generated_files/eusart.c: 67: volatile uint8_t eusartRxHead = 0;
+[v _eusartRxHead `Vuc ~T0 @X0 1 e ]
+[i _eusartRxHead
+-> -> 0 `i `uc
+]
 "68
-[; ;mcc_generated_files/interrupt_manager.c: 68:         }
-}
-[e $U 366  ]
+[; ;mcc_generated_files/eusart.c: 68: volatile uint8_t eusartRxTail = 0;
+[v _eusartRxTail `Vuc ~T0 @X0 1 e ]
+[i _eusartRxTail
+-> -> 0 `i `uc
+]
 "69
-[; ;mcc_generated_files/interrupt_manager.c: 69:         else if(PIE2bits.C2IE == 1 && PIR2bits.C2IF == 1)
-[e :U 365 ]
-[e $ ! && == -> . . _PIE2bits 0 5 `i -> 1 `i == -> . . _PIR2bits 0 5 `i -> 1 `i 367  ]
+[; ;mcc_generated_files/eusart.c: 69: volatile uint8_t eusartRxBuffer[8];
+[v _eusartRxBuffer `Vuc ~T0 @X0 -> 8 `i e ]
 "70
-[; ;mcc_generated_files/interrupt_manager.c: 70:         {
-{
+[; ;mcc_generated_files/eusart.c: 70: volatile eusart_status_t eusartRxStatusBuffer[8];
+[v _eusartRxStatusBuffer `VS354 ~T0 @X0 -> 8 `i e ]
 "71
-[; ;mcc_generated_files/interrupt_manager.c: 71:             CMP2_ISR();
-[e ( _CMP2_ISR ..  ]
+[; ;mcc_generated_files/eusart.c: 71: volatile uint8_t eusartRxCount;
+[v _eusartRxCount `Vuc ~T0 @X0 1 e ]
 "72
-[; ;mcc_generated_files/interrupt_manager.c: 72:         }
-}
-[e $U 368  ]
-"73
-[; ;mcc_generated_files/interrupt_manager.c: 73:         else if(PIE2bits.C1IE == 1 && PIR2bits.C1IF == 1)
-[e :U 367 ]
-[e $ ! && == -> . . _PIE2bits 0 4 `i -> 1 `i == -> . . _PIR2bits 0 4 `i -> 1 `i 369  ]
-"74
-[; ;mcc_generated_files/interrupt_manager.c: 74:         {
-{
-"75
-[; ;mcc_generated_files/interrupt_manager.c: 75:             CMP1_ISR();
-[e ( _CMP1_ISR ..  ]
-"76
-[; ;mcc_generated_files/interrupt_manager.c: 76:         }
-}
-[e $U 370  ]
+[; ;mcc_generated_files/eusart.c: 72: volatile eusart_status_t eusartRxLastError;
+[v _eusartRxLastError `VS354 ~T0 @X0 1 e ]
 "77
-[; ;mcc_generated_files/interrupt_manager.c: 77:         else if(PIE3bits.TMR4IE == 1 && PIR3bits.TMR4IF == 1)
-[e :U 369 ]
-[e $ ! && == -> . . _PIE3bits 0 1 `i -> 1 `i == -> . . _PIR3bits 0 1 `i -> 1 `i 371  ]
+[; ;mcc_generated_files/eusart.c: 77: void (*EUSART_TxDefaultInterruptHandler)(void);
+[v _EUSART_TxDefaultInterruptHandler `*F2547 ~T0 @X0 1 e ]
 "78
-[; ;mcc_generated_files/interrupt_manager.c: 78:         {
-{
-"79
-[; ;mcc_generated_files/interrupt_manager.c: 79:             TMR4_ISR();
-[e ( _TMR4_ISR ..  ]
+[; ;mcc_generated_files/eusart.c: 78: void (*EUSART_RxDefaultInterruptHandler)(void);
+[v _EUSART_RxDefaultInterruptHandler `*F2549 ~T0 @X0 1 e ]
 "80
-[; ;mcc_generated_files/interrupt_manager.c: 80:         }
-}
-[e $U 372  ]
+[; ;mcc_generated_files/eusart.c: 80: void (*EUSART_FramingErrorHandler)(void);
+[v _EUSART_FramingErrorHandler `*F2551 ~T0 @X0 1 e ]
 "81
-[; ;mcc_generated_files/interrupt_manager.c: 81:         else if(PIE1bits.TMR2IE == 1 && PIR1bits.TMR2IF == 1)
-[e :U 371 ]
-[e $ ! && == -> . . _PIE1bits 0 1 `i -> 1 `i == -> . . _PIR1bits 0 1 `i -> 1 `i 373  ]
+[; ;mcc_generated_files/eusart.c: 81: void (*EUSART_OverrunErrorHandler)(void);
+[v _EUSART_OverrunErrorHandler `*F2553 ~T0 @X0 1 e ]
 "82
-[; ;mcc_generated_files/interrupt_manager.c: 82:         {
-{
-"83
-[; ;mcc_generated_files/interrupt_manager.c: 83:             TMR2_ISR();
-[e ( _TMR2_ISR ..  ]
-"84
-[; ;mcc_generated_files/interrupt_manager.c: 84:         }
-}
-[e $U 374  ]
-"85
-[; ;mcc_generated_files/interrupt_manager.c: 85:         else
-[e :U 373 ]
-"86
-[; ;mcc_generated_files/interrupt_manager.c: 86:         {
-{
+[; ;mcc_generated_files/eusart.c: 82: void (*EUSART_ErrorHandler)(void);
+[v _EUSART_ErrorHandler `*F2555 ~T0 @X0 1 e ]
 "88
-[; ;mcc_generated_files/interrupt_manager.c: 88:         }
-}
-[e :U 374 ]
-[e :U 372 ]
-[e :U 370 ]
-[e :U 368 ]
-[e :U 366 ]
-[e :U 364 ]
+[; ;mcc_generated_files/eusart.c: 88: void EUSART_Initialize(void)
+[v _EUSART_Initialize `(v ~T0 @X0 1 ef ]
 "89
-[; ;mcc_generated_files/interrupt_manager.c: 89:     }
-}
-[e $U 375  ]
-"90
-[; ;mcc_generated_files/interrupt_manager.c: 90:     else
-[e :U 362 ]
-"91
-[; ;mcc_generated_files/interrupt_manager.c: 91:     {
+[; ;mcc_generated_files/eusart.c: 89: {
 {
+[e :U _EUSART_Initialize ]
+[f ]
+"91
+[; ;mcc_generated_files/eusart.c: 91:     PIE1bits.RCIE = 0;
+[e = . . _PIE1bits 0 5 -> -> 0 `i `uc ]
+"92
+[; ;mcc_generated_files/eusart.c: 92:     EUSART_SetRxInterruptHandler(EUSART_Receive_ISR);
+[e ( _EUSART_SetRxInterruptHandler (1 &U _EUSART_Receive_ISR ]
 "93
-[; ;mcc_generated_files/interrupt_manager.c: 93:     }
+[; ;mcc_generated_files/eusart.c: 93:     PIE1bits.TXIE = 0;
+[e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
+"94
+[; ;mcc_generated_files/eusart.c: 94:     EUSART_SetTxInterruptHandler(EUSART_Transmit_ISR);
+[e ( _EUSART_SetTxInterruptHandler (1 &U _EUSART_Transmit_ISR ]
+"98
+[; ;mcc_generated_files/eusart.c: 98:     BAUDCON = 0x08;
+[e = _BAUDCON -> -> 8 `i `uc ]
+"101
+[; ;mcc_generated_files/eusart.c: 101:     RCSTA = 0x90;
+[e = _RCSTA -> -> 144 `i `uc ]
+"104
+[; ;mcc_generated_files/eusart.c: 104:     TXSTA = 0x24;
+[e = _TXSTA -> -> 36 `i `uc ]
+"107
+[; ;mcc_generated_files/eusart.c: 107:     SPBRGL = 0x67;
+[e = _SPBRGL -> -> 103 `i `uc ]
+"110
+[; ;mcc_generated_files/eusart.c: 110:     SPBRGH = 0x00;
+[e = _SPBRGH -> -> 0 `i `uc ]
+"113
+[; ;mcc_generated_files/eusart.c: 113:     EUSART_SetFramingErrorHandler(EUSART_DefaultFramingErrorHandler);
+[e ( _EUSART_SetFramingErrorHandler (1 &U _EUSART_DefaultFramingErrorHandler ]
+"114
+[; ;mcc_generated_files/eusart.c: 114:     EUSART_SetOverrunErrorHandler(EUSART_DefaultOverrunErrorHandler);
+[e ( _EUSART_SetOverrunErrorHandler (1 &U _EUSART_DefaultOverrunErrorHandler ]
+"115
+[; ;mcc_generated_files/eusart.c: 115:     EUSART_SetErrorHandler(EUSART_DefaultErrorHandler);
+[e ( _EUSART_SetErrorHandler (1 &U _EUSART_DefaultErrorHandler ]
+"117
+[; ;mcc_generated_files/eusart.c: 117:     eusartRxLastError.status = 0;
+[e = . _eusartRxLastError 1 -> -> 0 `i `uc ]
+"120
+[; ;mcc_generated_files/eusart.c: 120:     eusartTxHead = 0;
+[e = _eusartTxHead -> -> 0 `i `uc ]
+"121
+[; ;mcc_generated_files/eusart.c: 121:     eusartTxTail = 0;
+[e = _eusartTxTail -> -> 0 `i `uc ]
+"122
+[; ;mcc_generated_files/eusart.c: 122:     eusartTxBufferRemaining = sizeof(eusartTxBuffer);
+[e = _eusartTxBufferRemaining -> -> # _eusartTxBuffer `ui `uc ]
+"124
+[; ;mcc_generated_files/eusart.c: 124:     eusartRxHead = 0;
+[e = _eusartRxHead -> -> 0 `i `uc ]
+"125
+[; ;mcc_generated_files/eusart.c: 125:     eusartRxTail = 0;
+[e = _eusartRxTail -> -> 0 `i `uc ]
+"126
+[; ;mcc_generated_files/eusart.c: 126:     eusartRxCount = 0;
+[e = _eusartRxCount -> -> 0 `i `uc ]
+"129
+[; ;mcc_generated_files/eusart.c: 129:     PIE1bits.RCIE = 1;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+"130
+[; ;mcc_generated_files/eusart.c: 130: }
+[e :UE 356 ]
+}
+"132
+[; ;mcc_generated_files/eusart.c: 132: _Bool EUSART_is_tx_ready(void)
+[v _EUSART_is_tx_ready `(a ~T0 @X0 1 ef ]
+"133
+[; ;mcc_generated_files/eusart.c: 133: {
+{
+[e :U _EUSART_is_tx_ready ]
+[f ]
+"134
+[; ;mcc_generated_files/eusart.c: 134:     return (eusartTxBufferRemaining ? 1 : 0);
+[e ) -> ? != -> _eusartTxBufferRemaining `i -> 0 `i : -> 1 `i -> 0 `i `a ]
+[e $UE 357  ]
+"135
+[; ;mcc_generated_files/eusart.c: 135: }
+[e :UE 357 ]
+}
+"137
+[; ;mcc_generated_files/eusart.c: 137: _Bool EUSART_is_rx_ready(void)
+[v _EUSART_is_rx_ready `(a ~T0 @X0 1 ef ]
+"138
+[; ;mcc_generated_files/eusart.c: 138: {
+{
+[e :U _EUSART_is_rx_ready ]
+[f ]
+"139
+[; ;mcc_generated_files/eusart.c: 139:     return (eusartRxCount ? 1 : 0);
+[e ) -> ? != -> _eusartRxCount `i -> 0 `i : -> 1 `i -> 0 `i `a ]
+[e $UE 358  ]
+"140
+[; ;mcc_generated_files/eusart.c: 140: }
+[e :UE 358 ]
+}
+"142
+[; ;mcc_generated_files/eusart.c: 142: _Bool EUSART_is_tx_done(void)
+[v _EUSART_is_tx_done `(a ~T0 @X0 1 ef ]
+"143
+[; ;mcc_generated_files/eusart.c: 143: {
+{
+[e :U _EUSART_is_tx_done ]
+[f ]
+"144
+[; ;mcc_generated_files/eusart.c: 144:     return TXSTAbits.TRMT;
+[e ) -> . . _TXSTAbits 0 1 `a ]
+[e $UE 359  ]
+"145
+[; ;mcc_generated_files/eusart.c: 145: }
+[e :UE 359 ]
+}
+"147
+[; ;mcc_generated_files/eusart.c: 147: eusart_status_t EUSART_get_last_status(void){
+[v _EUSART_get_last_status `(S354 ~T0 @X0 1 ef ]
+{
+[e :U _EUSART_get_last_status ]
+[f ]
+"148
+[; ;mcc_generated_files/eusart.c: 148:     return eusartRxLastError;
+[e ) _eusartRxLastError ]
+[e $UE 360  ]
+"149
+[; ;mcc_generated_files/eusart.c: 149: }
+[e :UE 360 ]
+}
+"151
+[; ;mcc_generated_files/eusart.c: 151: uint8_t EUSART_Read(void)
+[v _EUSART_Read `(uc ~T0 @X0 1 ef ]
+"152
+[; ;mcc_generated_files/eusart.c: 152: {
+{
+[e :U _EUSART_Read ]
+[f ]
+"153
+[; ;mcc_generated_files/eusart.c: 153:     uint8_t readValue = 0;
+[v _readValue `uc ~T0 @X0 1 a ]
+[e = _readValue -> -> 0 `i `uc ]
+"155
+[; ;mcc_generated_files/eusart.c: 155:     while(0 == eusartRxCount)
+[e $U 362  ]
+[e :U 363 ]
+"156
+[; ;mcc_generated_files/eusart.c: 156:     {
+{
+"157
+[; ;mcc_generated_files/eusart.c: 157:     }
+}
+[e :U 362 ]
+"155
+[; ;mcc_generated_files/eusart.c: 155:     while(0 == eusartRxCount)
+[e $ == -> 0 `i -> _eusartRxCount `i 363  ]
+[e :U 364 ]
+"159
+[; ;mcc_generated_files/eusart.c: 159:     eusartRxLastError = eusartRxStatusBuffer[eusartRxTail];
+[e = _eusartRxLastError *U + &U _eusartRxStatusBuffer * -> _eusartRxTail `ux -> -> # *U &U _eusartRxStatusBuffer `ui `ux ]
+"161
+[; ;mcc_generated_files/eusart.c: 161:     readValue = eusartRxBuffer[eusartRxTail++];
+[e = _readValue *U + &U _eusartRxBuffer * -> ++ _eusartRxTail -> -> 1 `i `Vuc `ux -> -> # *U &U _eusartRxBuffer `ui `ux ]
+"162
+[; ;mcc_generated_files/eusart.c: 162:     if(sizeof(eusartRxBuffer) <= eusartRxTail)
+[e $ ! <= -> # _eusartRxBuffer `ui -> _eusartRxTail `ui 365  ]
+"163
+[; ;mcc_generated_files/eusart.c: 163:     {
+{
+"164
+[; ;mcc_generated_files/eusart.c: 164:         eusartRxTail = 0;
+[e = _eusartRxTail -> -> 0 `i `uc ]
+"165
+[; ;mcc_generated_files/eusart.c: 165:     }
+}
+[e :U 365 ]
+"166
+[; ;mcc_generated_files/eusart.c: 166:     PIE1bits.RCIE = 0;
+[e = . . _PIE1bits 0 5 -> -> 0 `i `uc ]
+"167
+[; ;mcc_generated_files/eusart.c: 167:     eusartRxCount--;
+[e -- _eusartRxCount -> -> 1 `i `Vuc ]
+"168
+[; ;mcc_generated_files/eusart.c: 168:     PIE1bits.RCIE = 1;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+"170
+[; ;mcc_generated_files/eusart.c: 170:     return readValue;
+[e ) _readValue ]
+[e $UE 361  ]
+"171
+[; ;mcc_generated_files/eusart.c: 171: }
+[e :UE 361 ]
+}
+"173
+[; ;mcc_generated_files/eusart.c: 173: void EUSART_Write(uint8_t txData)
+[v _EUSART_Write `(v ~T0 @X0 1 ef1`uc ]
+"174
+[; ;mcc_generated_files/eusart.c: 174: {
+{
+[e :U _EUSART_Write ]
+"173
+[; ;mcc_generated_files/eusart.c: 173: void EUSART_Write(uint8_t txData)
+[v _txData `uc ~T0 @X0 1 r1 ]
+"174
+[; ;mcc_generated_files/eusart.c: 174: {
+[f ]
+"175
+[; ;mcc_generated_files/eusart.c: 175:     while(0 == eusartTxBufferRemaining)
+[e $U 367  ]
+[e :U 368 ]
+"176
+[; ;mcc_generated_files/eusart.c: 176:     {
+{
+"177
+[; ;mcc_generated_files/eusart.c: 177:     }
+}
+[e :U 367 ]
+"175
+[; ;mcc_generated_files/eusart.c: 175:     while(0 == eusartTxBufferRemaining)
+[e $ == -> 0 `i -> _eusartTxBufferRemaining `i 368  ]
+[e :U 369 ]
+"179
+[; ;mcc_generated_files/eusart.c: 179:     if(0 == PIE1bits.TXIE)
+[e $ ! == -> 0 `i -> . . _PIE1bits 0 4 `i 370  ]
+"180
+[; ;mcc_generated_files/eusart.c: 180:     {
+{
+"181
+[; ;mcc_generated_files/eusart.c: 181:         TXREG = txData;
+[e = _TXREG _txData ]
+"182
+[; ;mcc_generated_files/eusart.c: 182:     }
+}
+[e $U 371  ]
+"183
+[; ;mcc_generated_files/eusart.c: 183:     else
+[e :U 370 ]
+"184
+[; ;mcc_generated_files/eusart.c: 184:     {
+{
+"185
+[; ;mcc_generated_files/eusart.c: 185:         PIE1bits.TXIE = 0;
+[e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
+"186
+[; ;mcc_generated_files/eusart.c: 186:         eusartTxBuffer[eusartTxHead++] = txData;
+[e = *U + &U _eusartTxBuffer * -> ++ _eusartTxHead -> -> 1 `i `Vuc `ux -> -> # *U &U _eusartTxBuffer `ui `ux _txData ]
+"187
+[; ;mcc_generated_files/eusart.c: 187:         if(sizeof(eusartTxBuffer) <= eusartTxHead)
+[e $ ! <= -> # _eusartTxBuffer `ui -> _eusartTxHead `ui 372  ]
+"188
+[; ;mcc_generated_files/eusart.c: 188:         {
+{
+"189
+[; ;mcc_generated_files/eusart.c: 189:             eusartTxHead = 0;
+[e = _eusartTxHead -> -> 0 `i `uc ]
+"190
+[; ;mcc_generated_files/eusart.c: 190:         }
+}
+[e :U 372 ]
+"191
+[; ;mcc_generated_files/eusart.c: 191:         eusartTxBufferRemaining--;
+[e -- _eusartTxBufferRemaining -> -> 1 `i `Vuc ]
+"192
+[; ;mcc_generated_files/eusart.c: 192:     }
+}
+[e :U 371 ]
+"193
+[; ;mcc_generated_files/eusart.c: 193:     PIE1bits.TXIE = 1;
+[e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
+"194
+[; ;mcc_generated_files/eusart.c: 194: }
+[e :UE 366 ]
+}
+"197
+[; ;mcc_generated_files/eusart.c: 197: void EUSART_Transmit_ISR(void)
+[v _EUSART_Transmit_ISR `(v ~T0 @X0 1 ef ]
+"198
+[; ;mcc_generated_files/eusart.c: 198: {
+{
+[e :U _EUSART_Transmit_ISR ]
+[f ]
+"201
+[; ;mcc_generated_files/eusart.c: 201:     if(sizeof(eusartTxBuffer) > eusartTxBufferRemaining)
+[e $ ! > -> # _eusartTxBuffer `ui -> _eusartTxBufferRemaining `ui 374  ]
+"202
+[; ;mcc_generated_files/eusart.c: 202:     {
+{
+"203
+[; ;mcc_generated_files/eusart.c: 203:         TXREG = eusartTxBuffer[eusartTxTail++];
+[e = _TXREG *U + &U _eusartTxBuffer * -> ++ _eusartTxTail -> -> 1 `i `Vuc `ux -> -> # *U &U _eusartTxBuffer `ui `ux ]
+"204
+[; ;mcc_generated_files/eusart.c: 204:         if(sizeof(eusartTxBuffer) <= eusartTxTail)
+[e $ ! <= -> # _eusartTxBuffer `ui -> _eusartTxTail `ui 375  ]
+"205
+[; ;mcc_generated_files/eusart.c: 205:         {
+{
+"206
+[; ;mcc_generated_files/eusart.c: 206:             eusartTxTail = 0;
+[e = _eusartTxTail -> -> 0 `i `uc ]
+"207
+[; ;mcc_generated_files/eusart.c: 207:         }
 }
 [e :U 375 ]
-[e :U 361 ]
-"94
-[; ;mcc_generated_files/interrupt_manager.c: 94: }
-[e :UE 359 ]
+"208
+[; ;mcc_generated_files/eusart.c: 208:         eusartTxBufferRemaining++;
+[e ++ _eusartTxBufferRemaining -> -> 1 `i `Vuc ]
+"209
+[; ;mcc_generated_files/eusart.c: 209:     }
+}
+[e $U 376  ]
+"210
+[; ;mcc_generated_files/eusart.c: 210:     else
+[e :U 374 ]
+"211
+[; ;mcc_generated_files/eusart.c: 211:     {
+{
+"212
+[; ;mcc_generated_files/eusart.c: 212:         PIE1bits.TXIE = 0;
+[e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
+"213
+[; ;mcc_generated_files/eusart.c: 213:     }
+}
+[e :U 376 ]
+"214
+[; ;mcc_generated_files/eusart.c: 214: }
+[e :UE 373 ]
+}
+"216
+[; ;mcc_generated_files/eusart.c: 216: void EUSART_Receive_ISR(void)
+[v _EUSART_Receive_ISR `(v ~T0 @X0 1 ef ]
+"217
+[; ;mcc_generated_files/eusart.c: 217: {
+{
+[e :U _EUSART_Receive_ISR ]
+[f ]
+"219
+[; ;mcc_generated_files/eusart.c: 219:     eusartRxStatusBuffer[eusartRxHead].status = 0;
+[e = . *U + &U _eusartRxStatusBuffer * -> _eusartRxHead `ux -> -> # *U &U _eusartRxStatusBuffer `ui `ux 1 -> -> 0 `i `uc ]
+"221
+[; ;mcc_generated_files/eusart.c: 221:     if(RCSTAbits.FERR){
+[e $ ! != -> . . _RCSTAbits 0 2 `i -> 0 `i 378  ]
+{
+"222
+[; ;mcc_generated_files/eusart.c: 222:         eusartRxStatusBuffer[eusartRxHead].ferr = 1;
+[e = . . *U + &U _eusartRxStatusBuffer * -> _eusartRxHead `ux -> -> # *U &U _eusartRxStatusBuffer `ui `ux 0 1 -> -> 1 `i `uc ]
+"223
+[; ;mcc_generated_files/eusart.c: 223:         EUSART_FramingErrorHandler();
+[e ( *U _EUSART_FramingErrorHandler ..  ]
+"224
+[; ;mcc_generated_files/eusart.c: 224:     }
+}
+[e :U 378 ]
+"226
+[; ;mcc_generated_files/eusart.c: 226:     if(RCSTAbits.OERR){
+[e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 379  ]
+{
+"227
+[; ;mcc_generated_files/eusart.c: 227:         eusartRxStatusBuffer[eusartRxHead].oerr = 1;
+[e = . . *U + &U _eusartRxStatusBuffer * -> _eusartRxHead `ux -> -> # *U &U _eusartRxStatusBuffer `ui `ux 0 2 -> -> 1 `i `uc ]
+"228
+[; ;mcc_generated_files/eusart.c: 228:         EUSART_OverrunErrorHandler();
+[e ( *U _EUSART_OverrunErrorHandler ..  ]
+"229
+[; ;mcc_generated_files/eusart.c: 229:     }
+}
+[e :U 379 ]
+"231
+[; ;mcc_generated_files/eusart.c: 231:     if(eusartRxStatusBuffer[eusartRxHead].status){
+[e $ ! != -> . *U + &U _eusartRxStatusBuffer * -> _eusartRxHead `ux -> -> # *U &U _eusartRxStatusBuffer `ui `ux 1 `i -> 0 `i 380  ]
+{
+"232
+[; ;mcc_generated_files/eusart.c: 232:         EUSART_ErrorHandler();
+[e ( *U _EUSART_ErrorHandler ..  ]
+"233
+[; ;mcc_generated_files/eusart.c: 233:     } else {
+}
+[e $U 381  ]
+[e :U 380 ]
+{
+"234
+[; ;mcc_generated_files/eusart.c: 234:         EUSART_RxDataHandler();
+[e ( _EUSART_RxDataHandler ..  ]
+"235
+[; ;mcc_generated_files/eusart.c: 235:     }
+}
+[e :U 381 ]
+"238
+[; ;mcc_generated_files/eusart.c: 238: }
+[e :UE 377 ]
+}
+"240
+[; ;mcc_generated_files/eusart.c: 240: void EUSART_RxDataHandler(void){
+[v _EUSART_RxDataHandler `(v ~T0 @X0 1 ef ]
+{
+[e :U _EUSART_RxDataHandler ]
+[f ]
+"242
+[; ;mcc_generated_files/eusart.c: 242:     eusartRxBuffer[eusartRxHead++] = RCREG;
+[e = *U + &U _eusartRxBuffer * -> ++ _eusartRxHead -> -> 1 `i `Vuc `ux -> -> # *U &U _eusartRxBuffer `ui `ux _RCREG ]
+"243
+[; ;mcc_generated_files/eusart.c: 243:     if(sizeof(eusartRxBuffer) <= eusartRxHead)
+[e $ ! <= -> # _eusartRxBuffer `ui -> _eusartRxHead `ui 383  ]
+"244
+[; ;mcc_generated_files/eusart.c: 244:     {
+{
+"245
+[; ;mcc_generated_files/eusart.c: 245:         eusartRxHead = 0;
+[e = _eusartRxHead -> -> 0 `i `uc ]
+"246
+[; ;mcc_generated_files/eusart.c: 246:     }
+}
+[e :U 383 ]
+"247
+[; ;mcc_generated_files/eusart.c: 247:     eusartRxCount++;
+[e ++ _eusartRxCount -> -> 1 `i `Vuc ]
+"248
+[; ;mcc_generated_files/eusart.c: 248: }
+[e :UE 382 ]
+}
+"250
+[; ;mcc_generated_files/eusart.c: 250: void EUSART_DefaultFramingErrorHandler(void){}
+[v _EUSART_DefaultFramingErrorHandler `(v ~T0 @X0 1 ef ]
+{
+[e :U _EUSART_DefaultFramingErrorHandler ]
+[f ]
+[e :UE 384 ]
+}
+"252
+[; ;mcc_generated_files/eusart.c: 252: void EUSART_DefaultOverrunErrorHandler(void){
+[v _EUSART_DefaultOverrunErrorHandler `(v ~T0 @X0 1 ef ]
+{
+[e :U _EUSART_DefaultOverrunErrorHandler ]
+[f ]
+"255
+[; ;mcc_generated_files/eusart.c: 255:     RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"256
+[; ;mcc_generated_files/eusart.c: 256:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"258
+[; ;mcc_generated_files/eusart.c: 258: }
+[e :UE 385 ]
+}
+"260
+[; ;mcc_generated_files/eusart.c: 260: void EUSART_DefaultErrorHandler(void){
+[v _EUSART_DefaultErrorHandler `(v ~T0 @X0 1 ef ]
+{
+[e :U _EUSART_DefaultErrorHandler ]
+[f ]
+"261
+[; ;mcc_generated_files/eusart.c: 261:     EUSART_RxDataHandler();
+[e ( _EUSART_RxDataHandler ..  ]
+"262
+[; ;mcc_generated_files/eusart.c: 262: }
+[e :UE 386 ]
+}
+"264
+[; ;mcc_generated_files/eusart.c: 264: void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void)){
+[v _EUSART_SetFramingErrorHandler `(v ~T0 @X0 1 ef1`*F2580 ]
+{
+[e :U _EUSART_SetFramingErrorHandler ]
+[v _interruptHandler `*F2582 ~T0 @X0 1 r1 ]
+[f ]
+"265
+[; ;mcc_generated_files/eusart.c: 265:     EUSART_FramingErrorHandler = interruptHandler;
+[e = _EUSART_FramingErrorHandler _interruptHandler ]
+"266
+[; ;mcc_generated_files/eusart.c: 266: }
+[e :UE 387 ]
+}
+"268
+[; ;mcc_generated_files/eusart.c: 268: void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void)){
+[v _EUSART_SetOverrunErrorHandler `(v ~T0 @X0 1 ef1`*F2585 ]
+{
+[e :U _EUSART_SetOverrunErrorHandler ]
+[v _interruptHandler `*F2587 ~T0 @X0 1 r1 ]
+[f ]
+"269
+[; ;mcc_generated_files/eusart.c: 269:     EUSART_OverrunErrorHandler = interruptHandler;
+[e = _EUSART_OverrunErrorHandler _interruptHandler ]
+"270
+[; ;mcc_generated_files/eusart.c: 270: }
+[e :UE 388 ]
+}
+"272
+[; ;mcc_generated_files/eusart.c: 272: void EUSART_SetErrorHandler(void (* interruptHandler)(void)){
+[v _EUSART_SetErrorHandler `(v ~T0 @X0 1 ef1`*F2590 ]
+{
+[e :U _EUSART_SetErrorHandler ]
+[v _interruptHandler `*F2592 ~T0 @X0 1 r1 ]
+[f ]
+"273
+[; ;mcc_generated_files/eusart.c: 273:     EUSART_ErrorHandler = interruptHandler;
+[e = _EUSART_ErrorHandler _interruptHandler ]
+"274
+[; ;mcc_generated_files/eusart.c: 274: }
+[e :UE 389 ]
+}
+"276
+[; ;mcc_generated_files/eusart.c: 276: void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void)){
+[v _EUSART_SetTxInterruptHandler `(v ~T0 @X0 1 ef1`*F2595 ]
+{
+[e :U _EUSART_SetTxInterruptHandler ]
+[v _interruptHandler `*F2597 ~T0 @X0 1 r1 ]
+[f ]
+"277
+[; ;mcc_generated_files/eusart.c: 277:     EUSART_TxDefaultInterruptHandler = interruptHandler;
+[e = _EUSART_TxDefaultInterruptHandler _interruptHandler ]
+"278
+[; ;mcc_generated_files/eusart.c: 278: }
+[e :UE 390 ]
+}
+"280
+[; ;mcc_generated_files/eusart.c: 280: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
+[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 1 ef1`*F2600 ]
+{
+[e :U _EUSART_SetRxInterruptHandler ]
+[v _interruptHandler `*F2602 ~T0 @X0 1 r1 ]
+[f ]
+"281
+[; ;mcc_generated_files/eusart.c: 281:     EUSART_RxDefaultInterruptHandler = interruptHandler;
+[e = _EUSART_RxDefaultInterruptHandler _interruptHandler ]
+"282
+[; ;mcc_generated_files/eusart.c: 282: }
+[e :UE 391 ]
 }

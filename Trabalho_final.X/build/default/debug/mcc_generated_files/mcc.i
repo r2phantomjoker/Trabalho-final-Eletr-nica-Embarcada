@@ -4346,25 +4346,25 @@ extern __bank0 __bit __timeout;
 # 1 "mcc_generated_files/device_config.h" 1
 # 51 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 164 "mcc_generated_files/pin_manager.h"
+# 188 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 176 "mcc_generated_files/pin_manager.h"
+# 200 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 189 "mcc_generated_files/pin_manager.h"
+# 213 "mcc_generated_files/pin_manager.h"
 void IOCBF0_ISR(void);
-# 212 "mcc_generated_files/pin_manager.h"
-void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
 # 236 "mcc_generated_files/pin_manager.h"
-extern void (*IOCBF0_InterruptHandler)(void);
+void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
 # 260 "mcc_generated_files/pin_manager.h"
+extern void (*IOCBF0_InterruptHandler)(void);
+# 284 "mcc_generated_files/pin_manager.h"
 void IOCBF0_DefaultInterruptHandler(void);
-# 273 "mcc_generated_files/pin_manager.h"
+# 297 "mcc_generated_files/pin_manager.h"
 void IOCBF3_ISR(void);
-# 296 "mcc_generated_files/pin_manager.h"
-void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
 # 320 "mcc_generated_files/pin_manager.h"
-extern void (*IOCBF3_InterruptHandler)(void);
+void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
 # 344 "mcc_generated_files/pin_manager.h"
+extern void (*IOCBF3_InterruptHandler)(void);
+# 368 "mcc_generated_files/pin_manager.h"
 void IOCBF3_DefaultInterruptHandler(void);
 # 52 "mcc_generated_files/mcc.h" 2
 
@@ -4555,14 +4555,6 @@ extern void (*TMR4_InterruptHandler)(void);
 # 362 "mcc_generated_files/tmr4.h"
 void TMR4_DefaultInterruptHandler(void);
 # 57 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/cmp2.h" 1
-# 92 "mcc_generated_files/cmp2.h"
-void CMP2_Initialize(void);
-# 132 "mcc_generated_files/cmp2.h"
-_Bool CMP2_GetOutputStatus(void);
-# 148 "mcc_generated_files/cmp2.h"
-void CMP2_ISR(void);
-# 58 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/tmr2.h" 1
 # 103 "mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
@@ -4584,6 +4576,14 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 362 "mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
+# 58 "mcc_generated_files/mcc.h" 2
+# 1 "mcc_generated_files/cmp2.h" 1
+# 92 "mcc_generated_files/cmp2.h"
+void CMP2_Initialize(void);
+# 132 "mcc_generated_files/cmp2.h"
+_Bool CMP2_GetOutputStatus(void);
+# 148 "mcc_generated_files/cmp2.h"
+void CMP2_ISR(void);
 # 59 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/cmp1.h" 1
 # 92 "mcc_generated_files/cmp1.h"
@@ -4651,11 +4651,65 @@ adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 315 "mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
 # 64 "mcc_generated_files/mcc.h" 2
-# 78 "mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/eusart.h" 1
+# 75 "mcc_generated_files/eusart.h"
+typedef union {
+    struct {
+        unsigned perr : 1;
+        unsigned ferr : 1;
+        unsigned oerr : 1;
+        unsigned reserved : 5;
+    };
+    uint8_t status;
+}eusart_status_t;
+
+
+
+
+extern volatile uint8_t eusartTxBufferRemaining;
+extern volatile uint8_t eusartRxCount;
+
+
+
+
+extern void (*EUSART_TxDefaultInterruptHandler)(void);
+extern void (*EUSART_RxDefaultInterruptHandler)(void);
+# 117 "mcc_generated_files/eusart.h"
+void EUSART_Initialize(void);
+# 165 "mcc_generated_files/eusart.h"
+_Bool EUSART_is_tx_ready(void);
+# 213 "mcc_generated_files/eusart.h"
+_Bool EUSART_is_rx_ready(void);
+# 260 "mcc_generated_files/eusart.h"
+_Bool EUSART_is_tx_done(void);
+# 308 "mcc_generated_files/eusart.h"
+eusart_status_t EUSART_get_last_status(void);
+# 328 "mcc_generated_files/eusart.h"
+uint8_t EUSART_Read(void);
+# 348 "mcc_generated_files/eusart.h"
+void EUSART_Write(uint8_t txData);
+# 369 "mcc_generated_files/eusart.h"
+void EUSART_Transmit_ISR(void);
+# 390 "mcc_generated_files/eusart.h"
+void EUSART_Receive_ISR(void);
+# 411 "mcc_generated_files/eusart.h"
+void EUSART_RxDataHandler(void);
+# 429 "mcc_generated_files/eusart.h"
+void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
+# 447 "mcc_generated_files/eusart.h"
+void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
+# 465 "mcc_generated_files/eusart.h"
+void EUSART_SetErrorHandler(void (* interruptHandler)(void));
+# 485 "mcc_generated_files/eusart.h"
+void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
+# 505 "mcc_generated_files/eusart.h"
+void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
+# 65 "mcc_generated_files/mcc.h" 2
+# 79 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 91 "mcc_generated_files/mcc.h"
+# 92 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 103 "mcc_generated_files/mcc.h"
+# 104 "mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 48 "mcc_generated_files/mcc.c" 2
 
@@ -4674,6 +4728,7 @@ void SYSTEM_Initialize(void)
     PWM3_Initialize();
     TMR2_Initialize();
     TMR0_Initialize();
+    EUSART_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)

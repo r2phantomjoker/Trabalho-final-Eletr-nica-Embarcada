@@ -4343,25 +4343,25 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
 # 55 "mcc_generated_files/pin_manager.h" 2
-# 164 "mcc_generated_files/pin_manager.h"
+# 188 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 176 "mcc_generated_files/pin_manager.h"
+# 200 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 189 "mcc_generated_files/pin_manager.h"
+# 213 "mcc_generated_files/pin_manager.h"
 void IOCBF0_ISR(void);
-# 212 "mcc_generated_files/pin_manager.h"
-void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
 # 236 "mcc_generated_files/pin_manager.h"
-extern void (*IOCBF0_InterruptHandler)(void);
+void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
 # 260 "mcc_generated_files/pin_manager.h"
+extern void (*IOCBF0_InterruptHandler)(void);
+# 284 "mcc_generated_files/pin_manager.h"
 void IOCBF0_DefaultInterruptHandler(void);
-# 273 "mcc_generated_files/pin_manager.h"
+# 297 "mcc_generated_files/pin_manager.h"
 void IOCBF3_ISR(void);
-# 296 "mcc_generated_files/pin_manager.h"
-void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
 # 320 "mcc_generated_files/pin_manager.h"
-extern void (*IOCBF3_InterruptHandler)(void);
+void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
 # 344 "mcc_generated_files/pin_manager.h"
+extern void (*IOCBF3_InterruptHandler)(void);
+# 368 "mcc_generated_files/pin_manager.h"
 void IOCBF3_DefaultInterruptHandler(void);
 # 50 "mcc_generated_files/pin_manager.c" 2
 
@@ -4389,7 +4389,7 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    ANSELB = 0xF6;
+    ANSELB = 0xF0;
     ANSELA = 0x0F;
 
 

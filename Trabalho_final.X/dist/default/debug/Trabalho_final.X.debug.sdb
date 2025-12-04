@@ -41,15 +41,39 @@ channel_FVR 31
 [v _CMP2_Initialize CMP2_Initialize `(v  1 e 1 0 ]
 "85
 [v _CMP2_ISR CMP2_ISR `(v  1 e 1 0 ]
+"88 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"197
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+"216
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+"240
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+"250
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"252
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"260
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+"264
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+"268
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"272
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"276
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+"280
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
 "58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/fvr.c
 [v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
 "52 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 "50 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"66
+"67
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"76
+"77
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 "58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
@@ -118,7 +142,7 @@ channel_FVR 31
 ]
 [u S430 . 1 `S416 1 . 1 0 `S425 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES430  1 e 1 @11 ]
-[s S970 . 1 `uc 1 RB0 1 0 :1:0 
+[s S980 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -128,9 +152,9 @@ channel_FVR 31
 `uc 1 RB7 1 0 :1:7 
 ]
 "508
-[u S979 . 1 `S970 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES979  1 e 1 @13 ]
-[s S622 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S989 . 1 `S980 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES989  1 e 1 @13 ]
+[s S560 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -140,8 +164,8 @@ channel_FVR 31
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "570
-[u S631 . 1 `S622 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES631  1 e 1 @17 ]
+[u S569 . 1 `S560 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES569  1 e 1 @17 ]
 [s S155 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 BCL1IF 1 0 :1:3 
@@ -153,7 +177,7 @@ channel_FVR 31
 "631
 [u S163 . 1 `S155 1 . 1 0 ]
 [v _PIR2bits PIR2bits `VES163  1 e 1 @18 ]
-[s S580 . 1 `uc 1 . 1 0 :1:0 
+[s S626 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TMR4IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TMR6IF 1 0 :1:3 
@@ -161,8 +185,8 @@ channel_FVR 31
 `uc 1 CCP4IF 1 0 :1:5 
 ]
 "681
-[u S587 . 1 `S580 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES587  1 e 1 @19 ]
+[u S633 . 1 `S626 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES633  1 e 1 @19 ]
 "732
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
 "941
@@ -171,7 +195,7 @@ channel_FVR 31
 [v _PR2 PR2 `VEuc  1 e 1 @27 ]
 "981
 [v _T2CON T2CON `VEuc  1 e 1 @28 ]
-[s S721 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S727 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -180,17 +204,17 @@ channel_FVR 31
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
 "1002
-[s S729 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S735 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
-[u S733 . 1 `S721 1 . 1 0 `S729 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES733  1 e 1 @28 ]
+[u S739 . 1 `S727 1 . 1 0 `S735 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES739  1 e 1 @28 ]
 "1152
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1214
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
-[s S601 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S539 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSP1IE 1 0 :1:3 
@@ -200,8 +224,8 @@ channel_FVR 31
 `uc 1 TMR1GIE 1 0 :1:7 
 ]
 "1293
-[u S610 . 1 `S601 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES610  1 e 1 @145 ]
+[u S548 . 1 `S539 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES548  1 e 1 @145 ]
 [s S134 . 1 `uc 1 CCP2IE 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 BCL1IE 1 0 :1:3 
@@ -213,7 +237,7 @@ channel_FVR 31
 "1354
 [u S142 . 1 `S134 1 . 1 0 ]
 [v _PIE2bits PIE2bits `VES142  1 e 1 @146 ]
-[s S563 . 1 `uc 1 . 1 0 :1:0 
+[s S609 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TMR4IE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TMR6IE 1 0 :1:3 
@@ -221,8 +245,8 @@ channel_FVR 31
 `uc 1 CCP4IE 1 0 :1:5 
 ]
 "1404
-[u S570 . 1 `S563 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES570  1 e 1 @147 ]
+[u S616 . 1 `S609 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES616  1 e 1 @147 ]
 "1455
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
 [s S284 . 1 `uc 1 PS0 1 0 :1:0 
@@ -276,7 +300,7 @@ channel_FVR 31
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2039
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1046 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1056 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -286,13 +310,13 @@ channel_FVR 31
 `uc 1 LATA7 1 0 :1:7 
 ]
 "2056
-[u S1055 . 1 `S1046 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1055  1 e 1 @268 ]
+[u S1065 . 1 `S1056 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1065  1 e 1 @268 ]
 "2096
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2158
 [v _CM1CON0 CM1CON0 `VEuc  1 e 1 @273 ]
-[s S992 . 1 `uc 1 C1SYNC 1 0 :1:0 
+[s S1002 . 1 `uc 1 C1SYNC 1 0 :1:0 
 `uc 1 C1HYS 1 0 :1:1 
 `uc 1 C1SP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -302,13 +326,13 @@ channel_FVR 31
 `uc 1 C1ON 1 0 :1:7 
 ]
 "2175
-[u S1001 . 1 `S992 1 . 1 0 ]
-[v _CM1CON0bits CM1CON0bits `VES1001  1 e 1 @273 ]
+[u S1011 . 1 `S1002 1 . 1 0 ]
+[v _CM1CON0bits CM1CON0bits `VES1011  1 e 1 @273 ]
 "2215
 [v _CM1CON1 CM1CON1 `VEuc  1 e 1 @274 ]
 "2281
 [v _CM2CON0 CM2CON0 `VEuc  1 e 1 @275 ]
-[s S1013 . 1 `uc 1 C2SYNC 1 0 :1:0 
+[s S1023 . 1 `uc 1 C2SYNC 1 0 :1:0 
 `uc 1 C2HYS 1 0 :1:1 
 `uc 1 C2SP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -318,8 +342,8 @@ channel_FVR 31
 `uc 1 C2ON 1 0 :1:7 
 ]
 "2298
-[u S1022 . 1 `S1013 1 . 1 0 ]
-[v _CM2CON0bits CM2CON0bits `VES1022  1 e 1 @275 ]
+[u S1032 . 1 `S1023 1 . 1 0 ]
+[v _CM2CON0bits CM2CON0bits `VES1032  1 e 1 @275 ]
 "2338
 [v _CM2CON1 CM2CON1 `VEuc  1 e 1 @276 ]
 [s S174 . 1 `uc 1 MC1OUT 1 0 :1:0 
@@ -355,6 +379,44 @@ channel_FVR 31
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
 "2913
 [v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3172
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"3192
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"3228
+[v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
+"3278
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
+"3311
+[v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
+[s S1234 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3328
+[u S1243 . 1 `S1234 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES1243  1 e 1 @413 ]
+"3373
+[v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
+[s S1212 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3390
+[u S1221 . 1 `S1212 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES1221  1 e 1 @414 ]
+"3435
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @415 ]
 "3487
 [v _WPUA WPUA `VEuc  1 e 1 @524 ]
 "3516
@@ -430,7 +492,7 @@ channel_FVR 31
 [v _PR4 PR4 `VEuc  1 e 1 @1046 ]
 "6352
 [v _T4CON T4CON `VEuc  1 e 1 @1047 ]
-[s S845 . 1 `uc 1 T4CKPS0 1 0 :1:0 
+[s S855 . 1 `uc 1 T4CKPS0 1 0 :1:0 
 `uc 1 T4CKPS1 1 0 :1:1 
 `uc 1 TMR4ON 1 0 :1:2 
 `uc 1 T4OUTPS0 1 0 :1:3 
@@ -439,12 +501,12 @@ channel_FVR 31
 `uc 1 T4OUTPS3 1 0 :1:6 
 ]
 "6373
-[s S853 . 1 `uc 1 T4CKPS 1 0 :2:0 
+[s S863 . 1 `uc 1 T4CKPS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 T4OUTPS 1 0 :4:3 
 ]
-[u S857 . 1 `S845 1 . 1 0 `S853 1 . 1 0 ]
-[v _T4CONbits T4CONbits `VES857  1 e 1 @1047 ]
+[u S867 . 1 `S855 1 . 1 0 `S863 1 . 1 0 ]
+[v _T4CONbits T4CONbits `VES867  1 e 1 @1047 ]
 "11 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\globals.c
 [v _andar_atual andar_atual `VEuc  1 e 1 0 ]
 "12
@@ -459,6 +521,42 @@ channel_FVR 31
 [v _temperatura_ponte temperatura_ponte `VEuc  1 e 1 0 ]
 "20
 [v _solicitacoes solicitacoes `VE[4]a  1 e 4 0 ]
+"62 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
+[v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
+"63
+[v _eusartTxTail eusartTxTail `VEuc  1 e 1 0 ]
+"64
+[v _eusartTxBuffer eusartTxBuffer `VE[8]uc  1 e 8 0 ]
+"65
+[v _eusartTxBufferRemaining eusartTxBufferRemaining `VEuc  1 e 1 0 ]
+"67
+[v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
+"68
+[v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
+"69
+[v _eusartRxBuffer eusartRxBuffer `VE[8]uc  1 e 8 0 ]
+[s S1132 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"70
+[u S1137 . 1 `S1132 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[8]S1137  1 e 8 0 ]
+"71
+[v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
+"72
+[v _eusartRxLastError eusartRxLastError `VES1137  1 e 1 0 ]
+"77
+[v _EUSART_TxDefaultInterruptHandler EUSART_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"78
+[v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"80
+[v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"81
+[v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"82
+[v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
 "54 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
 [v _IOCBF0_InterruptHandler IOCBF0_InterruptHandler `*.37(v  1 e 2 0 ]
 "55
@@ -483,12 +581,12 @@ channel_FVR 31
 "50 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"64
+"65
 } 0
-"76
+"77
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 {
-"80
+"81
 } 0
 "64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
@@ -539,15 +637,50 @@ channel_FVR 31
 [v IOCBF0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "153
 } 0
-"66 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
+"67 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"74
+"75
 } 0
 "58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/fvr.c
 [v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
 {
 "62
+} 0
+"88 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"130
+} 0
+"276
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"278
+} 0
+"280
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"282
+} 0
+"268
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"270
+} 0
+"264
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"266
+} 0
+"272
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"274
 } 0
 "58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
 [v _CMP2_Initialize CMP2_Initialize `(v  1 e 1 0 ]
@@ -609,7 +742,7 @@ channel_FVR 31
 "52 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
-"86
+"94
 } 0
 "119 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
@@ -683,17 +816,17 @@ channel_FVR 31
 "8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1419 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1636 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1424 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1427 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1419 1 fAsBytes 4 0 `S1424 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1427  1 a 4 33 ]
+[s S1641 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1644 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1636 1 fAsBytes 4 0 `S1641 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1644  1 a 4 33 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 27 ]
-[s S1496 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1713 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1499 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1496 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1499  1 a 2 37 ]
+[u S1716 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1713 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1716  1 a 2 37 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 32 ]
 "11
@@ -787,6 +920,35 @@ channel_FVR 31
 [v _IOCBF0_DefaultInterruptHandler IOCBF0_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
 "161
+} 0
+"197 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+{
+"214
+} 0
+"216
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+{
+"238
+} 0
+"252
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+{
+"258
+} 0
+"250
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+{
+} 0
+"260
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+{
+"262
+} 0
+"240
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+{
+"248
 } 0
 "85 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
 [v _CMP2_ISR CMP2_ISR `(v  1 e 1 0 ]

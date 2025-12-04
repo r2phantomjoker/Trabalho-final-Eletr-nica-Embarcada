@@ -1,4 +1,4 @@
-# 1 "motor.c"
+# 1 "mcc_generated_files/eusart.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 285 "<built-in>" 3
@@ -6,132 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "motor.c" 2
-# 10 "motor.c"
-# 1 "./motor.h" 1
-# 11 "./motor.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
-# 26 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 133 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned short uintptr_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef short intptr_t;
-# 164 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 194 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 235 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 27 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
-# 12 "./motor.h" 2
-# 21 "./motor.h"
-void MOTOR_parar(void);
-
-
-
-
-
-
-void MOTOR_reset(void);
-# 37 "./motor.h"
-void MOTOR_mover(uint8_t destino, uint8_t atual);
-# 49 "./motor.h"
-void SENSORES_CalcularVelocidade(void);
-# 11 "motor.c" 2
-# 1 "./globals.h" 1
-# 14 "./globals.h"
+# 1 "mcc_generated_files/eusart.c" 2
+# 50 "mcc_generated_files/eusart.c"
+# 1 "mcc_generated_files/eusart.h" 1
+# 54 "mcc_generated_files/eusart.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -144,7 +22,16 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
+
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/features.h" 1 3
 # 11 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
@@ -153,6 +40,10 @@ extern double __fpnormalize(double);
 typedef long int wchar_t;
 # 128 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef unsigned size_t;
+# 174 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef __int24 int24_t;
+# 210 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef __uint24 uint24_t;
 # 22 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
 
 int atoi (const char *);
@@ -240,7 +131,91 @@ extern void __builtin_software_breakpoint(void);
 
 
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
+# 26 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 133 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned short uintptr_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef short intptr_t;
+# 164 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef signed char int8_t;
 
+
+
+
+typedef short int16_t;
+# 179 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 194 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+# 215 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 235 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 27 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/builtins.h" 2 3
 
 
 #pragma intrinsic(__nop)
@@ -4367,356 +4342,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
-# 15 "./globals.h" 2
-
+# 55 "mcc_generated_files/eusart.h" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
-# 17 "./globals.h" 2
-# 82 "./globals.h"
-extern volatile uint8_t andar_atual;
-
-
-
-
-
-extern volatile uint8_t andar_destino;
-
-
-
-
-
-extern volatile uint8_t estado_motor;
-
-
-
-
-
-extern volatile uint8_t posicao_mm;
-
-
-
-
-
-extern volatile uint8_t velocidade_atual;
-
-
-
-
-
-extern volatile uint8_t temperatura_ponte;
-# 123 "./globals.h"
-extern volatile _Bool solicitacoes[4];
-# 12 "motor.c" 2
-# 1 "./mcc_generated_files/mcc.h" 1
-# 50 "./mcc_generated_files/mcc.h"
-# 1 "./mcc_generated_files/device_config.h" 1
-# 51 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 188 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 200 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 213 "./mcc_generated_files/pin_manager.h"
-void IOCBF0_ISR(void);
-# 236 "./mcc_generated_files/pin_manager.h"
-void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 260 "./mcc_generated_files/pin_manager.h"
-extern void (*IOCBF0_InterruptHandler)(void);
-# 284 "./mcc_generated_files/pin_manager.h"
-void IOCBF0_DefaultInterruptHandler(void);
-# 297 "./mcc_generated_files/pin_manager.h"
-void IOCBF3_ISR(void);
-# 320 "./mcc_generated_files/pin_manager.h"
-void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 344 "./mcc_generated_files/pin_manager.h"
-extern void (*IOCBF3_InterruptHandler)(void);
-# 368 "./mcc_generated_files/pin_manager.h"
-void IOCBF3_DefaultInterruptHandler(void);
-# 52 "./mcc_generated_files/mcc.h" 2
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/conio.h" 1 3
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 143 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef short ssize_t;
-# 255 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long long off_t;
-# 409 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-
-
-
-
-
-int ungetc(int, FILE *);
-int getch(void);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-
-
-
-
-void putch(char);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-__attribute__((__format__(__printf__, 1, 2)))
-int printf(const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int fprintf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int sprintf(char *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 3, 4)))
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-__attribute__((__format__(__printf__, 1, 0)))
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 2, 0)))
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 3, 0)))
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-__attribute__((__format__(__scanf__, 1, 2)))
-int scanf(const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int fscanf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int sscanf(const char *restrict, const char *restrict, ...);
-
-__attribute__((__format__(__scanf__, 1, 0)))
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__scanf__, 2, 0)))
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 8 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/conio.h" 2 3
-# 55 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 56 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/tmr4.h" 1
-# 103 "./mcc_generated_files/tmr4.h"
-void TMR4_Initialize(void);
-# 132 "./mcc_generated_files/tmr4.h"
-void TMR4_StartTimer(void);
-# 164 "./mcc_generated_files/tmr4.h"
-void TMR4_StopTimer(void);
-# 199 "./mcc_generated_files/tmr4.h"
-uint8_t TMR4_ReadTimer(void);
-# 238 "./mcc_generated_files/tmr4.h"
-void TMR4_WriteTimer(uint8_t timerVal);
-# 290 "./mcc_generated_files/tmr4.h"
-void TMR4_LoadPeriodRegister(uint8_t periodVal);
-# 308 "./mcc_generated_files/tmr4.h"
-void TMR4_ISR(void);
-# 326 "./mcc_generated_files/tmr4.h"
- void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
-# 344 "./mcc_generated_files/tmr4.h"
-extern void (*TMR4_InterruptHandler)(void);
-# 362 "./mcc_generated_files/tmr4.h"
-void TMR4_DefaultInterruptHandler(void);
-# 57 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/tmr2.h" 1
-# 103 "./mcc_generated_files/tmr2.h"
-void TMR2_Initialize(void);
-# 132 "./mcc_generated_files/tmr2.h"
-void TMR2_StartTimer(void);
-# 164 "./mcc_generated_files/tmr2.h"
-void TMR2_StopTimer(void);
-# 199 "./mcc_generated_files/tmr2.h"
-uint8_t TMR2_ReadTimer(void);
-# 238 "./mcc_generated_files/tmr2.h"
-void TMR2_WriteTimer(uint8_t timerVal);
-# 290 "./mcc_generated_files/tmr2.h"
-void TMR2_LoadPeriodRegister(uint8_t periodVal);
-# 308 "./mcc_generated_files/tmr2.h"
-void TMR2_ISR(void);
-# 326 "./mcc_generated_files/tmr2.h"
- void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 344 "./mcc_generated_files/tmr2.h"
-extern void (*TMR2_InterruptHandler)(void);
-# 362 "./mcc_generated_files/tmr2.h"
-void TMR2_DefaultInterruptHandler(void);
-# 58 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/cmp2.h" 1
-# 92 "./mcc_generated_files/cmp2.h"
-void CMP2_Initialize(void);
-# 132 "./mcc_generated_files/cmp2.h"
-_Bool CMP2_GetOutputStatus(void);
-# 148 "./mcc_generated_files/cmp2.h"
-void CMP2_ISR(void);
-# 59 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/cmp1.h" 1
-# 92 "./mcc_generated_files/cmp1.h"
-void CMP1_Initialize(void);
-# 132 "./mcc_generated_files/cmp1.h"
-_Bool CMP1_GetOutputStatus(void);
-# 148 "./mcc_generated_files/cmp1.h"
-void CMP1_ISR(void);
-# 60 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/tmr0.h" 1
-# 98 "./mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "./mcc_generated_files/tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 168 "./mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 204 "./mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 242 "./mcc_generated_files/tmr0.h"
-_Bool TMR0_HasOverflowOccured(void);
-# 61 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/fvr.h" 1
-# 93 "./mcc_generated_files/fvr.h"
- void FVR_Initialize(void);
-# 127 "./mcc_generated_files/fvr.h"
-_Bool FVR_IsOutputReady(void);
-# 62 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/pwm3.h" 1
-# 97 "./mcc_generated_files/pwm3.h"
-void PWM3_Initialize(void);
-# 124 "./mcc_generated_files/pwm3.h"
-void PWM3_LoadDutyValue(uint16_t dutyValue);
-# 63 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/adc.h" 1
-# 72 "./mcc_generated_files/adc.h"
-typedef uint16_t adc_result_t;
-
-
-
-
-typedef struct
-{
-    adc_result_t adcResult1;
-    adc_result_t adcResult2;
-} adc_sync_double_result_t;
-# 95 "./mcc_generated_files/adc.h"
-typedef enum
-{
-    channel_Temp = 0x1D,
-    channel_DAC = 0x1E,
-    channel_FVR = 0x1F
-} adc_channel_t;
-# 135 "./mcc_generated_files/adc.h"
-void ADC_Initialize(void);
-# 165 "./mcc_generated_files/adc.h"
-void ADC_SelectChannel(adc_channel_t channel);
-# 192 "./mcc_generated_files/adc.h"
-void ADC_StartConversion(void);
-# 224 "./mcc_generated_files/adc.h"
-_Bool ADC_IsConversionDone(void);
-# 257 "./mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversionResult(void);
-# 287 "./mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 315 "./mcc_generated_files/adc.h"
-void ADC_TemperatureAcquisitionDelay(void);
-# 64 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/eusart.h" 1
-# 75 "./mcc_generated_files/eusart.h"
+# 56 "mcc_generated_files/eusart.h" 2
+# 75 "mcc_generated_files/eusart.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -4738,235 +4367,256 @@ extern volatile uint8_t eusartRxCount;
 
 extern void (*EUSART_TxDefaultInterruptHandler)(void);
 extern void (*EUSART_RxDefaultInterruptHandler)(void);
-# 117 "./mcc_generated_files/eusart.h"
+# 117 "mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
-# 165 "./mcc_generated_files/eusart.h"
+# 165 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_ready(void);
-# 213 "./mcc_generated_files/eusart.h"
+# 213 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_rx_ready(void);
-# 260 "./mcc_generated_files/eusart.h"
+# 260 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
-# 308 "./mcc_generated_files/eusart.h"
+# 308 "mcc_generated_files/eusart.h"
 eusart_status_t EUSART_get_last_status(void);
-# 328 "./mcc_generated_files/eusart.h"
+# 328 "mcc_generated_files/eusart.h"
 uint8_t EUSART_Read(void);
-# 348 "./mcc_generated_files/eusart.h"
+# 348 "mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 369 "./mcc_generated_files/eusart.h"
+# 369 "mcc_generated_files/eusart.h"
 void EUSART_Transmit_ISR(void);
-# 390 "./mcc_generated_files/eusart.h"
+# 390 "mcc_generated_files/eusart.h"
 void EUSART_Receive_ISR(void);
-# 411 "./mcc_generated_files/eusart.h"
+# 411 "mcc_generated_files/eusart.h"
 void EUSART_RxDataHandler(void);
-# 429 "./mcc_generated_files/eusart.h"
+# 429 "mcc_generated_files/eusart.h"
 void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 447 "./mcc_generated_files/eusart.h"
+# 447 "mcc_generated_files/eusart.h"
 void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 465 "./mcc_generated_files/eusart.h"
+# 465 "mcc_generated_files/eusart.h"
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 485 "./mcc_generated_files/eusart.h"
+# 485 "mcc_generated_files/eusart.h"
 void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 505 "./mcc_generated_files/eusart.h"
+# 505 "mcc_generated_files/eusart.h"
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 65 "./mcc_generated_files/mcc.h" 2
-# 79 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 92 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 104 "./mcc_generated_files/mcc.h"
-void WDT_Initialize(void);
-# 13 "motor.c" 2
+# 51 "mcc_generated_files/eusart.c" 2
+# 62 "mcc_generated_files/eusart.c"
+volatile uint8_t eusartTxHead = 0;
+volatile uint8_t eusartTxTail = 0;
+volatile uint8_t eusartTxBuffer[8];
+volatile uint8_t eusartTxBufferRemaining;
+
+volatile uint8_t eusartRxHead = 0;
+volatile uint8_t eusartRxTail = 0;
+volatile uint8_t eusartRxBuffer[8];
+volatile eusart_status_t eusartRxStatusBuffer[8];
+volatile uint8_t eusartRxCount;
+volatile eusart_status_t eusartRxLastError;
 
 
 
 
-static uint8_t ultima_direcao_aplicada = 1;
+void (*EUSART_TxDefaultInterruptHandler)(void);
+void (*EUSART_RxDefaultInterruptHandler)(void);
 
+void (*EUSART_FramingErrorHandler)(void);
+void (*EUSART_OverrunErrorHandler)(void);
+void (*EUSART_ErrorHandler)(void);
 
+void EUSART_DefaultFramingErrorHandler(void);
+void EUSART_DefaultOverrunErrorHandler(void);
+void EUSART_DefaultErrorHandler(void);
 
-
-static float posicao_mm_fina = 0.0;
-
-
-
-
-static uint16_t pulsos_para_velocidade = 0;
-
-
-
-
-
-
-static uint8_t ultimo_valor_timer0 = 0;
-# 56 "motor.c"
-void MOTOR_parar(void){
-
-    PWM3_LoadDutyValue(0);
-    estado_motor = 0;
-}
-# 69 "motor.c"
-void MOTOR_reset(void){
-
-
-
-
-
-    if(PORTBbits.RB0 == 0){
-        andar_atual = 0;
-    }
-    else if (PORTBbits.RB3 == 0){
-        andar_atual = 1;
-    }
-    else if(CM1CON0bits.C1OUT == 1){
-        andar_atual = 2;
-    }
-    else if(CM2CON0bits.C2OUT == 1){
-        andar_atual = 3;
-    }
-    else {
-
-        andar_atual = 255;
-    }
-
-
-    if(andar_atual != 0){
-        andar_destino = 0;
-
-
-
-        uint8_t origem_simulada = (andar_atual == 255) ? 4 : andar_atual;
-
-        MOTOR_mover(andar_destino, origem_simulada);
-    }
-
-
-    MOTOR_parar();
-    andar_atual = 0;
-    posicao_mm = 0;
-    andar_destino = 0;
-    estado_motor = 0;
-    andar_destino = 0;
-
-
-    TMR0_WriteTimer(0);
-    ultimo_valor_timer0 = 0;
-
-
-
-
-    for(uint8_t i=0; i<4; i++) {
-        solicitacoes[i] = 0;
-    }
-}
-# 131 "motor.c"
-void MOTOR_mover (uint8_t destino, uint8_t atual)
+void EUSART_Initialize(void)
 {
 
-    if (atual > 3 && atual != 255) {
-        MOTOR_parar(); return;
-    }
-    if (destino == atual){
-        MOTOR_parar(); return;
-    }
+    PIE1bits.RCIE = 0;
+    EUSART_SetRxInterruptHandler(EUSART_Receive_ISR);
+    PIE1bits.TXIE = 0;
+    EUSART_SetTxInterruptHandler(EUSART_Transmit_ISR);
 
 
 
-    uint8_t nova_direcao;
-
-    if(destino > atual){
-        nova_direcao = 1;
-    }
-    else {
-        nova_direcao = 0;
-    }
+    BAUDCON = 0x08;
 
 
-
-    if ((estado_motor != 0) && (nova_direcao != ultima_direcao_aplicada)) {
-        MOTOR_parar();
-        _delay((unsigned long)((500)*(8000000/4000.0)));
-    }
+    RCSTA = 0x90;
 
 
-
-    if(nova_direcao == 1){
-        LATAbits.LATA7 = 1;
-        estado_motor = 1;
-    }
-    else {
-        LATAbits.LATA7 = 0;
-        estado_motor = 2;
-    }
-
-    ultima_direcao_aplicada = nova_direcao;
+    TXSTA = 0x24;
 
 
-
-    while(atual != destino){
-
-        PWM3_LoadDutyValue(410);
+    SPBRGL = 0x67;
 
 
-
-        while( (PORTBbits.RB0 == 1) && (PORTBbits.RB3 == 1) &&
-               (CM1CON0bits.C1OUT == 0) && (CM2CON0bits.C2OUT == 0) )
-        {
+    SPBRGH = 0x00;
 
 
+    EUSART_SetFramingErrorHandler(EUSART_DefaultFramingErrorHandler);
+    EUSART_SetOverrunErrorHandler(EUSART_DefaultOverrunErrorHandler);
+    EUSART_SetErrorHandler(EUSART_DefaultErrorHandler);
 
-            if (LATAbits.LATA7 == 0 && PORTBbits.RB0 == 0) break;
-
-
-            if (LATAbits.LATA7 == 1 && CM2CON0bits.C2OUT == 1) break;
-        }
-
-
-        MOTOR_parar();
+    eusartRxLastError.status = 0;
 
 
-        if(LATAbits.LATA7 == 0) atual--;
-        else if (LATAbits.LATA7 == 1) atual++;
+    eusartTxHead = 0;
+    eusartTxTail = 0;
+    eusartTxBufferRemaining = sizeof(eusartTxBuffer);
 
-        _delay((unsigned long)((100)*(8000000/4000.0)));
-    }
+    eusartRxHead = 0;
+    eusartRxTail = 0;
+    eusartRxCount = 0;
 
 
-    MOTOR_parar();
-    andar_atual = atual;
+    PIE1bits.RCIE = 1;
 }
-# 219 "motor.c"
-void SENSORES_CalcularVelocidade(void){
 
+_Bool EUSART_is_tx_ready(void)
+{
+    return (eusartTxBufferRemaining ? 1 : 0);
+}
 
-    uint8_t valor_atual_timer0 = TMR0_ReadTimer();
+_Bool EUSART_is_rx_ready(void)
+{
+    return (eusartRxCount ? 1 : 0);
+}
 
+_Bool EUSART_is_tx_done(void)
+{
+    return TXSTAbits.TRMT;
+}
 
+eusart_status_t EUSART_get_last_status(void){
+    return eusartRxLastError;
+}
 
-    uint8_t delta_pulsos = valor_atual_timer0 - ultimo_valor_timer0;
+uint8_t EUSART_Read(void)
+{
+    uint8_t readValue = 0;
 
-
-    ultimo_valor_timer0 = valor_atual_timer0;
-
-
-    float distancia_janela = (float)delta_pulsos * 0.8372f;
-
-
-    if (estado_motor == 1) {
-        posicao_mm_fina += distancia_janela;
-
-
-        if (posicao_mm_fina > 180.0f) posicao_mm_fina = 180.0f;
-    }
-    else if (estado_motor == 2) {
-        posicao_mm_fina -= distancia_janela;
-
-
-        if (posicao_mm_fina < 0.0f) posicao_mm_fina = 0.0f;
+    while(0 == eusartRxCount)
+    {
     }
 
+    eusartRxLastError = eusartRxStatusBuffer[eusartRxTail];
 
-    posicao_mm = (uint8_t)posicao_mm_fina;
+    readValue = eusartRxBuffer[eusartRxTail++];
+    if(sizeof(eusartRxBuffer) <= eusartRxTail)
+    {
+        eusartRxTail = 0;
+    }
+    PIE1bits.RCIE = 0;
+    eusartRxCount--;
+    PIE1bits.RCIE = 1;
+
+    return readValue;
+}
+
+void EUSART_Write(uint8_t txData)
+{
+    while(0 == eusartTxBufferRemaining)
+    {
+    }
+
+    if(0 == PIE1bits.TXIE)
+    {
+        TXREG = txData;
+    }
+    else
+    {
+        PIE1bits.TXIE = 0;
+        eusartTxBuffer[eusartTxHead++] = txData;
+        if(sizeof(eusartTxBuffer) <= eusartTxHead)
+        {
+            eusartTxHead = 0;
+        }
+        eusartTxBufferRemaining--;
+    }
+    PIE1bits.TXIE = 1;
+}
 
 
-    velocidade_atual = (uint8_t)((distancia_janela / 0.1f)*100);
+void EUSART_Transmit_ISR(void)
+{
+
+
+    if(sizeof(eusartTxBuffer) > eusartTxBufferRemaining)
+    {
+        TXREG = eusartTxBuffer[eusartTxTail++];
+        if(sizeof(eusartTxBuffer) <= eusartTxTail)
+        {
+            eusartTxTail = 0;
+        }
+        eusartTxBufferRemaining++;
+    }
+    else
+    {
+        PIE1bits.TXIE = 0;
+    }
+}
+
+void EUSART_Receive_ISR(void)
+{
+
+    eusartRxStatusBuffer[eusartRxHead].status = 0;
+
+    if(RCSTAbits.FERR){
+        eusartRxStatusBuffer[eusartRxHead].ferr = 1;
+        EUSART_FramingErrorHandler();
+    }
+
+    if(RCSTAbits.OERR){
+        eusartRxStatusBuffer[eusartRxHead].oerr = 1;
+        EUSART_OverrunErrorHandler();
+    }
+
+    if(eusartRxStatusBuffer[eusartRxHead].status){
+        EUSART_ErrorHandler();
+    } else {
+        EUSART_RxDataHandler();
+    }
+
+
+}
+
+void EUSART_RxDataHandler(void){
+
+    eusartRxBuffer[eusartRxHead++] = RCREG;
+    if(sizeof(eusartRxBuffer) <= eusartRxHead)
+    {
+        eusartRxHead = 0;
+    }
+    eusartRxCount++;
+}
+
+void EUSART_DefaultFramingErrorHandler(void){}
+
+void EUSART_DefaultOverrunErrorHandler(void){
+
+
+    RCSTAbits.CREN = 0;
+    RCSTAbits.CREN = 1;
+
+}
+
+void EUSART_DefaultErrorHandler(void){
+    EUSART_RxDataHandler();
+}
+
+void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void)){
+    EUSART_FramingErrorHandler = interruptHandler;
+}
+
+void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void)){
+    EUSART_OverrunErrorHandler = interruptHandler;
+}
+
+void EUSART_SetErrorHandler(void (* interruptHandler)(void)){
+    EUSART_ErrorHandler = interruptHandler;
+}
+
+void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void)){
+    EUSART_TxDefaultInterruptHandler = interruptHandler;
+}
+
+void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
+    EUSART_RxDefaultInterruptHandler = interruptHandler;
 }

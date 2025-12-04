@@ -589,7 +589,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _estado_motor -> -> 0 `i `uc ]
 "60
 [; ;motor.c: 60: }
-[e :UE 357 ]
+[e :UE 359 ]
 }
 "69
 [; ;motor.c: 69: void MOTOR_reset(void){
@@ -599,7 +599,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "75
 [; ;motor.c: 75:     if(PORTBbits.RB0 == 0){
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 359  ]
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 361  ]
 {
 "76
 [; ;motor.c: 76:         andar_atual = 0;
@@ -607,11 +607,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "77
 [; ;motor.c: 77:     }
 }
-[e $U 360  ]
+[e $U 362  ]
 "78
 [; ;motor.c: 78:     else if (PORTBbits.RB3 == 0){
-[e :U 359 ]
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 361  ]
+[e :U 361 ]
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 363  ]
 {
 "79
 [; ;motor.c: 79:         andar_atual = 1;
@@ -619,11 +619,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "80
 [; ;motor.c: 80:     }
 }
-[e $U 362  ]
+[e $U 364  ]
 "81
 [; ;motor.c: 81:     else if(CM1CON0bits.C1OUT == 1){
-[e :U 361 ]
-[e $ ! == -> . . _CM1CON0bits 0 6 `i -> 1 `i 363  ]
+[e :U 363 ]
+[e $ ! == -> . . _CM1CON0bits 0 6 `i -> 1 `i 365  ]
 {
 "82
 [; ;motor.c: 82:         andar_atual = 2;
@@ -631,11 +631,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "83
 [; ;motor.c: 83:     }
 }
-[e $U 364  ]
+[e $U 366  ]
 "84
 [; ;motor.c: 84:     else if(CM2CON0bits.C2OUT == 1){
-[e :U 363 ]
-[e $ ! == -> . . _CM2CON0bits 0 6 `i -> 1 `i 365  ]
+[e :U 365 ]
+[e $ ! == -> . . _CM2CON0bits 0 6 `i -> 1 `i 367  ]
 {
 "85
 [; ;motor.c: 85:         andar_atual = 3;
@@ -643,10 +643,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "86
 [; ;motor.c: 86:     }
 }
-[e $U 366  ]
+[e $U 368  ]
 "87
 [; ;motor.c: 87:     else {
-[e :U 365 ]
+[e :U 367 ]
 {
 "89
 [; ;motor.c: 89:         andar_atual = 255;
@@ -654,13 +654,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "90
 [; ;motor.c: 90:     }
 }
+[e :U 368 ]
 [e :U 366 ]
 [e :U 364 ]
 [e :U 362 ]
-[e :U 360 ]
 "93
 [; ;motor.c: 93:     if(andar_atual != 0){
-[e $ ! != -> _andar_atual `i -> 0 `i 367  ]
+[e $ ! != -> _andar_atual `i -> 0 `i 369  ]
 {
 "94
 [; ;motor.c: 94:         andar_destino = 0;
@@ -675,7 +675,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "101
 [; ;motor.c: 101:     }
 }
-[e :U 367 ]
+[e :U 369 ]
 "104
 [; ;motor.c: 104:     MOTOR_parar();
 [e ( _MOTOR_parar ..  ]
@@ -705,9 +705,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 368  ]
-[e $U 369  ]
-[e :U 368 ]
+[e $ < -> _i `i -> 4 `i 370  ]
+[e $U 371  ]
+[e :U 370 ]
 {
 "119
 [; ;motor.c: 119:         solicitacoes[i] = 0;
@@ -716,12 +716,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motor.c: 120:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 368  ]
-[e :U 369 ]
+[e $ < -> _i `i -> 4 `i 370  ]
+[e :U 371 ]
 }
 "121
 [; ;motor.c: 121: }
-[e :UE 358 ]
+[e :UE 360 ]
 }
 "131
 [; ;motor.c: 131: void MOTOR_mover (uint8_t destino, uint8_t atual)
@@ -739,34 +739,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "134
 [; ;motor.c: 134:     if (atual > 3 && atual != 255) {
-[e $ ! && > -> _atual `i -> 3 `i != -> _atual `i -> 255 `i 372  ]
+[e $ ! && > -> _atual `i -> 3 `i != -> _atual `i -> 255 `i 374  ]
 {
 "135
 [; ;motor.c: 135:         MOTOR_parar(); return;
 [e ( _MOTOR_parar ..  ]
-[e $UE 371  ]
+[e $UE 373  ]
 "136
 [; ;motor.c: 136:     }
 }
-[e :U 372 ]
+[e :U 374 ]
 "137
 [; ;motor.c: 137:     if (destino == atual){
-[e $ ! == -> _destino `i -> _atual `i 373  ]
+[e $ ! == -> _destino `i -> _atual `i 375  ]
 {
 "138
 [; ;motor.c: 138:         MOTOR_parar(); return;
 [e ( _MOTOR_parar ..  ]
-[e $UE 371  ]
+[e $UE 373  ]
 "139
 [; ;motor.c: 139:     }
 }
-[e :U 373 ]
+[e :U 375 ]
 "143
 [; ;motor.c: 143:     uint8_t nova_direcao;
 [v _nova_direcao `uc ~T0 @X0 1 a ]
 "145
 [; ;motor.c: 145:     if(destino > atual){
-[e $ ! > -> _destino `i -> _atual `i 374  ]
+[e $ ! > -> _destino `i -> _atual `i 376  ]
 {
 "146
 [; ;motor.c: 146:         nova_direcao = 1;
@@ -774,10 +774,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "147
 [; ;motor.c: 147:     }
 }
-[e $U 375  ]
+[e $U 377  ]
 "148
 [; ;motor.c: 148:     else {
-[e :U 374 ]
+[e :U 376 ]
 {
 "149
 [; ;motor.c: 149:         nova_direcao = 0;
@@ -785,10 +785,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "150
 [; ;motor.c: 150:     }
 }
-[e :U 375 ]
+[e :U 377 ]
 "154
 [; ;motor.c: 154:     if ((estado_motor != 0) && (nova_direcao != ultima_direcao_aplicada)) {
-[e $ ! && != -> _estado_motor `i -> 0 `i != -> _nova_direcao `i -> _ultima_direcao_aplicada `i 376  ]
+[e $ ! && != -> _estado_motor `i -> 0 `i != -> _nova_direcao `i -> _ultima_direcao_aplicada `i 378  ]
 {
 "155
 [; ;motor.c: 155:         MOTOR_parar();
@@ -799,10 +799,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "157
 [; ;motor.c: 157:     }
 }
-[e :U 376 ]
+[e :U 378 ]
 "161
 [; ;motor.c: 161:     if(nova_direcao == 1){
-[e $ ! == -> _nova_direcao `i -> 1 `i 377  ]
+[e $ ! == -> _nova_direcao `i -> 1 `i 379  ]
 {
 "162
 [; ;motor.c: 162:         LATAbits.LATA7 = 1;
@@ -813,10 +813,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "164
 [; ;motor.c: 164:     }
 }
-[e $U 378  ]
+[e $U 380  ]
 "165
 [; ;motor.c: 165:     else {
-[e :U 377 ]
+[e :U 379 ]
 {
 "166
 [; ;motor.c: 166:         LATAbits.LATA7 = 0;
@@ -827,69 +827,69 @@ Version 4.0 HI-TECH Software Intermediate Code
 "168
 [; ;motor.c: 168:     }
 }
-[e :U 378 ]
+[e :U 380 ]
 "170
 [; ;motor.c: 170:     ultima_direcao_aplicada = nova_direcao;
 [e = _ultima_direcao_aplicada _nova_direcao ]
 "174
 [; ;motor.c: 174:     while(atual != destino){
-[e $U 379  ]
-[e :U 380 ]
+[e $U 381  ]
+[e :U 382 ]
 {
 "176
 [; ;motor.c: 176:         PWM3_LoadDutyValue(410);
 [e ( _PWM3_LoadDutyValue (1 -> -> 410 `i `us ]
 "180
 [; ;motor.c: 180:         while( (PORTBbits.RB0 == 1) && (PORTBbits.RB3 == 1) &&
-[e $U 382  ]
-[e :U 383 ]
+[e $U 384  ]
+[e :U 385 ]
 "182
 [; ;motor.c: 182:         {
 {
 "186
 [; ;motor.c: 186:             if (LATAbits.LATA7 == 0 && PORTBbits.RB0 == 0) break;
-[e $ ! && == -> . . _LATAbits 0 7 `i -> 0 `i == -> . . _PORTBbits 0 0 `i -> 0 `i 385  ]
-[e $U 384  ]
-[e :U 385 ]
+[e $ ! && == -> . . _LATAbits 0 7 `i -> 0 `i == -> . . _PORTBbits 0 0 `i -> 0 `i 387  ]
+[e $U 386  ]
+[e :U 387 ]
 "189
 [; ;motor.c: 189:             if (LATAbits.LATA7 == 1 && CM2CON0bits.C2OUT == 1) break;
-[e $ ! && == -> . . _LATAbits 0 7 `i -> 1 `i == -> . . _CM2CON0bits 0 6 `i -> 1 `i 386  ]
-[e $U 384  ]
-[e :U 386 ]
+[e $ ! && == -> . . _LATAbits 0 7 `i -> 1 `i == -> . . _CM2CON0bits 0 6 `i -> 1 `i 388  ]
+[e $U 386  ]
+[e :U 388 ]
 "190
 [; ;motor.c: 190:         }
 }
-[e :U 382 ]
+[e :U 384 ]
 "180
 [; ;motor.c: 180:         while( (PORTBbits.RB0 == 1) && (PORTBbits.RB3 == 1) &&
-[e $ && && && == -> . . _PORTBbits 0 0 `i -> 1 `i == -> . . _PORTBbits 0 3 `i -> 1 `i == -> . . _CM1CON0bits 0 6 `i -> 0 `i == -> . . _CM2CON0bits 0 6 `i -> 0 `i 383  ]
-[e :U 384 ]
+[e $ && && && == -> . . _PORTBbits 0 0 `i -> 1 `i == -> . . _PORTBbits 0 3 `i -> 1 `i == -> . . _CM1CON0bits 0 6 `i -> 0 `i == -> . . _CM2CON0bits 0 6 `i -> 0 `i 385  ]
+[e :U 386 ]
 "193
 [; ;motor.c: 193:         MOTOR_parar();
 [e ( _MOTOR_parar ..  ]
 "196
 [; ;motor.c: 196:         if(LATAbits.LATA7 == 0) atual--;
-[e $ ! == -> . . _LATAbits 0 7 `i -> 0 `i 387  ]
+[e $ ! == -> . . _LATAbits 0 7 `i -> 0 `i 389  ]
 [e -- _atual -> -> 1 `i `uc ]
-[e $U 388  ]
+[e $U 390  ]
 "197
 [; ;motor.c: 197:         else if (LATAbits.LATA7 == 1) atual++;
-[e :U 387 ]
-[e $ ! == -> . . _LATAbits 0 7 `i -> 1 `i 389  ]
-[e ++ _atual -> -> 1 `i `uc ]
 [e :U 389 ]
-[e :U 388 ]
+[e $ ! == -> . . _LATAbits 0 7 `i -> 1 `i 391  ]
+[e ++ _atual -> -> 1 `i `uc ]
+[e :U 391 ]
+[e :U 390 ]
 "199
 [; ;motor.c: 199:         _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "200
 [; ;motor.c: 200:     }
 }
-[e :U 379 ]
+[e :U 381 ]
 "174
 [; ;motor.c: 174:     while(atual != destino){
-[e $ != -> _atual `i -> _destino `i 380  ]
-[e :U 381 ]
+[e $ != -> _atual `i -> _destino `i 382  ]
+[e :U 383 ]
 "203
 [; ;motor.c: 203:     MOTOR_parar();
 [e ( _MOTOR_parar ..  ]
@@ -898,7 +898,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _andar_atual _atual ]
 "205
 [; ;motor.c: 205: }
-[e :UE 371 ]
+[e :UE 373 ]
 }
 "219
 [; ;motor.c: 219: void SENSORES_CalcularVelocidade(void){
@@ -923,38 +923,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _distancia_janela * -> _delta_pulsos `f -> .0.8372 `f ]
 "235
 [; ;motor.c: 235:     if (estado_motor == 1) {
-[e $ ! == -> _estado_motor `i -> 1 `i 391  ]
+[e $ ! == -> _estado_motor `i -> 1 `i 393  ]
 {
 "236
 [; ;motor.c: 236:         posicao_mm_fina += distancia_janela;
 [e =+ _posicao_mm_fina _distancia_janela ]
 "239
 [; ;motor.c: 239:         if (posicao_mm_fina > 180.0f) posicao_mm_fina = 180.0f;
-[e $ ! > _posicao_mm_fina -> .180.0 `f 392  ]
+[e $ ! > _posicao_mm_fina -> .180.0 `f 394  ]
 [e = _posicao_mm_fina -> .180.0 `f ]
-[e :U 392 ]
+[e :U 394 ]
 "240
 [; ;motor.c: 240:     }
 }
-[e $U 393  ]
+[e $U 395  ]
 "241
 [; ;motor.c: 241:     else if (estado_motor == 2) {
-[e :U 391 ]
-[e $ ! == -> _estado_motor `i -> 2 `i 394  ]
+[e :U 393 ]
+[e $ ! == -> _estado_motor `i -> 2 `i 396  ]
 {
 "242
 [; ;motor.c: 242:         posicao_mm_fina -= distancia_janela;
 [e =- _posicao_mm_fina _distancia_janela ]
 "245
 [; ;motor.c: 245:         if (posicao_mm_fina < 0.0f) posicao_mm_fina = 0.0f;
-[e $ ! < _posicao_mm_fina -> .0.0 `f 395  ]
+[e $ ! < _posicao_mm_fina -> .0.0 `f 397  ]
 [e = _posicao_mm_fina -> .0.0 `f ]
-[e :U 395 ]
+[e :U 397 ]
 "246
 [; ;motor.c: 246:     }
 }
-[e :U 394 ]
-[e :U 393 ]
+[e :U 396 ]
+[e :U 395 ]
 "249
 [; ;motor.c: 249:     posicao_mm = (uint8_t)posicao_mm_fina;
 [e = _posicao_mm -> _posicao_mm_fina `uc ]
@@ -963,5 +963,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _velocidade_atual -> * / _distancia_janela -> .0.1 `f -> -> 100 `i `f `uc ]
 "253
 [; ;motor.c: 253: }
-[e :UE 390 ]
+[e :UE 392 ]
 }
