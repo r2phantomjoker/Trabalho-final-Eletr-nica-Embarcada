@@ -26,4 +26,6 @@ void Controle_Parar(void);
 
 void Verificar_Sensores(void);
 
+int Buscar_Proxima_Parada(void);
+
 #endif	/* MOTOR_H */
