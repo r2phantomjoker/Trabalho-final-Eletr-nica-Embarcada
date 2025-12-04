@@ -13,6 +13,6 @@ mcc_generated_files/fvr.h  \
 mcc_generated_files/pwm3.h  \
 mcc_generated_files/adc.h  \
 mcc_generated_files/eusart.h  \
-motor.h  \
 globals.h  \
-comm.h 
+comm.h  \
+motor.h 

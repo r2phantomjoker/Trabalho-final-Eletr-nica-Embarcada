@@ -531,68 +531,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;comm.c: 14:     return 1;
 [e ) -> 1 `i ]
 [e $UE 359  ]
-"19
-[; ;comm.c: 19: }
+"16
+[; ;comm.c: 16: }
 [e :UE 359 ]
 }
-"21
-[; ;comm.c: 21: void UART_EnviaDados(void){
+"18
+[; ;comm.c: 18: void UART_EnviaDados(void){
 [v _UART_EnviaDados `(v ~T0 @X0 1 ef ]
 {
 [e :U _UART_EnviaDados ]
 [f ]
-"22
-[; ;comm.c: 22:     EUSART_Write('$');
+"19
+[; ;comm.c: 19:     EUSART_Write('$');
 [e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
-"23
-[; ;comm.c: 23:     EUSART_Write('0' + andar_atual);
+"20
+[; ;comm.c: 20:     EUSART_Write('0' + andar_atual);
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> _andar_atual `ui `uc ]
-"24
-[; ;comm.c: 24:     EUSART_Write('0' + andar_destino);
+"21
+[; ;comm.c: 21:     EUSART_Write('0' + andar_destino);
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> _andar_destino `ui `uc ]
-"25
-[; ;comm.c: 25:     EUSART_Write('0' + estado_motor);
+"22
+[; ;comm.c: 22:     EUSART_Write('0' + estado_motor);
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> _estado_motor `ui `uc ]
-"27
-[; ;comm.c: 27:     EUSART_Write('0' + (posicao_mm/100));
+"24
+[; ;comm.c: 24:     EUSART_Write('0' + (posicao_mm/100));
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> / -> _posicao_mm `i -> 100 `i `ui `uc ]
-"28
-[; ;comm.c: 28:     EUSART_Write('0' + ((posicao_mm%100)/10));
+"25
+[; ;comm.c: 25:     EUSART_Write('0' + ((posicao_mm%100)/10));
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> / % -> _posicao_mm `i -> 100 `i -> 10 `i `ui `uc ]
-"29
-[; ;comm.c: 29:     EUSART_Write('0' + ((posicao_mm%100)%10));
+"26
+[; ;comm.c: 26:     EUSART_Write('0' + ((posicao_mm%100)%10));
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> % % -> _posicao_mm `i -> 100 `i -> 10 `i `ui `uc ]
-"31
-[; ;comm.c: 31:     EUSART_Write('0' + (velocidade_atual/100));
+"28
+[; ;comm.c: 28:     EUSART_Write('0' + (velocidade_atual/100));
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> / -> _velocidade_atual `i -> 100 `i `ui `uc ]
-"32
-[; ;comm.c: 32:     EUSART_Write('0' + ((velocidade_atual%100)/10));
+"29
+[; ;comm.c: 29:     EUSART_Write('0' + ((velocidade_atual%100)/10));
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> / % -> _velocidade_atual `i -> 100 `i -> 10 `i `ui `uc ]
-"33
-[; ;comm.c: 33:     EUSART_Write('.');
+"30
+[; ;comm.c: 30:     EUSART_Write('.');
 [e ( _EUSART_Write (1 -> -> 46 `ui `uc ]
-"34
-[; ;comm.c: 34:     EUSART_Write('0' + ((velocidade_atual%100)%10));
+"31
+[; ;comm.c: 31:     EUSART_Write('0' + ((velocidade_atual%100)%10));
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> % % -> _velocidade_atual `i -> 100 `i -> 10 `i `ui `uc ]
-"36
-[; ;comm.c: 36:     EUSART_Write('0' + (temperatura_ponte/100));
+"33
+[; ;comm.c: 33:     EUSART_Write('0' + (temperatura_ponte/100));
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> / -> _temperatura_ponte `i -> 100 `i `ui `uc ]
-"37
-[; ;comm.c: 37:     EUSART_Write('0' + ((temperatura_ponte%100)/10));
+"34
+[; ;comm.c: 34:     EUSART_Write('0' + ((temperatura_ponte%100)/10));
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> / % -> _temperatura_ponte `i -> 100 `i -> 10 `i `ui `uc ]
-"38
-[; ;comm.c: 38:     EUSART_Write('.');
+"35
+[; ;comm.c: 35:     EUSART_Write('.');
 [e ( _EUSART_Write (1 -> -> 46 `ui `uc ]
-"39
-[; ;comm.c: 39:     EUSART_Write('0' + ((temperatura_ponte%100)%10));
+"36
+[; ;comm.c: 36:     EUSART_Write('0' + ((temperatura_ponte%100)%10));
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> % % -> _temperatura_ponte `i -> 100 `i -> 10 `i `ui `uc ]
-"41
-[; ;comm.c: 41:     EUSART_Write(13);
+"38
+[; ;comm.c: 38:     EUSART_Write(13);
 [e ( _EUSART_Write (1 -> -> 13 `i `uc ]
-"42
-[; ;comm.c: 42:     return;
+"39
+[; ;comm.c: 39:     return;
 [e $UE 362  ]
-"43
-[; ;comm.c: 43: }
+"40
+[; ;comm.c: 40: }
 [e :UE 362 ]
 }

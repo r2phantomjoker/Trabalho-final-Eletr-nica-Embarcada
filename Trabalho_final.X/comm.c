@@ -12,10 +12,7 @@ int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido){
         return 0;
     }
     return 1;   
-    /*Além do erro de não receber o <CR> ao final
-     *existe a possibilidade do <CR> ser enviado antes.
-     *Não implementei uma forma de verificar isso.
-    */
+    // Além do erro de não receber o <CR> ao final existe a possibilidade do <CR> ser enviado antes. Não implementei uma forma de verificar isso.
 }
 
 void UART_EnviaDados(void){

@@ -1,74 +1,48 @@
 /**
- * @file motor.c
- * @author Arthur Marinho
- * @brief Driver de controle de baixo nível para a Ponte H TB6612FNG.
- *
- * Implementa a lógica de movimentação, controle de velocidade (PWM),
- * direção e proteções de hardware (reversão brusca e fim de curso).
- */
+ @file motor.c
+ Autor: Arthur Marinho
+ @brief Driver do Motor (Versão Otimizada "Light" - Completa)
+ Implementa a lógica de movimentação, controle de velocidade (PWM),direção e proteções de hardware (reversão brusca e fim de curso).
+*/
 
 #include "motor.h"
-#include "globals.h"               // Para atualizar estado_motor (M na tabela)
-#include "mcc_generated_files/mcc.h" // Para usar PWM e Delay
+#include "globals.h"               
+#include "mcc_generated_files/mcc.h" 
+#include "mcc_generated_files/pwm3.h"
 
-/** * @brief Armazena a última direção aplicada para evitar reversão brusca.
- * Inicializa como SUBINDO por segurança.
- */
-static uint8_t ultima_direcao_aplicada = DIRECAO_SUBIR;
+// VARIÁVEIS INTERNAS (OTIMIZADAS PARA INTEIROS)
+// Usamos 'static' para que elas só existam dentro deste arquivo.
 
-/** * @brief Acumulador de posição com precisão decimal (float).
- * Usado internamente para não perder os 0.83mm a cada pulso.
- */
-static float posicao_mm_fina = 0.0;            
+// Antes era float. Mudamos para uint16 para economizar memória RAM e FLASH.
+static uint16_t total_pulsos = 0;            
 
-/** * @brief Contador de pulsos para o cálculo de velocidade.
- * Reiniciado a cada ciclo do Timer 4 (100ms).
- */
-static uint16_t pulsos_para_velocidade = 0;
-
-/**
- * @brief Armazena a leitura anterior do registrador TMR0.
- * @note Usada para calcular o diferencial (Delta) de pulsos entre
- * duas chamadas do Timer de velocidade (Pulsos Atuais - Pulsos Anteriores).
- */
+// Guarda a leitura anterior do Timer para saber o quanto andou (Delta).
 static uint8_t ultimo_valor_timer0 = 0;
 
-/**
- * @brief Fator de conversão de Pulsos para Milímetros.
- * Cálculo: 180mm (curso total) / 215 pulsos (total) = ~0.8372 mm/pulso.
- */
-#define MM_POR_PULSO  0.8372f 
+// Constante: 0.837 mm/pulso * 1000 = 837.
+// Usamos isso para fazer conta com números inteiros e fugir das bibliotecas pesadas de 'float'.
+#define MICRONS_POR_PULSO 837 
 
-/**
- * @brief Janela de tempo para cálculo de velocidade.
- * Definido pela configuração do Timer 4 no MCC (100ms = 0.1s).
- */
-#define TEMPO_TMR4    0.1f
+#define TEMPO_TMR4_MS    100  // Timer 4 roda a cada 100ms
 
-// ==========================================
-// FUNÇÕES DE CONTROLE DE MOVIMENTO
-// ==========================================
+// ÁREA DESATIVADA (CÓDIGO MORTO)
+// Mantido aqui para referência, mas comentado para o compilador ignorar.
 
-/**
- * @brief Para o motor imediatamente.
- * Define o Duty Cycle do PWM para 0 e atualiza o estado global.
- */
+/* INÍCIO DO BLOCO COMENTADO
+
+static uint8_t ultima_direcao_aplicada = DIRECAO_SUBIR;
+static float posicao_mm_fina = 0.0;            
+static uint16_t pulsos_para_velocidade = 0;
+
+// Esta função foi substituída por Controle_Parar() no main.c
 void MOTOR_parar(void){
-    // Nota: Verifique se o MCC gerou 'PWM3_LoadDutyValue' ou 'CCP1_LoadDutyValue'
-    PWM3_LoadDutyValue(MOTOR_OFF); 
     estado_motor = MOTOR_PARADO;
 }
 
-/**
- * @brief Realiza o procedimento de Calibração Inicial.
- * 1. Detecta o andar atual lendo os sensores diretamente.
- * 2. Se não estiver no térreo, força a descida até encontrar o sensor S1.
- * 3. Zera todas as variáveis de posição e solicitações.
- * @note Esta função é bloqueante (trava o sistema até calibrar).
- */
+// Esta função foi substituída pela lógica de "Homing" no main.c
 void MOTOR_reset(void){
     
-    // --- 1. DETECÇÃO INICIAL DE POSIÇÃO ---
+    // 1. DETECÇÃO INICIAL DE POSIÇÃO
     // Verifica os sensores físicos para estimar onde o elevador ligou.
     // S1/S2 são Active Low (0). S3/S4 são Active High (1) via Comparador.
     
@@ -89,18 +63,16 @@ void MOTOR_reset(void){
         andar_atual = 255; 
     }
    
-    // --- 2. MOVIMENTAÇÃO PARA O TÉRREO ---
+    // 2. MOVIMENTAÇÃO PARA O TÉRREO
     if(andar_atual != 0){
         andar_destino = 0;
         
-        // Se estiver "perdido" (255), simulamos que estamos no topo (4)
-        // para garantir que a lógica decida DESCER.
-        uint8_t origem_simulada = (andar_atual == 255) ? 4 : andar_atual;
+        // Se estiver "perdido" (255), simulamos que estamos no topo (4) para garantir que a lógica decida DESCER. uint8_t origem_simulada = (andar_atual == 255) ? 4 : andar_atual;
         
         MOTOR_mover(andar_destino, origem_simulada);
     }
     
-    // --- 3. RESET DE VARIÁVEIS ---
+    // 3. RESET DE VARIÁVEIS
     MOTOR_parar();
     andar_atual = 0;
     posicao_mm = 0;
@@ -112,25 +84,17 @@ void MOTOR_reset(void){
     TMR0_WriteTimer(0);
     ultimo_valor_timer0 = 0;
     
-    
-    
     // Limpa a fila de chamadas
     for(uint8_t i=0; i<4; i++) {
         solicitacoes[i] = false;
     }
 }
 
-/**
- * @brief Move o elevador de um andar de origem até o destino.
- * * Implementa lógica "Passo a Passo": o elevador viaja andar por andar,
- * parando brevemente em cada sensor até atingir o destino.
- * Inclui proteção de 500ms contra reversão de sentido.
- * * @param destino Andar alvo (0 a 3).
- * @param atual Andar atual (0 a 3, ou 255 se desconhecido).
- */
+// Esta função causava travamento no envio do Bluetooth (loop while).
+// A lógica dela foi quebrada e levada para a Máquina de Estados no main.c.
 void MOTOR_mover (uint8_t destino, uint8_t atual)
 {
-    // --- 1. VALIDAÇÕES DE SEGURANÇA (BOUNDS CHECK) ---
+    // 1. VALIDAÇÕES DE SEGURANÇA (BOUNDS CHECK)
     if (atual > 3 && atual != 255) { // Proteção contra valores corrompidos
         MOTOR_parar(); return;
     }
@@ -138,7 +102,7 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
         MOTOR_parar(); return;
     }
    
-    // --- 2. DECISÃO DE DIREÇÃO ---
+    // 2. DECISÃO DE DIREÇÃO
     // Apenas decide a intenção, NÃO aplica no pino ainda.
     uint8_t nova_direcao;
 
@@ -149,14 +113,14 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
         nova_direcao = DIRECAO_DESCER;
     }
    
-    // --- 3. PROTEÇÃO DE HARDWARE (PONTE H) ---
+    // 3. PROTEÇÃO DE HARDWARE (PONTE H)
     // Regra do Roteiro: Esperar 500ms se inverter o sentido em movimento.
     if ((estado_motor != MOTOR_PARADO) && (nova_direcao != ultima_direcao_aplicada)) {
         MOTOR_parar();      
         __delay_ms(500); // Delay comum é seguro agora (TMR0 conta no fundo)
     }
    
-    // --- 4. APLICAÇÃO NO HARDWARE ---
+    // 4. APLICAÇÃO NO HARDWARE
     // Agora é seguro mudar o pino DIR.
     if(nova_direcao == DIRECAO_SUBIR){
         DIR = DIRECAO_SUBIR;
@@ -169,7 +133,7 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
    
     ultima_direcao_aplicada = nova_direcao;
    
-    // --- 5. LOOP DE MOVIMENTO (BLOQUEANTE) ---
+    // 5. LOOP DE MOVIMENTO (BLOQUEANTE)
     // Mantém o motor ligado até chegar no destino final.
     while(atual != destino){
        
@@ -204,50 +168,54 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
     andar_atual = atual; // Sincroniza a variável global
 }
 
-// ==========================================
-// FUNÇÃO DE CÁLCULO FÍSICO (CALLBACK)
-// ==========================================
+FIM DO BLOCO COMENTADO 
+*/
+
+// CÁLCULO DE FÍSICA (VELOCIDADE E POSIÇÃO) - CÓDIGO ATIVO E OTIMIZADO
 
 /**
  * @brief Calcula Velocidade e Posição lendo o Hardware (TMR0).
  * @note Deve ser chamada periodicamente (ex: Timer 4 a cada 100ms).
- * * Funcionamento:
- * 1. Lê o registrador TMR0 (que conta pulsos do pino RA4).
- * 2. Calcula a diferença (Delta) desde a última leitura.
- * 3. Atualiza a posição (mm) e velocidade (mm/s).
  */
 void SENSORES_CalcularVelocidade(void){
     
-    // 1. Lê o registrador de hardware do Timer 0 (0-255)
-    uint8_t valor_atual_timer0 = TMR0_ReadTimer();
+    // 1. LEITURA DO ENCODER (HARDWARE)
+    // Lê o registrador TMR0 que conta os pulsos físicos do disco do motor.
+    uint8_t valor_atual = TMR0_ReadTimer();
     
-    // 2. Calcula quantos pulsos ocorreram desde a última vez (100ms atrás)
-    // A subtração uint8 lida com overflow (ex: 5 - 250 = 11) automaticamente.
-    uint8_t delta_pulsos = valor_atual_timer0 - ultimo_valor_timer0;
+    // Calcula quantos pulsos aconteceram nesses 100ms (Atual - Anterior).
+    // O tipo uint8_t lida automaticamente com o estouro (ex: se foi de 250 para 5, o resultado é 11).
+    uint8_t delta = valor_atual - ultimo_valor_timer0;
     
-    // Atualiza a memória para o próximo ciclo
-    ultimo_valor_timer0 = valor_atual_timer0;
+    // Salva o valor atual para a próxima conta.
+    ultimo_valor_timer0 = valor_atual;
 
-    // 3. Calcula Distância percorrida na janela (mm)
-    float distancia_janela = (float)delta_pulsos * MM_POR_PULSO;
-    
-    // 4. Atualização da Posição Global (Odometria)
+    // 2. ATUALIZAÇÃO DA POSIÇÃO (CONTAGEM DE PULSOS)
+    // Se o motor estiver subindo, somamos os pulsos.
     if (estado_motor == MOTOR_SUBINDO) {
-        posicao_mm_fina += distancia_janela;
-        
-        // Trava lógica no teto (180mm)
-        if (posicao_mm_fina > 180.0f) posicao_mm_fina = 180.0f;
+        total_pulsos += delta;
+        // Trava de segurança lógica: 220 pulsos é o topo (~180mm).
+        // Impede que o número cresça infinitamente se o sensor falhar.
+        if(total_pulsos > 220) total_pulsos = 220; 
     } 
+    // Se estiver descendo, subtraímos.
     else if (estado_motor == MOTOR_DESCENDO) {
-        posicao_mm_fina -= distancia_janela;
-        
-        // Trava lógica no chão (0mm)
-        if (posicao_mm_fina < 0.0f) posicao_mm_fina = 0.0f;
+        // Proteção para não ficar negativo (o que seria um erro em 'unsigned').
+        if(delta > total_pulsos) total_pulsos = 0; 
+        else total_pulsos -= delta;
     }
     
-    // Atualiza variável global inteira (para Telemetria)
-    posicao_mm = (uint8_t)posicao_mm_fina;
+    // 3. CONVERSÃO MATEMÁTICA (INTEIROS)
+    // Aqui transformamos "pulsos" em "milímetros" para o celular mostrar.
+    // Fórmula Otimizada: mm = (pulsos * 837) / 1000
+    
+    // Usamos uma variável temporária de 32 bits (uint32) para a multiplicação não estourar o limite de 16 bits.
+    uint32_t calculo_posicao = (uint32_t)total_pulsos * MICRONS_POR_PULSO;
+    posicao_mm = (uint8_t)(calculo_posicao / 1000); // Guarda na variável global (0-180mm)
 
-    // 5. Cálculo da Velocidade Instantânea (mm/s)
-    velocidade_atual = (uint8_t)((distancia_janela / TEMPO_TMR4)*100);
+    // 4. CÁLCULO DA VELOCIDADE
+    // Velocidade = Distância / Tempo. Como o tempo é fixo (0.1s), a conta simplifica.
+    // Truque matemático: (delta * 837) / 100 dá a velocidade já na escala mm/s.
+    uint32_t calculo_velocidade = (uint32_t)delta * MICRONS_POR_PULSO;
+    velocidade_atual = (uint8_t)(calculo_velocidade / 100);
 }
