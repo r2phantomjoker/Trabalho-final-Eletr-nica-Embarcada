@@ -4764,7 +4764,7 @@ int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 void UART_EnviaDados(void);
 # 10 "main.c" 2
 # 1 "./motor.h" 1
-# 21 "./motor.h"
+# 18 "./motor.h"
 void MOTOR_parar(void);
 
 
@@ -4773,9 +4773,15 @@ void MOTOR_parar(void);
 
 
 void MOTOR_reset(void);
-# 37 "./motor.h"
+# 34 "./motor.h"
 void MOTOR_mover(uint8_t destino, uint8_t atual);
-# 49 "./motor.h"
+
+
+
+
+
+
+
 void SENSORES_CalcularVelocidade(void);
 # 11 "main.c" 2
 
@@ -4799,6 +4805,8 @@ uint16_t contador_espera = 0;
 char buffer_origem, buffer_destino;
 
 
+
+
 void Controle_Subir() {
     LATAbits.LATA7 = 1;
     PWM3_LoadDutyValue(410);
@@ -4817,12 +4825,13 @@ void Controle_Parar() {
 }
 
 
+
+
 void Verificar_Sensores() {
 
 
     if (PORTBbits.RB0 == 0) andar_atual = 0;
     if (PORTBbits.RB3 == 0) andar_atual = 1;
-
 
     if (CM1CON0bits.C1OUT == 1) andar_atual = 2;
     if (CM2CON0bits.C2OUT == 1) andar_atual = 3;
@@ -4841,6 +4850,8 @@ void Verificar_Sensores() {
         posicao_mm = 180;
     }
 }
+
+
 
 
 int Buscar_Proxima_Parada() {
@@ -4869,10 +4880,9 @@ int Buscar_Proxima_Parada() {
 
 
 
+
 void main(void) {
-
     SYSTEM_Initialize();
-
 
 
 
@@ -4880,26 +4890,19 @@ void main(void) {
 
 
 
-
-
     TMR4_SetInterruptHandler(SENSORES_CalcularVelocidade);
-
 
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
-
 
     Controle_Parar();
 
     while (1) {
 
         if(EUSART_is_rx_ready()) {
-
             if (UART_RecebePedido(&buffer_origem, &buffer_destino) == 0) {
                 int o = buffer_origem - '0';
                 int d = buffer_destino - '0';
-
-
                 if (o >= 0 && o <= 3) solicitacoes[o] = 1;
                 if (d >= 0 && d <= 3) solicitacoes[d] = 1;
             }
@@ -4912,10 +4915,8 @@ void main(void) {
         switch (estado_atual) {
             case ESTADO_PARADO: {
                 int alvo = Buscar_Proxima_Parada();
-
                 if (alvo != -1) {
                     andar_destino = alvo;
-
                     if (andar_destino > andar_atual) {
                         Controle_Subir();
                         estado_atual = ESTADO_SUBINDO;
@@ -4940,31 +4941,26 @@ void main(void) {
 
 
 
-                int novo_alvo = Buscar_Proxima_Parada();
-                if (novo_alvo != -1) {
-                    andar_destino = novo_alvo;
-                }
-
-
                 if (andar_atual == andar_destino) {
                     Controle_Parar();
                     solicitacoes[andar_atual] = 0;
                     estado_atual = ESTADO_ESPERA_PORTA;
                     contador_espera = 0;
                 }
+
+                else {
+                    int novo_alvo = Buscar_Proxima_Parada();
+                    if (novo_alvo != -1) {
+                        andar_destino = novo_alvo;
+                    }
+                }
                 break;
 
             case ESTADO_ESPERA_PORTA:
                 contador_espera++;
-
                 if (contador_espera >= 200) {
                     int proximo = Buscar_Proxima_Parada();
-
                     if (proximo != -1) {
-
-
-                        _Bool inverte = 0;
-
 
 
                         estado_atual = ESTADO_REVERSAO;
@@ -4977,7 +4973,6 @@ void main(void) {
 
             case ESTADO_REVERSAO:
                 contador_espera++;
-
                 if (contador_espera >= 50) {
                     estado_atual = ESTADO_PARADO;
                 }
@@ -4989,12 +4984,8 @@ void main(void) {
         if (contador_telemetria >= 30) {
             UART_EnviaDados();
 
-
-
-
             contador_telemetria = 0;
         }
-
 
         _delay((unsigned long)((10)*(8000000/4000.0)));
     }

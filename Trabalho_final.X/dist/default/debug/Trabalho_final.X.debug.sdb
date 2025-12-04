@@ -37,17 +37,17 @@ ESTADO_REVERSAO 4
 [v _UART_RecebePedido UART_RecebePedido `(i  1 e 2 0 ]
 "18
 [v _UART_EnviaDados UART_EnviaDados `(v  1 e 1 0 ]
-"32 C:\Users\ferna\OneDrive\Documentos\GitHub\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
+"34 C:\Users\ferna\OneDrive\Documentos\GitHub\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
 [v _Controle_Subir Controle_Subir `(v  1 e 1 0 ]
-"38
+"40
 [v _Controle_Descer Controle_Descer `(v  1 e 1 0 ]
-"44
+"46
 [v _Controle_Parar Controle_Parar `(v  1 e 1 0 ]
-"50
+"54
 [v _Verificar_Sensores Verificar_Sensores `(v  1 e 1 0 ]
-"76
+"81
 [v _Buscar_Proxima_Parada Buscar_Proxima_Parada `(i  1 e 2 0 ]
-"102
+"108
 [v _main main `(v  1 e 1 0 ]
 "67 C:\Users\ferna\OneDrive\Documentos\GitHub\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -596,30 +596,30 @@ ESTADO_REVERSAO 4
 [v _total_pulsos total_pulsos `us  1 s 2 total_pulsos ]
 "20
 [v _ultimo_valor_timer0 ultimo_valor_timer0 `uc  1 s 1 ultimo_valor_timer0 ]
-"102 C:\Users\ferna\OneDrive\Documentos\GitHub\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
+"108 C:\Users\ferna\OneDrive\Documentos\GitHub\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"191
+"186
 [v main@proximo proximo `i  1 a 2 4 ]
-"144
-[v main@alvo alvo `i  1 a 2 12 ]
-"130
-[v main@d d `i  1 a 2 10 ]
-"129
-[v main@o o `i  1 a 2 8 ]
-"173
+"176
 [v main@novo_alvo novo_alvo `i  1 a 2 6 ]
-"231
+"141
+[v main@alvo alvo `i  1 a 2 12 ]
+"129
+[v main@d d `i  1 a 2 10 ]
+"128
+[v main@o o `i  1 a 2 8 ]
+"216
 } 0
-"50
+"54
 [v _Verificar_Sensores Verificar_Sensores `(v  1 e 1 0 ]
 {
-"73
+"76
 } 0
-"44
+"46
 [v _Controle_Parar Controle_Parar `(v  1 e 1 0 ]
 {
-"47
+"49
 } 0
 "7 C:\Users\ferna\OneDrive\Documentos\GitHub\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\comm.c
 [v _UART_RecebePedido UART_RecebePedido `(i  1 e 2 0 ]
@@ -796,15 +796,15 @@ ESTADO_REVERSAO 4
 {
 "140
 } 0
-"32 C:\Users\ferna\OneDrive\Documentos\GitHub\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
+"34 C:\Users\ferna\OneDrive\Documentos\GitHub\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
 [v _Controle_Subir Controle_Subir `(v  1 e 1 0 ]
 {
-"36
-} 0
 "38
+} 0
+"40
 [v _Controle_Descer Controle_Descer `(v  1 e 1 0 ]
 {
-"42
+"44
 } 0
 "82 C:\Users\ferna\OneDrive\Documentos\GitHub\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
 [v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
@@ -812,18 +812,18 @@ ESTADO_REVERSAO 4
 [v PWM3_LoadDutyValue@dutyValue dutyValue `us  1 p 2 14 ]
 "89
 } 0
-"76 C:\Users\ferna\OneDrive\Documentos\GitHub\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
+"81 C:\Users\ferna\OneDrive\Documentos\GitHub\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
 [v _Buscar_Proxima_Parada Buscar_Proxima_Parada `(i  1 e 2 0 ]
 {
-"90
-[v Buscar_Proxima_Parada@i_1323 i `i  1 a 2 21 ]
-"84
-[v Buscar_Proxima_Parada@i_1322 i `i  1 a 2 19 ]
-"79
-[v Buscar_Proxima_Parada@i i `i  1 a 2 17 ]
 "95
+[v Buscar_Proxima_Parada@i_1323 i `i  1 a 2 21 ]
+"89
+[v Buscar_Proxima_Parada@i_1322 i `i  1 a 2 19 ]
+"84
+[v Buscar_Proxima_Parada@i i `i  1 a 2 17 ]
+"100
 [v Buscar_Proxima_Parada@i_1324 i `i  1 a 2 23 ]
-"98
+"103
 } 0
 "52 C:\Users\ferna\OneDrive\Documentos\GitHub\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]

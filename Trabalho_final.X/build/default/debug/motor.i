@@ -122,7 +122,12 @@ typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 149 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 2 3
 # 12 "./motor.h" 2
-# 21 "./motor.h"
+
+
+
+
+
+
 void MOTOR_parar(void);
 
 
@@ -131,9 +136,15 @@ void MOTOR_parar(void);
 
 
 void MOTOR_reset(void);
-# 37 "./motor.h"
+# 34 "./motor.h"
 void MOTOR_mover(uint8_t destino, uint8_t atual);
-# 49 "./motor.h"
+
+
+
+
+
+
+
 void SENSORES_CalcularVelocidade(void);
 # 9 "motor.c" 2
 # 1 "./globals.h" 1
