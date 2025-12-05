@@ -121,7 +121,7 @@ int UART_RecebePedido(char* origem_pedido, char* destino_pedido){
 
 void UART_EnviaDados(void){
     EUSART_Write('$');
-    EUSART_Write('0' + andar_a0tual);
+    EUSART_Write('0' + andar_atual);
     EUSART_Write('0' + andar_destino);
     EUSART_Write('0' + estado_motor);
     EUSART_Write(posicao_mm);
