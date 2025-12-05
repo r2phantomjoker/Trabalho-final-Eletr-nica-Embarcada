@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V3.00 build 20241204225717 
-                                                                                               Fri Dec 05 15:27:58 2025
+                                                                                               Fri Dec 05 16:55:41 2025
 
 Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1 
      1                           	processor	16F1827
@@ -2991,21 +2991,21 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   2977     07FD                     __pstringtext1:
   2978     07FD                     _LUT_Andar:
   2979     07FD  3400               	retlw	0
-  2980     07FE  3482               	retlw	130
+  2980     07FE  3401               	retlw	1
   2981     07FF  34FF               	retlw	255
-  2982     0800  3480               	retlw	128
-  2983     0801  34C2               	retlw	194
-  2984     0802  34A1               	retlw	161
-  2985     0803  3491               	retlw	145
-  2986     0804  348E               	retlw	142
-  2987     0805  3442               	retlw	66
-  2988     0806  3481               	retlw	129
-  2989     0807  3489               	retlw	137
-  2990     0808  3476               	retlw	118
-  2991     0809  3407               	retlw	7
-  2992     080A  3404               	retlw	4
-  2993     080B  3404               	retlw	4
-  2994     080C  34FF               	retlw	255
+  2982     0800  3441               	retlw	65
+  2983     0801  3471               	retlw	113
+  2984     0802  3489               	retlw	137
+  2985     0803  3485               	retlw	133
+  2986     0804  3443               	retlw	67
+  2987     0805  346E               	retlw	110
+  2988     0806  3491               	retlw	145
+  2989     0807  3481               	retlw	129
+  2990     0808  3442               	retlw	66
+  2991     0809  34FF               	retlw	255
+  2992     080A  3410               	retlw	16
+  2993     080B  3410               	retlw	16
+  2994     080C  34F0               	retlw	240
   2995     080D                     __end_of_LUT_Andar:
   2996                           
   2997                           	psect	stringtext2
@@ -3034,11 +3034,11 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   3020     081C  3400               	retlw	0
   3021     081D  3400               	retlw	0
   3022     081E  3402               	retlw	2
-  3023     081F  3401               	retlw	1
+  3023     081F  3404               	retlw	4
   3024     0820  3402               	retlw	2
   3025     0821  3400               	retlw	0
   3026     0822  3402               	retlw	2
-  3027     0823  3404               	retlw	4
+  3027     0823  3401               	retlw	1
   3028     0824  3402               	retlw	2
   3029     0825                     __end_of_LUT_dir:
   3030                           
@@ -10597,7 +10597,7 @@ DATA                 0      0     129      0.0%
 
 
 Microchip Technology PIC Macro Assembler V3.00 build 20241204225717 
-Symbol Table                                                                                   Fri Dec 05 15:27:58 2025
+Symbol Table                                                                                   Fri Dec 05 16:55:41 2025
 
                 ?_EUSART_SetRxInterruptHandler 002E                                ?_Controle_Subir 0070  
              __end_of_TMR2_SetInterruptHandler 0E93               ??_IOCBF3_DefaultInterruptHandler 0070  

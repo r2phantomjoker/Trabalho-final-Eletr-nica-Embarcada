@@ -546,21 +546,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _LUT_Andar
 :U ..
 -> -> 0 `i `uc
--> -> 130 `i `uc
+-> -> 1 `i `uc
 -> -> 255 `i `uc
--> -> 128 `i `uc
--> -> 194 `i `uc
--> -> 161 `i `uc
--> -> 145 `i `uc
--> -> 142 `i `uc
--> -> 66 `i `uc
--> -> 129 `i `uc
+-> -> 65 `i `uc
+-> -> 113 `i `uc
 -> -> 137 `i `uc
--> -> 118 `i `uc
--> -> 7 `i `uc
--> -> 4 `i `uc
--> -> 4 `i `uc
+-> -> 133 `i `uc
+-> -> 67 `i `uc
+-> -> 110 `i `uc
+-> -> 145 `i `uc
+-> -> 129 `i `uc
+-> -> 66 `i `uc
 -> -> 255 `i `uc
+-> -> 16 `i `uc
+-> -> 16 `i `uc
+-> -> 240 `i `uc
 ..
 ]
 "39
@@ -574,11 +574,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 2 `i `uc
--> -> 1 `i `uc
+-> -> 4 `i `uc
 -> -> 2 `i `uc
 -> -> 0 `i `uc
 -> -> 2 `i `uc
--> -> 4 `i `uc
+-> -> 1 `i `uc
 -> -> 2 `i `uc
 ..
 ]

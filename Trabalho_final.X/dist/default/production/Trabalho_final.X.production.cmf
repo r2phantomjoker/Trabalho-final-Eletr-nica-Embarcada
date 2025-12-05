@@ -89,7 +89,7 @@ bssBANK1 BANK1 1 A0 A0 18 1 1
 clrtext CODE 0 E93 E93 6 2 1
 bssCOMMON COMMON 1 7D 7D 1 1 1
 config CONFIG 4 8007 8007 2 2 1
-$C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
+$C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
 reset_vec CODE 0 0 0 2 2 1
 end_init CODE 0 72 72 2 2 1
 config CONFIG 4 8007 8007 2 2 1
@@ -163,25 +163,25 @@ STRING 829-E62 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Trabalho_final.X.production.o
-74 cinit CODE >6173:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-74 cinit CODE >6176:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-74 cinit CODE >6281:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-75 cinit CODE >6285:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-76 cinit CODE >6286:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-77 cinit CODE >6287:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-78 cinit CODE >6288:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-79 cinit CODE >6289:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-7A cinit CODE >6290:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-7D cinit CODE >6294:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-7E cinit CODE >6295:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-7F cinit CODE >6296:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-80 cinit CODE >6297:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-81 cinit CODE >6298:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-82 cinit CODE >6299:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-85 cinit CODE >6305:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-85 cinit CODE >6307:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-86 cinit CODE >6308:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-87 cinit CODE >6309:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
+74 cinit CODE >6173:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+74 cinit CODE >6176:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+74 cinit CODE >6281:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+75 cinit CODE >6285:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+76 cinit CODE >6286:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+77 cinit CODE >6287:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+78 cinit CODE >6288:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+79 cinit CODE >6289:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+7A cinit CODE >6290:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+7D cinit CODE >6294:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+7E cinit CODE >6295:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+7F cinit CODE >6296:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+80 cinit CODE >6297:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+81 cinit CODE >6298:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+82 cinit CODE >6299:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+85 cinit CODE >6305:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+85 cinit CODE >6307:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+86 cinit CODE >6308:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+87 cinit CODE >6309:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
 4 intentry CODE >52:C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
 6 intentry CODE >55:C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
 E intentry CODE >57:C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
@@ -784,14 +784,14 @@ FF maintext CODE >65:C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-
 1D3 maintext CODE >141:C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
 1D6 maintext CODE >142:C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
 1D9 maintext CODE >145:C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
-E93 clrtext CODE >6270:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-E93 clrtext CODE >6271:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-E94 clrtext CODE >6272:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-E94 clrtext CODE >6273:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-E95 clrtext CODE >6274:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-E96 clrtext CODE >6275:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-E97 clrtext CODE >6276:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
-E98 clrtext CODE >6277:C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_1.s
+E93 clrtext CODE >6270:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+E93 clrtext CODE >6271:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+E94 clrtext CODE >6272:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+E94 clrtext CODE >6273:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+E95 clrtext CODE >6274:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+E96 clrtext CODE >6275:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+E97 clrtext CODE >6276:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
+E98 clrtext CODE >6277:C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -834,14 +834,14 @@ _TMR4 415 0 ABS 0 - dist/default/production\Trabalho_final.X.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production\Trabalho_final.X.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\Trabalho_final.X.production.o
 __end_of_IOCBF0_SetInterruptHandler 1D0E 0 CODE 0 text20 dist/default/production\Trabalho_final.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
 _main 112 0 CODE 0 maintext dist/default/production\Trabalho_final.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Trabalho_final.X.production.o
 _IOCBF0_DefaultInterruptHandler 1CC8 0 CODE 0 text53 dist/default/production\Trabalho_final.X.production.o
-___stack_hi 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
-___stack_lo 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
+___stack_hi 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
+___stack_lo 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
 _ultimo_valor_timer0 4A 0 BANK0 1 bssBANK0 dist/default/production\Trabalho_final.X.production.o
-start E4 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
+start E4 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
 _EUSART_Write F26 0 CODE 0 text8 dist/default/production\Trabalho_final.X.production.o
 __end_of_PWM3_LoadDutyValue 2000 0 CODE 0 text38 dist/default/production\Trabalho_final.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -858,12 +858,12 @@ __end_of_spi1_configuration 1052 0 STRCODE 0 stringtext4 dist/default/production
 ___awmod@sign 33 0 BANK0 1 cstackBANK0 dist/default/production\Trabalho_final.X.production.o
 _TMR2_Initialize 1F1E 0 CODE 0 text13 dist/default/production\Trabalho_final.X.production.o
 UART_RecebePedido@destino_pedido 30 0 BANK0 1 cstackBANK0 dist/default/production\Trabalho_final.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 PWM3_LoadDutyValue@dutyValue 2E 0 BANK0 1 cstackBANK0 dist/default/production\Trabalho_final.X.production.o
 _total_pulsos 42 0 BANK0 1 bssBANK0 dist/default/production\Trabalho_final.X.production.o
@@ -925,8 +925,8 @@ __end_of___lldiv A80 0 CODE 0 text45 dist/default/production\Trabalho_final.X.pr
 SENSORES_CalcularVelocidade@delta 2D 0 BANK0 1 cstackBANK0 dist/default/production\Trabalho_final.X.production.o
 MatrizLed@i 36 0 BANK0 1 cstackBANK0 dist/default/production\Trabalho_final.X.production.o
 _OPTION_REG 95 0 ABS 0 - dist/default/production\Trabalho_final.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
-___stacklo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
+___stackhi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
+___stacklo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
 _EUSART_Initialize BD0 0 CODE 0 text23 dist/default/production\Trabalho_final.X.production.o
 _TMR2_SetInterruptHandler 1D1A 0 CODE 0 text14 dist/default/production\Trabalho_final.X.production.o
 _EUSART_is_rx_ready 1D50 0 CODE 0 text35 dist/default/production\Trabalho_final.X.production.o
@@ -967,7 +967,7 @@ TMR2_SetInterruptHandler@InterruptHandler 2E 0 BANK0 1 cstackBANK0 dist/default/
 _IOCBF3_SetInterruptHandler 1D0E 0 CODE 0 text19 dist/default/production\Trabalho_final.X.production.o
 _WDTCON 97 0 ABS 0 - dist/default/production\Trabalho_final.X.production.o
 _EUSART_TxDefaultInterruptHandler D0 0 BANK1 1 nvBANK1 dist/default/production\Trabalho_final.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
 __end_of_EUSART_Read FBE 0 CODE 0 text4 dist/default/production\Trabalho_final.X.production.o
 __end_of_PWM3_Initialize 1DCE 0 CODE 0 text17 dist/default/production\Trabalho_final.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
@@ -1140,7 +1140,7 @@ __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __HnvBANK1 0 0 ABS 0 nvBANK1 -
 __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Trabalho_final.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
 EUSART_Read@readValue 2E 0 BANK0 1 cstackBANK0 dist/default/production\Trabalho_final.X.production.o
 _CCPTMRS0bits 29E 0 ABS 0 - dist/default/production\Trabalho_final.X.production.o
 __end_of_Controle_Descer 1E86 0 CODE 0 text37 dist/default/production\Trabalho_final.X.production.o
@@ -1335,8 +1335,8 @@ __Hstringtext3 0 0 ABS 0 stringtext3 -
 __Hstringtext4 0 0 ABS 0 stringtext4 -
 __end_of_LUT_Andar 101A 0 STRCODE 0 stringtext1 dist/default/production\Trabalho_final.X.production.o
 _eusartRxStatusBuffer A0 0 BANK1 1 bssBANK1 dist/default/production\Trabalho_final.X.production.o
-___heap_hi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
-___heap_lo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
+___heap_hi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
+___heap_lo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
 __end_of_IOCBF0_DefaultInterruptHandler 1CCA 0 CODE 0 text53 dist/default/production\Trabalho_final.X.production.o
 EUSART_Write@txData 2E 0 BANK0 1 cstackBANK0 dist/default/production\Trabalho_final.X.production.o
 _IOCBF0_ISR 1EA2 0 CODE 0 text52 dist/default/production\Trabalho_final.X.production.o
@@ -1406,8 +1406,8 @@ __end_of_UART_RecebePedido ED6 0 CODE 0 text3 dist/default/production\Trabalho_f
 _eusartTxHead 57 0 BANK0 1 bssBANK0 dist/default/production\Trabalho_final.X.production.o
 _eusartTxTail 56 0 BANK0 1 bssBANK0 dist/default/production\Trabalho_final.X.production.o
 MatrizInicializa@row 31 0 BANK0 1 cstackBANK0 dist/default/production\Trabalho_final.X.production.o
-___int_stack_hi 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
-___int_stack_lo 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs1hhc.\driver_tmp_15.o
+___int_stack_hi 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
+___int_stack_lo 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcBso2k.1\driver_tmp_15.o
 __end_of_EUSART_SetRxInterruptHandler 1DAA 0 CODE 0 text25 dist/default/production\Trabalho_final.X.production.o
 _OSCILLATOR_Initialize 1D32 0 CODE 0 text21 dist/default/production\Trabalho_final.X.production.o
 __end_of_TMR2_Initialize 1F44 0 CODE 0 text13 dist/default/production\Trabalho_final.X.production.o
