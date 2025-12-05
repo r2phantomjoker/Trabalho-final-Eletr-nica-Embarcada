@@ -13,7 +13,7 @@ channel_FVR 31
 [e E358 . `uc
 SPI1_DEFAULT 0
 ]
-"61 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
+"62 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
 [e E2974 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
@@ -38,7 +38,7 @@ ESTADO_ESPERA_PORTA 3
 ESTADO_REVERSAO 4
 ]
 "45 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
-[e E2504 . `uc
+[e E2506 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
 ESTADO_DESCENDO 2
@@ -65,8 +65,6 @@ ESTADO_REVERSAO 4
 [v _UART_RecebePedido UART_RecebePedido `(i  1 e 2 0 ]
 "18
 [v _UART_EnviaDados UART_EnviaDados `(v  1 e 1 0 ]
-"42
-[v _MatrizLed MatrizLed `(v  1 e 1 0 ]
 "24 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "67 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
@@ -145,6 +143,8 @@ ESTADO_REVERSAO 4
 [v _SPI1_ExchangeByte SPI1_ExchangeByte `(uc  1 e 1 0 ]
 "100
 [v _SPI1_ExchangeBlock SPI1_ExchangeBlock `(v  1 e 1 0 ]
+"113
+[v _SPI1_WriteBlock SPI1_WriteBlock `(v  1 e 1 0 ]
 "63 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "80
@@ -181,6 +181,8 @@ ESTADO_REVERSAO 4
 [v _LUT_Andar LUT_Andar `DC[16]uc  1 e 16 0 ]
 "35
 [v _LUT_dir LUT_dir `DC[12]uc  1 e 12 0 ]
+"52
+[v _matrix_conf matrix_conf `DC[12]uc  1 e 12 0 ]
 [s S416 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
@@ -198,7 +200,7 @@ ESTADO_REVERSAO 4
 ]
 [u S430 . 1 `S416 1 . 1 0 `S425 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES430  1 e 1 @11 ]
-[s S1391 . 1 `uc 1 RB0 1 0 :1:0 
+[s S1388 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -208,8 +210,8 @@ ESTADO_REVERSAO 4
 `uc 1 RB7 1 0 :1:7 
 ]
 "508
-[u S1400 . 1 `S1391 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1400  1 e 1 @13 ]
+[u S1397 . 1 `S1388 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1397  1 e 1 @13 ]
 [s S560 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -368,7 +370,7 @@ ESTADO_REVERSAO 4
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2039
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1369 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1366 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -378,25 +380,13 @@ ESTADO_REVERSAO 4
 `uc 1 LATA7 1 0 :1:7 
 ]
 "2056
-[u S1378 . 1 `S1369 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1378  1 e 1 @268 ]
+[u S1375 . 1 `S1366 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1375  1 e 1 @268 ]
 "2096
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S1528 . 1 `uc 1 LATB0 1 0 :1:0 
-`uc 1 LATB1 1 0 :1:1 
-`uc 1 LATB2 1 0 :1:2 
-`uc 1 LATB3 1 0 :1:3 
-`uc 1 LATB4 1 0 :1:4 
-`uc 1 LATB5 1 0 :1:5 
-`uc 1 LATB6 1 0 :1:6 
-`uc 1 LATB7 1 0 :1:7 
-]
-"2113
-[u S1537 . 1 `S1528 1 . 1 0 ]
-[v _LATBbits LATBbits `VES1537  1 e 1 @269 ]
 "2158
 [v _CM1CON0 CM1CON0 `VEuc  1 e 1 @273 ]
-[s S1413 . 1 `uc 1 C1SYNC 1 0 :1:0 
+[s S1410 . 1 `uc 1 C1SYNC 1 0 :1:0 
 `uc 1 C1HYS 1 0 :1:1 
 `uc 1 C1SP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -406,13 +396,13 @@ ESTADO_REVERSAO 4
 `uc 1 C1ON 1 0 :1:7 
 ]
 "2175
-[u S1422 . 1 `S1413 1 . 1 0 ]
-[v _CM1CON0bits CM1CON0bits `VES1422  1 e 1 @273 ]
+[u S1419 . 1 `S1410 1 . 1 0 ]
+[v _CM1CON0bits CM1CON0bits `VES1419  1 e 1 @273 ]
 "2215
 [v _CM1CON1 CM1CON1 `VEuc  1 e 1 @274 ]
 "2281
 [v _CM2CON0 CM2CON0 `VEuc  1 e 1 @275 ]
-[s S1434 . 1 `uc 1 C2SYNC 1 0 :1:0 
+[s S1431 . 1 `uc 1 C2SYNC 1 0 :1:0 
 `uc 1 C2HYS 1 0 :1:1 
 `uc 1 C2SP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -422,8 +412,8 @@ ESTADO_REVERSAO 4
 `uc 1 C2ON 1 0 :1:7 
 ]
 "2298
-[u S1443 . 1 `S1434 1 . 1 0 ]
-[v _CM2CON0bits CM2CON0bits `VES1443  1 e 1 @275 ]
+[u S1440 . 1 `S1431 1 . 1 0 ]
+[v _CM2CON0bits CM2CON0bits `VES1440  1 e 1 @275 ]
 "2338
 [v _CM2CON1 CM2CON1 `VEuc  1 e 1 @276 ]
 [s S174 . 1 `uc 1 MC1OUT 1 0 :1:0 
@@ -690,17 +680,17 @@ ESTADO_REVERSAO 4
 "24 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"101
+"102
 [v main@proximo proximo `i  1 a 2 4 ]
-"91
+"92
 [v main@novo_alvo novo_alvo `i  1 a 2 6 ]
-"56
+"57
 [v main@alvo alvo `i  1 a 2 12 ]
-"44
+"45
 [v main@destino destino `i  1 a 2 10 ]
-"43
+"44
 [v main@origem origem `i  1 a 2 8 ]
-"131
+"132
 } 0
 "97 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
 [v _Verificar_Sensores Verificar_Sensores `(v  1 e 1 0 ]
@@ -887,31 +877,6 @@ ESTADO_REVERSAO 4
 {
 "83
 } 0
-"42 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
-[v _MatrizLed MatrizLed `(v  1 e 1 0 ]
-{
-"53
-[v MatrizLed@i_1573 i `uc  1 a 1 22 ]
-"47
-[v MatrizLed@i i `uc  1 a 1 21 ]
-"43
-[v MatrizLed@data data `[2]uc  1 a 2 23 ]
-"45
-[v MatrizLed@pos_LUT_dir pos_LUT_dir `uc  1 a 1 20 ]
-"44
-[v MatrizLed@dig_andar dig_andar `uc  1 a 1 19 ]
-"68
-} 0
-"100 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/spi1.c
-[v _SPI1_ExchangeBlock SPI1_ExchangeBlock `(v  1 e 1 0 ]
-{
-"102
-[v SPI1_ExchangeBlock@data data `*.4uc  1 a 1 17 ]
-"100
-[v SPI1_ExchangeBlock@block block `*.4v  1 p 1 14 ]
-[v SPI1_ExchangeBlock@blockSize blockSize `ui  1 p 2 15 ]
-"110
-} 0
 "137 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
 {
@@ -937,13 +902,13 @@ ESTADO_REVERSAO 4
 [v _Buscar_Proxima_Parada Buscar_Proxima_Parada `(i  1 e 2 0 ]
 {
 "136
-[v Buscar_Proxima_Parada@i_1511 i `i  1 a 2 21 ]
+[v Buscar_Proxima_Parada@i_1508 i `i  1 a 2 21 ]
 "130
-[v Buscar_Proxima_Parada@i_1510 i `i  1 a 2 19 ]
+[v Buscar_Proxima_Parada@i_1507 i `i  1 a 2 19 ]
 "125
 [v Buscar_Proxima_Parada@i i `i  1 a 2 17 ]
 "141
-[v Buscar_Proxima_Parada@i_1512 i `i  1 a 2 23 ]
+[v Buscar_Proxima_Parada@i_1509 i `i  1 a 2 23 ]
 "144
 } 0
 "52 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c

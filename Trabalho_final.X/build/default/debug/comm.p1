@@ -25,11 +25,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _temperatura_ponte `Vuc ~T0 @X0 0 e ]
 "45 comm.c
 [; ;comm.c: 45:     uint8_t pos_LUT_dir = estado_atual<<2;
-[c E2504 0 1 2 3 4 .. ]
-[n E2504 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
+[c E2506 0 1 2 3 4 .. ]
+[n E2506 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
 "134 ./globals.h
 [; ;./globals.h: 134: extern volatile EstadoElevador estado_atual;
-[v _estado_atual `VE2504 ~T0 @X0 0 e ]
+[v _estado_atual `VE2506 ~T0 @X0 0 e ]
 "2102 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2102:     struct {
 [s S112 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -41,12 +41,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2113
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2113: extern volatile LATBbits_t LATBbits __attribute__((address(0x10D)));
 [v _LATBbits `VS111 ~T0 @X0 0 e@269 ]
-"67 ./mcc_generated_files/spi1.h
-[; ;./mcc_generated_files/spi1.h: 67: void SPI1_ExchangeBlock(void *block, size_t blockSize);
-[v _SPI1_ExchangeBlock `(v ~T0 @X0 0 ef2`*v`ui ]
+"68 ./mcc_generated_files/spi1.h
+[; ;./mcc_generated_files/spi1.h: 68: void SPI1_WriteBlock(void *block, size_t blockSize);
+[v _SPI1_WriteBlock `(v ~T0 @X0 0 ef2`*v`ui ]
 "123 ./globals.h
 [; ;./globals.h: 123: extern volatile _Bool solicitacoes[4];
 [v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
+"67 ./mcc_generated_files/spi1.h
+[; ;./mcc_generated_files/spi1.h: 67: void SPI1_ExchangeBlock(void *block, size_t blockSize);
+[v _SPI1_ExchangeBlock `(v ~T0 @X0 0 ef2`*v`ui ]
+[v F211 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
+[v __delay `JF211 ~T0 @X0 0 e ]
+[p i __delay ]
 "13 ./comm.h
 [; ;./comm.h: 13: const uint8_t LUT_Andar[]= {
 [v _LUT_Andar `Cuc ~T0 @X0 -> 16 `i e ]
@@ -87,6 +94,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 2 `i `uc
 -> -> 4 `i `uc
 -> -> 2 `i `uc
+..
+]
+"52
+[; ;./comm.h: 52: const uint8_t matrix_conf[] = {
+[v _matrix_conf `Cuc ~T0 @X0 -> 12 `i e ]
+[i _matrix_conf
+:U ..
+-> -> 9 `i `uc
+-> -> 0 `i `uc
+-> -> 10 `i `uc
+-> -> 0 `i `uc
+-> -> 11 `i `uc
+-> -> 7 `i `uc
+-> -> 12 `i `uc
+-> -> 1 `i `uc
+-> -> 15 `i `uc
+-> -> 1 `i `uc
+-> -> 15 `i `uc
+-> -> 0 `i `uc
 ..
 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
@@ -701,21 +727,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49
 [; ;comm.c: 49:         data[1] = LUT_Andar[dig_andar];
 [e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux *U + &U _LUT_Andar * -> _dig_andar `ux -> -> # *U &U _LUT_Andar `ui `ux ]
-"50
-[; ;comm.c: 50:         SPI1_ExchangeBlock(data, 2);
-[e ( _SPI1_ExchangeBlock (2 , -> &U _data `*v -> -> 2 `i `ui ]
 "51
-[; ;comm.c: 51:         dig_andar++;
-[e ++ _dig_andar -> -> 1 `i `uc ]
+[; ;comm.c: 51:         SPI1_WriteBlock(data, 2);
+[e ( _SPI1_WriteBlock (2 , -> &U _data `*v -> -> 2 `i `ui ]
 "52
-[; ;comm.c: 52:     }
+[; ;comm.c: 52:         dig_andar++;
+[e ++ _dig_andar -> -> 1 `i `uc ]
+"53
+[; ;comm.c: 53:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 5 `i 367  ]
 [e :U 368 ]
 }
-"53
-[; ;comm.c: 53:     for(uint8_t i=1;i<4;i++){
+"54
+[; ;comm.c: 54:     for(uint8_t i=1;i<4;i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 1 `i `uc ]
@@ -723,54 +749,172 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 371  ]
 [e :U 370 ]
 {
-"54
-[; ;comm.c: 54:         data[0] = i;
-[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux _i ]
 "55
-[; ;comm.c: 55:         data[1] = LUT_dir[pos_LUT_dir];
-[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux *U + &U _LUT_dir * -> _pos_LUT_dir `ux -> -> # *U &U _LUT_dir `ui `ux ]
+[; ;comm.c: 55:         data[0] = i;
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux _i ]
 "56
-[; ;comm.c: 56:         SPI1_ExchangeBlock(data, 2);
-[e ( _SPI1_ExchangeBlock (2 , -> &U _data `*v -> -> 2 `i `ui ]
-"57
-[; ;comm.c: 57:         pos_LUT_dir++;
-[e ++ _pos_LUT_dir -> -> 1 `i `uc ]
+[; ;comm.c: 56:         data[1] = LUT_dir[pos_LUT_dir];
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux *U + &U _LUT_dir * -> _pos_LUT_dir `ux -> -> # *U &U _LUT_dir `ui `ux ]
 "58
-[; ;comm.c: 58:     }
+[; ;comm.c: 58:         SPI1_WriteBlock(data, 2);
+[e ( _SPI1_WriteBlock (2 , -> &U _data `*v -> -> 2 `i `ui ]
+"59
+[; ;comm.c: 59:         pos_LUT_dir++;
+[e ++ _pos_LUT_dir -> -> 1 `i `uc ]
+"60
+[; ;comm.c: 60:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 4 `i 370  ]
 [e :U 371 ]
 }
-"59
-[; ;comm.c: 59:     data[0] = 4;
-[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 4 `i `uc ]
-"60
-[; ;comm.c: 60:     data[1] = pos_LUT_dir;
-[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux _pos_LUT_dir ]
 "61
-[; ;comm.c: 61:     data[1] = data[1] + (solicitacoes[0])*128;
-[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> + -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i * -> *U + &U _solicitacoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 128 `i `uc ]
+[; ;comm.c: 61:     data[0] = 4;
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 4 `i `uc ]
 "62
-[; ;comm.c: 62:     data[1] = data[1] + (solicitacoes[1])*64;
-[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> + -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i * -> *U + &U _solicitacoes * -> -> -> 1 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 64 `i `uc ]
+[; ;comm.c: 62:     data[1] = pos_LUT_dir;
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux _pos_LUT_dir ]
 "63
-[; ;comm.c: 63:     data[1] = data[1] + (solicitacoes[2])*32;
-[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> + -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i * -> *U + &U _solicitacoes * -> -> -> 2 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 32 `i `uc ]
+[; ;comm.c: 63:     data[1] = data[1] + (solicitacoes[0])*128;
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> + -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i * -> *U + &U _solicitacoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 128 `i `uc ]
 "64
-[; ;comm.c: 64:     data[1] = data[1] + (solicitacoes[3])*16;
-[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> + -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i * -> *U + &U _solicitacoes * -> -> -> 3 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 16 `i `uc ]
+[; ;comm.c: 64:     data[1] = data[1] + (solicitacoes[1])*64;
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> + -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i * -> *U + &U _solicitacoes * -> -> -> 1 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 64 `i `uc ]
 "65
-[; ;comm.c: 65:     SPI1_ExchangeBlock(data, 2);
-[e ( _SPI1_ExchangeBlock (2 , -> &U _data `*v -> -> 2 `i `ui ]
-"67
-[; ;comm.c: 67:     do { LATBbits.LATB1 = 1; } while(0);
+[; ;comm.c: 65:     data[1] = data[1] + (solicitacoes[2])*32;
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> + -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i * -> *U + &U _solicitacoes * -> -> -> 2 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 32 `i `uc ]
+"66
+[; ;comm.c: 66:     data[1] = data[1] + (solicitacoes[3])*16;
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> + -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i * -> *U + &U _solicitacoes * -> -> -> 3 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 16 `i `uc ]
+"68
+[; ;comm.c: 68:     SPI1_WriteBlock(data, 2);
+[e ( _SPI1_WriteBlock (2 , -> &U _data `*v -> -> 2 `i `ui ]
+"70
+[; ;comm.c: 70:     do { LATBbits.LATB1 = 1; } while(0);
 [e :U 375 ]
 {
 [e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 }
 [e :U 374 ]
-"68
-[; ;comm.c: 68: }
+"71
+[; ;comm.c: 71: }
 [e :UE 363 ]
+}
+"73
+[; ;comm.c: 73: void MatrizInicializa(void){
+[v _MatrizInicializa `(v ~T0 @X0 1 ef ]
+{
+[e :U _MatrizInicializa ]
+[f ]
+"74
+[; ;comm.c: 74:     uint8_t data[2];
+[v _data `uc ~T0 @X0 -> 2 `i a ]
+"75
+[; ;comm.c: 75:     uint8_t k=0;
+[v _k `uc ~T0 @X0 1 a ]
+[e = _k -> -> 0 `i `uc ]
+"76
+[; ;comm.c: 76:     do { LATBbits.LATB1 = 0; } while(0);
+[e :U 379 ]
+{
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
+}
+[e :U 378 ]
+"77
+[; ;comm.c: 77:     for(uint8_t i=1;i<5;i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 380  ]
+[e $U 381  ]
+[e :U 380 ]
+{
+"78
+[; ;comm.c: 78:         data[0] = i;
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux _i ]
+"79
+[; ;comm.c: 79:         data[1] = 0;
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 0 `i `uc ]
+"80
+[; ;comm.c: 80:         SPI1_ExchangeBlock(data, 2);
+[e ( _SPI1_ExchangeBlock (2 , -> &U _data `*v -> -> 2 `i `ui ]
+"81
+[; ;comm.c: 81:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 380  ]
+[e :U 381 ]
+}
+"82
+[; ;comm.c: 82:     for(uint8_t i=0;i<6;i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 6 `i 383  ]
+[e $U 384  ]
+[e :U 383 ]
+{
+"83
+[; ;comm.c: 83:         for(uint8_t j=0;j<4;j=j+2){
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 4 `i 386  ]
+[e $U 387  ]
+[e :U 386 ]
+{
+"84
+[; ;comm.c: 84:             data[j]= matrix_conf[k];
+[e = *U + &U _data * -> _j `ux -> -> # *U &U _data `ui `ux *U + &U _matrix_conf * -> _k `ux -> -> # *U &U _matrix_conf `ui `ux ]
+"85
+[; ;comm.c: 85:             data[j+1]= matrix_conf[k+1];
+[e = *U + &U _data * -> -> + -> _j `i -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux *U + &U _matrix_conf * -> -> + -> _k `i -> 1 `i `ui `ux -> -> # *U &U _matrix_conf `ui `ux ]
+"86
+[; ;comm.c: 86:         }
+}
+[e = _j -> + -> _j `i -> 2 `i `uc ]
+[e $ < -> _j `i -> 4 `i 386  ]
+[e :U 387 ]
+}
+"87
+[; ;comm.c: 87:         k=k+2;
+[e = _k -> + -> _k `i -> 2 `i `uc ]
+"88
+[; ;comm.c: 88:         do { LATBbits.LATB1 = 0; } while(0);
+[e :U 391 ]
+{
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
+}
+[e :U 390 ]
+"89
+[; ;comm.c: 89:         SPI1_ExchangeBlock(data, 2);
+[e ( _SPI1_ExchangeBlock (2 , -> &U _data `*v -> -> 2 `i `ui ]
+"90
+[; ;comm.c: 90:         if(i==4){
+[e $ ! == -> _i `i -> 4 `i 392  ]
+{
+"91
+[; ;comm.c: 91:             _delay((unsigned long)((800)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"92
+[; ;comm.c: 92:         }
+}
+[e :U 392 ]
+"93
+[; ;comm.c: 93:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 383  ]
+[e :U 384 ]
+}
+"94
+[; ;comm.c: 94:     do { LATBbits.LATB1 = 1; } while(0);
+[e :U 395 ]
+{
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
+}
+[e :U 394 ]
+"95
+[; ;comm.c: 95: }
+[e :UE 376 ]
 }

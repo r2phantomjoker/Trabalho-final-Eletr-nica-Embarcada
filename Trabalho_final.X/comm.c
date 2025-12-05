@@ -48,12 +48,14 @@ void MatrizLed (void){
         data[0] = i;
         data[1] = LUT_Andar[dig_andar];
         SPI1_ExchangeBlock(data, 2); 
+        //SPI1_WriteBlock(data, 2); 
         dig_andar++;
     }
     for(uint8_t i=1;i<4;i++){
         data[0] = i;
         data[1] = LUT_dir[pos_LUT_dir];
         SPI1_ExchangeBlock(data, 2); 
+        //SPI1_WriteBlock(data, 2); 
         pos_LUT_dir++;
     }
     data[0] = 4;
@@ -62,7 +64,32 @@ void MatrizLed (void){
     data[1] = data[1] + (solicitacoes[1])*64;
     data[1] = data[1] + (solicitacoes[2])*32;
     data[1] = data[1] + (solicitacoes[3])*16;
-    SPI1_ExchangeBlock(data, 2); 
+    //SPI1_ExchangeBlock(data, 2); 
+    SPI1_WriteBlock(data, 2); 
     
+    CS_SetHigh();
+}
+
+void MatrizInicializa(void){
+    uint8_t data[2];            // Buffer para tx spi
+    uint8_t k=0;                // Ponteiro do arranjo da configuração das matrizes
+    CS_SetLow();
+    for(uint8_t i=1;i<5;i++){
+        data[0] = i;
+        data[1] = 0;
+        SPI1_ExchangeBlock(data, 2); 
+    }
+    for(uint8_t i=0;i<6;i++){   // Envia os 8 valores de configuração
+        for(uint8_t j=0;j<4;j=j+2){
+            data[j]= matrix_conf[k];    // Define o endereço dos registradores de configuração
+            data[j+1]= matrix_conf[k+1];// Define o valor dos registradores de configuração
+        }
+        k=k+2;                  // Inc ponteiro da configuração   
+        CS_SetLow();
+        SPI1_ExchangeBlock(data, 2); 
+        if(i==4){               // Display-Test
+            __delay_ms(800);
+        }
+    }
     CS_SetHigh();
 }

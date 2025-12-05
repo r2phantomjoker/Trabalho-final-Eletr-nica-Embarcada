@@ -638,8 +638,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motor.c: 79:     LATAbits.LATA7 = 1;
 [e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
 "80
-[; ;motor.c: 80:     PWM3_LoadDutyValue(410);
-[e ( _PWM3_LoadDutyValue (1 -> -> 410 `i `us ]
+[; ;motor.c: 80:     PWM3_LoadDutyValue(614);
+[e ( _PWM3_LoadDutyValue (1 -> -> 614 `i `us ]
 "81
 [; ;motor.c: 81:     estado_motor = 1;
 [e = _estado_motor -> -> 1 `i `uc ]
@@ -657,8 +657,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motor.c: 85:     LATAbits.LATA7 = 0;
 [e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
 "86
-[; ;motor.c: 86:     PWM3_LoadDutyValue(410);
-[e ( _PWM3_LoadDutyValue (1 -> -> 410 `i `us ]
+[; ;motor.c: 86:     PWM3_LoadDutyValue(614);
+[e ( _PWM3_LoadDutyValue (1 -> -> 614 `i `us ]
 "87
 [; ;motor.c: 87:     estado_motor = 2;
 [e = _estado_motor -> -> 2 `i `uc ]

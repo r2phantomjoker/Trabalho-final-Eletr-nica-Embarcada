@@ -92,18 +92,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 5812: extern volatile IOCBPbits_t IOCBPbits __attribute__((address(0x394)));
 [v _IOCBPbits `VS295 ~T0 @X0 0 e@916 ]
 [v F2494 `(v ~T0 @X0 0 tf ]
-"273 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 273: void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
+"287 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 287: void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IOCBF0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2494 ]
-"321
-[; ;mcc_generated_files/pin_manager.h: 321: void IOCBF0_DefaultInterruptHandler(void);
+"335
+[; ;mcc_generated_files/pin_manager.h: 335: void IOCBF0_DefaultInterruptHandler(void);
 [v _IOCBF0_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 [v F2502 `(v ~T0 @X0 0 tf ]
-"357
-[; ;mcc_generated_files/pin_manager.h: 357: void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
+"371
+[; ;mcc_generated_files/pin_manager.h: 371: void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IOCBF3_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2502 ]
-"405
-[; ;mcc_generated_files/pin_manager.h: 405: void IOCBF3_DefaultInterruptHandler(void);
+"419
+[; ;mcc_generated_files/pin_manager.h: 419: void IOCBF3_DefaultInterruptHandler(void);
 [v _IOCBF3_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 "357 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 357:     struct {
@@ -120,11 +120,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"250 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 250: void IOCBF0_ISR(void);
+"264 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 264: void IOCBF0_ISR(void);
 [v _IOCBF0_ISR `(v ~T0 @X0 0 ef ]
-"334
-[; ;mcc_generated_files/pin_manager.h: 334: void IOCBF3_ISR(void);
+"348
+[; ;mcc_generated_files/pin_manager.h: 348: void IOCBF3_ISR(void);
 [v _IOCBF3_ISR `(v ~T0 @X0 0 ef ]
 [v F2517 `(v ~T0 @X0 0 tf ]
 [v F2519 `(v ~T0 @X0 0 tf ]
@@ -627,17 +627,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 64:     LATB = 0x00;
 [e = _LATB -> -> 0 `i `uc ]
 "69
-[; ;mcc_generated_files/pin_manager.c: 69:     TRISA = 0x37;
-[e = _TRISA -> -> 55 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 69:     TRISA = 0x33;
+[e = _TRISA -> -> 51 `i `uc ]
 "70
-[; ;mcc_generated_files/pin_manager.c: 70:     TRISB = 0xED;
-[e = _TRISB -> -> 237 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 70:     TRISB = 0xEF;
+[e = _TRISB -> -> 239 `i `uc ]
 "75
-[; ;mcc_generated_files/pin_manager.c: 75:     ANSELB = 0xC0;
-[e = _ANSELB -> -> 192 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 75:     ANSELB = 0x80;
+[e = _ANSELB -> -> 128 `i `uc ]
 "76
-[; ;mcc_generated_files/pin_manager.c: 76:     ANSELA = 0x0F;
-[e = _ANSELA -> -> 15 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 76:     ANSELA = 0x0B;
+[e = _ANSELA -> -> 11 `i `uc ]
 "81
 [; ;mcc_generated_files/pin_manager.c: 81:     WPUB = 0x09;
 [e = _WPUB -> -> 9 `i `uc ]

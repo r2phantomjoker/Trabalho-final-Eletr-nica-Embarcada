@@ -4576,14 +4576,6 @@ extern void (*TMR4_InterruptHandler)(void);
 # 362 "./mcc_generated_files/tmr4.h"
 void TMR4_DefaultInterruptHandler(void);
 # 58 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/cmp2.h" 1
-# 92 "./mcc_generated_files/cmp2.h"
-void CMP2_Initialize(void);
-# 132 "./mcc_generated_files/cmp2.h"
-_Bool CMP2_GetOutputStatus(void);
-# 148 "./mcc_generated_files/cmp2.h"
-void CMP2_ISR(void);
-# 59 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 103 "./mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
@@ -4605,6 +4597,14 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 362 "./mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
+# 59 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/cmp2.h" 1
+# 92 "./mcc_generated_files/cmp2.h"
+void CMP2_Initialize(void);
+# 132 "./mcc_generated_files/cmp2.h"
+_Bool CMP2_GetOutputStatus(void);
+# 148 "./mcc_generated_files/cmp2.h"
+void CMP2_ISR(void);
 # 60 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/cmp1.h" 1
 # 92 "./mcc_generated_files/cmp1.h"
@@ -4821,6 +4821,15 @@ const uint8_t LUT_dir[] = {
     0b00000010
 };
 
+const uint8_t matrix_conf[] = {
+    0x09,0x00,
+    0x0A,0x00,
+    0x0B,0x07,
+    0x0C,0x01,
+    0x0F,0x01,
+    0x0F,0x00,
+};
+
 
 
 
@@ -4839,6 +4848,8 @@ void UART_EnviaDados(void);
 
 
 void MatrizLed (void);
+
+void MatrizInicializa(void);
 # 10 "main.c" 2
 # 1 "./motor.h" 1
 # 18 "./motor.h"
@@ -4883,6 +4894,7 @@ void main(void) {
 
     Controle_Parar();
 
+    MatrizInicializa();
     while (1) {
 
         if(EUSART_is_rx_ready()) {

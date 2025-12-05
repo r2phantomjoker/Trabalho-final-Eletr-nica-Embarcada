@@ -49,6 +49,15 @@ const uint8_t LUT_dir[] = {
     0b00000010
 };
 
+const uint8_t matrix_conf[] = {
+    0x09,0x00,  // Decode mode = 0
+    0x0A,0x00,  // Intensity 1/32
+    0x0B,0x07,  // Scan Limit
+    0x0C,0x01,  // Shutdown mode = 1
+    0x0F,0x01,  // Display-Test = 1
+    0x0F,0x00,  // Display-Test = 0
+};  ///< Configuração da matriz de  LEDs
+
 /**
  * @brief Recebe e salva os dados da UART no endereço designado.
  * Retorna 0 caso último caractere recebido seja  <CR>.
@@ -67,5 +76,7 @@ void UART_EnviaDados(void);
  * Pega os valores das variaveis globais e atualiza a matriz de LEDs
  */
 void MatrizLed (void);
+
+void MatrizInicializa(void);
 #endif	/* COMM_H */
 

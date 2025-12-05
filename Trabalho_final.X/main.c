@@ -35,7 +35,8 @@ void main(void) {
     INTERRUPT_PeripheralInterruptEnable();
 
     Controle_Parar(); 
-
+    
+//    MatrizInicializa();
     while (1) {
         // A. COMUNICAÇÃO BLUETOOTH
         if(EUSART_is_rx_ready()) {
@@ -122,7 +123,7 @@ void main(void) {
         contador_telemetria++;
         if (contador_telemetria >= 30) { 
             UART_EnviaDados();
-            MatrizLed();
+            //MatrizLed();
             contador_telemetria = 0; 
         }
 

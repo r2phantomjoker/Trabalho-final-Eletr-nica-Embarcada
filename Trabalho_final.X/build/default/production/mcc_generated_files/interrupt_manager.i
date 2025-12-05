@@ -4348,25 +4348,25 @@ extern __bank0 __bit __timeout;
 # 1 "mcc_generated_files/device_config.h" 1
 # 51 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 225 "mcc_generated_files/pin_manager.h"
+# 239 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 237 "mcc_generated_files/pin_manager.h"
+# 251 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 250 "mcc_generated_files/pin_manager.h"
+# 264 "mcc_generated_files/pin_manager.h"
 void IOCBF0_ISR(void);
-# 273 "mcc_generated_files/pin_manager.h"
+# 287 "mcc_generated_files/pin_manager.h"
 void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 297 "mcc_generated_files/pin_manager.h"
+# 311 "mcc_generated_files/pin_manager.h"
 extern void (*IOCBF0_InterruptHandler)(void);
-# 321 "mcc_generated_files/pin_manager.h"
+# 335 "mcc_generated_files/pin_manager.h"
 void IOCBF0_DefaultInterruptHandler(void);
-# 334 "mcc_generated_files/pin_manager.h"
+# 348 "mcc_generated_files/pin_manager.h"
 void IOCBF3_ISR(void);
-# 357 "mcc_generated_files/pin_manager.h"
+# 371 "mcc_generated_files/pin_manager.h"
 void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 381 "mcc_generated_files/pin_manager.h"
+# 395 "mcc_generated_files/pin_manager.h"
 extern void (*IOCBF3_InterruptHandler)(void);
-# 405 "mcc_generated_files/pin_manager.h"
+# 419 "mcc_generated_files/pin_manager.h"
 void IOCBF3_DefaultInterruptHandler(void);
 # 52 "mcc_generated_files/mcc.h" 2
 
@@ -4572,14 +4572,6 @@ extern void (*TMR4_InterruptHandler)(void);
 # 362 "mcc_generated_files/tmr4.h"
 void TMR4_DefaultInterruptHandler(void);
 # 58 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/cmp2.h" 1
-# 92 "mcc_generated_files/cmp2.h"
-void CMP2_Initialize(void);
-# 132 "mcc_generated_files/cmp2.h"
-_Bool CMP2_GetOutputStatus(void);
-# 148 "mcc_generated_files/cmp2.h"
-void CMP2_ISR(void);
-# 59 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/tmr2.h" 1
 # 103 "mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
@@ -4601,6 +4593,14 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 362 "mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
+# 59 "mcc_generated_files/mcc.h" 2
+# 1 "mcc_generated_files/cmp2.h" 1
+# 92 "mcc_generated_files/cmp2.h"
+void CMP2_Initialize(void);
+# 132 "mcc_generated_files/cmp2.h"
+_Bool CMP2_GetOutputStatus(void);
+# 148 "mcc_generated_files/cmp2.h"
+void CMP2_ISR(void);
 # 60 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/cmp1.h" 1
 # 92 "mcc_generated_files/cmp1.h"

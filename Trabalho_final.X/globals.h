@@ -69,7 +69,7 @@
  * 410 = ~40% de Duty Cycle.
  */
 #define MOTOR_OFF       0
-#define MOTOR_ON        410 
+#define MOTOR_ON        614 
 
 // ==========================================
 // VARIÁVEIS GLOBAIS (TELEMETRIA - TABELA 1)

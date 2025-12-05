@@ -155,6 +155,15 @@ const uint8_t LUT_dir[] = {
     0b00000010
 };
 
+const uint8_t matrix_conf[] = {
+    0x09,0x00,
+    0x0A,0x00,
+    0x0B,0x07,
+    0x0C,0x01,
+    0x0F,0x01,
+    0x0F,0x00,
+};
+
 
 
 
@@ -173,6 +182,8 @@ void UART_EnviaDados(void);
 
 
 void MatrizLed (void);
+
+void MatrizInicializa(void);
 # 2 "comm.c" 2
 # 1 "./globals.h" 1
 # 14 "./globals.h"
@@ -4466,25 +4477,25 @@ extern volatile EstadoElevador estado_atual;
 # 1 "./mcc_generated_files/device_config.h" 1
 # 51 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 225 "./mcc_generated_files/pin_manager.h"
+# 239 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 237 "./mcc_generated_files/pin_manager.h"
+# 251 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 250 "./mcc_generated_files/pin_manager.h"
+# 264 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_ISR(void);
-# 273 "./mcc_generated_files/pin_manager.h"
+# 287 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 297 "./mcc_generated_files/pin_manager.h"
+# 311 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF0_InterruptHandler)(void);
-# 321 "./mcc_generated_files/pin_manager.h"
+# 335 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_DefaultInterruptHandler(void);
-# 334 "./mcc_generated_files/pin_manager.h"
+# 348 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_ISR(void);
-# 357 "./mcc_generated_files/pin_manager.h"
+# 371 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 381 "./mcc_generated_files/pin_manager.h"
+# 395 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF3_InterruptHandler)(void);
-# 405 "./mcc_generated_files/pin_manager.h"
+# 419 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_DefaultInterruptHandler(void);
 # 52 "./mcc_generated_files/mcc.h" 2
 
@@ -4690,14 +4701,6 @@ extern void (*TMR4_InterruptHandler)(void);
 # 362 "./mcc_generated_files/tmr4.h"
 void TMR4_DefaultInterruptHandler(void);
 # 58 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/cmp2.h" 1
-# 92 "./mcc_generated_files/cmp2.h"
-void CMP2_Initialize(void);
-# 132 "./mcc_generated_files/cmp2.h"
-_Bool CMP2_GetOutputStatus(void);
-# 148 "./mcc_generated_files/cmp2.h"
-void CMP2_ISR(void);
-# 59 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 103 "./mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
@@ -4719,6 +4722,14 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 362 "./mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
+# 59 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/cmp2.h" 1
+# 92 "./mcc_generated_files/cmp2.h"
+void CMP2_Initialize(void);
+# 132 "./mcc_generated_files/cmp2.h"
+_Bool CMP2_GetOutputStatus(void);
+# 148 "./mcc_generated_files/cmp2.h"
+void CMP2_ISR(void);
 # 60 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/cmp1.h" 1
 # 92 "./mcc_generated_files/cmp1.h"
@@ -4889,17 +4900,19 @@ void MatrizLed (void){
     uint8_t data[2];
     uint8_t dig_andar = (andar_atual)<<2;
     uint8_t pos_LUT_dir = estado_atual<<2;
-    do { LATBbits.LATB1 = 0; } while(0);
+    do { LATAbits.LATA2 = 0; } while(0);
     for(uint8_t i=1;i<5;i++){
         data[0] = i;
         data[1] = LUT_Andar[dig_andar];
         SPI1_ExchangeBlock(data, 2);
+
         dig_andar++;
     }
     for(uint8_t i=1;i<4;i++){
         data[0] = i;
         data[1] = LUT_dir[pos_LUT_dir];
         SPI1_ExchangeBlock(data, 2);
+
         pos_LUT_dir++;
     }
     data[0] = 4;
@@ -4908,7 +4921,32 @@ void MatrizLed (void){
     data[1] = data[1] + (solicitacoes[1])*64;
     data[1] = data[1] + (solicitacoes[2])*32;
     data[1] = data[1] + (solicitacoes[3])*16;
-    SPI1_ExchangeBlock(data, 2);
 
-    do { LATBbits.LATB1 = 1; } while(0);
+    SPI1_WriteBlock(data, 2);
+
+    do { LATAbits.LATA2 = 1; } while(0);
+}
+
+void MatrizInicializa(void){
+    uint8_t data[2];
+    uint8_t k=0;
+    do { LATAbits.LATA2 = 0; } while(0);
+    for(uint8_t i=1;i<5;i++){
+        data[0] = i;
+        data[1] = 0;
+        SPI1_ExchangeBlock(data, 2);
+    }
+    for(uint8_t i=0;i<6;i++){
+        for(uint8_t j=0;j<4;j=j+2){
+            data[j]= matrix_conf[k];
+            data[j+1]= matrix_conf[k+1];
+        }
+        k=k+2;
+        do { LATAbits.LATA2 = 0; } while(0);
+        SPI1_ExchangeBlock(data, 2);
+        if(i==4){
+            _delay((unsigned long)((800)*(8000000/4000.0)));
+        }
+    }
+    do { LATAbits.LATA2 = 1; } while(0);
 }

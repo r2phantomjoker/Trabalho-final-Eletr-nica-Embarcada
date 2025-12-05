@@ -2,8 +2,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "63 mcc_generated_files/spi1.h
 [; ;mcc_generated_files/spi1.h: 63: void SPI1_Initialize(void);
 [v _SPI1_Initialize `(v ~T0 @X0 0 ef ]
-"225 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 225: void PIN_MANAGER_Initialize (void);
+"239 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 239: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/mcc.h
 [; ;mcc_generated_files/mcc.h: 93: void OSCILLATOR_Initialize(void);
@@ -11,12 +11,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "105
 [; ;mcc_generated_files/mcc.h: 105: void WDT_Initialize(void);
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
-"92 mcc_generated_files/cmp2.h
-[; ;mcc_generated_files/cmp2.h: 92: void CMP2_Initialize(void);
-[v _CMP2_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/fvr.h
 [; ;mcc_generated_files/fvr.h: 93:  void FVR_Initialize(void);
 [v _FVR_Initialize `(v ~T0 @X0 0 ef ]
+"92 mcc_generated_files/cmp2.h
+[; ;mcc_generated_files/cmp2.h: 92: void CMP2_Initialize(void);
+[v _CMP2_Initialize `(v ~T0 @X0 0 ef ]
 "103 mcc_generated_files/tmr4.h
 [; ;mcc_generated_files/tmr4.h: 103: void TMR4_Initialize(void);
 [v _TMR4_Initialize `(v ~T0 @X0 0 ef ]
@@ -545,11 +545,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 56:     WDT_Initialize();
 [e ( _WDT_Initialize ..  ]
 "57
-[; ;mcc_generated_files/mcc.c: 57:     CMP2_Initialize();
-[e ( _CMP2_Initialize ..  ]
-"58
-[; ;mcc_generated_files/mcc.c: 58:     FVR_Initialize();
+[; ;mcc_generated_files/mcc.c: 57:     FVR_Initialize();
 [e ( _FVR_Initialize ..  ]
+"58
+[; ;mcc_generated_files/mcc.c: 58:     CMP2_Initialize();
+[e ( _CMP2_Initialize ..  ]
 "59
 [; ;mcc_generated_files/mcc.c: 59:     TMR4_Initialize();
 [e ( _TMR4_Initialize ..  ]
