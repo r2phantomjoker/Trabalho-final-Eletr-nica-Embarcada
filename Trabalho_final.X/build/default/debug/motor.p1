@@ -65,8 +65,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motor.c: 110:         estado_atual = ESTADO_PARADO;
 [c E2503 0 1 2 3 4 .. ]
 [n E2503 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
-"133 ./globals.h
-[; ;./globals.h: 133: extern volatile EstadoElevador estado_atual;
+"134 ./globals.h
+[; ;./globals.h: 134: extern volatile EstadoElevador estado_atual;
 [v _estado_atual `VE2503 ~T0 @X0 0 e ]
 "123
 [; ;./globals.h: 123: extern volatile _Bool solicitacoes[4];

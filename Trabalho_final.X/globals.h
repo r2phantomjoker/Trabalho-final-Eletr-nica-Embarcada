@@ -129,6 +129,7 @@ typedef enum {
     ESTADO_ESPERA_PORTA,
     ESTADO_REVERSAO
 } EstadoElevador;
+//Se alterar a ordem desse enum, alterar a ordem da LUT_dir em comm.h
 
 extern volatile EstadoElevador estado_atual;
 

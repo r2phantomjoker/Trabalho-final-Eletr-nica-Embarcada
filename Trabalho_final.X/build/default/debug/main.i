@@ -4777,30 +4777,48 @@ typedef enum {
     ESTADO_REVERSAO
 } EstadoElevador;
 
+
 extern volatile EstadoElevador estado_atual;
 # 9 "main.c" 2
 # 1 "./comm.h" 1
 # 13 "./comm.h"
 const uint8_t LUT_Andar[]= {
-        0b00000000,
-        0b10000010,
-        0b11111111,
-        0b10000000,
+    0b00000000,
+    0b10000010,
+    0b11111111,
+    0b10000000,
 
-        0b11000010,
-        0b10100001,
-        0b10010001,
-        0b10001110,
+    0b11000010,
+    0b10100001,
+    0b10010001,
+    0b10001110,
 
-        0b01000010,
-        0b10000001,
-        0b10001001,
-        0b01110110,
+    0b01000010,
+    0b10000001,
+    0b10001001,
+    0b01110110,
 
-        0b00000111,
-        0b00000100,
-        0b00000100,
-        0b11111111
+    0b00000111,
+    0b00000100,
+    0b00000100,
+    0b11111111
+};
+
+const uint8_t LUT_dir[] = {
+    0b00000000,
+    0b00000000,
+    0b00000000,
+    0b00000000,
+
+    0b00000000,
+    0b00000010,
+    0b00000001,
+    0b00000010,
+
+    0b00000000,
+    0b00000010,
+    0b00000100,
+    0b00000010
 };
 
 
@@ -4816,6 +4834,11 @@ int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 
 
 void UART_EnviaDados(void);
+
+
+
+
+void MatrizLed (void);
 # 10 "main.c" 2
 # 1 "./motor.h" 1
 # 18 "./motor.h"
@@ -4946,7 +4969,7 @@ void main(void) {
         contador_telemetria++;
         if (contador_telemetria >= 30) {
             UART_EnviaDados();
-
+            MatrizLed();
             contador_telemetria = 0;
         }
 

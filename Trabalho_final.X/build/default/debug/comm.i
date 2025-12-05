@@ -117,25 +117,42 @@ typedef uint32_t uint_fast32_t;
 # 12 "./comm.h" 2
 
 const uint8_t LUT_Andar[]= {
-        0b00000000,
-        0b10000010,
-        0b11111111,
-        0b10000000,
+    0b00000000,
+    0b10000010,
+    0b11111111,
+    0b10000000,
 
-        0b11000010,
-        0b10100001,
-        0b10010001,
-        0b10001110,
+    0b11000010,
+    0b10100001,
+    0b10010001,
+    0b10001110,
 
-        0b01000010,
-        0b10000001,
-        0b10001001,
-        0b01110110,
+    0b01000010,
+    0b10000001,
+    0b10001001,
+    0b01110110,
 
-        0b00000111,
-        0b00000100,
-        0b00000100,
-        0b11111111
+    0b00000111,
+    0b00000100,
+    0b00000100,
+    0b11111111
+};
+
+const uint8_t LUT_dir[] = {
+    0b00000000,
+    0b00000000,
+    0b00000000,
+    0b00000000,
+
+    0b00000000,
+    0b00000010,
+    0b00000001,
+    0b00000010,
+
+    0b00000000,
+    0b00000010,
+    0b00000100,
+    0b00000010
 };
 
 
@@ -151,6 +168,11 @@ int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 
 
 void UART_EnviaDados(void);
+
+
+
+
+void MatrizLed (void);
 # 2 "comm.c" 2
 # 1 "./globals.h" 1
 # 14 "./globals.h"
@@ -4436,6 +4458,7 @@ typedef enum {
     ESTADO_REVERSAO
 } EstadoElevador;
 
+
 extern volatile EstadoElevador estado_atual;
 # 3 "comm.c" 2
 # 1 "./mcc_generated_files/mcc.h" 1
@@ -4827,10 +4850,10 @@ void WDT_Initialize(void);
 
 
 
-int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido){
+int UART_RecebePedido(char* origem_pedido, char* destino_pedido){
     if(EUSART_Read() == '$'){
-    *OrigemPedido = EUSART_Read();
-    *DestinoPedido = EUSART_Read();
+    *origem_pedido = EUSART_Read();
+    *destino_pedido = EUSART_Read();
     if(EUSART_Read() == 13)
         return 0;
     }
@@ -4864,10 +4887,26 @@ void UART_EnviaDados(void){
 
 void MatrizLed (void){
     uint8_t data[2];
-    uint8_t digAndar = (andar_atual)<<2;
+    uint8_t dig_andar = (andar_atual)<<2;
+    uint8_t pos_LUT_dir = estado_atual<<2;
+    do { LATBbits.LATB1 = 0; } while(0);
     for(uint8_t i=1;i<5;i++){
         data[0] = i;
-        data[1] = LUT_Andar[digAndar];
-        digAndar++;
+        data[1] = LUT_Andar[dig_andar];
+        SPI1_ExchangeBlock(data, 2);
+        dig_andar++;
     }
+    for(uint8_t i=1;i<4;i++){
+        data[0] = i;
+        data[1] = LUT_dir[pos_LUT_dir];
+        SPI1_ExchangeBlock(data, 2);
+        pos_LUT_dir++;
+    }
+    data[0] = 4;
+    data[1] = pos_LUT_dir;
+    data[1] = data[1] + (solicitacoes[0])*128;
+    data[1] = data[1] + (solicitacoes[1])*64;
+    data[1] = data[1] + (solicitacoes[2])*32;
+    data[1] = data[1] + (solicitacoes[3])*16;
+    SPI1_ExchangeBlock(data, 2);
 }

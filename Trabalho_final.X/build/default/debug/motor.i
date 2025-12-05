@@ -4425,6 +4425,7 @@ typedef enum {
     ESTADO_REVERSAO
 } EstadoElevador;
 
+
 extern volatile EstadoElevador estado_atual;
 # 10 "motor.c" 2
 # 1 "./mcc_generated_files/mcc.h" 1

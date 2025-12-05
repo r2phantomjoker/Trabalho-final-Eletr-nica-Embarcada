@@ -23,6 +23,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "112
 [; ;./globals.h: 112: extern volatile uint8_t temperatura_ponte;
 [v _temperatura_ponte `Vuc ~T0 @X0 0 e ]
+"45 comm.c
+[; ;comm.c: 45:     uint8_t pos_LUT_dir = estado_atual<<2;
+[c E2504 0 1 2 3 4 .. ]
+[n E2504 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
+"134 ./globals.h
+[; ;./globals.h: 134: extern volatile EstadoElevador estado_atual;
+[v _estado_atual `VE2504 ~T0 @X0 0 e ]
+"2102 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2102:     struct {
+[s S112 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S112 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"2101
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2101: typedef union {
+[u S111 `S112 1 ]
+[n S111 . . ]
+"2113
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2113: extern volatile LATBbits_t LATBbits __attribute__((address(0x10D)));
+[v _LATBbits `VS111 ~T0 @X0 0 e@269 ]
+"67 ./mcc_generated_files/spi1.h
+[; ;./mcc_generated_files/spi1.h: 67: void SPI1_ExchangeBlock(void *block, size_t blockSize);
+[v _SPI1_ExchangeBlock `(v ~T0 @X0 0 ef2`*v`ui ]
+"123 ./globals.h
+[; ;./globals.h: 123: extern volatile _Bool solicitacoes[4];
+[v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
 "13 ./comm.h
 [; ;./comm.h: 13: const uint8_t LUT_Andar[]= {
 [v _LUT_Andar `Cuc ~T0 @X0 -> 16 `i e ]
@@ -44,6 +68,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 4 `i `uc
 -> -> 4 `i `uc
 -> -> 255 `i `uc
+..
+]
+"35
+[; ;./comm.h: 35: const uint8_t LUT_dir[] = {
+[v _LUT_dir `Cuc ~T0 @X0 -> 12 `i e ]
+[i _LUT_dir
+:U ..
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 2 `i `uc
 ..
 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
@@ -521,23 +564,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 6748: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "7 comm.c
-[; ;comm.c: 7: int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido){
+[; ;comm.c: 7: int UART_RecebePedido(char* origem_pedido, char* destino_pedido){
 [v _UART_RecebePedido `(i ~T0 @X0 1 ef2`*uc`*uc ]
 {
 [e :U _UART_RecebePedido ]
-[v _OrigemPedido `*uc ~T0 @X0 1 r1 ]
-[v _DestinoPedido `*uc ~T0 @X0 1 r2 ]
+[v _origem_pedido `*uc ~T0 @X0 1 r1 ]
+[v _destino_pedido `*uc ~T0 @X0 1 r2 ]
 [f ]
 "8
 [; ;comm.c: 8:     if(EUSART_Read() == '$'){
 [e $ ! == -> ( _EUSART_Read ..  `ui -> 36 `ui 360  ]
 {
 "9
-[; ;comm.c: 9:     *OrigemPedido = EUSART_Read();
-[e = *U _OrigemPedido -> ( _EUSART_Read ..  `uc ]
+[; ;comm.c: 9:     *origem_pedido = EUSART_Read();
+[e = *U _origem_pedido -> ( _EUSART_Read ..  `uc ]
 "10
-[; ;comm.c: 10:     *DestinoPedido = EUSART_Read();
-[e = *U _DestinoPedido -> ( _EUSART_Read ..  `uc ]
+[; ;comm.c: 10:     *destino_pedido = EUSART_Read();
+[e = *U _destino_pedido -> ( _EUSART_Read ..  `uc ]
 "11
 [; ;comm.c: 11:     if(EUSART_Read() == 13)
 [e $ ! == -> ( _EUSART_Read ..  `i -> 13 `i 361  ]
@@ -629,35 +672,98 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;comm.c: 43:     uint8_t data[2];
 [v _data `uc ~T0 @X0 -> 2 `i a ]
 "44
-[; ;comm.c: 44:     uint8_t digAndar = (andar_atual)<<2;
-[v _digAndar `uc ~T0 @X0 1 a ]
-[e = _digAndar -> << -> _andar_atual `i -> 2 `i `uc ]
+[; ;comm.c: 44:     uint8_t dig_andar = (andar_atual)<<2;
+[v _dig_andar `uc ~T0 @X0 1 a ]
+[e = _dig_andar -> << -> _andar_atual `i -> 2 `i `uc ]
 "45
-[; ;comm.c: 45:     for(uint8_t i=1;i<5;i++){
+[; ;comm.c: 45:     uint8_t pos_LUT_dir = estado_atual<<2;
+[v _pos_LUT_dir `uc ~T0 @X0 1 a ]
+[e = _pos_LUT_dir -> << -> _estado_atual `ui -> 2 `i `uc ]
+"46
+[; ;comm.c: 46:     do { LATBbits.LATB1 = 0; } while(0);
+[e :U 366 ]
+{
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
+}
+[e :U 365 ]
+"47
+[; ;comm.c: 47:     for(uint8_t i=1;i<5;i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 364  ]
-[e $U 365  ]
-[e :U 364 ]
+[e $ < -> _i `i -> 5 `i 367  ]
+[e $U 368  ]
+[e :U 367 ]
 {
-"46
-[; ;comm.c: 46:         data[0] = i;
-[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux _i ]
-"47
-[; ;comm.c: 47:         data[1] = LUT_Andar[digAndar];
-[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux *U + &U _LUT_Andar * -> _digAndar `ux -> -> # *U &U _LUT_Andar `ui `ux ]
 "48
-[; ;comm.c: 48:         digAndar++;
-[e ++ _digAndar -> -> 1 `i `uc ]
+[; ;comm.c: 48:         data[0] = i;
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux _i ]
 "49
-[; ;comm.c: 49:     }
+[; ;comm.c: 49:         data[1] = LUT_Andar[dig_andar];
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux *U + &U _LUT_Andar * -> _dig_andar `ux -> -> # *U &U _LUT_Andar `ui `ux ]
+"50
+[; ;comm.c: 50:         SPI1_ExchangeBlock(data, 2);
+[e ( _SPI1_ExchangeBlock (2 , -> &U _data `*v -> -> 2 `i `ui ]
+"51
+[; ;comm.c: 51:         dig_andar++;
+[e ++ _dig_andar -> -> 1 `i `uc ]
+"52
+[; ;comm.c: 52:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 364  ]
-[e :U 365 ]
+[e $ < -> _i `i -> 5 `i 367  ]
+[e :U 368 ]
 }
-"50
-[; ;comm.c: 50: }
+"53
+[; ;comm.c: 53:     for(uint8_t i=1;i<4;i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 4 `i 370  ]
+[e $U 371  ]
+[e :U 370 ]
+{
+"54
+[; ;comm.c: 54:         data[0] = i;
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux _i ]
+"55
+[; ;comm.c: 55:         data[1] = LUT_dir[pos_LUT_dir];
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux *U + &U _LUT_dir * -> _pos_LUT_dir `ux -> -> # *U &U _LUT_dir `ui `ux ]
+"56
+[; ;comm.c: 56:         SPI1_ExchangeBlock(data, 2);
+[e ( _SPI1_ExchangeBlock (2 , -> &U _data `*v -> -> 2 `i `ui ]
+"57
+[; ;comm.c: 57:         pos_LUT_dir++;
+[e ++ _pos_LUT_dir -> -> 1 `i `uc ]
+"58
+[; ;comm.c: 58:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 4 `i 370  ]
+[e :U 371 ]
+}
+"59
+[; ;comm.c: 59:     data[0] = 4;
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 4 `i `uc ]
+"60
+[; ;comm.c: 60:     data[1] = pos_LUT_dir;
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux _pos_LUT_dir ]
+"61
+[; ;comm.c: 61:     data[1] = data[1] + (solicitacoes[0])*128;
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> + -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i * -> *U + &U _solicitacoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 128 `i `uc ]
+"62
+[; ;comm.c: 62:     data[1] = data[1] + (solicitacoes[1])*64;
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> + -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i * -> *U + &U _solicitacoes * -> -> -> 1 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 64 `i `uc ]
+"63
+[; ;comm.c: 63:     data[1] = data[1] + (solicitacoes[2])*32;
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> + -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i * -> *U + &U _solicitacoes * -> -> -> 2 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 32 `i `uc ]
+"64
+[; ;comm.c: 64:     data[1] = data[1] + (solicitacoes[3])*16;
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> + -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i * -> *U + &U _solicitacoes * -> -> -> 3 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 16 `i `uc ]
+"65
+[; ;comm.c: 65:     SPI1_ExchangeBlock(data, 2);
+[e ( _SPI1_ExchangeBlock (2 , -> &U _data `*v -> -> 2 `i `ui ]
+"66
+[; ;comm.c: 66: }
 [e :UE 363 ]
 }

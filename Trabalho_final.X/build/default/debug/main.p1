@@ -31,8 +31,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "213 ./mcc_generated_files/eusart.h
 [; ;./mcc_generated_files/eusart.h: 213: _Bool EUSART_is_rx_ready(void);
 [v _EUSART_is_rx_ready `(a ~T0 @X0 0 ef ]
-"41 ./comm.h
-[; ;./comm.h: 41: int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
+"58 ./comm.h
+[; ;./comm.h: 58: int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 [v _UART_RecebePedido `(i ~T0 @X0 0 ef2`*uc`*uc ]
 "123 ./globals.h
 [; ;./globals.h: 123: extern volatile _Bool solicitacoes[4];
@@ -56,15 +56,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 61:                         estado_atual = ESTADO_SUBINDO;
 [c E2974 0 1 2 3 4 .. ]
 [n E2974 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
-"133 ./globals.h
-[; ;./globals.h: 133: extern volatile EstadoElevador estado_atual;
+"134 ./globals.h
+[; ;./globals.h: 134: extern volatile EstadoElevador estado_atual;
 [v _estado_atual `VE2974 ~T0 @X0 0 e ]
 "23 ./motor.h
 [; ;./motor.h: 23: void Controle_Descer(void);
 [v _Controle_Descer `(v ~T0 @X0 0 ef ]
-"47 ./comm.h
-[; ;./comm.h: 47: void UART_EnviaDados(void);
+"64 ./comm.h
+[; ;./comm.h: 64: void UART_EnviaDados(void);
 [v _UART_EnviaDados `(v ~T0 @X0 0 ef ]
+"69
+[; ;./comm.h: 69: void MatrizLed (void);
+[v _MatrizLed `(v ~T0 @X0 0 ef ]
 [v F202 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
 [v __delay `JF202 ~T0 @X0 0 e ]
@@ -566,6 +569,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 255 `i `uc
 ..
 ]
+"35
+[; ;./comm.h: 35: const uint8_t LUT_dir[] = {
+[v _LUT_dir `Cuc ~T0 @X0 -> 12 `i e ]
+[i _LUT_dir
+:U ..
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 2 `i `uc
+..
+]
 "18 main.c
 [; ;main.c: 18: uint16_t contador_telemetria = 0;
 [v _contador_telemetria `us ~T0 @X0 1 e ]
@@ -869,6 +891,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "124
 [; ;main.c: 124:             UART_EnviaDados();
 [e ( _UART_EnviaDados ..  ]
+"125
+[; ;main.c: 125:             MatrizLed();
+[e ( _MatrizLed ..  ]
 "126
 [; ;main.c: 126:             contador_telemetria = 0;
 [e = _contador_telemetria -> -> 0 `i `us ]

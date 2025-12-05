@@ -3,13 +3,17 @@
 [d edition pro ]
 [d chip 16F1827 ]
 [d frameptr 6 ]
-"85 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
+"85 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
 [e E2495 . `uc
 channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
-"61 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
+"72 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/spi1.c
+[e E358 . `uc
+SPI1_DEFAULT 0
+]
+"61 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
 [e E2974 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
@@ -17,7 +21,7 @@ ESTADO_DESCENDO 2
 ESTADO_ESPERA_PORTA 3
 ESTADO_REVERSAO 4
 ]
-"23 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\globals.c
+"23 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\globals.c
 [e E2497 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
@@ -25,7 +29,7 @@ ESTADO_DESCENDO 2
 ESTADO_ESPERA_PORTA 3
 ESTADO_REVERSAO 4
 ]
-"110 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
+"110 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
 [e E2503 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
@@ -33,9 +37,13 @@ ESTADO_DESCENDO 2
 ESTADO_ESPERA_PORTA 3
 ESTADO_REVERSAO 4
 ]
-"72 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/spi1.c
-[e E358 . `uc
-SPI1_DEFAULT 0
+"45 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\comm.c
+[e E2504 . `uc
+ESTADO_PARADO 0
+ESTADO_SUBINDO 1
+ESTADO_DESCENDO 2
+ESTADO_ESPERA_PORTA 3
+ESTADO_REVERSAO 4
 ]
 "5 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
@@ -53,23 +61,25 @@ SPI1_DEFAULT 0
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"7 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\comm.c
+"7 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\comm.c
 [v _UART_RecebePedido UART_RecebePedido `(i  1 e 2 0 ]
 "18
 [v _UART_EnviaDados UART_EnviaDados `(v  1 e 1 0 ]
-"24 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
+"42
+[v _MatrizLed MatrizLed `(v  1 e 1 0 ]
+"24 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"67 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
+"67 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
-"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp1.c
+"58 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp1.c
 [v _CMP1_Initialize CMP1_Initialize `(v  1 e 1 0 ]
 "85
 [v _CMP1_ISR CMP1_ISR `(v  1 e 1 0 ]
-"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
+"58 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
 [v _CMP2_Initialize CMP2_Initialize `(v  1 e 1 0 ]
 "85
 [v _CMP2_ISR CMP2_ISR `(v  1 e 1 0 ]
-"88 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
+"88 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 "137
 [v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
@@ -99,17 +109,17 @@ SPI1_DEFAULT 0
 [v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
 "280
 [v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
-"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/fvr.c
+"58 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/fvr.c
 [v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
-"52 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
+"52 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"50 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
+"50 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "68
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "78
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
-"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
+"58 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "119
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
@@ -125,19 +135,21 @@ SPI1_DEFAULT 0
 [v _IOCBF3_SetInterruptHandler IOCBF3_SetInterruptHandler `(v  1 e 1 0 ]
 "188
 [v _IOCBF3_DefaultInterruptHandler IOCBF3_DefaultInterruptHandler `(v  1 e 1 0 ]
-"64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
+"64 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
 [v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
 "82
 [v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
-"62 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/spi1.c
+"62 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/spi1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
 "92
 [v _SPI1_ExchangeByte SPI1_ExchangeByte `(uc  1 e 1 0 ]
-"63 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
+"100
+[v _SPI1_ExchangeBlock SPI1_ExchangeBlock `(v  1 e 1 0 ]
+"63 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "80
 [v _TMR0_ReadTimer TMR0_ReadTimer `(uc  1 e 1 0 ]
-"64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
+"64 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 "119
 [v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
@@ -145,7 +157,7 @@ SPI1_DEFAULT 0
 [v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
 "136
 [v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
-"64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
+"64 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
 "119
 [v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
@@ -153,7 +165,7 @@ SPI1_DEFAULT 0
 [v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
 "136
 [v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
-"34 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
+"34 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
 [v _SENSORES_CalcularVelocidade SENSORES_CalcularVelocidade `(v  1 e 1 0 ]
 "78
 [v _Controle_Subir Controle_Subir `(v  1 e 1 0 ]
@@ -165,8 +177,10 @@ SPI1_DEFAULT 0
 [v _Verificar_Sensores Verificar_Sensores `(v  1 e 1 0 ]
 "122
 [v _Buscar_Proxima_Parada Buscar_Proxima_Parada `(i  1 e 2 0 ]
-"13 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X/comm.h
+"13 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X/comm.h
 [v _LUT_Andar LUT_Andar `DC[16]uc  1 e 16 0 ]
+"35
+[v _LUT_dir LUT_dir `DC[12]uc  1 e 12 0 ]
 [s S416 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
@@ -184,7 +198,7 @@ SPI1_DEFAULT 0
 ]
 [u S430 . 1 `S416 1 . 1 0 `S425 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES430  1 e 1 @11 ]
-[s S1272 . 1 `uc 1 RB0 1 0 :1:0 
+[s S1391 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -194,8 +208,8 @@ SPI1_DEFAULT 0
 `uc 1 RB7 1 0 :1:7 
 ]
 "508
-[u S1281 . 1 `S1272 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1281  1 e 1 @13 ]
+[u S1400 . 1 `S1391 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1400  1 e 1 @13 ]
 [s S560 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -256,7 +270,7 @@ SPI1_DEFAULT 0
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1214
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
-[s S1421 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S1155 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -266,8 +280,8 @@ SPI1_DEFAULT 0
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "1231
-[u S1430 . 1 `S1421 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES1430  1 e 1 @141 ]
+[u S1164 . 1 `S1155 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES1164  1 e 1 @141 ]
 [s S539 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
@@ -354,7 +368,7 @@ SPI1_DEFAULT 0
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2039
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1250 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1369 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -364,13 +378,25 @@ SPI1_DEFAULT 0
 `uc 1 LATA7 1 0 :1:7 
 ]
 "2056
-[u S1259 . 1 `S1250 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1259  1 e 1 @268 ]
+[u S1378 . 1 `S1369 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1378  1 e 1 @268 ]
 "2096
 [v _LATB LATB `VEuc  1 e 1 @269 ]
+[s S1528 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"2113
+[u S1537 . 1 `S1528 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1537  1 e 1 @269 ]
 "2158
 [v _CM1CON0 CM1CON0 `VEuc  1 e 1 @273 ]
-[s S1294 . 1 `uc 1 C1SYNC 1 0 :1:0 
+[s S1413 . 1 `uc 1 C1SYNC 1 0 :1:0 
 `uc 1 C1HYS 1 0 :1:1 
 `uc 1 C1SP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -380,13 +406,13 @@ SPI1_DEFAULT 0
 `uc 1 C1ON 1 0 :1:7 
 ]
 "2175
-[u S1303 . 1 `S1294 1 . 1 0 ]
-[v _CM1CON0bits CM1CON0bits `VES1303  1 e 1 @273 ]
+[u S1422 . 1 `S1413 1 . 1 0 ]
+[v _CM1CON0bits CM1CON0bits `VES1422  1 e 1 @273 ]
 "2215
 [v _CM1CON1 CM1CON1 `VEuc  1 e 1 @274 ]
 "2281
 [v _CM2CON0 CM2CON0 `VEuc  1 e 1 @275 ]
-[s S1315 . 1 `uc 1 C2SYNC 1 0 :1:0 
+[s S1434 . 1 `uc 1 C2SYNC 1 0 :1:0 
 `uc 1 C2HYS 1 0 :1:1 
 `uc 1 C2SP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -396,8 +422,8 @@ SPI1_DEFAULT 0
 `uc 1 C2ON 1 0 :1:7 
 ]
 "2298
-[u S1324 . 1 `S1315 1 . 1 0 ]
-[v _CM2CON0bits CM2CON0bits `VES1324  1 e 1 @275 ]
+[u S1443 . 1 `S1434 1 . 1 0 ]
+[v _CM2CON0bits CM2CON0bits `VES1443  1 e 1 @275 ]
 "2338
 [v _CM2CON1 CM2CON1 `VEuc  1 e 1 @276 ]
 [s S174 . 1 `uc 1 MC1OUT 1 0 :1:0 
@@ -483,7 +509,7 @@ SPI1_DEFAULT 0
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
 "3822
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
-[s S1442 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S1176 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
@@ -493,10 +519,10 @@ SPI1_DEFAULT 0
 `uc 1 WCOL 1 0 :1:7 
 ]
 "3851
-[s S1451 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S1185 . 1 `uc 1 SSPM 1 0 :4:0 
 ]
-[u S1453 . 1 `S1442 1 . 1 0 `S1451 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES1453  1 e 1 @533 ]
+[u S1187 . 1 `S1176 1 . 1 0 `S1185 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES1187  1 e 1 @533 ]
 "4026
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
 [s S25 . 1 `uc 1 C1TSEL0 1 0 :1:0 
@@ -585,7 +611,7 @@ SPI1_DEFAULT 0
 ]
 [u S871 . 1 `S859 1 . 1 0 `S867 1 . 1 0 ]
 [v _T4CONbits T4CONbits `VES871  1 e 1 @1047 ]
-"11 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\globals.c
+"11 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\globals.c
 [v _andar_atual andar_atual `VEuc  1 e 1 0 ]
 "12
 [v _andar_destino andar_destino `VEuc  1 e 1 0 ]
@@ -601,14 +627,14 @@ SPI1_DEFAULT 0
 [v _solicitacoes solicitacoes `VE[4]a  1 e 4 0 ]
 "23
 [v _estado_atual estado_atual `VEE2974  1 e 1 0 ]
-"18 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
+"18 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
 [v _contador_telemetria contador_telemetria `us  1 e 2 0 ]
 "19
 [v _contador_espera contador_espera `us  1 e 2 0 ]
 "20
 [v _buffer_origem buffer_origem `uc  1 e 1 0 ]
 [v _buffer_destino buffer_destino `uc  1 e 1 0 ]
-"62 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
+"62 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
 "63
 [v _eusartTxTail eusartTxTail `VEuc  1 e 1 0 ]
@@ -644,24 +670,24 @@ SPI1_DEFAULT 0
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "82
 [v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
-"54 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
+"54 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
 [v _IOCBF0_InterruptHandler IOCBF0_InterruptHandler `*.37(v  1 e 2 0 ]
 "55
 [v _IOCBF3_InterruptHandler IOCBF3_InterruptHandler `*.37(v  1 e 2 0 ]
-[s S1413 . 4 `uc 1 con1 1 0 `uc 1 stat 1 1 `uc 1 add 1 2 `uc 1 operation 1 3 ]
-"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/spi1.c
-[v _spi1_configuration spi1_configuration `DC[1]S1413  1 s 4 spi1_configuration ]
-"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
+[s S1147 . 4 `uc 1 con1 1 0 `uc 1 stat 1 1 `uc 1 add 1 2 `uc 1 operation 1 3 ]
+"58 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/spi1.c
+[v _spi1_configuration spi1_configuration `DC[1]S1147  1 s 4 spi1_configuration ]
+"58 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
-"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
+"58 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
-"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
+"58 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_InterruptHandler TMR4_InterruptHandler `*.37(v  1 e 2 0 ]
-"17 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
+"17 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
 [v _total_pulsos total_pulsos `us  1 s 2 total_pulsos ]
 "20
 [v _ultimo_valor_timer0 ultimo_valor_timer0 `uc  1 s 1 ultimo_valor_timer0 ]
-"24 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
+"24 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "101
@@ -676,7 +702,7 @@ SPI1_DEFAULT 0
 [v main@origem origem `i  1 a 2 8 ]
 "131
 } 0
-"97 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
+"97 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
 [v _Verificar_Sensores Verificar_Sensores `(v  1 e 1 0 ]
 {
 "119
@@ -686,21 +712,21 @@ SPI1_DEFAULT 0
 {
 "93
 } 0
-"7 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\comm.c
+"7 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\comm.c
 [v _UART_RecebePedido UART_RecebePedido `(i  1 e 2 0 ]
 {
-[v UART_RecebePedido@OrigemPedido OrigemPedido `*.4uc  1 p 1 15 ]
-[v UART_RecebePedido@DestinoPedido DestinoPedido `*.4uc  1 p 1 16 ]
+[v UART_RecebePedido@origem_pedido origem_pedido `*.4uc  1 p 1 15 ]
+[v UART_RecebePedido@destino_pedido destino_pedido `*.4uc  1 p 1 16 ]
 "16
 } 0
-"151 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
+"151 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
 {
 "153
 [v EUSART_Read@readValue readValue `uc  1 a 1 14 ]
 "171
 } 0
-"18 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\comm.c
+"18 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\comm.c
 [v _UART_EnviaDados UART_EnviaDados `(v  1 e 1 0 ]
 {
 "40
@@ -729,7 +755,7 @@ SPI1_DEFAULT 0
 [v ___awdiv@dividend dividend `i  1 p 2 22 ]
 "41
 } 0
-"173 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
+"173 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
 {
 [v EUSART_Write@txData txData `uc  1 p 1 wreg ]
@@ -737,7 +763,7 @@ SPI1_DEFAULT 0
 [v EUSART_Write@txData txData `uc  1 p 1 14 ]
 "194
 } 0
-"50 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
+"50 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "66
@@ -747,7 +773,7 @@ SPI1_DEFAULT 0
 {
 "82
 } 0
-"64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
+"64 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
 {
 "85
@@ -758,7 +784,7 @@ SPI1_DEFAULT 0
 [v TMR4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 14 ]
 "134
 } 0
-"64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
+"64 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
 "85
@@ -769,22 +795,22 @@ SPI1_DEFAULT 0
 [v TMR2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 14 ]
 "134
 } 0
-"63 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
+"63 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
-"62 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/spi1.c
+"62 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/spi1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
 {
 "70
 } 0
-"64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
+"64 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
 [v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
 {
 "80
 } 0
-"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
+"58 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "117
@@ -801,17 +827,17 @@ SPI1_DEFAULT 0
 [v IOCBF0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 14 ]
 "153
 } 0
-"68 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
+"68 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "76
 } 0
-"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/fvr.c
+"58 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/fvr.c
 [v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
 {
 "62
 } 0
-"88 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
+"88 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 {
 "130
@@ -846,27 +872,52 @@ SPI1_DEFAULT 0
 [v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 14 ]
 "274
 } 0
-"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
+"58 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
 [v _CMP2_Initialize CMP2_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
-"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp1.c
+"58 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp1.c
 [v _CMP1_Initialize CMP1_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
-"67 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
+"67 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 {
 "83
 } 0
-"137 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
+"42 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\comm.c
+[v _MatrizLed MatrizLed `(v  1 e 1 0 ]
+{
+"53
+[v MatrizLed@i_1573 i `uc  1 a 1 22 ]
+"47
+[v MatrizLed@i i `uc  1 a 1 21 ]
+"43
+[v MatrizLed@data data `[2]uc  1 a 2 23 ]
+"45
+[v MatrizLed@pos_LUT_dir pos_LUT_dir `uc  1 a 1 20 ]
+"44
+[v MatrizLed@dig_andar dig_andar `uc  1 a 1 19 ]
+"66
+} 0
+"100 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/spi1.c
+[v _SPI1_ExchangeBlock SPI1_ExchangeBlock `(v  1 e 1 0 ]
+{
+"102
+[v SPI1_ExchangeBlock@data data `*.4uc  1 a 1 17 ]
+"100
+[v SPI1_ExchangeBlock@block block `*.4v  1 p 1 14 ]
+[v SPI1_ExchangeBlock@blockSize blockSize `ui  1 p 2 15 ]
+"110
+} 0
+"137 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
 {
 "140
 } 0
-"78 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
+"78 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
 [v _Controle_Subir Controle_Subir `(v  1 e 1 0 ]
 {
 "82
@@ -876,36 +927,36 @@ SPI1_DEFAULT 0
 {
 "88
 } 0
-"82 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
+"82 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
 [v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
 {
 [v PWM3_LoadDutyValue@dutyValue dutyValue `us  1 p 2 14 ]
 "89
 } 0
-"122 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
+"122 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
 [v _Buscar_Proxima_Parada Buscar_Proxima_Parada `(i  1 e 2 0 ]
 {
 "136
-[v Buscar_Proxima_Parada@i_1392 i `i  1 a 2 21 ]
+[v Buscar_Proxima_Parada@i_1511 i `i  1 a 2 21 ]
 "130
-[v Buscar_Proxima_Parada@i_1391 i `i  1 a 2 19 ]
+[v Buscar_Proxima_Parada@i_1510 i `i  1 a 2 19 ]
 "125
 [v Buscar_Proxima_Parada@i i `i  1 a 2 17 ]
 "141
-[v Buscar_Proxima_Parada@i_1393 i `i  1 a 2 23 ]
+[v Buscar_Proxima_Parada@i_1512 i `i  1 a 2 23 ]
 "144
 } 0
-"52 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
+"52 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "94
 } 0
-"119 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
+"119 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
 {
 "129
 } 0
-"34 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
+"34 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
 [v _SENSORES_CalcularVelocidade SENSORES_CalcularVelocidade `(v  1 e 1 0 ]
 {
 "73
@@ -918,7 +969,7 @@ SPI1_DEFAULT 0
 [v SENSORES_CalcularVelocidade@valor_atual valor_atual `uc  1 a 1 12 ]
 "75
 } 0
-"136 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
+"136 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
 "139
@@ -945,14 +996,14 @@ SPI1_DEFAULT 0
 [v ___lldiv@dividend dividend `ul  1 p 4 4 ]
 "30
 } 0
-"80 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
+"80 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
 [v _TMR0_ReadTimer TMR0_ReadTimer `(uc  1 e 1 0 ]
 {
 "82
 [v TMR0_ReadTimer@readVal readVal `uc  1 a 1 0 ]
 "87
 } 0
-"119 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
+"119 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
 [v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
 {
 "129
@@ -962,7 +1013,7 @@ SPI1_DEFAULT 0
 {
 "139
 } 0
-"119 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
+"119 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
 {
 "131
@@ -987,7 +1038,7 @@ SPI1_DEFAULT 0
 {
 "161
 } 0
-"197 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
+"197 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
 {
 "214
@@ -1016,12 +1067,12 @@ SPI1_DEFAULT 0
 {
 "248
 } 0
-"85 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
+"85 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
 [v _CMP2_ISR CMP2_ISR `(v  1 e 1 0 ]
 {
 "89
 } 0
-"85 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp1.c
+"85 C:\Users\gabri\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp1.c
 [v _CMP1_ISR CMP1_ISR `(v  1 e 1 0 ]
 {
 "89

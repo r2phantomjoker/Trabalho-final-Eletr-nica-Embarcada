@@ -4394,6 +4394,7 @@ typedef enum {
     ESTADO_REVERSAO
 } EstadoElevador;
 
+
 extern volatile EstadoElevador estado_atual;
 # 8 "globals.c" 2
 

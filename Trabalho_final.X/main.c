@@ -122,7 +122,7 @@ void main(void) {
         contador_telemetria++;
         if (contador_telemetria >= 30) { 
             UART_EnviaDados();
-            // MAX7219_AtualizarDisplay(andar_atual, estado_motor);
+            MatrizLed();
             contador_telemetria = 0; 
         }
 
