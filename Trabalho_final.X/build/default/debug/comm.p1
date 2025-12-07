@@ -59,8 +59,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1293
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1293: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x091)));
 [v _PIE1bits `VS74 ~T0 @X0 0 e@145 ]
-"205 comm.c
-[; ;comm.c: 205:     uint8_t base_seta = estado_atual * 4;
+"201 comm.c
+[; ;comm.c: 201:     uint8_t base_seta = estado_atual * 4;
 [c E2506 0 1 2 3 4 .. ]
 [n E2506 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
 "142 ./globals.h
@@ -836,106 +836,96 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;comm.c: 188: }
 [e :UE 370 ]
 }
-"191
-[; ;comm.c: 191: int Uniaomatrix (void){
-[v _Uniaomatrix `(i ~T0 @X0 1 ef ]
-{
-[e :U _Uniaomatrix ]
-[f ]
-"193
-[; ;comm.c: 193: }
-[e :UE 377 ]
-}
-"196
-[; ;comm.c: 196: void MatrizLed (void){
+"192
+[; ;comm.c: 192: void MatrizLed (void){
 [v _MatrizLed `(v ~T0 @X0 1 ef ]
 {
 [e :U _MatrizLed ]
 [f ]
-"203
-[; ;comm.c: 203:     uint8_t buffer_percurso = 0;
+"199
+[; ;comm.c: 199:     uint8_t buffer_percurso = 0;
 [v _buffer_percurso `uc ~T0 @X0 1 a ]
 [e = _buffer_percurso -> -> 0 `i `uc ]
-"204
-[; ;comm.c: 204:     uint8_t base_andar = andar_atual * 4;
+"200
+[; ;comm.c: 200:     uint8_t base_andar = andar_atual * 4;
 [v _base_andar `uc ~T0 @X0 1 a ]
 [e = _base_andar -> * -> _andar_atual `i -> 4 `i `uc ]
-"205
-[; ;comm.c: 205:     uint8_t base_seta = estado_atual * 4;
+"201
+[; ;comm.c: 201:     uint8_t base_seta = estado_atual * 4;
 [v _base_seta `uc ~T0 @X0 1 a ]
 [e = _base_seta -> * -> _estado_atual `ui -> -> 4 `i `ui `uc ]
-"208
-[; ;comm.c: 208:     for(uint8_t i=0; i<4; i++){
+"204
+[; ;comm.c: 204:     for(uint8_t i=0; i<4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 379  ]
-[e $U 380  ]
-[e :U 379 ]
+[e $ < -> _i `i -> 4 `i 378  ]
+[e $U 379  ]
+[e :U 378 ]
 {
-"210
-[; ;comm.c: 210:         MAX7219_Write(i+1, LUT_Andar[base_andar + i]);
+"206
+[; ;comm.c: 206:         MAX7219_Write(i+1, LUT_Andar[base_andar + i]);
 [e ( _MAX7219_Write (2 , -> + -> _i `i -> 1 `i `uc *U + &U _LUT_Andar * -> -> + -> _base_andar `i -> _i `i `ui `ux -> -> # *U &U _LUT_Andar `ui `ux ]
-"211
-[; ;comm.c: 211:     }
+"207
+[; ;comm.c: 207:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 379  ]
-[e :U 380 ]
+[e $ < -> _i `i -> 4 `i 378  ]
+[e :U 379 ]
 }
-"216
-[; ;comm.c: 216:     for(uint8_t i=0; i<4; i++){
+"212
+[; ;comm.c: 212:     for(uint8_t i=0; i<4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 382  ]
-[e $U 383  ]
-[e :U 382 ]
+[e $ < -> _i `i -> 4 `i 381  ]
+[e $U 382  ]
+[e :U 381 ]
 {
-"218
-[; ;comm.c: 218:         MAX7219_Write(i+5, LUT_dir[base_seta + i]);
+"214
+[; ;comm.c: 214:         MAX7219_Write(i+5, LUT_dir[base_seta + i]);
 [e ( _MAX7219_Write (2 , -> + -> _i `i -> 5 `i `uc *U + &U _LUT_dir * -> -> + -> _base_seta `i -> _i `i `ui `ux -> -> # *U &U _LUT_dir `ui `ux ]
-"219
-[; ;comm.c: 219:     }
+"215
+[; ;comm.c: 215:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 382  ]
-[e :U 383 ]
+[e $ < -> _i `i -> 4 `i 381  ]
+[e :U 382 ]
 }
-"221
-[; ;comm.c: 221:     buffer_percurso = LUT_dir[base_seta + 3];
+"217
+[; ;comm.c: 217:     buffer_percurso = LUT_dir[base_seta + 3];
 [e = _buffer_percurso *U + &U _LUT_dir * -> -> + -> _base_seta `i -> 3 `i `ui `ux -> -> # *U &U _LUT_dir `ui `ux ]
-"222
-[; ;comm.c: 222:         for (uint8_t i=0; i<4; i++){
+"218
+[; ;comm.c: 218:         for (uint8_t i=0; i<4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 385  ]
-[e $U 386  ]
-[e :U 385 ]
+[e $ < -> _i `i -> 4 `i 384  ]
+[e $U 385  ]
+[e :U 384 ]
 {
-"223
-[; ;comm.c: 223:             if(solicitacoes[i]){
-[e $ ! != -> *U + &U _solicitacoes * -> _i `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 388  ]
+"219
+[; ;comm.c: 219:             if(solicitacoes[i]){
+[e $ ! != -> *U + &U _solicitacoes * -> _i `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 387  ]
 {
-"224
-[; ;comm.c: 224:                 buffer_percurso += LUT_percurso[i] ;
+"220
+[; ;comm.c: 220:                 buffer_percurso += LUT_percurso[i] ;
 [e =+ _buffer_percurso -> *U + &U _LUT_percurso * -> _i `ux -> -> # *U &U _LUT_percurso `ui `ux `uc ]
-"225
-[; ;comm.c: 225:             }
+"221
+[; ;comm.c: 221:             }
 }
-[e :U 388 ]
-"226
-[; ;comm.c: 226:         }
+[e :U 387 ]
+"222
+[; ;comm.c: 222:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 385  ]
-[e :U 386 ]
+[e $ < -> _i `i -> 4 `i 384  ]
+[e :U 385 ]
 }
-"227
-[; ;comm.c: 227:     MAX7219_Write(8, buffer_percurso);
+"223
+[; ;comm.c: 223:     MAX7219_Write(8, buffer_percurso);
 [e ( _MAX7219_Write (2 , -> -> 8 `i `uc _buffer_percurso ]
-"232
-[; ;comm.c: 232: }
-[e :UE 378 ]
+"228
+[; ;comm.c: 228: }
+[e :UE 377 ]
 }

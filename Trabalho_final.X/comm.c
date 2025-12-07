@@ -162,9 +162,9 @@ void UART_EnviaDados(void){
 
 }
 
-// ==========================================
-// FUNÇÕES DA MATRIZ (CORRIGIDAS)
-// ==========================================
+// =================
+// FUNÇÕES DA MATRIZ 
+// =================
 
 void MatrizInicializa(void){
     // Garante que a SPI não vai gerar interrupção (redundância de segurança)
@@ -187,10 +187,6 @@ void MatrizInicializa(void){
     }
 }
 
-
-int Uniaomatrix (void){
-    
-}
 
 
 void MatrizLed (void){

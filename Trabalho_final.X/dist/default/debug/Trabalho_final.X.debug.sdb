@@ -14,7 +14,7 @@ channel_FVR 31
 [e E358 . `uc
 SPI1_DEFAULT 0
 ]
-"37 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
+"79 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
 [e E2975 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
@@ -30,22 +30,22 @@ ESTADO_DESCENDO 2
 ESTADO_ESPERA_PORTA 3
 ESTADO_REVERSAO 4
 ]
-"79 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
-[e E2925 . `uc
+"106 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
+[e E2936 . `uc
 channel_AN2 2
 channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
-"123
-[e E2503 . `uc
+"172
+[e E2508 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
 ESTADO_DESCENDO 2
 ESTADO_ESPERA_PORTA 3
 ESTADO_REVERSAO 4
 ]
-"205 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
+"201 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [e E2506 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
@@ -82,15 +82,9 @@ ESTADO_REVERSAO 4
 [v _UART_EnviaDados UART_EnviaDados `(v  1 e 1 0 ]
 "169
 [v _MatrizInicializa MatrizInicializa `(v  1 e 1 0 ]
-"196
+"192
 [v _MatrizLed MatrizLed `(v  1 e 1 0 ]
-"22 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
-[v _Existe_Chamada_Acima Existe_Chamada_Acima `(a  1 e 1 0 ]
-"29
-[v _Existe_Chamada_Abaixo Existe_Chamada_Abaixo `(a  1 e 1 0 ]
-"36
-[v _Limpar_Chamada_Atual Limpar_Chamada_Atual `(v  1 e 1 0 ]
-"49
+"13 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "67 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -188,16 +182,22 @@ ESTADO_REVERSAO 4
 [v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
 "136
 [v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
-"34 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
+"62 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
 [v _SENSORES_CalcularVelocidade SENSORES_CalcularVelocidade `(v  1 e 1 0 ]
-"91
+"122
 [v _Controle_Subir Controle_Subir `(v  1 e 1 0 ]
-"97
+"132
 [v _Controle_Descer Controle_Descer `(v  1 e 1 0 ]
-"103
+"142
 [v _Controle_Parar Controle_Parar `(v  1 e 1 0 ]
-"110
+"158
 [v _Verificar_Sensores Verificar_Sensores `(v  1 e 1 0 ]
+"228
+[v _Existe_Chamada_Acima Existe_Chamada_Acima `(a  1 e 1 0 ]
+"243
+[v _Existe_Chamada_Abaixo Existe_Chamada_Abaixo `(a  1 e 1 0 ]
+"257
+[v _Limpar_Chamada_Atual Limpar_Chamada_Atual `(v  1 e 1 0 ]
 [s S417 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
@@ -215,7 +215,7 @@ ESTADO_REVERSAO 4
 ]
 [u S431 . 1 `S417 1 . 1 0 `S426 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES431  1 e 1 @11 ]
-[s S1466 . 1 `uc 1 RB0 1 0 :1:0 
+[s S1476 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -225,8 +225,8 @@ ESTADO_REVERSAO 4
 `uc 1 RB7 1 0 :1:7 
 ]
 "508
-[u S1475 . 1 `S1466 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1475  1 e 1 @13 ]
+[u S1485 . 1 `S1476 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1485  1 e 1 @13 ]
 [s S561 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -385,7 +385,7 @@ ESTADO_REVERSAO 4
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2039
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1444 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1454 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -395,11 +395,11 @@ ESTADO_REVERSAO 4
 `uc 1 LATA7 1 0 :1:7 
 ]
 "2056
-[u S1453 . 1 `S1444 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1453  1 e 1 @268 ]
+[u S1463 . 1 `S1454 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1463  1 e 1 @268 ]
 "2096
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S1284 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S1276 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -409,11 +409,11 @@ ESTADO_REVERSAO 4
 `uc 1 LATB7 1 0 :1:7 
 ]
 "2113
-[u S1293 . 1 `S1284 1 . 1 0 ]
-[v _LATBbits LATBbits `VES1293  1 e 1 @269 ]
+[u S1285 . 1 `S1276 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1285  1 e 1 @269 ]
 "2158
 [v _CM1CON0 CM1CON0 `VEuc  1 e 1 @273 ]
-[s S1488 . 1 `uc 1 C1SYNC 1 0 :1:0 
+[s S1498 . 1 `uc 1 C1SYNC 1 0 :1:0 
 `uc 1 C1HYS 1 0 :1:1 
 `uc 1 C1SP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -423,13 +423,13 @@ ESTADO_REVERSAO 4
 `uc 1 C1ON 1 0 :1:7 
 ]
 "2175
-[u S1497 . 1 `S1488 1 . 1 0 ]
-[v _CM1CON0bits CM1CON0bits `VES1497  1 e 1 @273 ]
+[u S1507 . 1 `S1498 1 . 1 0 ]
+[v _CM1CON0bits CM1CON0bits `VES1507  1 e 1 @273 ]
 "2215
 [v _CM1CON1 CM1CON1 `VEuc  1 e 1 @274 ]
 "2281
 [v _CM2CON0 CM2CON0 `VEuc  1 e 1 @275 ]
-[s S1509 . 1 `uc 1 C2SYNC 1 0 :1:0 
+[s S1519 . 1 `uc 1 C2SYNC 1 0 :1:0 
 `uc 1 C2HYS 1 0 :1:1 
 `uc 1 C2SP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -439,8 +439,8 @@ ESTADO_REVERSAO 4
 `uc 1 C2ON 1 0 :1:7 
 ]
 "2298
-[u S1518 . 1 `S1509 1 . 1 0 ]
-[v _CM2CON0bits CM2CON0bits `VES1518  1 e 1 @275 ]
+[u S1528 . 1 `S1519 1 . 1 0 ]
+[v _CM2CON0bits CM2CON0bits `VES1528  1 e 1 @275 ]
 "2338
 [v _CM2CON1 CM2CON1 `VEuc  1 e 1 @276 ]
 [s S175 . 1 `uc 1 MC1OUT 1 0 :1:0 
@@ -652,16 +652,17 @@ ESTADO_REVERSAO 4
 [v _solicitacoes solicitacoes `VE[4]a  1 e 4 0 ]
 "23
 [v _estado_atual estado_atual `VEE2975  1 e 1 0 ]
-"12 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
+"30
 [v _chamadas_subida chamadas_subida `[4]a  1 e 4 0 ]
-"13
+"31
 [v _chamadas_descida chamadas_descida `[4]a  1 e 4 0 ]
-"16
+"33
 [v _contador_telemetria contador_telemetria `us  1 e 2 0 ]
-"17
+"34
 [v _contador_espera contador_espera `us  1 e 2 0 ]
-"18
+"38
 [v _buffer_origem buffer_origem `uc  1 e 1 0 ]
+"39
 [v _buffer_destino buffer_destino `uc  1 e 1 0 ]
 "62 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
@@ -712,30 +713,30 @@ ESTADO_REVERSAO 4
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
 "58 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_InterruptHandler TMR4_InterruptHandler `*.37(v  1 e 2 0 ]
-"17 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
+"46 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
 [v _total_pulsos total_pulsos `us  1 s 2 total_pulsos ]
-"20
+"52
 [v _ultimo_valor_timer0 ultimo_valor_timer0 `uc  1 s 1 ultimo_valor_timer0 ]
-"49 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
+"13 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"182
+"189
 [v main@i i `i  1 a 2 13 ]
-"74
+"49
 [v main@destino destino `i  1 a 2 17 ]
-"73
+"48
 [v main@origem origem `i  1 a 2 15 ]
-"192
+"203
 } 0
-"110 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
+"158 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
 [v _Verificar_Sensores Verificar_Sensores `(v  1 e 1 0 ]
 {
-"132
+"181
 } 0
-"103
+"142
 [v _Controle_Parar Controle_Parar `(v  1 e 1 0 ]
 {
-"106
+"145
 } 0
 "111 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [v _UART_RecebePedido UART_RecebePedido `(i  1 e 2 0 ]
@@ -934,22 +935,22 @@ ESTADO_REVERSAO 4
 {
 "83
 } 0
-"196 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
+"192 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [v _MatrizLed MatrizLed `(v  1 e 1 0 ]
 {
-"222
-[v MatrizLed@i_1668 i `uc  1 a 1 5 ]
-"216
-[v MatrizLed@i_1667 i `uc  1 a 1 4 ]
-"208
-[v MatrizLed@i i `uc  1 a 1 3 ]
-"205
-[v MatrizLed@base_seta base_seta `uc  1 a 1 2 ]
-"203
-[v MatrizLed@buffer_percurso buffer_percurso `uc  1 a 1 1 ]
+"218
+[v MatrizLed@i_1686 i `uc  1 a 1 5 ]
+"212
+[v MatrizLed@i_1685 i `uc  1 a 1 4 ]
 "204
+[v MatrizLed@i i `uc  1 a 1 3 ]
+"201
+[v MatrizLed@base_seta base_seta `uc  1 a 1 2 ]
+"199
+[v MatrizLed@buffer_percurso buffer_percurso `uc  1 a 1 1 ]
+"200
 [v MatrizLed@base_andar base_andar `uc  1 a 1 0 ]
-"232
+"228
 } 0
 "169
 [v _MatrizInicializa MatrizInicializa `(v  1 e 1 0 ]
@@ -969,47 +970,49 @@ ESTADO_REVERSAO 4
 [v MAX7219_Write@address address `uc  1 p 1 19 ]
 "104
 } 0
-"36 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
+"257 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
 [v _Limpar_Chamada_Atual Limpar_Chamada_Atual `(v  1 e 1 0 ]
 {
-"46
+"275
 } 0
-"22
+"228
 [v _Existe_Chamada_Acima Existe_Chamada_Acima `(a  1 e 1 0 ]
 {
 [v Existe_Chamada_Acima@andar_ref andar_ref `uc  1 p 1 wreg ]
-"23
+"230
 [v Existe_Chamada_Acima@i i `i  1 a 2 20 ]
-"22
+"228
 [v Existe_Chamada_Acima@andar_ref andar_ref `uc  1 p 1 wreg ]
+"230
 [v Existe_Chamada_Acima@andar_ref andar_ref `uc  1 p 1 19 ]
-"27
+"235
 } 0
-"29
+"243
 [v _Existe_Chamada_Abaixo Existe_Chamada_Abaixo `(a  1 e 1 0 ]
 {
 [v Existe_Chamada_Abaixo@andar_ref andar_ref `uc  1 p 1 wreg ]
-"30
+"245
 [v Existe_Chamada_Abaixo@i i `i  1 a 2 20 ]
-"29
+"243
 [v Existe_Chamada_Abaixo@andar_ref andar_ref `uc  1 p 1 wreg ]
+"245
 [v Existe_Chamada_Abaixo@andar_ref andar_ref `uc  1 p 1 19 ]
-"34
+"250
 } 0
 "137 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
 {
 "140
 } 0
-"91 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
+"122 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
 [v _Controle_Subir Controle_Subir `(v  1 e 1 0 ]
 {
-"95
+"126
 } 0
-"97
+"132
 [v _Controle_Descer Controle_Descer `(v  1 e 1 0 ]
 {
-"101
+"136
 } 0
 "82 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
 [v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
@@ -1027,22 +1030,22 @@ ESTADO_REVERSAO 4
 {
 "129
 } 0
-"34 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
+"62 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
 [v _SENSORES_CalcularVelocidade SENSORES_CalcularVelocidade `(v  1 e 1 0 ]
 {
-"78
-[v SENSORES_CalcularVelocidade@i i `i  1 a 2 12 ]
-"73
+"105
+[v SENSORES_CalcularVelocidade@i i `i  1 a 2 14 ]
+"98
 [v SENSORES_CalcularVelocidade@calculo_velocidade calculo_velocidade `ul  1 a 4 8 ]
-"67
+"92
 [v SENSORES_CalcularVelocidade@calculo_posicao calculo_posicao `ul  1 a 4 4 ]
-"76
-[v SENSORES_CalcularVelocidade@leitura_adc leitura_adc `us  1 a 2 15 ]
-"42
+"102
+[v SENSORES_CalcularVelocidade@leitura_adc leitura_adc `us  1 a 2 12 ]
+"69
 [v SENSORES_CalcularVelocidade@delta delta `uc  1 a 1 17 ]
-"38
-[v SENSORES_CalcularVelocidade@valor_atual valor_atual `uc  1 a 1 14 ]
-"88
+"66
+[v SENSORES_CalcularVelocidade@valor_atual valor_atual `uc  1 a 1 16 ]
+"112
 } 0
 "136 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]

@@ -15,7 +15,7 @@
 
 
 # 1 "./motor.h" 1
-# 11 "./motor.h"
+# 13 "./motor.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
 
 
@@ -121,25 +121,53 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
-# 12 "./motor.h" 2
-
-
-
-
-
-
+# 14 "./motor.h" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
+# 15 "./motor.h" 2
+# 25 "./motor.h"
 void SENSORES_CalcularVelocidade(void);
 
 
+
+
+
+
+void Verificar_Sensores(void);
+# 42 "./motor.h"
 void Controle_Subir(void);
+
+
+
+
 
 void Controle_Descer(void);
 
+
+
+
+
 void Controle_Parar(void);
-
-void Verificar_Sensores(void);
-
+# 66 "./motor.h"
 int Buscar_Proxima_Parada(void);
+
+
+
+
+
+
+_Bool Existe_Chamada_Acima(uint8_t andar_ref);
+
+
+
+
+
+
+_Bool Existe_Chamada_Abaixo(uint8_t andar_ref);
+
+
+
+
+void Limpar_Chamada_Atual(void);
 # 9 "motor.c" 2
 # 1 "./globals.h" 1
 # 14 "./globals.h"
@@ -4379,9 +4407,6 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
 # 15 "./globals.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
-# 17 "./globals.h" 2
 # 89 "./globals.h"
 extern volatile uint8_t andar_atual;
 
@@ -4427,6 +4452,24 @@ typedef enum {
 
 
 extern volatile EstadoElevador estado_atual;
+
+
+
+
+
+extern _Bool chamadas_subida[4];
+
+
+
+
+
+extern _Bool chamadas_descida[4];
+
+
+extern uint16_t contador_telemetria;
+extern uint16_t contador_espera;
+extern char buffer_origem;
+extern char buffer_destino;
 # 10 "motor.c" 2
 # 1 "./mcc_generated_files/mcc.h" 1
 # 50 "./mcc_generated_files/mcc.h"
@@ -4815,17 +4858,15 @@ void OSCILLATOR_Initialize(void);
 # 105 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 11 "motor.c" 2
-
-
-
-
-
-
+# 46 "motor.c"
 static uint16_t total_pulsos = 0;
 
 
+
+
+
 static uint8_t ultimo_valor_timer0 = 0;
-# 34 "motor.c"
+# 62 "motor.c"
 void SENSORES_CalcularVelocidade(void){
 
 
@@ -4833,12 +4874,10 @@ void SENSORES_CalcularVelocidade(void){
     uint8_t valor_atual = TMR0_ReadTimer();
 
 
-
     uint8_t delta = valor_atual - ultimo_valor_timer0;
 
 
     ultimo_valor_timer0 = valor_atual;
-
 
 
     if (estado_motor == 1) {
@@ -4849,7 +4888,6 @@ void SENSORES_CalcularVelocidade(void){
     }
 
     else if (estado_motor == 2) {
-
         if(delta > total_pulsos) total_pulsos = 0;
         else total_pulsos -= delta;
     }
@@ -4868,26 +4906,28 @@ void SENSORES_CalcularVelocidade(void){
     uint32_t calculo_velocidade = (uint32_t)delta * 837;
     velocidade_atual = (uint8_t)(calculo_velocidade / 100);
 
+
     uint16_t leitura_adc = 0;
 
+
     for(int i = 0; i < 10; i++){
-        leitura_adc = leitura_adc + ADC_GetConversion(channel_AN2);
-        _delay(100);
+        leitura_adc += ADC_GetConversion(channel_AN2);
+        _delay((unsigned long)((100)*(8000000/4000.0)));
     }
 
-    leitura_adc = leitura_adc/10;
 
-
-    temperatura_ponte = (uint16_t)(leitura_adc);
-
+    temperatura_ponte = (uint16_t)(leitura_adc / 10);
 }
-
-
+# 122 "motor.c"
 void Controle_Subir() {
     LATAbits.LATA7 = 1;
     PWM3_LoadDutyValue(614);
     estado_motor = 1;
 }
+
+
+
+
 
 void Controle_Descer() {
     LATAbits.LATA7 = 0;
@@ -4895,14 +4935,17 @@ void Controle_Descer() {
     estado_motor = 2;
 }
 
+
+
+
+
 void Controle_Parar() {
     PWM3_LoadDutyValue(0);
     estado_motor = 0;
 }
-
-
-
+# 158 "motor.c"
 void Verificar_Sensores() {
+
 
 
     if (PORTBbits.RB0 == 0) andar_atual = 0;
@@ -4925,8 +4968,7 @@ void Verificar_Sensores() {
         posicao_mm = 180;
     }
 }
-
-
+# 198 "motor.c"
 int Buscar_Proxima_Parada() {
 
     if (estado_atual == ESTADO_PARADO) {
@@ -4949,4 +4991,59 @@ int Buscar_Proxima_Parada() {
     for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
 
     return -1;
+}
+
+
+
+
+
+
+
+_Bool Existe_Chamada_Acima(uint8_t andar_ref) {
+
+    for (int i = andar_ref + 1; i <= 3; i++) {
+
+        if (chamadas_subida[i] || chamadas_descida[i]) return 1;
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+_Bool Existe_Chamada_Abaixo(uint8_t andar_ref) {
+
+    for (int i = 0; i < andar_ref; i++) {
+
+        if (chamadas_subida[i] || chamadas_descida[i]) return 1;
+    }
+    return 0;
+}
+
+
+
+
+
+
+void Limpar_Chamada_Atual() {
+
+
+    if (estado_motor == 1 || estado_motor == 0) {
+        chamadas_subida[andar_atual] = 0;
+    }
+
+
+    if (estado_motor == 2 || estado_motor == 0) {
+        chamadas_descida[andar_atual] = 0;
+    }
+
+
+
+    if (andar_atual == 3) chamadas_subida[3] = 0;
+
+
+    if (andar_atual == 0) chamadas_descida[0] = 0;
 }

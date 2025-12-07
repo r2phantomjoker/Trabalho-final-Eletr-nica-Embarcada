@@ -4779,6 +4779,24 @@ typedef enum {
 
 
 extern volatile EstadoElevador estado_atual;
+
+
+
+
+
+extern _Bool chamadas_subida[4];
+
+
+
+
+
+extern _Bool chamadas_descida[4];
+
+
+extern uint16_t contador_telemetria;
+extern uint16_t contador_espera;
+extern char buffer_origem;
+extern char buffer_destino;
 # 8 "main.c" 2
 # 1 "./comm.h" 1
 # 17 "./comm.h"
@@ -4809,57 +4827,52 @@ void MatrizLed (void);
 void MatrizInicializa(void);
 # 9 "main.c" 2
 # 1 "./motor.h" 1
-# 18 "./motor.h"
+# 25 "./motor.h"
 void SENSORES_CalcularVelocidade(void);
 
 
+
+
+
+
+void Verificar_Sensores(void);
+# 42 "./motor.h"
 void Controle_Subir(void);
+
+
+
+
 
 void Controle_Descer(void);
 
+
+
+
+
 void Controle_Parar(void);
-
-void Verificar_Sensores(void);
-
+# 66 "./motor.h"
 int Buscar_Proxima_Parada(void);
+
+
+
+
+
+
+_Bool Existe_Chamada_Acima(uint8_t andar_ref);
+
+
+
+
+
+
+_Bool Existe_Chamada_Abaixo(uint8_t andar_ref);
+
+
+
+
+void Limpar_Chamada_Atual(void);
 # 10 "main.c" 2
 
-
-_Bool chamadas_subida[4] = {0, 0, 0, 0};
-_Bool chamadas_descida[4] = {0, 0, 0, 0};
-
-
-uint16_t contador_telemetria = 0;
-uint16_t contador_espera = 0;
-char buffer_origem, buffer_destino;
-
-
-
-_Bool Existe_Chamada_Acima(uint8_t andar_ref) {
-    for (int i = andar_ref + 1; i <= 3; i++) {
-        if (chamadas_subida[i] || chamadas_descida[i]) return 1;
-    }
-    return 0;
-}
-
-_Bool Existe_Chamada_Abaixo(uint8_t andar_ref) {
-    for (int i = 0; i < andar_ref; i++) {
-        if (chamadas_subida[i] || chamadas_descida[i]) return 1;
-    }
-    return 0;
-}
-
-void Limpar_Chamada_Atual() {
-    if (estado_atual == ESTADO_SUBINDO || estado_atual == ESTADO_PARADO) {
-        chamadas_subida[andar_atual] = 0;
-    }
-    if (estado_atual == ESTADO_DESCENDO || estado_atual == ESTADO_PARADO) {
-        chamadas_descida[andar_atual] = 0;
-    }
-
-    if (andar_atual == 3) chamadas_subida[3] = 0;
-    if (andar_atual == 0) chamadas_descida[0] = 0;
-}
 
 
 void main(void) {
@@ -4870,7 +4883,11 @@ void main(void) {
     TRISBbits.TRISB1 = 0;
     LATBbits.LATB1 = 1;
     INTCONbits.IOCIE = 0;
+
+
+
     TMR4_SetInterruptHandler(SENSORES_CalcularVelocidade);
+
 
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
@@ -4879,17 +4896,27 @@ void main(void) {
     SSP1CON1bits.SSPEN = 0;
     SSP1CON1bits.SSPEN = 1;
 
+
     Controle_Parar();
+
+
     MatrizInicializa();
 
+
+
     while (1) {
+
+
 
         if(EUSART_is_rx_ready()) {
             if (UART_RecebePedido(&buffer_origem, &buffer_destino) == 0) {
                 int origem = buffer_origem - '0';
                 int destino = buffer_destino - '0';
 
+
                 if (origem >= 0 && origem <= 3 && destino >= 0 && destino <= 3) {
+
+
                     if (origem < destino) {
                         chamadas_subida[origem] = 1;
                         chamadas_subida[destino] = 1;
@@ -4903,84 +4930,110 @@ void main(void) {
         }
 
 
+
         Verificar_Sensores();
 
 
         switch (estado_atual) {
+
+
             case ESTADO_PARADO:
+
                 if (chamadas_subida[andar_atual]) {
                     Limpar_Chamada_Atual();
                     estado_atual = ESTADO_ESPERA_PORTA;
                     contador_espera = 0;
                 }
+
                 else if (chamadas_descida[andar_atual]) {
                     Limpar_Chamada_Atual();
                     estado_atual = ESTADO_ESPERA_PORTA;
                     contador_espera = 0;
                 }
+
                 else if (Existe_Chamada_Acima(andar_atual)) {
                     Controle_Subir();
                     estado_atual = ESTADO_SUBINDO;
                 }
+
                 else if (Existe_Chamada_Abaixo(andar_atual)) {
                     Controle_Descer();
                     estado_atual = ESTADO_DESCENDO;
                 }
+
                 else if (andar_atual != 0) {
                     chamadas_descida[0] = 1;
                 }
                 break;
 
+
             case ESTADO_SUBINDO:
+
                 if (chamadas_subida[andar_atual]) {
                     Controle_Parar();
                     Limpar_Chamada_Atual();
                     estado_atual = ESTADO_ESPERA_PORTA;
                     contador_espera = 0;
                 }
+
                 else if (!Existe_Chamada_Acima(andar_atual)) {
+
                     if (chamadas_descida[andar_atual]) {
                         Controle_Parar();
                         Limpar_Chamada_Atual();
                         estado_atual = ESTADO_ESPERA_PORTA;
                         contador_espera = 0;
-                    } else {
+                    }
+
+                    else {
                         Controle_Parar();
                         estado_atual = ESTADO_PARADO;
                     }
                 }
                 break;
 
+
             case ESTADO_DESCENDO:
+
                 if (chamadas_descida[andar_atual]) {
                     Controle_Parar();
                     Limpar_Chamada_Atual();
                     estado_atual = ESTADO_ESPERA_PORTA;
                     contador_espera = 0;
                 }
+
                 else if (!Existe_Chamada_Abaixo(andar_atual)) {
+
                     if (chamadas_subida[andar_atual]) {
                          Controle_Parar();
                          Limpar_Chamada_Atual();
                          estado_atual = ESTADO_ESPERA_PORTA;
                          contador_espera = 0;
-                    } else {
+                    }
+
+                    else {
                         Controle_Parar();
                         estado_atual = ESTADO_PARADO;
                     }
                 }
                 break;
 
+
+
             case ESTADO_ESPERA_PORTA:
                 contador_espera++;
+
                 if (contador_espera >= 200) {
                     estado_atual = ESTADO_REVERSAO;
                     contador_espera = 0;
                 }
                 break;
 
+
             case ESTADO_REVERSAO:
                 contador_espera++;
+
+
                 if (contador_espera >= 50) {
                     estado_atual = ESTADO_PARADO;
                 }
@@ -4988,20 +5041,27 @@ void main(void) {
         }
 
 
+
         contador_telemetria++;
+
+
         if (contador_telemetria >= 30) {
+
+
             UART_EnviaDados();
-
-
 
 
             for(int i=0; i<4; i++) {
                 solicitacoes[i] = chamadas_subida[i] || chamadas_descida[i];
             }
 
+
             MatrizLed();
+
+
             contador_telemetria = 0;
         }
+
 
         _delay((unsigned long)((10)*(8000000/4000.0)));
     }

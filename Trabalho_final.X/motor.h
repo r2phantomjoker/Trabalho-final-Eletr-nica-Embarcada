@@ -9,7 +9,9 @@
 #ifndef MOTOR_H
 #define MOTOR_H
 
+
 #include <stdint.h>
+#include <stdbool.h>
 
 // ================================
 // FUNÇÕES DE TELEMETRIA E SENSORES
@@ -62,5 +64,24 @@ void Controle_Parar(void);
  * @return int Índice do próximo andar (0 a 3) ou -1 se não houver chamadas.
  */
 int Buscar_Proxima_Parada(void);
+
+/**
+ * @brief Verifica requisições acima de um andar.
+ * @param andar_ref Andar de referência.
+ * @return true/false.
+ */
+bool Existe_Chamada_Acima(uint8_t andar_ref);
+
+/**
+ * @brief Verifica requisições abaixo de um andar.
+ * @param andar_ref Andar de referência.
+ * @return true/false.
+ */
+bool Existe_Chamada_Abaixo(uint8_t andar_ref);
+
+/**
+ * @brief Remove a pendência do andar atual dos vetores globais.
+ */
+void Limpar_Chamada_Atual(void);  
 
 #endif	/* MOTOR_H */

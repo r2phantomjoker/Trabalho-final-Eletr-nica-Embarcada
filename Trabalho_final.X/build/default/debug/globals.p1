@@ -530,3 +530,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _estado_atual
 . `E2497 0
 ]
+"30
+[; ;globals.c: 30: _Bool chamadas_subida[4] = {0, 0, 0, 0};
+[v _chamadas_subida `a ~T0 @X0 -> 4 `i e ]
+[i _chamadas_subida
+:U ..
+-> -> 0 `i `a
+-> -> 0 `i `a
+-> -> 0 `i `a
+-> -> 0 `i `a
+..
+]
+"31
+[; ;globals.c: 31: _Bool chamadas_descida[4] = {0, 0, 0, 0};
+[v _chamadas_descida `a ~T0 @X0 -> 4 `i e ]
+[i _chamadas_descida
+:U ..
+-> -> 0 `i `a
+-> -> 0 `i `a
+-> -> 0 `i `a
+-> -> 0 `i `a
+..
+]
+"33
+[; ;globals.c: 33: uint16_t contador_telemetria = 0;
+[v _contador_telemetria `us ~T0 @X0 1 e ]
+[i _contador_telemetria
+-> -> 0 `i `us
+]
+"34
+[; ;globals.c: 34: uint16_t contador_espera = 0;
+[v _contador_espera `us ~T0 @X0 1 e ]
+[i _contador_espera
+-> -> 0 `i `us
+]
+"38
+[; ;globals.c: 38: char buffer_origem = 0;
+[v _buffer_origem `uc ~T0 @X0 1 e ]
+[i _buffer_origem
+-> -> 0 `i `uc
+]
+"39
+[; ;globals.c: 39: char buffer_destino = 0;
+[v _buffer_destino `uc ~T0 @X0 1 e ]
+[i _buffer_destino
+-> -> 0 `i `uc
+]

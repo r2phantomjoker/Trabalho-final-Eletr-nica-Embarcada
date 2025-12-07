@@ -21,3 +21,19 @@ volatile bool solicitacoes[4] = {false, false, false, false};
 
 // Estado da Máquina de Estados
 volatile EstadoElevador estado_atual = ESTADO_PARADO;
+
+
+
+// Aqui as variáveis são realmente criadas na RAM.
+// Note: Não use 'extern' aqui.
+
+bool chamadas_subida[4]  = {false, false, false, false};
+bool chamadas_descida[4] = {false, false, false, false};
+
+uint16_t contador_telemetria = 0;
+uint16_t contador_espera = 0;
+
+// Variáveis não inicializadas explicitamente são 0 por padrão, 
+// mas é boa prática inicializar.
+char buffer_origem = 0;
+char buffer_destino = 0;

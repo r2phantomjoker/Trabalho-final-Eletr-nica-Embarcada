@@ -1,14 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"37 main.c
-[; ;main.c: 37:     if (estado_atual == ESTADO_SUBINDO || estado_atual == ESTADO_PARADO) {
-[c E2975 0 1 2 3 4 .. ]
-[n E2975 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
-"142 ./globals.h
-[; ;./globals.h: 142: extern volatile EstadoElevador estado_atual;
-[v _estado_atual `VE2975 ~T0 @X0 0 e ]
-"89
-[; ;./globals.h: 89: extern volatile uint8_t andar_atual;
-[v _andar_atual `Vuc ~T0 @X0 0 e ]
 [p mainexit ]
 "80 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 80: void SYSTEM_Initialize(void);
@@ -57,8 +47,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "326 ./mcc_generated_files/tmr4.h
 [; ;./mcc_generated_files/tmr4.h: 326:  void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _TMR4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2860 ]
-"18 ./motor.h
-[; ;./motor.h: 18: void SENSORES_CalcularVelocidade(void);
+"25 ./motor.h
+[; ;./motor.h: 25: void SENSORES_CalcularVelocidade(void);
 [v _SENSORES_CalcularVelocidade `(v ~T0 @X0 0 ef ]
 "3837 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3837:     struct {
@@ -75,8 +65,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3851
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3851: extern volatile SSP1CON1bits_t SSP1CON1bits __attribute__((address(0x215)));
 [v _SSP1CON1bits `VS207 ~T0 @X0 0 e@533 ]
-"25 ./motor.h
-[; ;./motor.h: 25: void Controle_Parar(void);
+"54 ./motor.h
+[; ;./motor.h: 54: void Controle_Parar(void);
 [v _Controle_Parar `(v ~T0 @X0 0 ef ]
 "41 ./comm.h
 [; ;./comm.h: 41: void MatrizInicializa(void);
@@ -87,15 +77,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 "26 ./comm.h
 [; ;./comm.h: 26: int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 [v _UART_RecebePedido `(i ~T0 @X0 0 ef2`*uc`*uc ]
-"27 ./motor.h
-[; ;./motor.h: 27: void Verificar_Sensores(void);
+"159 ./globals.h
+[; ;./globals.h: 159: extern char buffer_origem;
+[v _buffer_origem `uc ~T0 @X0 0 e ]
+"160
+[; ;./globals.h: 160: extern char buffer_destino;
+[v _buffer_destino `uc ~T0 @X0 0 e ]
+"148
+[; ;./globals.h: 148: extern _Bool chamadas_subida[4];
+[v _chamadas_subida `a ~T0 @X0 -> 0 `x e ]
+"154
+[; ;./globals.h: 154: extern _Bool chamadas_descida[4];
+[v _chamadas_descida `a ~T0 @X0 -> 0 `x e ]
+"32 ./motor.h
+[; ;./motor.h: 32: void Verificar_Sensores(void);
 [v _Verificar_Sensores `(v ~T0 @X0 0 ef ]
-"21
-[; ;./motor.h: 21: void Controle_Subir(void);
+"89 ./globals.h
+[; ;./globals.h: 89: extern volatile uint8_t andar_atual;
+[v _andar_atual `Vuc ~T0 @X0 0 e ]
+"85 ./motor.h
+[; ;./motor.h: 85: void Limpar_Chamada_Atual(void);
+[v _Limpar_Chamada_Atual `(v ~T0 @X0 0 ef ]
+"79 main.c
+[; ;main.c: 79:                     estado_atual = ESTADO_ESPERA_PORTA;
+[c E2975 0 1 2 3 4 .. ]
+[n E2975 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
+"142 ./globals.h
+[; ;./globals.h: 142: extern volatile EstadoElevador estado_atual;
+[v _estado_atual `VE2975 ~T0 @X0 0 e ]
+"158
+[; ;./globals.h: 158: extern uint16_t contador_espera;
+[v _contador_espera `us ~T0 @X0 0 e ]
+"73 ./motor.h
+[; ;./motor.h: 73: _Bool Existe_Chamada_Acima(uint8_t andar_ref);
+[v _Existe_Chamada_Acima `(a ~T0 @X0 0 ef1`uc ]
+"42
+[; ;./motor.h: 42: void Controle_Subir(void);
 [v _Controle_Subir `(v ~T0 @X0 0 ef ]
-"23
-[; ;./motor.h: 23: void Controle_Descer(void);
+"80
+[; ;./motor.h: 80: _Bool Existe_Chamada_Abaixo(uint8_t andar_ref);
+[v _Existe_Chamada_Abaixo `(a ~T0 @X0 0 ef1`uc ]
+"48
+[; ;./motor.h: 48: void Controle_Descer(void);
 [v _Controle_Descer `(v ~T0 @X0 0 ef ]
+"157 ./globals.h
+[; ;./globals.h: 157: extern uint16_t contador_telemetria;
+[v _contador_telemetria `us ~T0 @X0 0 e ]
 "31 ./comm.h
 [; ;./comm.h: 31: void UART_EnviaDados(void);
 [v _UART_EnviaDados `(v ~T0 @X0 0 ef ]
@@ -583,603 +610,453 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6748
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 6748: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"12 main.c
-[; ;main.c: 12: _Bool chamadas_subida[4] = {0, 0, 0, 0};
-[v _chamadas_subida `a ~T0 @X0 -> 4 `i e ]
-[i _chamadas_subida
-:U ..
--> -> 0 `i `a
--> -> 0 `i `a
--> -> 0 `i `a
--> -> 0 `i `a
-..
-]
-"13
-[; ;main.c: 13: _Bool chamadas_descida[4] = {0, 0, 0, 0};
-[v _chamadas_descida `a ~T0 @X0 -> 4 `i e ]
-[i _chamadas_descida
-:U ..
--> -> 0 `i `a
--> -> 0 `i `a
--> -> 0 `i `a
--> -> 0 `i `a
-..
-]
-"16
-[; ;main.c: 16: uint16_t contador_telemetria = 0;
-[v _contador_telemetria `us ~T0 @X0 1 e ]
-[i _contador_telemetria
--> -> 0 `i `us
-]
-"17
-[; ;main.c: 17: uint16_t contador_espera = 0;
-[v _contador_espera `us ~T0 @X0 1 e ]
-[i _contador_espera
--> -> 0 `i `us
-]
-"18
-[; ;main.c: 18: char buffer_origem, buffer_destino;
-[v _buffer_origem `uc ~T0 @X0 1 e ]
-[v _buffer_destino `uc ~T0 @X0 1 e ]
-"22
-[; ;main.c: 22: _Bool Existe_Chamada_Acima(uint8_t andar_ref) {
-[v _Existe_Chamada_Acima `(a ~T0 @X0 1 ef1`uc ]
-{
-[e :U _Existe_Chamada_Acima ]
-[v _andar_ref `uc ~T0 @X0 1 r1 ]
-[f ]
-"23
-[; ;main.c: 23:     for (int i = andar_ref + 1; i <= 3; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i + -> _andar_ref `i -> 1 `i ]
-[e $ <= _i -> 3 `i 360  ]
-[e $U 361  ]
-[e :U 360 ]
-{
-"24
-[; ;main.c: 24:         if (chamadas_subida[i] || chamadas_descida[i]) return 1;
-[e $ ! || != -> *U + &U _chamadas_subida * -> -> _i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i != -> *U + &U _chamadas_descida * -> -> _i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 363  ]
-[e ) -> -> 1 `i `a ]
-[e $UE 359  ]
-[e :U 363 ]
-"25
-[; ;main.c: 25:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ <= _i -> 3 `i 360  ]
-[e :U 361 ]
-}
-"26
-[; ;main.c: 26:     return 0;
-[e ) -> -> 0 `i `a ]
-[e $UE 359  ]
-"27
-[; ;main.c: 27: }
-[e :UE 359 ]
-}
-"29
-[; ;main.c: 29: _Bool Existe_Chamada_Abaixo(uint8_t andar_ref) {
-[v _Existe_Chamada_Abaixo `(a ~T0 @X0 1 ef1`uc ]
-{
-[e :U _Existe_Chamada_Abaixo ]
-[v _andar_ref `uc ~T0 @X0 1 r1 ]
-[f ]
-"30
-[; ;main.c: 30:     for (int i = 0; i < andar_ref; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $U 368  ]
-[e :U 365 ]
-{
-"31
-[; ;main.c: 31:         if (chamadas_subida[i] || chamadas_descida[i]) return 1;
-[e $ ! || != -> *U + &U _chamadas_subida * -> -> _i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i != -> *U + &U _chamadas_descida * -> -> _i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 369  ]
-[e ) -> -> 1 `i `a ]
-[e $UE 364  ]
-[e :U 369 ]
-"32
-[; ;main.c: 32:     }
-}
-[e ++ _i -> 1 `i ]
-[e :U 368 ]
-[e $ < _i -> _andar_ref `i 365  ]
-[e :U 366 ]
-}
-"33
-[; ;main.c: 33:     return 0;
-[e ) -> -> 0 `i `a ]
-[e $UE 364  ]
-"34
-[; ;main.c: 34: }
-[e :UE 364 ]
-}
-"36
-[; ;main.c: 36: void Limpar_Chamada_Atual() {
-[v _Limpar_Chamada_Atual `(v ~T0 @X0 1 ef ]
-{
-[e :U _Limpar_Chamada_Atual ]
-[f ]
-"37
-[; ;main.c: 37:     if (estado_atual == ESTADO_SUBINDO || estado_atual == ESTADO_PARADO) {
-[e $ ! || == -> _estado_atual `ui -> . `E2975 1 `ui == -> _estado_atual `ui -> . `E2975 0 `ui 371  ]
-{
-"38
-[; ;main.c: 38:         chamadas_subida[andar_atual] = 0;
-[e = *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 0 `i `a ]
-"39
-[; ;main.c: 39:     }
-}
-[e :U 371 ]
-"40
-[; ;main.c: 40:     if (estado_atual == ESTADO_DESCENDO || estado_atual == ESTADO_PARADO) {
-[e $ ! || == -> _estado_atual `ui -> . `E2975 2 `ui == -> _estado_atual `ui -> . `E2975 0 `ui 372  ]
-{
-"41
-[; ;main.c: 41:         chamadas_descida[andar_atual] = 0;
-[e = *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 0 `i `a ]
-"42
-[; ;main.c: 42:     }
-}
-[e :U 372 ]
-"44
-[; ;main.c: 44:     if (andar_atual == 3) chamadas_subida[3] = 0;
-[e $ ! == -> _andar_atual `i -> 3 `i 373  ]
-[e = *U + &U _chamadas_subida * -> -> -> 3 `i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 0 `i `a ]
-[e :U 373 ]
-"45
-[; ;main.c: 45:     if (andar_atual == 0) chamadas_descida[0] = 0;
-[e $ ! == -> _andar_atual `i -> 0 `i 374  ]
-[e = *U + &U _chamadas_descida * -> -> -> 0 `i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 0 `i `a ]
-[e :U 374 ]
-"46
-[; ;main.c: 46: }
-[e :UE 370 ]
-}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"49
-[; ;main.c: 49: void main(void) {
+"13 main.c
+[; ;main.c: 13: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"50
-[; ;main.c: 50:     SYSTEM_Initialize();
+"14
+[; ;main.c: 14:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"53
-[; ;main.c: 53:     ANSELB = 0x00;
+"17
+[; ;main.c: 17:     ANSELB = 0x00;
 [e = _ANSELB -> -> 0 `i `uc ]
-"54
-[; ;main.c: 54:     TRISBbits.TRISB1 = 0;
+"18
+[; ;main.c: 18:     TRISBbits.TRISB1 = 0;
 [e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
-"55
-[; ;main.c: 55:     LATBbits.LATB1 = 1;
+"19
+[; ;main.c: 19:     LATBbits.LATB1 = 1;
 [e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-"56
-[; ;main.c: 56:     INTCONbits.IOCIE = 0;
+"20
+[; ;main.c: 20:     INTCONbits.IOCIE = 0;
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"57
-[; ;main.c: 57:     TMR4_SetInterruptHandler(SENSORES_CalcularVelocidade);
+"24
+[; ;main.c: 24:     TMR4_SetInterruptHandler(SENSORES_CalcularVelocidade);
 [e ( _TMR4_SetInterruptHandler (1 &U _SENSORES_CalcularVelocidade ]
-"59
-[; ;main.c: 59:     (INTCONbits.GIE = 1);
+"27
+[; ;main.c: 27:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"60
-[; ;main.c: 60:     (INTCONbits.PEIE = 1);
+"28
+[; ;main.c: 28:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"63
-[; ;main.c: 63:     SSP1CON1bits.SSPEN = 0;
+"31
+[; ;main.c: 31:     SSP1CON1bits.SSPEN = 0;
 [e = . . _SSP1CON1bits 0 5 -> -> 0 `i `uc ]
-"64
-[; ;main.c: 64:     SSP1CON1bits.SSPEN = 1;
+"32
+[; ;main.c: 32:     SSP1CON1bits.SSPEN = 1;
 [e = . . _SSP1CON1bits 0 5 -> -> 1 `i `uc ]
-"66
-[; ;main.c: 66:     Controle_Parar();
+"35
+[; ;main.c: 35:     Controle_Parar();
 [e ( _Controle_Parar ..  ]
-"67
-[; ;main.c: 67:     MatrizInicializa();
+"38
+[; ;main.c: 38:     MatrizInicializa();
 [e ( _MatrizInicializa ..  ]
-"69
-[; ;main.c: 69:     while (1) {
-[e :U 377 ]
+"42
+[; ;main.c: 42:     while (1) {
+[e :U 361 ]
 {
-"71
-[; ;main.c: 71:         if(EUSART_is_rx_ready()) {
-[e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 379  ]
+"46
+[; ;main.c: 46:         if(EUSART_is_rx_ready()) {
+[e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 363  ]
 {
-"72
-[; ;main.c: 72:             if (UART_RecebePedido(&buffer_origem, &buffer_destino) == 0) {
-[e $ ! == ( _UART_RecebePedido (2 , &U _buffer_origem &U _buffer_destino -> 0 `i 380  ]
+"47
+[; ;main.c: 47:             if (UART_RecebePedido(&buffer_origem, &buffer_destino) == 0) {
+[e $ ! == ( _UART_RecebePedido (2 , &U _buffer_origem &U _buffer_destino -> 0 `i 364  ]
 {
-"73
-[; ;main.c: 73:                 int origem = buffer_origem - '0';
+"48
+[; ;main.c: 48:                 int origem = buffer_origem - '0';
 [v _origem `i ~T0 @X0 1 a ]
 [e = _origem -> - -> _buffer_origem `ui -> 48 `ui `i ]
-"74
-[; ;main.c: 74:                 int destino = buffer_destino - '0';
+"49
+[; ;main.c: 49:                 int destino = buffer_destino - '0';
 [v _destino `i ~T0 @X0 1 a ]
 [e = _destino -> - -> _buffer_destino `ui -> 48 `ui `i ]
-"76
-[; ;main.c: 76:                 if (origem >= 0 && origem <= 3 && destino >= 0 && destino <= 3) {
-[e $ ! && && && >= _origem -> 0 `i <= _origem -> 3 `i >= _destino -> 0 `i <= _destino -> 3 `i 381  ]
+"52
+[; ;main.c: 52:                 if (origem >= 0 && origem <= 3 && destino >= 0 && destino <= 3) {
+[e $ ! && && && >= _origem -> 0 `i <= _origem -> 3 `i >= _destino -> 0 `i <= _destino -> 3 `i 365  ]
 {
+"55
+[; ;main.c: 55:                     if (origem < destino) {
+[e $ ! < _origem _destino 366  ]
+{
+"56
+[; ;main.c: 56:                         chamadas_subida[origem] = 1;
+[e = *U + &U _chamadas_subida * -> -> _origem `ui `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 1 `i `a ]
+"57
+[; ;main.c: 57:                         chamadas_subida[destino] = 1;
+[e = *U + &U _chamadas_subida * -> -> _destino `ui `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 1 `i `a ]
+"58
+[; ;main.c: 58:                     }
+}
+[e $U 367  ]
+"59
+[; ;main.c: 59:                     else if (origem > destino) {
+[e :U 366 ]
+[e $ ! > _origem _destino 368  ]
+{
+"60
+[; ;main.c: 60:                         chamadas_descida[origem] = 1;
+[e = *U + &U _chamadas_descida * -> -> _origem `ui `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 1 `i `a ]
+"61
+[; ;main.c: 61:                         chamadas_descida[destino] = 1;
+[e = *U + &U _chamadas_descida * -> -> _destino `ui `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 1 `i `a ]
+"62
+[; ;main.c: 62:                     }
+}
+[e :U 368 ]
+[e :U 367 ]
+"63
+[; ;main.c: 63:                 }
+}
+[e :U 365 ]
+"64
+[; ;main.c: 64:             }
+}
+[e :U 364 ]
+"65
+[; ;main.c: 65:         }
+}
+[e :U 363 ]
+"69
+[; ;main.c: 69:         Verificar_Sensores();
+[e ( _Verificar_Sensores ..  ]
+"72
+[; ;main.c: 72:         switch (estado_atual) {
+[e $U 370  ]
+{
+"75
+[; ;main.c: 75:             case ESTADO_PARADO:
+[e :U 371 ]
 "77
-[; ;main.c: 77:                     if (origem < destino) {
-[e $ ! < _origem _destino 382  ]
+[; ;main.c: 77:                 if (chamadas_subida[andar_atual]) {
+[e $ ! != -> *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i 372  ]
 {
 "78
-[; ;main.c: 78:                         chamadas_subida[origem] = 1;
-[e = *U + &U _chamadas_subida * -> -> _origem `ui `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 1 `i `a ]
+[; ;main.c: 78:                     Limpar_Chamada_Atual();
+[e ( _Limpar_Chamada_Atual ..  ]
 "79
-[; ;main.c: 79:                         chamadas_subida[destino] = 1;
-[e = *U + &U _chamadas_subida * -> -> _destino `ui `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 1 `i `a ]
+[; ;main.c: 79:                     estado_atual = ESTADO_ESPERA_PORTA;
+[e = _estado_atual . `E2975 3 ]
 "80
-[; ;main.c: 80:                     }
-}
-[e $U 383  ]
+[; ;main.c: 80:                     contador_espera = 0;
+[e = _contador_espera -> -> 0 `i `us ]
 "81
-[; ;main.c: 81:                     else if (origem > destino) {
-[e :U 382 ]
-[e $ ! > _origem _destino 384  ]
-{
-"82
-[; ;main.c: 82:                         chamadas_descida[origem] = 1;
-[e = *U + &U _chamadas_descida * -> -> _origem `ui `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 1 `i `a ]
+[; ;main.c: 81:                 }
+}
+[e $U 373  ]
 "83
-[; ;main.c: 83:                         chamadas_descida[destino] = 1;
-[e = *U + &U _chamadas_descida * -> -> _destino `ui `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 1 `i `a ]
+[; ;main.c: 83:                 else if (chamadas_descida[andar_atual]) {
+[e :U 372 ]
+[e $ ! != -> *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 374  ]
+{
 "84
-[; ;main.c: 84:                     }
-}
-[e :U 384 ]
-[e :U 383 ]
+[; ;main.c: 84:                     Limpar_Chamada_Atual();
+[e ( _Limpar_Chamada_Atual ..  ]
 "85
-[; ;main.c: 85:                 }
-}
-[e :U 381 ]
+[; ;main.c: 85:                     estado_atual = ESTADO_ESPERA_PORTA;
+[e = _estado_atual . `E2975 3 ]
 "86
-[; ;main.c: 86:             }
+[; ;main.c: 86:                     contador_espera = 0;
+[e = _contador_espera -> -> 0 `i `us ]
+"87
+[; ;main.c: 87:                 }
+}
+[e $U 375  ]
+"89
+[; ;main.c: 89:                 else if (Existe_Chamada_Acima(andar_atual)) {
+[e :U 374 ]
+[e $ ! != -> ( _Existe_Chamada_Acima (1 _andar_atual `i -> 0 `i 376  ]
+{
+"90
+[; ;main.c: 90:                     Controle_Subir();
+[e ( _Controle_Subir ..  ]
+"91
+[; ;main.c: 91:                     estado_atual = ESTADO_SUBINDO;
+[e = _estado_atual . `E2975 1 ]
+"92
+[; ;main.c: 92:                 }
+}
+[e $U 377  ]
+"94
+[; ;main.c: 94:                 else if (Existe_Chamada_Abaixo(andar_atual)) {
+[e :U 376 ]
+[e $ ! != -> ( _Existe_Chamada_Abaixo (1 _andar_atual `i -> 0 `i 378  ]
+{
+"95
+[; ;main.c: 95:                     Controle_Descer();
+[e ( _Controle_Descer ..  ]
+"96
+[; ;main.c: 96:                     estado_atual = ESTADO_DESCENDO;
+[e = _estado_atual . `E2975 2 ]
+"97
+[; ;main.c: 97:                 }
+}
+[e $U 379  ]
+"99
+[; ;main.c: 99:                 else if (andar_atual != 0) {
+[e :U 378 ]
+[e $ ! != -> _andar_atual `i -> 0 `i 380  ]
+{
+"100
+[; ;main.c: 100:                     chamadas_descida[0] = 1;
+[e = *U + &U _chamadas_descida * -> -> -> 0 `i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 1 `i `a ]
+"101
+[; ;main.c: 101:                 }
 }
 [e :U 380 ]
-"87
-[; ;main.c: 87:         }
-}
 [e :U 379 ]
-"90
-[; ;main.c: 90:         Verificar_Sensores();
-[e ( _Verificar_Sensores ..  ]
-"93
-[; ;main.c: 93:         switch (estado_atual) {
-[e $U 386  ]
-{
-"94
-[; ;main.c: 94:             case ESTADO_PARADO:
-[e :U 387 ]
-"95
-[; ;main.c: 95:                 if (chamadas_subida[andar_atual]) {
-[e $ ! != -> *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i 388  ]
-{
-"96
-[; ;main.c: 96:                     Limpar_Chamada_Atual();
-[e ( _Limpar_Chamada_Atual ..  ]
-"97
-[; ;main.c: 97:                     estado_atual = ESTADO_ESPERA_PORTA;
-[e = _estado_atual . `E2975 3 ]
-"98
-[; ;main.c: 98:                     contador_espera = 0;
-[e = _contador_espera -> -> 0 `i `us ]
-"99
-[; ;main.c: 99:                 }
-}
-[e $U 389  ]
-"100
-[; ;main.c: 100:                 else if (chamadas_descida[andar_atual]) {
-[e :U 388 ]
-[e $ ! != -> *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 390  ]
-{
-"101
-[; ;main.c: 101:                     Limpar_Chamada_Atual();
-[e ( _Limpar_Chamada_Atual ..  ]
+[e :U 377 ]
+[e :U 375 ]
+[e :U 373 ]
 "102
-[; ;main.c: 102:                     estado_atual = ESTADO_ESPERA_PORTA;
-[e = _estado_atual . `E2975 3 ]
-"103
-[; ;main.c: 103:                     contador_espera = 0;
-[e = _contador_espera -> -> 0 `i `us ]
-"104
-[; ;main.c: 104:                 }
-}
-[e $U 391  ]
+[; ;main.c: 102:                 break;
+[e $U 369  ]
 "105
-[; ;main.c: 105:                 else if (Existe_Chamada_Acima(andar_atual)) {
-[e :U 390 ]
-[e $ ! != -> ( _Existe_Chamada_Acima (1 _andar_atual `i -> 0 `i 392  ]
-{
-"106
-[; ;main.c: 106:                     Controle_Subir();
-[e ( _Controle_Subir ..  ]
+[; ;main.c: 105:             case ESTADO_SUBINDO:
+[e :U 381 ]
 "107
-[; ;main.c: 107:                     estado_atual = ESTADO_SUBINDO;
-[e = _estado_atual . `E2975 1 ]
-"108
-[; ;main.c: 108:                 }
-}
-[e $U 393  ]
-"109
-[; ;main.c: 109:                 else if (Existe_Chamada_Abaixo(andar_atual)) {
-[e :U 392 ]
-[e $ ! != -> ( _Existe_Chamada_Abaixo (1 _andar_atual `i -> 0 `i 394  ]
+[; ;main.c: 107:                 if (chamadas_subida[andar_atual]) {
+[e $ ! != -> *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i 382  ]
 {
+"108
+[; ;main.c: 108:                     Controle_Parar();
+[e ( _Controle_Parar ..  ]
+"109
+[; ;main.c: 109:                     Limpar_Chamada_Atual();
+[e ( _Limpar_Chamada_Atual ..  ]
 "110
-[; ;main.c: 110:                     Controle_Descer();
-[e ( _Controle_Descer ..  ]
+[; ;main.c: 110:                     estado_atual = ESTADO_ESPERA_PORTA;
+[e = _estado_atual . `E2975 3 ]
 "111
-[; ;main.c: 111:                     estado_atual = ESTADO_DESCENDO;
-[e = _estado_atual . `E2975 2 ]
+[; ;main.c: 111:                     contador_espera = 0;
+[e = _contador_espera -> -> 0 `i `us ]
 "112
 [; ;main.c: 112:                 }
 }
-[e $U 395  ]
-"113
-[; ;main.c: 113:                 else if (andar_atual != 0) {
-[e :U 394 ]
-[e $ ! != -> _andar_atual `i -> 0 `i 396  ]
-{
+[e $U 383  ]
 "114
-[; ;main.c: 114:                     chamadas_descida[0] = 1;
-[e = *U + &U _chamadas_descida * -> -> -> 0 `i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 1 `i `a ]
-"115
-[; ;main.c: 115:                 }
-}
-[e :U 396 ]
-[e :U 395 ]
-[e :U 393 ]
-[e :U 391 ]
-[e :U 389 ]
+[; ;main.c: 114:                 else if (!Existe_Chamada_Acima(andar_atual)) {
+[e :U 382 ]
+[e $ ! ! != -> ( _Existe_Chamada_Acima (1 _andar_atual `i -> 0 `i 384  ]
+{
 "116
-[; ;main.c: 116:                 break;
-[e $U 385  ]
+[; ;main.c: 116:                     if (chamadas_descida[andar_atual]) {
+[e $ ! != -> *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 385  ]
+{
+"117
+[; ;main.c: 117:                         Controle_Parar();
+[e ( _Controle_Parar ..  ]
 "118
-[; ;main.c: 118:             case ESTADO_SUBINDO:
-[e :U 397 ]
+[; ;main.c: 118:                         Limpar_Chamada_Atual();
+[e ( _Limpar_Chamada_Atual ..  ]
 "119
-[; ;main.c: 119:                 if (chamadas_subida[andar_atual]) {
-[e $ ! != -> *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i 398  ]
-{
+[; ;main.c: 119:                         estado_atual = ESTADO_ESPERA_PORTA;
+[e = _estado_atual . `E2975 3 ]
 "120
-[; ;main.c: 120:                     Controle_Parar();
-[e ( _Controle_Parar ..  ]
+[; ;main.c: 120:                         contador_espera = 0;
+[e = _contador_espera -> -> 0 `i `us ]
 "121
-[; ;main.c: 121:                     Limpar_Chamada_Atual();
-[e ( _Limpar_Chamada_Atual ..  ]
-"122
-[; ;main.c: 122:                     estado_atual = ESTADO_ESPERA_PORTA;
-[e = _estado_atual . `E2975 3 ]
+[; ;main.c: 121:                     }
+}
+[e $U 386  ]
 "123
-[; ;main.c: 123:                     contador_espera = 0;
-[e = _contador_espera -> -> 0 `i `us ]
+[; ;main.c: 123:                     else {
+[e :U 385 ]
+{
 "124
-[; ;main.c: 124:                 }
-}
-[e $U 399  ]
+[; ;main.c: 124:                         Controle_Parar();
+[e ( _Controle_Parar ..  ]
 "125
-[; ;main.c: 125:                 else if (!Existe_Chamada_Acima(andar_atual)) {
-[e :U 398 ]
-[e $ ! ! != -> ( _Existe_Chamada_Acima (1 _andar_atual `i -> 0 `i 400  ]
-{
+[; ;main.c: 125:                         estado_atual = ESTADO_PARADO;
+[e = _estado_atual . `E2975 0 ]
 "126
-[; ;main.c: 126:                     if (chamadas_descida[andar_atual]) {
-[e $ ! != -> *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 401  ]
-{
+[; ;main.c: 126:                     }
+}
+[e :U 386 ]
 "127
-[; ;main.c: 127:                         Controle_Parar();
-[e ( _Controle_Parar ..  ]
+[; ;main.c: 127:                 }
+}
+[e :U 384 ]
+[e :U 383 ]
 "128
-[; ;main.c: 128:                         Limpar_Chamada_Atual();
-[e ( _Limpar_Chamada_Atual ..  ]
-"129
-[; ;main.c: 129:                         estado_atual = ESTADO_ESPERA_PORTA;
-[e = _estado_atual . `E2975 3 ]
-"130
-[; ;main.c: 130:                         contador_espera = 0;
-[e = _contador_espera -> -> 0 `i `us ]
+[; ;main.c: 128:                 break;
+[e $U 369  ]
 "131
-[; ;main.c: 131:                     } else {
-}
-[e $U 402  ]
-[e :U 401 ]
-{
-"132
-[; ;main.c: 132:                         Controle_Parar();
-[e ( _Controle_Parar ..  ]
+[; ;main.c: 131:             case ESTADO_DESCENDO:
+[e :U 387 ]
 "133
-[; ;main.c: 133:                         estado_atual = ESTADO_PARADO;
-[e = _estado_atual . `E2975 0 ]
+[; ;main.c: 133:                 if (chamadas_descida[andar_atual]) {
+[e $ ! != -> *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 388  ]
+{
 "134
-[; ;main.c: 134:                     }
-}
-[e :U 402 ]
+[; ;main.c: 134:                     Controle_Parar();
+[e ( _Controle_Parar ..  ]
 "135
-[; ;main.c: 135:                 }
-}
-[e :U 400 ]
-[e :U 399 ]
+[; ;main.c: 135:                     Limpar_Chamada_Atual();
+[e ( _Limpar_Chamada_Atual ..  ]
 "136
-[; ;main.c: 136:                 break;
-[e $U 385  ]
+[; ;main.c: 136:                     estado_atual = ESTADO_ESPERA_PORTA;
+[e = _estado_atual . `E2975 3 ]
+"137
+[; ;main.c: 137:                     contador_espera = 0;
+[e = _contador_espera -> -> 0 `i `us ]
 "138
-[; ;main.c: 138:             case ESTADO_DESCENDO:
-[e :U 403 ]
-"139
-[; ;main.c: 139:                 if (chamadas_descida[andar_atual]) {
-[e $ ! != -> *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 404  ]
-{
+[; ;main.c: 138:                 }
+}
+[e $U 389  ]
 "140
-[; ;main.c: 140:                     Controle_Parar();
-[e ( _Controle_Parar ..  ]
-"141
-[; ;main.c: 141:                     Limpar_Chamada_Atual();
-[e ( _Limpar_Chamada_Atual ..  ]
+[; ;main.c: 140:                 else if (!Existe_Chamada_Abaixo(andar_atual)) {
+[e :U 388 ]
+[e $ ! ! != -> ( _Existe_Chamada_Abaixo (1 _andar_atual `i -> 0 `i 390  ]
+{
 "142
-[; ;main.c: 142:                     estado_atual = ESTADO_ESPERA_PORTA;
-[e = _estado_atual . `E2975 3 ]
+[; ;main.c: 142:                     if (chamadas_subida[andar_atual]) {
+[e $ ! != -> *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i 391  ]
+{
 "143
-[; ;main.c: 143:                     contador_espera = 0;
-[e = _contador_espera -> -> 0 `i `us ]
+[; ;main.c: 143:                          Controle_Parar();
+[e ( _Controle_Parar ..  ]
 "144
-[; ;main.c: 144:                 }
-}
-[e $U 405  ]
-"145
-[; ;main.c: 145:                 else if (!Existe_Chamada_Abaixo(andar_atual)) {
-[e :U 404 ]
-[e $ ! ! != -> ( _Existe_Chamada_Abaixo (1 _andar_atual `i -> 0 `i 406  ]
-{
-"146
-[; ;main.c: 146:                     if (chamadas_subida[andar_atual]) {
-[e $ ! != -> *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i 407  ]
-{
-"147
-[; ;main.c: 147:                          Controle_Parar();
-[e ( _Controle_Parar ..  ]
-"148
-[; ;main.c: 148:                          Limpar_Chamada_Atual();
+[; ;main.c: 144:                          Limpar_Chamada_Atual();
 [e ( _Limpar_Chamada_Atual ..  ]
-"149
-[; ;main.c: 149:                          estado_atual = ESTADO_ESPERA_PORTA;
+"145
+[; ;main.c: 145:                          estado_atual = ESTADO_ESPERA_PORTA;
 [e = _estado_atual . `E2975 3 ]
-"150
-[; ;main.c: 150:                          contador_espera = 0;
+"146
+[; ;main.c: 146:                          contador_espera = 0;
 [e = _contador_espera -> -> 0 `i `us ]
-"151
-[; ;main.c: 151:                     } else {
+"147
+[; ;main.c: 147:                     }
 }
-[e $U 408  ]
-[e :U 407 ]
+[e $U 392  ]
+"149
+[; ;main.c: 149:                     else {
+[e :U 391 ]
 {
-"152
-[; ;main.c: 152:                         Controle_Parar();
+"150
+[; ;main.c: 150:                         Controle_Parar();
 [e ( _Controle_Parar ..  ]
-"153
-[; ;main.c: 153:                         estado_atual = ESTADO_PARADO;
+"151
+[; ;main.c: 151:                         estado_atual = ESTADO_PARADO;
 [e = _estado_atual . `E2975 0 ]
+"152
+[; ;main.c: 152:                     }
+}
+[e :U 392 ]
+"153
+[; ;main.c: 153:                 }
+}
+[e :U 390 ]
+[e :U 389 ]
 "154
-[; ;main.c: 154:                     }
-}
-[e :U 408 ]
-"155
-[; ;main.c: 155:                 }
-}
-[e :U 406 ]
-[e :U 405 ]
-"156
-[; ;main.c: 156:                 break;
-[e $U 385  ]
+[; ;main.c: 154:                 break;
+[e $U 369  ]
 "158
 [; ;main.c: 158:             case ESTADO_ESPERA_PORTA:
-[e :U 409 ]
+[e :U 393 ]
 "159
 [; ;main.c: 159:                 contador_espera++;
 [e ++ _contador_espera -> -> 1 `i `us ]
-"160
-[; ;main.c: 160:                 if (contador_espera >= 200) {
-[e $ ! >= -> _contador_espera `ui -> -> 200 `i `ui 410  ]
-{
 "161
-[; ;main.c: 161:                     estado_atual = ESTADO_REVERSAO;
-[e = _estado_atual . `E2975 4 ]
+[; ;main.c: 161:                 if (contador_espera >= 200) {
+[e $ ! >= -> _contador_espera `ui -> -> 200 `i `ui 394  ]
+{
 "162
-[; ;main.c: 162:                     contador_espera = 0;
-[e = _contador_espera -> -> 0 `i `us ]
+[; ;main.c: 162:                     estado_atual = ESTADO_REVERSAO;
+[e = _estado_atual . `E2975 4 ]
 "163
-[; ;main.c: 163:                 }
-}
-[e :U 410 ]
+[; ;main.c: 163:                     contador_espera = 0;
+[e = _contador_espera -> -> 0 `i `us ]
 "164
-[; ;main.c: 164:                 break;
-[e $U 385  ]
-"166
-[; ;main.c: 166:             case ESTADO_REVERSAO:
-[e :U 411 ]
-"167
-[; ;main.c: 167:                 contador_espera++;
-[e ++ _contador_espera -> -> 1 `i `us ]
+[; ;main.c: 164:                 }
+}
+[e :U 394 ]
+"165
+[; ;main.c: 165:                 break;
+[e $U 369  ]
 "168
-[; ;main.c: 168:                 if (contador_espera >= 50) {
-[e $ ! >= -> _contador_espera `ui -> -> 50 `i `ui 412  ]
-{
+[; ;main.c: 168:             case ESTADO_REVERSAO:
+[e :U 395 ]
 "169
-[; ;main.c: 169:                     estado_atual = ESTADO_PARADO;
-[e = _estado_atual . `E2975 0 ]
-"170
-[; ;main.c: 170:                 }
-}
-[e :U 412 ]
-"171
-[; ;main.c: 171:                 break;
-[e $U 385  ]
+[; ;main.c: 169:                 contador_espera++;
+[e ++ _contador_espera -> -> 1 `i `us ]
 "172
-[; ;main.c: 172:         }
-}
-[e $U 385  ]
-[e :U 386 ]
-[e [\ -> _estado_atual `ui , $ -> . `E2975 0 `ui 387
- , $ -> . `E2975 1 `ui 397
- , $ -> . `E2975 2 `ui 403
- , $ -> . `E2975 3 `ui 409
- , $ -> . `E2975 4 `ui 411
- 385 ]
-[e :U 385 ]
-"175
-[; ;main.c: 175:         contador_telemetria++;
-[e ++ _contador_telemetria -> -> 1 `i `us ]
-"176
-[; ;main.c: 176:         if (contador_telemetria >= 30) {
-[e $ ! >= -> _contador_telemetria `ui -> -> 30 `i `ui 413  ]
+[; ;main.c: 172:                 if (contador_espera >= 50) {
+[e $ ! >= -> _contador_espera `ui -> -> 50 `i `ui 396  ]
 {
-"177
-[; ;main.c: 177:             UART_EnviaDados();
+"173
+[; ;main.c: 173:                     estado_atual = ESTADO_PARADO;
+[e = _estado_atual . `E2975 0 ]
+"174
+[; ;main.c: 174:                 }
+}
+[e :U 396 ]
+"175
+[; ;main.c: 175:                 break;
+[e $U 369  ]
+"176
+[; ;main.c: 176:         }
+}
+[e $U 369  ]
+[e :U 370 ]
+[e [\ -> _estado_atual `ui , $ -> . `E2975 0 `ui 371
+ , $ -> . `E2975 1 `ui 381
+ , $ -> . `E2975 2 `ui 387
+ , $ -> . `E2975 3 `ui 393
+ , $ -> . `E2975 4 `ui 395
+ 369 ]
+[e :U 369 ]
+"180
+[; ;main.c: 180:         contador_telemetria++;
+[e ++ _contador_telemetria -> -> 1 `i `us ]
+"183
+[; ;main.c: 183:         if (contador_telemetria >= 30) {
+[e $ ! >= -> _contador_telemetria `ui -> -> 30 `i `ui 397  ]
+{
+"186
+[; ;main.c: 186:             UART_EnviaDados();
 [e ( _UART_EnviaDados ..  ]
-"182
-[; ;main.c: 182:             for(int i=0; i<4; i++) {
+"189
+[; ;main.c: 189:             for(int i=0; i<4; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 414  ]
-[e $U 415  ]
-[e :U 414 ]
+[e $ < _i -> 4 `i 398  ]
+[e $U 399  ]
+[e :U 398 ]
 {
-"183
-[; ;main.c: 183:                 solicitacoes[i] = chamadas_subida[i] || chamadas_descida[i];
+"190
+[; ;main.c: 190:                 solicitacoes[i] = chamadas_subida[i] || chamadas_descida[i];
 [e = *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux -> -> || != -> *U + &U _chamadas_subida * -> -> _i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i != -> *U + &U _chamadas_descida * -> -> _i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i `i `a ]
-"184
-[; ;main.c: 184:             }
+"191
+[; ;main.c: 191:             }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 414  ]
-[e :U 415 ]
+[e $ < _i -> 4 `i 398  ]
+[e :U 399 ]
 }
-"186
-[; ;main.c: 186:             MatrizLed();
+"194
+[; ;main.c: 194:             MatrizLed();
 [e ( _MatrizLed ..  ]
-"187
-[; ;main.c: 187:             contador_telemetria = 0;
+"197
+[; ;main.c: 197:             contador_telemetria = 0;
 [e = _contador_telemetria -> -> 0 `i `us ]
-"188
-[; ;main.c: 188:         }
+"198
+[; ;main.c: 198:         }
 }
-[e :U 413 ]
-"190
-[; ;main.c: 190:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[e :U 397 ]
+"201
+[; ;main.c: 201:         _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"191
-[; ;main.c: 191:     }
+"202
+[; ;main.c: 202:     }
 }
-[e :U 376 ]
-[e $U 377  ]
-[e :U 378 ]
-"192
-[; ;main.c: 192: }
-[e :UE 375 ]
+[e :U 360 ]
+[e $U 361  ]
+[e :U 362 ]
+"203
+[; ;main.c: 203: }
+[e :UE 359 ]
 }

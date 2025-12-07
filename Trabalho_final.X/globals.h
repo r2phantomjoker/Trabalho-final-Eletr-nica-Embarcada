@@ -141,4 +141,22 @@ typedef enum {
 
 extern volatile EstadoElevador estado_atual;
 
+/**
+ * @brief Vetor de chamadas de subida (Botões externos ^).
+ * @note Definido em globals.c
+ */
+extern bool chamadas_subida[4];  
+
+/**
+ * @brief Vetor de chamadas de descida (Botões externos v).
+ * @note Definido em globals.c
+ */
+extern bool chamadas_descida[4]; 
+
+// VARIÁVEIS DE CONTROLE
+extern uint16_t contador_telemetria;
+extern uint16_t contador_espera;
+extern char buffer_origem;
+extern char buffer_destino;
+
 #endif /* GLOBALS_H */

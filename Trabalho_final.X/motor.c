@@ -10,20 +10,29 @@
 #include "mcc_generated_files/mcc.h" 
 #include "mcc_generated_files/pwm3.h"
 
+
 // =======================
 // CONSTANTES E DEFINIÇÕES
 // =======================
 
-/** @brief Limite máximo de pulsos (segurança de software). */
+/** 
+ * @brief Limite máximo de pulsos (segurança de software). 
+ */
 #define MAX_PULSOS_TOPO   220
 
-/** @brief Posição física máxima em milímetros. */
+/** 
+ * @brief Posição física máxima em milímetros. 
+ */
 #define POSICAO_MAX_MM    180
 
-/** @brief Fator de conversão: 0.837 mm/pulso * 1000 = 837. */
+/** 
+ * @brief Fator de conversão: 0.837 mm/pulso * 1000 = 837. 
+ */
 #define MICRONS_POR_PULSO 837 
 
-/** @brief Período de execução da tarefa de sensores (ms). */
+/** 
+ * @brief Período de execução da tarefa de sensores (ms). 
+ */
 #define TEMPO_TMR4_MS     100  
 
 // ===================
@@ -53,13 +62,13 @@ static uint8_t ultimo_valor_timer0 = 0;
 void SENSORES_CalcularVelocidade(void){
     
     // 1. LEITURA DO ENCODER
-    // Lê o registrador TMR0 que conta os pulsos físicos do disco do motor.
+    // Lê o registrador TMR0 que conta os pulsos físicos do disco do motor
     uint8_t valor_atual = TMR0_ReadTimer();     
 
     // Calcula quantos pulsos aconteceram desde a última leitura
     uint8_t delta = valor_atual - ultimo_valor_timer0;
     
-    // Salva o valor atual para a próxima conta.
+    // Salva o valor atual para a próxima conta
     ultimo_valor_timer0 = valor_atual;
 
     // 2. ATUALIZAÇÃO DA POSIÇÃO 
@@ -71,21 +80,21 @@ void SENSORES_CalcularVelocidade(void){
     } 
     
     else if (estado_motor == MOTOR_DESCENDO) {
-        if(delta > total_pulsos) total_pulsos = 0;  // Proteção para não ficar negativo.
-        else total_pulsos -= delta; // Se estiver descendo, subtraem-se os pulsos.
+        if(delta > total_pulsos) total_pulsos = 0;  // Proteção para não ficar negativo
+        else total_pulsos -= delta; // Se estiver descendo, subtraem-se os pulsos
     }
     
     // 3. CONVERSÃO MATEMÁTICA 
     // Conversão dos pulsos para milímetros 
     // Fórmula Otimizada: mm = (pulsos * 837) / 1000
     
-    // É utilizada uma variável temporária de 32 bits para a multiplicação não estourar o limite de 16 bits.
+    // É utilizada uma variável temporária de 32 bits para a multiplicação não estourar o limite de 16 bits
     uint32_t calculo_posicao = (uint32_t)total_pulsos * MICRONS_POR_PULSO;
     posicao_mm = (uint8_t)(calculo_posicao / 1000); // Guarda na variável global (0-180mm)
 
     // 4. CÁLCULO DA VELOCIDADE
-    // Velocidade = Distância / Tempo.
-    // Forma utilizada: (delta * 837) / 100, velocidade em mm/s.
+    // Velocidade = Distância / Tempo
+    // Fórmula utilizada: (delta * 837) / 100, velocidade em mm/s
     uint32_t calculo_velocidade = (uint32_t)delta * MICRONS_POR_PULSO;
     velocidade_atual = (uint8_t)(calculo_velocidade / 100);
     
@@ -95,7 +104,7 @@ void SENSORES_CalcularVelocidade(void){
     // Média móvel simples para estabilizar a leitura do ADC
     for(int i = 0;  i < 10; i++){
         leitura_adc += ADC_GetConversion(channel_AN2);
-        // _delay(100); // ATENÇÃO: Verifique se este delay não trava o sistema. Se for ciclos, ok.
+        __delay_ms(100); 
     }
     
     // Média aritmética
@@ -157,13 +166,13 @@ void Verificar_Sensores() {
     if (SENSOR_S4 == 1) andar_atual = 3; 
 
     // SEGURANÇA EXTREMA 
-    // Se bater no chão descendo - PARA
+    // Se bater no chão descendo, motor para
     if (SENSOR_S1 == 0 && estado_motor == MOTOR_DESCENDO) {
         Controle_Parar();
         estado_atual = ESTADO_PARADO;
         posicao_mm = 0; // Recalibra a posição física para 0
     }
-    // Se bater no teto subindo - PARA
+    // Se bater no teto subindo, motor para
     if (SENSOR_S4 == 1 && estado_motor == MOTOR_SUBINDO) {
         Controle_Parar();
         estado_atual = ESTADO_PARADO;
@@ -174,12 +183,13 @@ void Verificar_Sensores() {
 // =======================
 // ALGORITMO DE OTIMIZAÇÃO
 // =======================
+
 /**
  * @brief Algoritmo de escalonamento de paradas (SCAN).
  * @details Esta função verifica o vetor de solicitações pendentes e decide qual
  * será o próximo andar alvo com base no estado atual de movimento.
  * A prioridade segue a lógica:
- * 1. Se estiver parado, atende a primeira solicitação encontrada (0 a 3).
+ * 1. Se estiver parado, atende a primeira solicitação encontrada.
  * 2. Se estiver subindo, prioriza solicitações acima do andar atual.
  * 3. Se estiver descendo, prioriza solicitações abaixo do andar atual.
  * 4. Se não houver solicitações no sentido atual, verifica qualquer andar.
@@ -191,13 +201,13 @@ int Buscar_Proxima_Parada() {
         for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
         return -1;
     }
-    // 2. Se subindo, prioriza quem está ACIMA
+    // 2. Se subindo, prioriza quem está solicitações acimas
     if (estado_atual == ESTADO_SUBINDO) {
         for (int i = andar_atual + 1; i <= 3; i++) {
             if (solicitacoes[i]) return i;
         }
     }
-    // 3. Se descendo, prioriza quem está ABAIXO
+    // 3. Se descendo, prioriza quem está solicitações abaixos
     if (estado_atual == ESTADO_DESCENDO) {
         for (int i = andar_atual - 1; i >= 0; i--) {
             if (solicitacoes[i]) return i;
@@ -207,4 +217,60 @@ int Buscar_Proxima_Parada() {
     for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
     
     return -1;
+}    
+    
+/**
+ * @brief Verifica se existem chamadas pendentes acima do andar de referência.
+ * @param andar_ref O andar a partir do qual a busca será feita.
+ * @return true Se houver qualquer chamada, subida ou descida, acima.
+ * @return false Se não houver chamadas.
+ */
+bool Existe_Chamada_Acima(uint8_t andar_ref) {
+    // Varre dos andares acima até o topo 
+    for (int i = andar_ref + 1; i <= 3; i++) {
+        // Verifica se há chamada de subida OU descida naquele andar
+        if (chamadas_subida[i] || chamadas_descida[i]) return true;
+    }
+    return false;
 }
+
+/**
+ * @brief Verifica se existem chamadas pendentes abaixo do andar de referência.
+ * @param andar_ref O andar a partir do qual a busca será feita.
+ * @return true Se houver qualquer chamada, subida ou descida, abaixo.
+ * @return false Se não houver chamadas.
+ */
+bool Existe_Chamada_Abaixo(uint8_t andar_ref) {
+    // Varre dos andares abaixo até o térreo
+    for (int i = 0; i < andar_ref; i++) {
+        // Verifica se há chamada de subida OU descida naquele andar
+        if (chamadas_subida[i] || chamadas_descida[i]) return true;
+    }
+    return false;
+}
+
+/**
+ * @brief Limpa a solicitação do andar atual após o atendimento.
+ * @details Remove a pendência dos vetores globais (#chamadas_subida ou #chamadas_descida)
+ * baseando-se na direção atual do elevador e nas regras de fim de curso.
+ */
+void Limpar_Chamada_Atual() {
+    
+    // Se estava subindo ou parado, marca como atendida a solicitação de subida
+    if (estado_motor == MOTOR_SUBINDO || estado_motor == MOTOR_PARADO) {
+        chamadas_subida[andar_atual] = false;
+    }
+    
+    // Se estava descendo ou parado, marca como atendida a solicitação de descida
+    if (estado_motor == MOTOR_DESCENDO || estado_motor == MOTOR_PARADO) {
+        chamadas_descida[andar_atual] = false;
+    }
+    
+    // Tratamento de Extremos
+    // No último andar, limpa forçado
+    if (andar_atual == 3) chamadas_subida[3] = false; 
+    
+    // No térreo, limpa forçado
+    if (andar_atual == 0) chamadas_descida[0] = false;
+}
+

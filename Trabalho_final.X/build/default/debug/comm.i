@@ -4437,6 +4437,24 @@ typedef enum {
 
 
 extern volatile EstadoElevador estado_atual;
+
+
+
+
+
+extern _Bool chamadas_subida[4];
+
+
+
+
+
+extern _Bool chamadas_descida[4];
+
+
+extern uint16_t contador_telemetria;
+extern uint16_t contador_espera;
+extern char buffer_origem;
+extern char buffer_destino;
 # 8 "comm.c" 2
 # 1 "./mcc_generated_files/mcc.h" 1
 # 50 "./mcc_generated_files/mcc.h"
@@ -4998,10 +5016,6 @@ void MatrizInicializa(void){
     }
 }
 
-
-int Uniaomatrix (void){
-
-}
 
 
 void MatrizLed (void){

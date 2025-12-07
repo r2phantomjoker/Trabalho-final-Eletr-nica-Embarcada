@@ -4396,6 +4396,24 @@ typedef enum {
 
 
 extern volatile EstadoElevador estado_atual;
+
+
+
+
+
+extern _Bool chamadas_subida[4];
+
+
+
+
+
+extern _Bool chamadas_descida[4];
+
+
+extern uint16_t contador_telemetria;
+extern uint16_t contador_espera;
+extern char buffer_origem;
+extern char buffer_destino;
 # 8 "globals.c" 2
 
 
@@ -4413,3 +4431,19 @@ volatile _Bool solicitacoes[4] = {0, 0, 0, 0};
 
 
 volatile EstadoElevador estado_atual = ESTADO_PARADO;
+
+
+
+
+
+
+_Bool chamadas_subida[4] = {0, 0, 0, 0};
+_Bool chamadas_descida[4] = {0, 0, 0, 0};
+
+uint16_t contador_telemetria = 0;
+uint16_t contador_espera = 0;
+
+
+
+char buffer_origem = 0;
+char buffer_destino = 0;
