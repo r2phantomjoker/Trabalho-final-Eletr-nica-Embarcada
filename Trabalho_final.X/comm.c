@@ -237,12 +237,12 @@ void MAX7219_Write(uint8_t address, uint8_t data) {
     
     // 2. Transmite o Endereço 
     SSP1BUF = address;           // Escrever no buffer, inicia o Clock do hardware
-    while(!PIR1bits.SSP1IF);     // Espera o hardware enviar todos os 8 bits
+    // while(!PIR1bits.SSP1IF);     // Espera o hardware enviar todos os 8 bits
     PIR1bits.SSP1IF = 0;         // Limpa a flag
     
     // 3. Transmite o Dado
     SSP1BUF = data;              // Inicia o envio do segundo byte
-    while(!PIR1bits.SSP1IF);     // Espera o hardware enviar todos os 8 bits
+    // while(!PIR1bits.SSP1IF);     // Espera o hardware enviar todos os 8 bits
     PIR1bits.SSP1IF = 0;         // Limpa a flag
     
     // 4. Finaliza e Salva

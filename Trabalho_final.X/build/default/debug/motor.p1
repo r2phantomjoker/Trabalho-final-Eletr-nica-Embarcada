@@ -2,29 +2,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "129 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 129: uint8_t TMR0_ReadTimer(void);
 [v _TMR0_ReadTimer `(uc ~T0 @X0 0 ef ]
-"87 ./globals.h
-[; ;./globals.h: 87: extern volatile uint8_t estado_motor;
+"84 ./globals.h
+[; ;./globals.h: 84: extern volatile uint8_t estado_motor;
 [v _estado_motor `Vuc ~T0 @X0 0 e ]
-"93
-[; ;./globals.h: 93: extern volatile uint8_t posicao_mm;
+"90
+[; ;./globals.h: 90: extern volatile uint8_t posicao_mm;
 [v _posicao_mm `Vuc ~T0 @X0 0 e ]
-"99
-[; ;./globals.h: 99: extern volatile uint8_t velocidade_atual;
+"96
+[; ;./globals.h: 96: extern volatile uint8_t velocidade_atual;
 [v _velocidade_atual `Vuc ~T0 @X0 0 e ]
-"106 motor.c
-[; ;motor.c: 106:         leitura_adc += ADC_GetConversion(channel_AN2);
+"102
+[; ;./globals.h: 102: extern volatile uint16_t temperatura_ponte;
+[v _temperatura_ponte `Vus ~T0 @X0 0 e ]
+"117 motor.c
+[; ;motor.c: 117:     temperatura_ponte = ADC_GetConversion(channel_AN2);
 [c E2935 2 29 30 31 .. ]
 [n E2935 . channel_AN2 channel_Temp channel_DAC channel_FVR  ]
 "288 ./mcc_generated_files/adc.h
 [; ;./mcc_generated_files/adc.h: 288: adc_result_t ADC_GetConversion(adc_channel_t channel);
 [v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E2935 ]
-[v F212 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
-[v __delay `JF212 ~T0 @X0 0 e ]
-[p i __delay ]
-"105 ./globals.h
-[; ;./globals.h: 105: extern volatile uint16_t temperatura_ponte;
-[v _temperatura_ponte `Vus ~T0 @X0 0 e ]
 "2045 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2045:     struct {
 [s S110 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -50,8 +46,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "508
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 508: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
 [v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
-"75 ./globals.h
-[; ;./globals.h: 75: extern volatile uint8_t andar_atual;
+"72 ./globals.h
+[; ;./globals.h: 72: extern volatile uint8_t andar_atual;
 [v _andar_atual `Vuc ~T0 @X0 0 e ]
 "2164 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2164:     struct {
@@ -75,18 +71,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2298
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2298: extern volatile CM2CON0bits_t CM2CON0bits __attribute__((address(0x113)));
 [v _CM2CON0bits `VS118 ~T0 @X0 0 e@275 ]
-"172 motor.c
-[; ;motor.c: 172:         estado_atual = ESTADO_PARADO;
+"178 motor.c
+[; ;motor.c: 178:         estado_atual = ESTADO_PARADO;
 [c E2507 0 1 2 3 4 .. ]
 [n E2507 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
-"130 ./globals.h
-[; ;./globals.h: 130: extern volatile EstadoElevador estado_atual;
+"127 ./globals.h
+[; ;./globals.h: 127: extern volatile EstadoElevador estado_atual;
 [v _estado_atual `VE2507 ~T0 @X0 0 e ]
-"135
-[; ;./globals.h: 135: extern _Bool chamadas_subida[4];
+"132
+[; ;./globals.h: 132: extern _Bool chamadas_subida[4];
 [v _chamadas_subida `a ~T0 @X0 -> 0 `x e ]
-"140
-[; ;./globals.h: 140: extern _Bool chamadas_descida[4];
+"137
+[; ;./globals.h: 137: extern _Bool chamadas_descida[4];
 [v _chamadas_descida `a ~T0 @X0 -> 0 `x e ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
@@ -562,218 +558,175 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6748
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 6748: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"46 motor.c
-[; ;motor.c: 46: static uint16_t total_pulsos = 0;
+"44 motor.c
+[; ;motor.c: 44: static uint16_t total_pulsos = 0;
 [v _total_pulsos `us ~T0 @X0 1 s ]
 [i _total_pulsos
 -> -> 0 `i `us
 ]
-"52
-[; ;motor.c: 52: static uint8_t ultimo_valor_timer0 = 0;
+"50
+[; ;motor.c: 50: static uint8_t ultimo_valor_timer0 = 0;
 [v _ultimo_valor_timer0 `uc ~T0 @X0 1 s ]
 [i _ultimo_valor_timer0
 -> -> 0 `i `uc
 ]
-"62
-[; ;motor.c: 62: void SENSORES_CalcularVelocidade(void){
+"59
+[; ;motor.c: 59: void SENSORES_CalcularVelocidade(void){
 [v _SENSORES_CalcularVelocidade `(v ~T0 @X0 1 ef ]
 {
 [e :U _SENSORES_CalcularVelocidade ]
 [f ]
-"66
-[; ;motor.c: 66:     uint8_t valor_atual = TMR0_ReadTimer();
+"63
+[; ;motor.c: 63:     uint8_t valor_atual = TMR0_ReadTimer();
 [v _valor_atual `uc ~T0 @X0 1 a ]
 [e = _valor_atual ( _TMR0_ReadTimer ..  ]
-"69
-[; ;motor.c: 69:     uint8_t delta = valor_atual - ultimo_valor_timer0;
+"66
+[; ;motor.c: 66:     uint8_t delta = valor_atual - ultimo_valor_timer0;
 [v _delta `uc ~T0 @X0 1 a ]
 [e = _delta -> - -> _valor_atual `i -> _ultimo_valor_timer0 `i `uc ]
-"72
-[; ;motor.c: 72:     ultimo_valor_timer0 = valor_atual;
+"69
+[; ;motor.c: 69:     ultimo_valor_timer0 = valor_atual;
 [e = _ultimo_valor_timer0 _valor_atual ]
-"75
-[; ;motor.c: 75:     if (estado_motor == 1) {
+"72
+[; ;motor.c: 72:     if (estado_motor == 1) {
 [e $ ! == -> _estado_motor `i -> 1 `i 360  ]
 {
-"76
-[; ;motor.c: 76:         total_pulsos += delta;
+"73
+[; ;motor.c: 73:         total_pulsos += delta;
 [e =+ _total_pulsos -> _delta `us ]
-"79
-[; ;motor.c: 79:         if(total_pulsos > 220) total_pulsos = 220;
+"76
+[; ;motor.c: 76:         if(total_pulsos > 220) total_pulsos = 220;
 [e $ ! > -> _total_pulsos `ui -> -> 220 `i `ui 361  ]
 [e = _total_pulsos -> -> 220 `i `us ]
 [e :U 361 ]
-"80
-[; ;motor.c: 80:     }
+"77
+[; ;motor.c: 77:     }
 }
 [e $U 362  ]
-"82
-[; ;motor.c: 82:     else if (estado_motor == 2) {
+"79
+[; ;motor.c: 79:     else if (estado_motor == 2) {
 [e :U 360 ]
 [e $ ! == -> _estado_motor `i -> 2 `i 363  ]
 {
-"83
-[; ;motor.c: 83:         if(delta > total_pulsos) total_pulsos = 0;
+"80
+[; ;motor.c: 80:         if(delta > total_pulsos) total_pulsos = 0;
 [e $ ! > -> _delta `ui -> _total_pulsos `ui 364  ]
 [e = _total_pulsos -> -> 0 `i `us ]
 [e $U 365  ]
-"84
-[; ;motor.c: 84:         else total_pulsos -= delta;
+"81
+[; ;motor.c: 81:         else total_pulsos -= delta;
 [e :U 364 ]
 [e =- _total_pulsos -> _delta `us ]
 [e :U 365 ]
-"85
-[; ;motor.c: 85:     }
+"82
+[; ;motor.c: 82:     }
 }
 [e :U 363 ]
 [e :U 362 ]
-"92
-[; ;motor.c: 92:     uint32_t calculo_posicao = (uint32_t)total_pulsos * 837;
+"89
+[; ;motor.c: 89:     uint32_t calculo_posicao = (uint32_t)total_pulsos * 837;
 [v _calculo_posicao `ul ~T0 @X0 1 a ]
 [e = _calculo_posicao * -> _total_pulsos `ul -> -> -> 837 `i `l `ul ]
-"93
-[; ;motor.c: 93:     posicao_mm = (uint8_t)(calculo_posicao / 1000);
+"90
+[; ;motor.c: 90:     posicao_mm = (uint8_t)(calculo_posicao / 1000);
 [e = _posicao_mm -> / _calculo_posicao -> -> -> 1000 `i `l `ul `uc ]
-"98
-[; ;motor.c: 98:     uint32_t calculo_velocidade = (uint32_t)delta * 837;
+"95
+[; ;motor.c: 95:     uint32_t calculo_velocidade = (uint32_t)delta * 837;
 [v _calculo_velocidade `ul ~T0 @X0 1 a ]
 [e = _calculo_velocidade * -> _delta `ul -> -> -> 837 `i `l `ul ]
-"99
-[; ;motor.c: 99:     velocidade_atual = (uint8_t)(calculo_velocidade / 100);
+"96
+[; ;motor.c: 96:     velocidade_atual = (uint8_t)(calculo_velocidade / 100);
 [e = _velocidade_atual -> / _calculo_velocidade -> -> -> 100 `i `l `ul `uc ]
-"102
-[; ;motor.c: 102:     uint16_t leitura_adc = 0;
-[v _leitura_adc `us ~T0 @X0 1 a ]
-[e = _leitura_adc -> -> 0 `i `us ]
-"105
-[; ;motor.c: 105:     for(int i = 0; i < 10; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 10 `i 366  ]
-[e $U 367  ]
-[e :U 366 ]
-{
-"106
-[; ;motor.c: 106:         leitura_adc += ADC_GetConversion(channel_AN2);
-[e =+ _leitura_adc -> ( _ADC_GetConversion (1 . `E2935 0 `us ]
-"107
-[; ;motor.c: 107:         _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"108
-[; ;motor.c: 108:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 10 `i 366  ]
-[e :U 367 ]
-}
-"111
-[; ;motor.c: 111:     temperatura_ponte = (uint16_t)(leitura_adc / 10);
-[e = _temperatura_ponte -> / -> _leitura_adc `ui -> -> 10 `i `ui `us ]
-"112
-[; ;motor.c: 112: }
+"117
+[; ;motor.c: 117:     temperatura_ponte = ADC_GetConversion(channel_AN2);
+[e = _temperatura_ponte ( _ADC_GetConversion (1 . `E2935 0 ]
+"118
+[; ;motor.c: 118: }
 [e :UE 359 ]
 }
-"122
-[; ;motor.c: 122: void Controle_Subir() {
+"128
+[; ;motor.c: 128: void Controle_Subir() {
 [v _Controle_Subir `(v ~T0 @X0 1 ef ]
 {
 [e :U _Controle_Subir ]
 [f ]
-"123
-[; ;motor.c: 123:     LATAbits.LATA7 = 1;
+"129
+[; ;motor.c: 129:     LATAbits.LATA7 = 1;
 [e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-"124
-[; ;motor.c: 124:     PWM3_LoadDutyValue(614);
+"130
+[; ;motor.c: 130:     PWM3_LoadDutyValue(614);
 [e ( _PWM3_LoadDutyValue (1 -> -> 614 `i `us ]
-"125
-[; ;motor.c: 125:     estado_motor = 1;
+"131
+[; ;motor.c: 131:     estado_motor = 1;
 [e = _estado_motor -> -> 1 `i `uc ]
-"126
-[; ;motor.c: 126: }
-[e :UE 369 ]
-}
 "132
-[; ;motor.c: 132: void Controle_Descer() {
+[; ;motor.c: 132: }
+[e :UE 366 ]
+}
+"138
+[; ;motor.c: 138: void Controle_Descer() {
 [v _Controle_Descer `(v ~T0 @X0 1 ef ]
 {
 [e :U _Controle_Descer ]
 [f ]
-"133
-[; ;motor.c: 133:     LATAbits.LATA7 = 0;
+"139
+[; ;motor.c: 139:     LATAbits.LATA7 = 0;
 [e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-"134
-[; ;motor.c: 134:     PWM3_LoadDutyValue(614);
+"140
+[; ;motor.c: 140:     PWM3_LoadDutyValue(614);
 [e ( _PWM3_LoadDutyValue (1 -> -> 614 `i `us ]
-"135
-[; ;motor.c: 135:     estado_motor = 2;
+"141
+[; ;motor.c: 141:     estado_motor = 2;
 [e = _estado_motor -> -> 2 `i `uc ]
-"136
-[; ;motor.c: 136: }
-[e :UE 370 ]
-}
 "142
-[; ;motor.c: 142: void Controle_Parar() {
+[; ;motor.c: 142: }
+[e :UE 367 ]
+}
+"148
+[; ;motor.c: 148: void Controle_Parar() {
 [v _Controle_Parar `(v ~T0 @X0 1 ef ]
 {
 [e :U _Controle_Parar ]
 [f ]
-"143
-[; ;motor.c: 143:     PWM3_LoadDutyValue(0);
+"149
+[; ;motor.c: 149:     PWM3_LoadDutyValue(0);
 [e ( _PWM3_LoadDutyValue (1 -> -> 0 `i `us ]
-"144
-[; ;motor.c: 144:     estado_motor = 0;
+"150
+[; ;motor.c: 150:     estado_motor = 0;
 [e = _estado_motor -> -> 0 `i `uc ]
-"145
-[; ;motor.c: 145: }
-[e :UE 371 ]
+"151
+[; ;motor.c: 151: }
+[e :UE 368 ]
 }
-"158
-[; ;motor.c: 158: void Verificar_Sensores() {
+"164
+[; ;motor.c: 164: void Verificar_Sensores() {
 [v _Verificar_Sensores `(v ~T0 @X0 1 ef ]
 {
 [e :U _Verificar_Sensores ]
 [f ]
-"162
-[; ;motor.c: 162:     if (PORTBbits.RB0 == 0) andar_atual = 0;
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 373  ]
+"168
+[; ;motor.c: 168:     if (PORTBbits.RB0 == 0) andar_atual = 0;
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 370  ]
 [e = _andar_atual -> -> 0 `i `uc ]
-[e :U 373 ]
-"163
-[; ;motor.c: 163:     if (PORTBbits.RB3 == 0) andar_atual = 1;
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 374  ]
+[e :U 370 ]
+"169
+[; ;motor.c: 169:     if (PORTBbits.RB3 == 0) andar_atual = 1;
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 371  ]
 [e = _andar_atual -> -> 1 `i `uc ]
-[e :U 374 ]
-"165
-[; ;motor.c: 165:     if (CM1CON0bits.C1OUT == 1) andar_atual = 2;
-[e $ ! == -> . . _CM1CON0bits 0 6 `i -> 1 `i 375  ]
-[e = _andar_atual -> -> 2 `i `uc ]
-[e :U 375 ]
-"166
-[; ;motor.c: 166:     if (CM2CON0bits.C2OUT == 1) andar_atual = 3;
-[e $ ! == -> . . _CM2CON0bits 0 6 `i -> 1 `i 376  ]
-[e = _andar_atual -> -> 3 `i `uc ]
-[e :U 376 ]
-"170
-[; ;motor.c: 170:     if (PORTBbits.RB0 == 0 && estado_motor == 2) {
-[e $ ! && == -> . . _PORTBbits 0 0 `i -> 0 `i == -> _estado_motor `i -> 2 `i 377  ]
-{
+[e :U 371 ]
 "171
-[; ;motor.c: 171:         Controle_Parar();
-[e ( _Controle_Parar ..  ]
+[; ;motor.c: 171:     if (CM1CON0bits.C1OUT == 1) andar_atual = 2;
+[e $ ! == -> . . _CM1CON0bits 0 6 `i -> 1 `i 372  ]
+[e = _andar_atual -> -> 2 `i `uc ]
+[e :U 372 ]
 "172
-[; ;motor.c: 172:         estado_atual = ESTADO_PARADO;
-[e = _estado_atual . `E2507 0 ]
-"173
-[; ;motor.c: 173:         posicao_mm = 0;
-[e = _posicao_mm -> -> 0 `i `uc ]
-"174
-[; ;motor.c: 174:     }
-}
-[e :U 377 ]
+[; ;motor.c: 172:     if (CM2CON0bits.C2OUT == 1) andar_atual = 3;
+[e $ ! == -> . . _CM2CON0bits 0 6 `i -> 1 `i 373  ]
+[e = _andar_atual -> -> 3 `i `uc ]
+[e :U 373 ]
 "176
-[; ;motor.c: 176:     if (CM2CON0bits.C2OUT == 1 && estado_motor == 1) {
-[e $ ! && == -> . . _CM2CON0bits 0 6 `i -> 1 `i == -> _estado_motor `i -> 1 `i 378  ]
+[; ;motor.c: 176:     if (PORTBbits.RB0 == 0 && estado_motor == 2) {
+[e $ ! && == -> . . _PORTBbits 0 0 `i -> 0 `i == -> _estado_motor `i -> 2 `i 374  ]
 {
 "177
 [; ;motor.c: 177:         Controle_Parar();
@@ -782,129 +735,146 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motor.c: 178:         estado_atual = ESTADO_PARADO;
 [e = _estado_atual . `E2507 0 ]
 "179
-[; ;motor.c: 179:         posicao_mm = 180;
-[e = _posicao_mm -> -> 180 `i `uc ]
+[; ;motor.c: 179:         posicao_mm = 0;
+[e = _posicao_mm -> -> 0 `i `uc ]
 "180
 [; ;motor.c: 180:     }
 }
-[e :U 378 ]
-"181
-[; ;motor.c: 181: }
-[e :UE 372 ]
+[e :U 374 ]
+"182
+[; ;motor.c: 182:     if (CM2CON0bits.C2OUT == 1 && estado_motor == 1) {
+[e $ ! && == -> . . _CM2CON0bits 0 6 `i -> 1 `i == -> _estado_motor `i -> 1 `i 375  ]
+{
+"183
+[; ;motor.c: 183:         Controle_Parar();
+[e ( _Controle_Parar ..  ]
+"184
+[; ;motor.c: 184:         estado_atual = ESTADO_PARADO;
+[e = _estado_atual . `E2507 0 ]
+"185
+[; ;motor.c: 185:         posicao_mm = 180;
+[e = _posicao_mm -> -> 180 `i `uc ]
+"186
+[; ;motor.c: 186:     }
 }
-"193
-[; ;motor.c: 193: _Bool Existe_Chamada_Acima(uint8_t andar_ref) {
+[e :U 375 ]
+"187
+[; ;motor.c: 187: }
+[e :UE 369 ]
+}
+"199
+[; ;motor.c: 199: _Bool Existe_Chamada_Acima(uint8_t andar_ref) {
 [v _Existe_Chamada_Acima `(a ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Existe_Chamada_Acima ]
 [v _andar_ref `uc ~T0 @X0 1 r1 ]
 [f ]
-"195
-[; ;motor.c: 195:     for (int i = andar_ref + 1; i <= 3; i++) {
+"201
+[; ;motor.c: 201:     for (int i = andar_ref + 1; i <= 3; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i + -> _andar_ref `i -> 1 `i ]
-[e $ <= _i -> 3 `i 380  ]
-[e $U 381  ]
-[e :U 380 ]
+[e $ <= _i -> 3 `i 377  ]
+[e $U 378  ]
+[e :U 377 ]
 {
-"197
-[; ;motor.c: 197:         if (chamadas_subida[i] || chamadas_descida[i]) return 1;
-[e $ ! || != -> *U + &U _chamadas_subida * -> -> _i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i != -> *U + &U _chamadas_descida * -> -> _i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 383  ]
+"203
+[; ;motor.c: 203:         if (chamadas_subida[i] || chamadas_descida[i]) return 1;
+[e $ ! || != -> *U + &U _chamadas_subida * -> -> _i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i != -> *U + &U _chamadas_descida * -> -> _i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 380  ]
 [e ) -> -> 1 `i `a ]
-[e $UE 379  ]
-[e :U 383 ]
-"198
-[; ;motor.c: 198:     }
+[e $UE 376  ]
+[e :U 380 ]
+"204
+[; ;motor.c: 204:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ <= _i -> 3 `i 380  ]
-[e :U 381 ]
+[e $ <= _i -> 3 `i 377  ]
+[e :U 378 ]
 }
-"199
-[; ;motor.c: 199:     return 0;
+"205
+[; ;motor.c: 205:     return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 379  ]
-"200
-[; ;motor.c: 200: }
-[e :UE 379 ]
+[e $UE 376  ]
+"206
+[; ;motor.c: 206: }
+[e :UE 376 ]
 }
-"208
-[; ;motor.c: 208: _Bool Existe_Chamada_Abaixo(uint8_t andar_ref) {
+"214
+[; ;motor.c: 214: _Bool Existe_Chamada_Abaixo(uint8_t andar_ref) {
 [v _Existe_Chamada_Abaixo `(a ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Existe_Chamada_Abaixo ]
 [v _andar_ref `uc ~T0 @X0 1 r1 ]
 [f ]
-"210
-[; ;motor.c: 210:     for (int i = 0; i < andar_ref; i++) {
+"216
+[; ;motor.c: 216:     for (int i = 0; i < andar_ref; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $U 388  ]
-[e :U 385 ]
+[e $U 385  ]
+[e :U 382 ]
 {
-"212
-[; ;motor.c: 212:         if (chamadas_subida[i] || chamadas_descida[i]) return 1;
-[e $ ! || != -> *U + &U _chamadas_subida * -> -> _i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i != -> *U + &U _chamadas_descida * -> -> _i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 389  ]
+"218
+[; ;motor.c: 218:         if (chamadas_subida[i] || chamadas_descida[i]) return 1;
+[e $ ! || != -> *U + &U _chamadas_subida * -> -> _i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i != -> *U + &U _chamadas_descida * -> -> _i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 386  ]
 [e ) -> -> 1 `i `a ]
-[e $UE 384  ]
-[e :U 389 ]
-"213
-[; ;motor.c: 213:     }
+[e $UE 381  ]
+[e :U 386 ]
+"219
+[; ;motor.c: 219:     }
 }
 [e ++ _i -> 1 `i ]
-[e :U 388 ]
-[e $ < _i -> _andar_ref `i 385  ]
-[e :U 386 ]
+[e :U 385 ]
+[e $ < _i -> _andar_ref `i 382  ]
+[e :U 383 ]
 }
-"214
-[; ;motor.c: 214:     return 0;
+"220
+[; ;motor.c: 220:     return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 384  ]
-"215
-[; ;motor.c: 215: }
-[e :UE 384 ]
+[e $UE 381  ]
+"221
+[; ;motor.c: 221: }
+[e :UE 381 ]
 }
-"222
-[; ;motor.c: 222: void Limpar_Chamada_Atual() {
+"228
+[; ;motor.c: 228: void Limpar_Chamada_Atual() {
 [v _Limpar_Chamada_Atual `(v ~T0 @X0 1 ef ]
 {
 [e :U _Limpar_Chamada_Atual ]
 [f ]
-"225
-[; ;motor.c: 225:     if (estado_motor == 1 || estado_motor == 0) {
-[e $ ! || == -> _estado_motor `i -> 1 `i == -> _estado_motor `i -> 0 `i 391  ]
-{
-"226
-[; ;motor.c: 226:         chamadas_subida[andar_atual] = 0;
-[e = *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 0 `i `a ]
-"227
-[; ;motor.c: 227:     }
-}
-[e :U 391 ]
-"230
-[; ;motor.c: 230:     if (estado_motor == 2 || estado_motor == 0) {
-[e $ ! || == -> _estado_motor `i -> 2 `i == -> _estado_motor `i -> 0 `i 392  ]
-{
 "231
-[; ;motor.c: 231:         chamadas_descida[andar_atual] = 0;
-[e = *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 0 `i `a ]
+[; ;motor.c: 231:     if (estado_motor == 1 || estado_motor == 0) {
+[e $ ! || == -> _estado_motor `i -> 1 `i == -> _estado_motor `i -> 0 `i 388  ]
+{
 "232
-[; ;motor.c: 232:     }
+[; ;motor.c: 232:         chamadas_subida[andar_atual] = 0;
+[e = *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 0 `i `a ]
+"233
+[; ;motor.c: 233:     }
 }
-[e :U 392 ]
+[e :U 388 ]
 "236
-[; ;motor.c: 236:     if (andar_atual == 3) chamadas_subida[3] = 0;
-[e $ ! == -> _andar_atual `i -> 3 `i 393  ]
+[; ;motor.c: 236:     if (estado_motor == 2 || estado_motor == 0) {
+[e $ ! || == -> _estado_motor `i -> 2 `i == -> _estado_motor `i -> 0 `i 389  ]
+{
+"237
+[; ;motor.c: 237:         chamadas_descida[andar_atual] = 0;
+[e = *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 0 `i `a ]
+"238
+[; ;motor.c: 238:     }
+}
+[e :U 389 ]
+"242
+[; ;motor.c: 242:     if (andar_atual == 3) chamadas_subida[3] = 0;
+[e $ ! == -> _andar_atual `i -> 3 `i 390  ]
 [e = *U + &U _chamadas_subida * -> -> -> 3 `i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 0 `i `a ]
-[e :U 393 ]
-"239
-[; ;motor.c: 239:     if (andar_atual == 0) chamadas_descida[0] = 0;
-[e $ ! == -> _andar_atual `i -> 0 `i 394  ]
+[e :U 390 ]
+"245
+[; ;motor.c: 245:     if (andar_atual == 0) chamadas_descida[0] = 0;
+[e $ ! == -> _andar_atual `i -> 0 `i 391  ]
 [e = *U + &U _chamadas_descida * -> -> -> 0 `i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 0 `i `a ]
-[e :U 394 ]
-"240
-[; ;motor.c: 240: }
-[e :UE 390 ]
+[e :U 391 ]
+"246
+[; ;motor.c: 246: }
+[e :UE 387 ]
 }

@@ -96,7 +96,10 @@ void SENSORES_CalcularVelocidade(void){
     velocidade_atual = (uint8_t)(calculo_velocidade / 100);
     
     // 5. CÁLCULO DA TEMPERATURA
-    uint16_t leitura_adc = 0;   
+    
+    // VERSÃO ORIGINAL:
+    
+    /*uint16_t leitura_adc = 0;   
     
     // Média móvel simples para estabilizar a leitura do ADC
     for(int i = 0;  i < 10; i++){
@@ -105,7 +108,13 @@ void SENSORES_CalcularVelocidade(void){
     }
     
     // Média aritmética
-    temperatura_ponte = (uint16_t)(leitura_adc / 10);
+    temperatura_ponte = (uint16_t)(leitura_adc / 10);*/
+    
+    // PARA SIMULAÇÃO:
+    
+    // Como o Timer 4 já chama essa função a cada 100ms, a leitura já é periódica.
+    // Isso libera o processador para rodar o loop principal (main).
+    temperatura_ponte = ADC_GetConversion(channel_AN2);
 }
 
 

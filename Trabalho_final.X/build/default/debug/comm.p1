@@ -5,23 +5,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "348
 [; ;./mcc_generated_files/eusart.h: 348: void EUSART_Write(uint8_t txData);
 [v _EUSART_Write `(v ~T0 @X0 0 ef1`uc ]
-"75 ./globals.h
-[; ;./globals.h: 75: extern volatile uint8_t andar_atual;
+"72 ./globals.h
+[; ;./globals.h: 72: extern volatile uint8_t andar_atual;
 [v _andar_atual `Vuc ~T0 @X0 0 e ]
-"81
-[; ;./globals.h: 81: extern volatile uint8_t andar_destino;
+"78
+[; ;./globals.h: 78: extern volatile uint8_t andar_destino;
 [v _andar_destino `Vuc ~T0 @X0 0 e ]
-"87
-[; ;./globals.h: 87: extern volatile uint8_t estado_motor;
+"84
+[; ;./globals.h: 84: extern volatile uint8_t estado_motor;
 [v _estado_motor `Vuc ~T0 @X0 0 e ]
-"93
-[; ;./globals.h: 93: extern volatile uint8_t posicao_mm;
+"90
+[; ;./globals.h: 90: extern volatile uint8_t posicao_mm;
 [v _posicao_mm `Vuc ~T0 @X0 0 e ]
-"99
-[; ;./globals.h: 99: extern volatile uint8_t velocidade_atual;
+"96
+[; ;./globals.h: 96: extern volatile uint8_t velocidade_atual;
 [v _velocidade_atual `Vuc ~T0 @X0 0 e ]
-"105
-[; ;./globals.h: 105: extern volatile uint16_t temperatura_ponte;
+"102
+[; ;./globals.h: 102: extern volatile uint16_t temperatura_ponte;
 [v _temperatura_ponte `Vus ~T0 @X0 0 e ]
 "2102 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2102:     struct {
@@ -59,15 +59,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1293
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1293: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x091)));
 [v _PIE1bits `VS74 ~T0 @X0 0 e@145 ]
-"291 comm.c
-[; ;comm.c: 291:     uint8_t base_seta = estado_atual * 4;
+"290 comm.c
+[; ;comm.c: 290:     uint8_t base_seta = estado_atual * 4;
 [c E2506 0 1 2 3 4 .. ]
 [n E2506 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
-"130 ./globals.h
-[; ;./globals.h: 130: extern volatile EstadoElevador estado_atual;
+"127 ./globals.h
+[; ;./globals.h: 127: extern volatile EstadoElevador estado_atual;
 [v _estado_atual `VE2506 ~T0 @X0 0 e ]
-"113
-[; ;./globals.h: 113: extern volatile _Bool solicitacoes[4];
+"110
+[; ;./globals.h: 110: extern volatile _Bool solicitacoes[4];
 [v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
@@ -734,124 +734,152 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;comm.c: 216: }
 [e :UE 362 ]
 }
-"233
-[; ;comm.c: 233: void MAX7219_Write(uint8_t address, uint8_t data) {
+"232
+[; ;comm.c: 232: void MAX7219_Write(uint8_t address, uint8_t data) {
 [v _MAX7219_Write `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _MAX7219_Write ]
 [v _address `uc ~T0 @X0 1 r1 ]
 [v _data `uc ~T0 @X0 1 r2 ]
 [f ]
-"237
-[; ;comm.c: 237:     LATBbits.LATB1 = 0;
+"236
+[; ;comm.c: 236:     LATBbits.LATB1 = 0;
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-"240
-[; ;comm.c: 240:     SSP1BUF = address;
+"239
+[; ;comm.c: 239:     SSP1BUF = address;
 [e = _SSP1BUF _address ]
 "241
-[; ;comm.c: 241:     while(!PIR1bits.SSP1IF);
-[e $U 364  ]
-[e :U 365 ]
-[e :U 364 ]
-[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 365  ]
-[e :U 366 ]
-"242
-[; ;comm.c: 242:     PIR1bits.SSP1IF = 0;
+[; ;comm.c: 241:     PIR1bits.SSP1IF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"245
-[; ;comm.c: 245:     SSP1BUF = data;
+"244
+[; ;comm.c: 244:     SSP1BUF = data;
 [e = _SSP1BUF _data ]
 "246
-[; ;comm.c: 246:     while(!PIR1bits.SSP1IF);
-[e $U 367  ]
-[e :U 368 ]
-[e :U 367 ]
-[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 368  ]
-[e :U 369 ]
-"247
-[; ;comm.c: 247:     PIR1bits.SSP1IF = 0;
+[; ;comm.c: 246:     PIR1bits.SSP1IF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"250
-[; ;comm.c: 250:     LATBbits.LATB1 = 1;
+"249
+[; ;comm.c: 249:     LATBbits.LATB1 = 1;
 [e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-"251
-[; ;comm.c: 251: }
+"250
+[; ;comm.c: 250: }
 [e :UE 363 ]
 }
-"257
-[; ;comm.c: 257: void MatrizInicializa(void){
+"256
+[; ;comm.c: 256: void MatrizInicializa(void){
 [v _MatrizInicializa `(v ~T0 @X0 1 ef ]
 {
 [e :U _MatrizInicializa ]
 [f ]
-"260
-[; ;comm.c: 260:     PIE1bits.SSP1IE = 0;
+"259
+[; ;comm.c: 259:     PIE1bits.SSP1IE = 0;
 [e = . . _PIE1bits 0 3 -> -> 0 `i `uc ]
-"263
-[; ;comm.c: 263:     LATBbits.LATB1 = 1;
+"262
+[; ;comm.c: 262:     LATBbits.LATB1 = 1;
 [e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-"266
-[; ;comm.c: 266:     uint8_t i = 0;
+"265
+[; ;comm.c: 265:     uint8_t i = 0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"267
-[; ;comm.c: 267:     while(i < 12) {
-[e $U 371  ]
-[e :U 372 ]
+"266
+[; ;comm.c: 266:     while(i < 12) {
+[e $U 365  ]
+[e :U 366 ]
 {
-"268
-[; ;comm.c: 268:         MAX7219_Write(matrix_conf[i], matrix_conf[i+1]);
-[e ( _MAX7219_Write (2 , *U + &U _matrix_conf * -> _i `ux -> -> # *U &U _matrix_conf `ui `ux *U + &U _matrix_conf * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _matrix_conf `ui `ux ]
-"269
-[; ;comm.c: 269:         i += 2;
-[e =+ _i -> -> 2 `i `uc ]
-"270
-[; ;comm.c: 270:     }
-}
-[e :U 371 ]
 "267
-[; ;comm.c: 267:     while(i < 12) {
-[e $ < -> _i `i -> 12 `i 372  ]
-[e :U 373 ]
-"273
-[; ;comm.c: 273:     for(uint8_t i=1; i<=8; i++){
+[; ;comm.c: 267:         MAX7219_Write(matrix_conf[i], matrix_conf[i+1]);
+[e ( _MAX7219_Write (2 , *U + &U _matrix_conf * -> _i `ux -> -> # *U &U _matrix_conf `ui `ux *U + &U _matrix_conf * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _matrix_conf `ui `ux ]
+"268
+[; ;comm.c: 268:         i += 2;
+[e =+ _i -> -> 2 `i `uc ]
+"269
+[; ;comm.c: 269:     }
+}
+[e :U 365 ]
+"266
+[; ;comm.c: 266:     while(i < 12) {
+[e $ < -> _i `i -> 12 `i 366  ]
+[e :U 367 ]
+"272
+[; ;comm.c: 272:     for(uint8_t i=1; i<=8; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 1 `i `uc ]
-[e $ <= -> _i `i -> 8 `i 374  ]
-[e $U 375  ]
-[e :U 374 ]
+[e $ <= -> _i `i -> 8 `i 368  ]
+[e $U 369  ]
+[e :U 368 ]
 {
-"274
-[; ;comm.c: 274:         MAX7219_Write(i, 0x00);
+"273
+[; ;comm.c: 273:         MAX7219_Write(i, 0x00);
 [e ( _MAX7219_Write (2 , _i -> -> 0 `i `uc ]
-"275
-[; ;comm.c: 275:     }
+"274
+[; ;comm.c: 274:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ <= -> _i `i -> 8 `i 374  ]
-[e :U 375 ]
+[e $ <= -> _i `i -> 8 `i 368  ]
+[e :U 369 ]
 }
-"276
-[; ;comm.c: 276: }
-[e :UE 370 ]
+"275
+[; ;comm.c: 275: }
+[e :UE 364 ]
 }
-"286
-[; ;comm.c: 286: void MatrizLed (void){
+"285
+[; ;comm.c: 285: void MatrizLed (void){
 [v _MatrizLed `(v ~T0 @X0 1 ef ]
 {
 [e :U _MatrizLed ]
 [f ]
-"290
-[; ;comm.c: 290:     uint8_t base_andar = andar_atual * 4;
+"289
+[; ;comm.c: 289:     uint8_t base_andar = andar_atual * 4;
 [v _base_andar `uc ~T0 @X0 1 a ]
 [e = _base_andar -> * -> _andar_atual `i -> 4 `i `uc ]
-"291
-[; ;comm.c: 291:     uint8_t base_seta = estado_atual * 4;
+"290
+[; ;comm.c: 290:     uint8_t base_seta = estado_atual * 4;
 [v _base_seta `uc ~T0 @X0 1 a ]
 [e = _base_seta -> * -> _estado_atual `ui -> -> 4 `i `ui `uc ]
+"293
+[; ;comm.c: 293:     for(uint8_t i=0; i<4; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 4 `i 372  ]
+[e $U 373  ]
+[e :U 372 ]
+{
 "294
-[; ;comm.c: 294:     for(uint8_t i=0; i<4; i++){
+[; ;comm.c: 294:         MAX7219_Write(i+1, LUT_Andar[base_andar + i]);
+[e ( _MAX7219_Write (2 , -> + -> _i `i -> 1 `i `uc *U + &U _LUT_Andar * -> -> + -> _base_andar `i -> _i `i `ui `ux -> -> # *U &U _LUT_Andar `ui `ux ]
+"295
+[; ;comm.c: 295:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 4 `i 372  ]
+[e :U 373 ]
+}
+"298
+[; ;comm.c: 298:     for(uint8_t i=0; i<4; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 4 `i 375  ]
+[e $U 376  ]
+[e :U 375 ]
+{
+"299
+[; ;comm.c: 299:         MAX7219_Write(i+5, LUT_dir[base_seta + i]);
+[e ( _MAX7219_Write (2 , -> + -> _i `i -> 5 `i `uc *U + &U _LUT_dir * -> -> + -> _base_seta `i -> _i `i `ui `ux -> -> # *U &U _LUT_dir `ui `ux ]
+"300
+[; ;comm.c: 300:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 4 `i 375  ]
+[e :U 376 ]
+}
+"304
+[; ;comm.c: 304:     uint8_t buffer_percurso = LUT_dir[base_seta + 3];
+[v _buffer_percurso `uc ~T0 @X0 1 a ]
+[e = _buffer_percurso *U + &U _LUT_dir * -> -> + -> _base_seta `i -> 3 `i `ui `ux -> -> # *U &U _LUT_dir `ui `ux ]
+"307
+[; ;comm.c: 307:     for (uint8_t i=0; i<4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -859,70 +887,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 379  ]
 [e :U 378 ]
 {
-"295
-[; ;comm.c: 295:         MAX7219_Write(i+1, LUT_Andar[base_andar + i]);
-[e ( _MAX7219_Write (2 , -> + -> _i `i -> 1 `i `uc *U + &U _LUT_Andar * -> -> + -> _base_andar `i -> _i `i `ui `ux -> -> # *U &U _LUT_Andar `ui `ux ]
-"296
-[; ;comm.c: 296:     }
+"308
+[; ;comm.c: 308:         if(solicitacoes[i]){
+[e $ ! != -> *U + &U _solicitacoes * -> _i `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 381  ]
+{
+"310
+[; ;comm.c: 310:             buffer_percurso += LUT_percurso[i];
+[e =+ _buffer_percurso -> *U + &U _LUT_percurso * -> _i `ux -> -> # *U &U _LUT_percurso `ui `ux `uc ]
+"311
+[; ;comm.c: 311:         }
+}
+[e :U 381 ]
+"312
+[; ;comm.c: 312:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 4 `i 378  ]
 [e :U 379 ]
 }
-"299
-[; ;comm.c: 299:     for(uint8_t i=0; i<4; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 381  ]
-[e $U 382  ]
-[e :U 381 ]
-{
-"300
-[; ;comm.c: 300:         MAX7219_Write(i+5, LUT_dir[base_seta + i]);
-[e ( _MAX7219_Write (2 , -> + -> _i `i -> 5 `i `uc *U + &U _LUT_dir * -> -> + -> _base_seta `i -> _i `i `ui `ux -> -> # *U &U _LUT_dir `ui `ux ]
-"301
-[; ;comm.c: 301:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 381  ]
-[e :U 382 ]
-}
-"305
-[; ;comm.c: 305:     uint8_t buffer_percurso = LUT_dir[base_seta + 3];
-[v _buffer_percurso `uc ~T0 @X0 1 a ]
-[e = _buffer_percurso *U + &U _LUT_dir * -> -> + -> _base_seta `i -> 3 `i `ui `ux -> -> # *U &U _LUT_dir `ui `ux ]
-"308
-[; ;comm.c: 308:     for (uint8_t i=0; i<4; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 384  ]
-[e $U 385  ]
-[e :U 384 ]
-{
-"309
-[; ;comm.c: 309:         if(solicitacoes[i]){
-[e $ ! != -> *U + &U _solicitacoes * -> _i `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 387  ]
-{
-"311
-[; ;comm.c: 311:             buffer_percurso += LUT_percurso[i];
-[e =+ _buffer_percurso -> *U + &U _LUT_percurso * -> _i `ux -> -> # *U &U _LUT_percurso `ui `ux `uc ]
-"312
-[; ;comm.c: 312:         }
-}
-[e :U 387 ]
-"313
-[; ;comm.c: 313:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 384  ]
-[e :U 385 ]
-}
-"316
-[; ;comm.c: 316:     MAX7219_Write(8, buffer_percurso);
+"315
+[; ;comm.c: 315:     MAX7219_Write(8, buffer_percurso);
 [e ( _MAX7219_Write (2 , -> -> 8 `i `uc _buffer_percurso ]
-"317
-[; ;comm.c: 317: }
-[e :UE 377 ]
+"316
+[; ;comm.c: 316: }
+[e :UE 371 ]
 }
