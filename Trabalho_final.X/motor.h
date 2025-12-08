@@ -57,14 +57,6 @@ void Controle_Parar(void);
 // ====================
 
 /**
- * @brief Executa o algoritmo de decisão de paradas.
- * Verifica a lista de solicitações e decide qual é o próximo andar alvo
- * com base na posição atual e direção do movimento.
- * @return int Índice do próximo andar (0 a 3) ou -1 se não houver chamadas.
- */
-int Buscar_Proxima_Parada(void);
-
-/**
  * @brief Verifica requisições acima de um andar.
  * @param andar_ref Andar de referência.
  * @return true/false.

@@ -15,7 +15,7 @@
 
 
 # 1 "./motor.h" 1
-# 13 "./motor.h"
+# 12 "./motor.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
 
 
@@ -121,10 +121,10 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
-# 14 "./motor.h" 2
+# 13 "./motor.h" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
-# 15 "./motor.h" 2
-# 25 "./motor.h"
+# 14 "./motor.h" 2
+# 24 "./motor.h"
 void SENSORES_CalcularVelocidade(void);
 
 
@@ -133,7 +133,7 @@ void SENSORES_CalcularVelocidade(void);
 
 
 void Verificar_Sensores(void);
-# 42 "./motor.h"
+# 41 "./motor.h"
 void Controle_Subir(void);
 
 
@@ -147,7 +147,7 @@ void Controle_Descer(void);
 
 
 void Controle_Parar(void);
-# 66 "./motor.h"
+# 65 "./motor.h"
 int Buscar_Proxima_Parada(void);
 
 
@@ -170,7 +170,14 @@ _Bool Existe_Chamada_Abaixo(uint8_t andar_ref);
 void Limpar_Chamada_Atual(void);
 # 9 "motor.c" 2
 # 1 "./globals.h" 1
-# 14 "./globals.h"
+
+
+
+
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4406,8 +4413,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
-# 15 "./globals.h" 2
-# 89 "./globals.h"
+# 10 "./globals.h" 2
+# 84 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -4439,7 +4446,7 @@ extern volatile uint8_t velocidade_atual;
 
 
 extern volatile uint16_t temperatura_ponte;
-# 131 "./globals.h"
+# 126 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 
 typedef enum {

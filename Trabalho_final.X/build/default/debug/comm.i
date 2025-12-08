@@ -13,7 +13,14 @@
 
 
 # 1 "./comm.h" 1
-# 11 "./comm.h"
+
+
+
+
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
 
 
@@ -119,22 +126,23 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
-# 12 "./comm.h" 2
-
-
-
-
-
+# 10 "./comm.h" 2
+# 20 "./comm.h"
 extern const uint8_t LUT_Andar[];
+
+
+
+
 extern const uint8_t LUT_dir[];
+
+
+
+
 extern const uint8_t matrix_conf[];
-
-
-
-
-
-
+# 47 "./comm.h"
 int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
+
+
 
 
 
@@ -144,7 +152,11 @@ void UART_EnviaDados(void);
 
 
 
+
+
 void MatrizLed (void);
+
+
 
 
 
@@ -152,7 +164,14 @@ void MatrizLed (void);
 void MatrizInicializa(void);
 # 7 "comm.c" 2
 # 1 "./globals.h" 1
-# 14 "./globals.h"
+
+
+
+
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4388,11 +4407,11 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
-# 15 "./globals.h" 2
+# 10 "./globals.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
-# 17 "./globals.h" 2
-# 89 "./globals.h"
+# 12 "./globals.h" 2
+# 84 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -4424,7 +4443,7 @@ extern volatile uint8_t velocidade_atual;
 
 
 extern volatile uint16_t temperatura_ponte;
-# 131 "./globals.h"
+# 126 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 
 typedef enum {
@@ -4843,56 +4862,58 @@ void OSCILLATOR_Initialize(void);
 # 105 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 9 "comm.c" 2
-
-
-
-
-
-
-
-
+# 28 "comm.c"
 const uint8_t LUT_Andar[]= {
+
     0b00000000,
     0b00000001,
     0b11111111,
     0b01000001,
+
 
     0b01110001,
     0b10001001,
     0b10000101,
     0b01000011,
 
+
     0b01101110,
     0b10010001,
     0b10000001,
     0b01000010,
+
 
     0b11111111,
     0b00010000,
     0b00010000,
     0b11110000
 };
-
+# 63 "comm.c"
 const uint8_t LUT_dir[] = {
+
     0b00000000,
     0b00000000,
     0b00000000,
     0b00000000,
+
 
     0b00000000,
     0b00000010,
     0b00000100,
     0b00000010,
 
+
     0b00000000,
     0b00000010,
     0b00000001,
     0b00000010,
 
+
     0b00000000,
     0b00000010,
     0b00000010,
     0b00000010,
+
 
     0b00000000,
     0b00000010,
@@ -4900,58 +4921,53 @@ const uint8_t LUT_dir[] = {
     0b00000010
 };
 
-const uint8_t LUT_percurso[] ={
+
+
+
+
+const uint8_t LUT_percurso[] = {
     0b00010000,
     0b00100000,
     0b01000000,
     0b10000000
 };
-
+# 117 "comm.c"
 const uint8_t matrix_conf[] = {
-    0x09,0x00,
-    0x0A,0x00,
-    0x0B,0x07,
-    0x0C,0x01,
-    0x0F,0x01,
-    0x0F,0x00,
+    0x09, 0x00,
+    0x0A, 0x00,
+    0x0B, 0x07,
+    0x0C, 0x01,
+    0x0F, 0x01,
+    0x0F, 0x00,
 };
-# 90 "comm.c"
-void MAX7219_Write(uint8_t address, uint8_t data) {
-    LATBbits.LATB1 = 0;
-
-
-    SSP1BUF = address;
-    while(!PIR1bits.SSP1IF);
-    PIR1bits.SSP1IF = 0;
-
-
-    SSP1BUF = data;
-    while(!PIR1bits.SSP1IF);
-    PIR1bits.SSP1IF = 0;
-
-    LATBbits.LATB1 = 1;
-}
-
-
-
-
-
-
+# 141 "comm.c"
 int UART_RecebePedido(char* origem_pedido, char* destino_pedido){
+
+
     if(EUSART_Read() == '$'){
+
+
+
+
         *origem_pedido = EUSART_Read();
         *destino_pedido = EUSART_Read();
+
+
 
         if(EUSART_Read() == 13)
             return 0;
     }
+
+
     return 1;
 }
-
+# 175 "comm.c"
 void UART_EnviaDados(void){
 
 
+
     EUSART_Write('$');
+
 
 
     EUSART_Write('0' + andar_atual);
@@ -4964,7 +4980,6 @@ void UART_EnviaDados(void){
 
     EUSART_Write('0' + estado_motor);
     EUSART_Write(',');
-
 
 
     EUSART_Write('0' + (posicao_mm / 100));
@@ -4988,7 +5003,26 @@ void UART_EnviaDados(void){
 
 
     EUSART_Write(13);
+}
+# 233 "comm.c"
+void MAX7219_Write(uint8_t address, uint8_t data) {
 
+
+
+    LATBbits.LATB1 = 0;
+
+
+    SSP1BUF = address;
+    while(!PIR1bits.SSP1IF);
+    PIR1bits.SSP1IF = 0;
+
+
+    SSP1BUF = data;
+    while(!PIR1bits.SSP1IF);
+    PIR1bits.SSP1IF = 0;
+
+
+    LATBbits.LATB1 = 1;
 }
 
 
@@ -4997,11 +5031,11 @@ void UART_EnviaDados(void){
 
 void MatrizInicializa(void){
 
+
     PIE1bits.SSP1IE = 0;
 
+
     LATBbits.LATB1 = 1;
-
-
 
 
     uint8_t i = 0;
@@ -5011,47 +5045,40 @@ void MatrizInicializa(void){
     }
 
 
-    for(uint8_t row=1; row<=8; row++){
-        MAX7219_Write(row, 0x00);
+    for(uint8_t i=1; i<=8; i++){
+        MAX7219_Write(i, 0x00);
     }
 }
-
-
-
+# 286 "comm.c"
 void MatrizLed (void){
 
 
 
-
-
-
-    uint8_t buffer_percurso = 0;
     uint8_t base_andar = andar_atual * 4;
     uint8_t base_seta = estado_atual * 4;
 
 
     for(uint8_t i=0; i<4; i++){
-
         MAX7219_Write(i+1, LUT_Andar[base_andar + i]);
     }
 
 
-
-
     for(uint8_t i=0; i<4; i++){
-
         MAX7219_Write(i+5, LUT_dir[base_seta + i]);
     }
 
-    buffer_percurso = LUT_dir[base_seta + 3];
-        for (uint8_t i=0; i<4; i++){
-            if(solicitacoes[i]){
-                buffer_percurso += LUT_percurso[i] ;
-            }
+
+
+    uint8_t buffer_percurso = LUT_dir[base_seta + 3];
+
+
+    for (uint8_t i=0; i<4; i++){
+        if(solicitacoes[i]){
+
+            buffer_percurso += LUT_percurso[i];
         }
+    }
+
+
     MAX7219_Write(8, buffer_percurso);
-
-
-
-
 }

@@ -14,7 +14,7 @@ channel_FVR 31
 [e E358 . `uc
 SPI1_DEFAULT 0
 ]
-"79 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
+"104 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
 [e E2975 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
@@ -45,7 +45,7 @@ ESTADO_DESCENDO 2
 ESTADO_ESPERA_PORTA 3
 ESTADO_REVERSAO 4
 ]
-"201 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
+"291 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [e E2506 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
@@ -74,17 +74,17 @@ ESTADO_REVERSAO 4
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"90 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
-[v _MAX7219_Write MAX7219_Write `(v  1 e 1 0 ]
-"111
+"141 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [v _UART_RecebePedido UART_RecebePedido `(i  1 e 2 0 ]
-"122
+"175
 [v _UART_EnviaDados UART_EnviaDados `(v  1 e 1 0 ]
-"169
+"233
+[v _MAX7219_Write MAX7219_Write `(v  1 e 1 0 ]
+"257
 [v _MatrizInicializa MatrizInicializa `(v  1 e 1 0 ]
-"192
+"286
 [v _MatrizLed MatrizLed `(v  1 e 1 0 ]
-"13 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
+"29 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "67 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -215,7 +215,7 @@ ESTADO_REVERSAO 4
 ]
 [u S431 . 1 `S417 1 . 1 0 `S426 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES431  1 e 1 @11 ]
-[s S1476 . 1 `uc 1 RB0 1 0 :1:0 
+[s S1477 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -225,8 +225,8 @@ ESTADO_REVERSAO 4
 `uc 1 RB7 1 0 :1:7 
 ]
 "508
-[u S1485 . 1 `S1476 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1485  1 e 1 @13 ]
+[u S1486 . 1 `S1477 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1486  1 e 1 @13 ]
 [s S561 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -385,7 +385,7 @@ ESTADO_REVERSAO 4
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2039
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1454 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1455 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -395,8 +395,8 @@ ESTADO_REVERSAO 4
 `uc 1 LATA7 1 0 :1:7 
 ]
 "2056
-[u S1463 . 1 `S1454 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1463  1 e 1 @268 ]
+[u S1464 . 1 `S1455 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1464  1 e 1 @268 ]
 "2096
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 [s S1276 . 1 `uc 1 LATB0 1 0 :1:0 
@@ -413,7 +413,7 @@ ESTADO_REVERSAO 4
 [v _LATBbits LATBbits `VES1285  1 e 1 @269 ]
 "2158
 [v _CM1CON0 CM1CON0 `VEuc  1 e 1 @273 ]
-[s S1498 . 1 `uc 1 C1SYNC 1 0 :1:0 
+[s S1499 . 1 `uc 1 C1SYNC 1 0 :1:0 
 `uc 1 C1HYS 1 0 :1:1 
 `uc 1 C1SP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -423,13 +423,13 @@ ESTADO_REVERSAO 4
 `uc 1 C1ON 1 0 :1:7 
 ]
 "2175
-[u S1507 . 1 `S1498 1 . 1 0 ]
-[v _CM1CON0bits CM1CON0bits `VES1507  1 e 1 @273 ]
+[u S1508 . 1 `S1499 1 . 1 0 ]
+[v _CM1CON0bits CM1CON0bits `VES1508  1 e 1 @273 ]
 "2215
 [v _CM1CON1 CM1CON1 `VEuc  1 e 1 @274 ]
 "2281
 [v _CM2CON0 CM2CON0 `VEuc  1 e 1 @275 ]
-[s S1519 . 1 `uc 1 C2SYNC 1 0 :1:0 
+[s S1520 . 1 `uc 1 C2SYNC 1 0 :1:0 
 `uc 1 C2HYS 1 0 :1:1 
 `uc 1 C2SP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -439,8 +439,8 @@ ESTADO_REVERSAO 4
 `uc 1 C2ON 1 0 :1:7 
 ]
 "2298
-[u S1528 . 1 `S1519 1 . 1 0 ]
-[v _CM2CON0bits CM2CON0bits `VES1528  1 e 1 @275 ]
+[u S1529 . 1 `S1520 1 . 1 0 ]
+[v _CM2CON0bits CM2CON0bits `VES1529  1 e 1 @275 ]
 "2338
 [v _CM2CON1 CM2CON1 `VEuc  1 e 1 @276 ]
 [s S175 . 1 `uc 1 MC1OUT 1 0 :1:0 
@@ -628,13 +628,13 @@ ESTADO_REVERSAO 4
 ]
 [u S872 . 1 `S860 1 . 1 0 `S868 1 . 1 0 ]
 [v _T4CONbits T4CONbits `VES872  1 e 1 @1047 ]
-"17 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
+"28 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [v _LUT_Andar LUT_Andar `DC[16]uc  1 e 16 0 ]
-"39
+"63
 [v _LUT_dir LUT_dir `DC[20]uc  1 e 20 0 ]
-"66
+"99
 [v _LUT_percurso LUT_percurso `DC[4]uc  1 e 4 0 ]
-"73
+"117
 [v _matrix_conf matrix_conf `DC[12]uc  1 e 12 0 ]
 "11 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\globals.c
 [v _andar_atual andar_atual `VEuc  1 e 1 0 ]
@@ -717,16 +717,16 @@ ESTADO_REVERSAO 4
 [v _total_pulsos total_pulsos `us  1 s 2 total_pulsos ]
 "52
 [v _ultimo_valor_timer0 ultimo_valor_timer0 `uc  1 s 1 ultimo_valor_timer0 ]
-"13 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
+"29 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"189
+"214
 [v main@i i `i  1 a 2 13 ]
-"49
+"71
 [v main@destino destino `i  1 a 2 17 ]
-"48
+"70
 [v main@origem origem `i  1 a 2 15 ]
-"203
+"228
 } 0
 "158 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
 [v _Verificar_Sensores Verificar_Sensores `(v  1 e 1 0 ]
@@ -738,12 +738,12 @@ ESTADO_REVERSAO 4
 {
 "145
 } 0
-"111 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
+"141 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [v _UART_RecebePedido UART_RecebePedido `(i  1 e 2 0 ]
 {
 [v UART_RecebePedido@origem_pedido origem_pedido `*.4uc  1 p 1 19 ]
 [v UART_RecebePedido@destino_pedido destino_pedido `*.4uc  1 p 1 20 ]
-"120
+"160
 } 0
 "151 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
@@ -752,10 +752,10 @@ ESTADO_REVERSAO 4
 [v EUSART_Read@readValue readValue `uc  1 a 1 18 ]
 "171
 } 0
-"122 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
+"175 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [v _UART_EnviaDados UART_EnviaDados `(v  1 e 1 0 ]
 {
-"163
+"216
 } 0
 "5 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -935,40 +935,41 @@ ESTADO_REVERSAO 4
 {
 "83
 } 0
-"192 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
+"286 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [v _MatrizLed MatrizLed `(v  1 e 1 0 ]
 {
-"218
-[v MatrizLed@i_1686 i `uc  1 a 1 5 ]
-"212
+"308
+[v MatrizLed@i_1687 i `uc  1 a 1 5 ]
+"299
 [v MatrizLed@i_1685 i `uc  1 a 1 4 ]
-"204
+"294
 [v MatrizLed@i i `uc  1 a 1 3 ]
-"201
+"291
 [v MatrizLed@base_seta base_seta `uc  1 a 1 2 ]
-"199
+"305
 [v MatrizLed@buffer_percurso buffer_percurso `uc  1 a 1 1 ]
-"200
+"290
 [v MatrizLed@base_andar base_andar `uc  1 a 1 0 ]
-"228
+"317
 } 0
-"169
+"257
 [v _MatrizInicializa MatrizInicializa `(v  1 e 1 0 ]
 {
-"185
-[v MatrizInicializa@row row `uc  1 a 1 21 ]
-"178
+"273
+[v MatrizInicializa@i_1680 i `uc  1 a 1 21 ]
+"266
 [v MatrizInicializa@i i `uc  1 a 1 20 ]
-"188
+"276
 } 0
-"90
+"233
 [v _MAX7219_Write MAX7219_Write `(v  1 e 1 0 ]
 {
 [v MAX7219_Write@address address `uc  1 p 1 wreg ]
 [v MAX7219_Write@address address `uc  1 p 1 wreg ]
 [v MAX7219_Write@data data `uc  1 p 1 18 ]
+"237
 [v MAX7219_Write@address address `uc  1 p 1 19 ]
-"104
+"251
 } 0
 "257 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
 [v _Limpar_Chamada_Atual Limpar_Chamada_Atual `(v  1 e 1 0 ]

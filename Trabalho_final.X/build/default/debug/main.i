@@ -7,11 +7,7 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-
-
-
-
-
+# 18 "main.c"
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
@@ -4732,9 +4728,9 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 105 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
-# 7 "main.c" 2
+# 19 "main.c" 2
 # 1 "./globals.h" 1
-# 89 "./globals.h"
+# 84 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -4766,7 +4762,7 @@ extern volatile uint8_t velocidade_atual;
 
 
 extern volatile uint16_t temperatura_ponte;
-# 131 "./globals.h"
+# 126 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 
 typedef enum {
@@ -4797,19 +4793,24 @@ extern uint16_t contador_telemetria;
 extern uint16_t contador_espera;
 extern char buffer_origem;
 extern char buffer_destino;
-# 8 "main.c" 2
+# 20 "main.c" 2
 # 1 "./comm.h" 1
-# 17 "./comm.h"
+# 20 "./comm.h"
 extern const uint8_t LUT_Andar[];
+
+
+
+
 extern const uint8_t LUT_dir[];
+
+
+
+
 extern const uint8_t matrix_conf[];
-
-
-
-
-
-
+# 47 "./comm.h"
 int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
+
+
 
 
 
@@ -4819,15 +4820,19 @@ void UART_EnviaDados(void);
 
 
 
+
+
 void MatrizLed (void);
 
 
 
 
+
+
 void MatrizInicializa(void);
-# 9 "main.c" 2
+# 21 "main.c" 2
 # 1 "./motor.h" 1
-# 25 "./motor.h"
+# 24 "./motor.h"
 void SENSORES_CalcularVelocidade(void);
 
 
@@ -4836,7 +4841,7 @@ void SENSORES_CalcularVelocidade(void);
 
 
 void Verificar_Sensores(void);
-# 42 "./motor.h"
+# 41 "./motor.h"
 void Controle_Subir(void);
 
 
@@ -4850,7 +4855,7 @@ void Controle_Descer(void);
 
 
 void Controle_Parar(void);
-# 66 "./motor.h"
+# 65 "./motor.h"
 int Buscar_Proxima_Parada(void);
 
 
@@ -4871,7 +4876,11 @@ _Bool Existe_Chamada_Abaixo(uint8_t andar_ref);
 
 
 void Limpar_Chamada_Atual(void);
-# 10 "main.c" 2
+# 22 "main.c" 2
+
+
+
+
 
 
 
@@ -4879,11 +4888,16 @@ void main(void) {
     SYSTEM_Initialize();
 
 
+
+
     ANSELB = 0x00;
+
+
     TRISBbits.TRISB1 = 0;
     LATBbits.LATB1 = 1;
-    INTCONbits.IOCIE = 0;
 
+
+    INTCONbits.IOCIE = 0;
 
 
     TMR4_SetInterruptHandler(SENSORES_CalcularVelocidade);
@@ -4903,18 +4917,22 @@ void main(void) {
     MatrizInicializa();
 
 
-
     while (1) {
 
 
 
         if(EUSART_is_rx_ready()) {
             if (UART_RecebePedido(&buffer_origem, &buffer_destino) == 0) {
+
+
                 int origem = buffer_origem - '0';
                 int destino = buffer_destino - '0';
 
 
                 if (origem >= 0 && origem <= 3 && destino >= 0 && destino <= 3) {
+
+
+                    andar_destino = (uint8_t)destino;
 
 
                     if (origem < destino) {
@@ -4978,6 +4996,7 @@ void main(void) {
 
                 else if (!Existe_Chamada_Acima(andar_atual)) {
 
+
                     if (chamadas_descida[andar_atual]) {
                         Controle_Parar();
                         Limpar_Chamada_Atual();
@@ -5004,6 +5023,7 @@ void main(void) {
 
                 else if (!Existe_Chamada_Abaixo(andar_atual)) {
 
+
                     if (chamadas_subida[andar_atual]) {
                          Controle_Parar();
                          Limpar_Chamada_Atual();
@@ -5017,7 +5037,6 @@ void main(void) {
                     }
                 }
                 break;
-
 
 
             case ESTADO_ESPERA_PORTA:
@@ -5039,7 +5058,6 @@ void main(void) {
                 }
                 break;
         }
-
 
 
         contador_telemetria++;

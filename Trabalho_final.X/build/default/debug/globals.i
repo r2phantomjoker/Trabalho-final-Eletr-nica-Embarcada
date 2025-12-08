@@ -14,7 +14,14 @@
 
 
 # 1 "./globals.h" 1
-# 14 "./globals.h"
+
+
+
+
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4347,11 +4354,11 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
-# 15 "./globals.h" 2
+# 10 "./globals.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
-# 17 "./globals.h" 2
-# 89 "./globals.h"
+# 12 "./globals.h" 2
+# 84 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -4383,7 +4390,7 @@ extern volatile uint8_t velocidade_atual;
 
 
 extern volatile uint16_t temperatura_ponte;
-# 131 "./globals.h"
+# 126 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 
 typedef enum {

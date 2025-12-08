@@ -185,41 +185,6 @@ void Verificar_Sensores() {
 // =======================
 
 /**
- * @brief Algoritmo de escalonamento de paradas (SCAN).
- * @details Esta função verifica o vetor de solicitações pendentes e decide qual
- * será o próximo andar alvo com base no estado atual de movimento.
- * A prioridade segue a lógica:
- * 1. Se estiver parado, atende a primeira solicitação encontrada.
- * 2. Se estiver subindo, prioriza solicitações acima do andar atual.
- * 3. Se estiver descendo, prioriza solicitações abaixo do andar atual.
- * 4. Se não houver solicitações no sentido atual, verifica qualquer andar.
- * @return int O índice do próximo andar (0 a 3) ou -1 se não houver solicitações.
- */
-int Buscar_Proxima_Parada() {
-    // 1. Se parado, atende qualquer um
-    if (estado_atual == ESTADO_PARADO) {
-        for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
-        return -1;
-    }
-    // 2. Se subindo, prioriza quem está solicitações acimas
-    if (estado_atual == ESTADO_SUBINDO) {
-        for (int i = andar_atual + 1; i <= 3; i++) {
-            if (solicitacoes[i]) return i;
-        }
-    }
-    // 3. Se descendo, prioriza quem está solicitações abaixos
-    if (estado_atual == ESTADO_DESCENDO) {
-        for (int i = andar_atual - 1; i >= 0; i--) {
-            if (solicitacoes[i]) return i;
-        }
-    }
-    // 4. Se não achou no sentido, varre tudo
-    for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
-    
-    return -1;
-}    
-    
-/**
  * @brief Verifica se existem chamadas pendentes acima do andar de referência.
  * @param andar_ref O andar a partir do qual a busca será feita.
  * @return true Se houver qualquer chamada, subida ou descida, acima.

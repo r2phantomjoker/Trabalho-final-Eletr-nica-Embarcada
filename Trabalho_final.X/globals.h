@@ -6,125 +6,116 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
-#include <xc.h>         // Necessário para reconhecer LATAbits
-#include <stdint.h>     // Necessário para uint8_t, int16_t, etc.
-#include <stdbool.h>    // Necessário para o tipo bool
-
-// ==========================================
-// MÁQUINA DE ESTADOS E CONTROLE
-// ==========================================
-
-/** * @brief Estados possíveis do motor (Variável 'M' na Tabela 1). 
- */
-#define MOTOR_PARADO    0   ///< Motor desligado e travado
-#define MOTOR_SUBINDO   1   ///< Movimento ascendente (Direção = 1)
-#define MOTOR_DESCENDO  2   ///< Movimento descendente (Direção = 0)
+#include <xc.h>         
+#include <stdint.h>     
+#include <stdbool.h>    
 
 
-// Define o pino como nível ALTO (5V/3.3V)
-#define CS_SetHigh()    LATBbits.LATB1 = 1
-
-// Define o pino como nível BAIXO (0V/GND)
-#define CS_SetLow()     LATBbits.LATB1 = 0
-
-// ==========================================
-// MAPEAMENTO DE HARDWARE (Sensores de Andar)
-// ==========================================
+// ======================
+// MAPEAMENTO DE HARDWARE 
+// ======================
 
 /**
- * @brief Sensores Digitais (Térreo e 1º Andar).
- * Conectados ao PORTB com Pull-Up ativado.
- * Tipo: Sensor de Efeito Hall (A3144) - Coletor Aberto.
- * * Lógica:
- * - 1 (HIGH): Sem ímã (Elevador longe).
- * - 0 (LOW):  Com ímã (Elevador no andar).
+ * @brief Definição dos estados físicos do motor.
  */
-#define SENSOR_S1       PORTBbits.RB0   ///< Sensor do Térreo (Andar 0). Leitura direta do pino.
-#define SENSOR_S2       PORTBbits.RB3   ///< Sensor do 1º Andar (Andar 1). Leitura direta do pino.
+#define MOTOR_PARADO    0   // Motor desligado 
+#define MOTOR_SUBINDO   1   // Movimento ascendente 
+#define MOTOR_DESCENDO  2   // Movimento descendente 
+
 
 /**
- * @brief Sensores Analógicos (2º e 3º Andar).
- * Conectados ao PORTA e lidos através dos Comparadores Analógicos.
- * Configuração: FVR (2.048V) na entrada Positiva, Sensor na Negativa.
- * * Lógica (Invertida pelo Comparador):
- * - 0 (LOW):  Sem ímã (Sensor=5V > Ref=2V -> Saída 0).
- * - 1 (HIGH): Com ímã (Sensor=0V < Ref=2V -> Saída 1).
+ * @brief Controle do Chip Select do Driver MAX7219.
  */
-#define SENSOR_S3       CM1CON0bits.C1OUT  ///< Sensor do 2º Andar (Andar 2). Lê a saída do Comparador 1.
-#define SENSOR_S4       CM2CON0bits.C2OUT  ///< Sensor do 3º Andar (Andar 3). Lê a saída do Comparador 2.
+#define CS_SetHigh()    LATBbits.LATB1 = 1 // Desabilita comunicação (Latch)
+#define CS_SetLow()     LATBbits.LATB1 = 0 // Habilita comunicação (Start)
+
+/**
+ * @brief Sensores Digitais.
+ * Tipo: Sensor de Efeito Hall - Coletor Aberto.
+ * @note Lógica - Active low:
+ * - 1 : Sem ímã - Elevador longe.
+ * - 0 : Com ímã - Elevador no andar.
+ */
+#define SENSOR_S1       PORTBbits.RB0   // Sensor do Térreo 
+#define SENSOR_S2       PORTBbits.RB3   // Sensor do 1º Andar
+
+/**
+ * @brief Sensores Analógicos.
+ * Lidos através dos Comparadores Analógicos.
+ * @note Lógica - Active HIGH:
+ * - 0 : Sem ímã (Elevador longe).
+ * - 1 : Com ímã (Elevador detectado).
+ */
+#define SENSOR_S3       CM1CON0bits.C1OUT  // Sensor do 2º Andar 
+#define SENSOR_S4       CM2CON0bits.C2OUT  // Sensor do 3º Andar 
 
 
-// ==========================================
-// MAPEAMENTO DE HARDWARE (Camada HAL)
-// ==========================================
-
-/** * @brief Controle do Pino de Direção (RA7).
- * Usa o registrador LAT para escrita segura na saída.
+/**
+ * @brief Controle do Pino de Direção - RA7.
  */
 #define DIR             LATAbits.LATA7 
-#define DIRECAO_SUBIR   1   ///< Define pino RA7 em Nível Alto (Subida)
-#define DIRECAO_DESCER  0   ///< Define pino RA7 em Nível Baixo (Descida)
+#define DIRECAO_SUBIR   1   // Nível Alto 
+#define DIRECAO_DESCER  0   // Nível Baixo
 
 /**
- * @brief Valores de PWM (0 a 1023 - 10 bits).
- * O roteiro sugere ciclo útil entre 40% e 50%[cite: 388].
- * 410 = ~40% de Duty Cycle.
+ * @brief Valores de PWM .
+ * @note 614 = 60% de Duty Cycle.
  */
-#define MOTOR_OFF       0
-#define MOTOR_ON        614 
+#define MOTOR_OFF       0    // Motor desligado
+#define MOTOR_ON        614  // Motor ligado (~60%)
 
-// ==========================================
-// VARIÁVEIS GLOBAIS (TELEMETRIA - TABELA 1)
-// ==========================================
+// =================
+// VARIÁVEIS GLOBAIS 
+// =================
 
 /**
- * @brief 'Andar (A)': Último andar detectado pelos sensores.
- * Faixa: 0 a 3.
+ * @brief Andar atual onde o elevador se encontra.
+ * @note Faixa: 0 a 3.
  */
 extern volatile uint8_t andar_atual;
 
 /**
- * @brief 'Destino (D)': Andar alvo da solicitação atual.
- * Faixa: 0 a 3.
+ * @brief Andar de destino da solicitação atual.
+ * @note Faixa: 0 a 3.
  */
 extern volatile uint8_t andar_destino;
 
 /**
- * @brief 'Motor (M)': Estado atual do movimento.
- * Valores: 0 (Parado), 1 (Subindo), 2 (Descendo).
+ * @brief Estado físico do motor.
+ * @note Valores: 0 (Parado), 1 (Subindo), 2 (Descendo).
  */
 extern volatile uint8_t estado_motor;
 
 /**
- * @brief 'Posição (HHH)': Altura em milímetros em relação ao solo.
- * Faixa: 0 a 180 mm[cite: 385].
+ * @brief Posição estimada em milímetros.
+ * @note Faixa: 0 a 180 mm.
  */
 extern volatile uint8_t posicao_mm;
 
 /**
- * @brief 'Velocidade (VV.V)': Velocidade instantânea calculada via Encoder.
- * Unidade: mm/s.
+ * @brief Velocidade instantânea.
+ * @note Unidade: mm/s.
  */
 extern volatile uint8_t velocidade_atual;
 
 /**
- * @brief 'Temperatura (TT.T)': Temperatura monitorada na Ponte H.
- * Unidade: Graus Celsius (°C).
+ * @brief Temperatura monitorada na Ponte H.
+ * @note Unidade:°C.
  */
 extern volatile uint16_t temperatura_ponte;
 
 
-// ==========================================
-// VARIÁVEIS DE LÓGICA INTERNA
-// ==========================================
-
 /**
- * @brief Fila de solicitações de chamadas.
- * Índice [0] = Térreo ... [3] = 3º Andar.
- * true = Botão pressionado / Solicitação ativa.
+ * @brief Vetor unificado de solicitações para o Display.
+ * @note Índice [0]=Térreo, [1]=1º Andar, [2]=2º Andar e [3]=3º Andar.
+ * true = LED deve acender, solicitação ativa.
  */
 extern volatile bool solicitacoes[4];
 
+
+/**
+ * @brief Estados possíveis da Máquina de Estados.
+ */
 typedef enum {
     ESTADO_PARADO,
     ESTADO_SUBINDO,
@@ -132,26 +123,40 @@ typedef enum {
     ESTADO_ESPERA_PORTA,
     ESTADO_REVERSAO
 } EstadoElevador;
-//Se alterar a ordem desse enum, alterar a ordem da LUT_dir em comm.h
 
+/**
+ * @brief Estado atual do elevador.
+ */
 extern volatile EstadoElevador estado_atual;
 
 /**
- * @brief Vetor de chamadas de subida (Botões externos ^).
- * @note Definido em globals.c
+ * @brief Vetor de chamadas de subida.
  */
 extern bool chamadas_subida[4];  
 
 /**
- * @brief Vetor de chamadas de descida (Botões externos v).
- * @note Definido em globals.c
+ * @brief Vetor de chamadas de descida.
  */
 extern bool chamadas_descida[4]; 
 
-// VARIÁVEIS DE CONTROLE
+/**
+ * @brief Contador para divisão de frequência da Telemetria.
+ */
 extern uint16_t contador_telemetria;
-extern uint16_t contador_espera;
-extern char buffer_origem;
-extern char buffer_destino;
 
-#endif /* GLOBALS_H */
+/**
+ * @brief Contador para temporizações da Máquina de Estados.
+ */
+extern uint16_t contador_espera;
+
+/**
+ * @brief Buffer temporário para o andar de origem.
+ */
+extern char buffer_origem;   
+
+/**
+ * @brief Buffer temporário para o andar de destino.
+ */
+extern char buffer_destino;  
+
+#endif

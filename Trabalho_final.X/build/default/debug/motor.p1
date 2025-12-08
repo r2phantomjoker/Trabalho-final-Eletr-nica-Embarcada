@@ -2,14 +2,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "129 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 129: uint8_t TMR0_ReadTimer(void);
 [v _TMR0_ReadTimer `(uc ~T0 @X0 0 ef ]
-"101 ./globals.h
-[; ;./globals.h: 101: extern volatile uint8_t estado_motor;
+"96 ./globals.h
+[; ;./globals.h: 96: extern volatile uint8_t estado_motor;
 [v _estado_motor `Vuc ~T0 @X0 0 e ]
-"107
-[; ;./globals.h: 107: extern volatile uint8_t posicao_mm;
+"102
+[; ;./globals.h: 102: extern volatile uint8_t posicao_mm;
 [v _posicao_mm `Vuc ~T0 @X0 0 e ]
-"113
-[; ;./globals.h: 113: extern volatile uint8_t velocidade_atual;
+"108
+[; ;./globals.h: 108: extern volatile uint8_t velocidade_atual;
 [v _velocidade_atual `Vuc ~T0 @X0 0 e ]
 "106 motor.c
 [; ;motor.c: 106:         leitura_adc += ADC_GetConversion(channel_AN2);
@@ -22,8 +22,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
 [v __delay `JF213 ~T0 @X0 0 e ]
 [p i __delay ]
-"119 ./globals.h
-[; ;./globals.h: 119: extern volatile uint16_t temperatura_ponte;
+"114 ./globals.h
+[; ;./globals.h: 114: extern volatile uint16_t temperatura_ponte;
 [v _temperatura_ponte `Vus ~T0 @X0 0 e ]
 "2045 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2045:     struct {
@@ -50,8 +50,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "508
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 508: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
 [v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
-"89 ./globals.h
-[; ;./globals.h: 89: extern volatile uint8_t andar_atual;
+"84 ./globals.h
+[; ;./globals.h: 84: extern volatile uint8_t andar_atual;
 [v _andar_atual `Vuc ~T0 @X0 0 e ]
 "2164 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2164:     struct {
@@ -79,17 +79,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motor.c: 172:         estado_atual = ESTADO_PARADO;
 [c E2508 0 1 2 3 4 .. ]
 [n E2508 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
-"142 ./globals.h
-[; ;./globals.h: 142: extern volatile EstadoElevador estado_atual;
+"137 ./globals.h
+[; ;./globals.h: 137: extern volatile EstadoElevador estado_atual;
 [v _estado_atual `VE2508 ~T0 @X0 0 e ]
-"131
-[; ;./globals.h: 131: extern volatile _Bool solicitacoes[4];
+"126
+[; ;./globals.h: 126: extern volatile _Bool solicitacoes[4];
 [v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
-"148
-[; ;./globals.h: 148: extern _Bool chamadas_subida[4];
+"143
+[; ;./globals.h: 143: extern _Bool chamadas_subida[4];
 [v _chamadas_subida `a ~T0 @X0 -> 0 `x e ]
-"154
-[; ;./globals.h: 154: extern _Bool chamadas_descida[4];
+"149
+[; ;./globals.h: 149: extern _Bool chamadas_descida[4];
 [v _chamadas_descida `a ~T0 @X0 -> 0 `x e ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
