@@ -11,9 +11,7 @@
 #include <stdbool.h>    
 
 
-// ======================
 // MAPEAMENTO DE HARDWARE 
-// ======================
 
 /**
  * @brief Definição dos estados físicos do motor.
@@ -64,9 +62,8 @@
 #define MOTOR_OFF       0    // Motor desligado
 #define MOTOR_ON        614  // Motor ligado (~60%)
 
-// =================
+
 // VARIÁVEIS GLOBAIS 
-// =================
 
 /**
  * @brief Andar atual onde o elevador se encontra.

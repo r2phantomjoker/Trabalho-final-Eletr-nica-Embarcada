@@ -12,9 +12,9 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-// ================================
+
 // FUNÇÕES DE TELEMETRIA E SENSORES
-// ================================
+
 
 /**
  * @brief Atualiza a telemetria do sistema (Velocidade e Posição).
@@ -30,9 +30,8 @@ void SENSORES_CalcularVelocidade(void);
  */
 void Verificar_Sensores(void);
 
-// ================================
+
 // FUNÇÕES DE CONTROLE DE MOVIMENTO
-// ================================
 
 /**
  * @brief Ativa o motor para subir o elevador.
@@ -52,9 +51,9 @@ void Controle_Descer(void);
  */
 void Controle_Parar(void);
 
-// ====================
+
 // ALGORITMOS DE LÓGICA
-// ====================
+
 
 /**
  * @brief Verifica requisições acima de um andar.

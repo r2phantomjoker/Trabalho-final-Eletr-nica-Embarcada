@@ -8,10 +8,8 @@
 
 #include <stdint.h>
 
-/* 
- * ====================
+/*
  * CONSTANTES E TABELAS
- * ====================
  */
 
 /**
@@ -31,9 +29,7 @@ extern const uint8_t matrix_conf[];
 
 
 /*
- * =====================
  * PROTÓTIPOS DE FUNÇÕES
- * ===================== 
  */
 
 /**

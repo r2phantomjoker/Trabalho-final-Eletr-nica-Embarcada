@@ -11,9 +11,8 @@
 #include "mcc_generated_files/pwm3.h"
 
 
-// =======================
+
 // CONSTANTES E DEFINIÇÕES
-// =======================
 
 /** 
  * @brief Limite máximo de pulsos (segurança de software). 
@@ -35,9 +34,8 @@
  */
 #define TEMPO_TMR4_MS     100  
 
-// ===================
+
 // VARIÁVEIS INTERNAS 
-// ===================
 
 /**
  * @brief Contador acumulativo de pulsos do encoder.
@@ -51,9 +49,8 @@ static uint16_t total_pulsos = 0;
  */
 static uint8_t ultimo_valor_timer0 = 0;
 
-// ====================
+
 // CÁLCULO DOS SENSORES
-// ====================
 
 /**
  * @brief Realiza a telemetria do sistema (Velocidade, Posição e Temperatura).
@@ -111,9 +108,9 @@ void SENSORES_CalcularVelocidade(void){
     temperatura_ponte = (uint16_t)(leitura_adc / 10);
 }
 
-// ================================
+
 // FUNÇÕES DE CONTROLE DE MOVIMENTO
-// ================================
+
 
 /**
  * @brief Envia comando para o motor subir.
@@ -144,9 +141,9 @@ void Controle_Parar() {
     estado_motor = MOTOR_PARADO;   // Atualiza o estado lógico
 }
 
-// ===============================
+
 // LEITURA DE SENSORES E SEGURANÇA
-// ===============================
+
 
 /**
  * @brief Verifica os sensores de fim de curso e de andar.
@@ -180,9 +177,9 @@ void Verificar_Sensores() {
     }
 }
 
-// =======================
+
 // ALGORITMO DE OTIMIZAÇÃO
-// =======================
+
 
 /**
  * @brief Verifica se existem chamadas pendentes acima do andar de referência.

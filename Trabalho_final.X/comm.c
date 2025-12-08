@@ -13,9 +13,9 @@
  */
 #define CR      13 
 
-// =======================
+
 // TABELAS DE DADOS (LUTs)
-// =======================
+
 
 /**
  * @brief Tabela de padrões de bits para desenhar os números dos andares.
@@ -124,9 +124,9 @@ const uint8_t matrix_conf[] = {
 };
 
 
-// ============
+
 // FUNÇÕES UART
-// ============
+
 
 
 /**
@@ -215,9 +215,8 @@ void UART_EnviaDados(void){
     EUSART_Write(13); 
 }
 
-// =================
+
 // FUNÇÕES DA MATRIZ 
-// =================
 
 
 /**
