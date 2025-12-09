@@ -74,7 +74,7 @@
         <targetDevice>PIC16F1827</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>snap</platformTool>
+        <platformTool>Simulator</platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>3.00</languageToolchainVersion>
         <platform>3</platform>
@@ -1258,8 +1258,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fff"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/User/OneDrive - unb.br/Documentos/GitHub/Trabalho-final-Eletr-nica-Embarcada/Trabalho_final.X/debug/default/Trabalho_final_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

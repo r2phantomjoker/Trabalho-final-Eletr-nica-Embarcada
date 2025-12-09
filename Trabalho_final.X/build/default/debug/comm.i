@@ -127,7 +127,14 @@ typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
 # 10 "./comm.h" 2
-# 20 "./comm.h"
+
+
+
+
+
+
+
+
 extern const uint8_t LUT_Andar[];
 
 
@@ -139,7 +146,7 @@ extern const uint8_t LUT_dir[];
 
 
 extern const uint8_t matrix_conf[];
-# 47 "./comm.h"
+# 43 "./comm.h"
 int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 
 
@@ -4411,7 +4418,7 @@ extern __bank0 __bit __timeout;
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
 # 12 "./globals.h" 2
-# 75 "./globals.h"
+# 72 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -5028,7 +5035,7 @@ void UART_EnviaDados(void){
 
     EUSART_Write(13);
 }
-# 233 "comm.c"
+# 232 "comm.c"
 void MAX7219_Write(uint8_t address, uint8_t data) {
 
 
@@ -5073,7 +5080,7 @@ void MatrizInicializa(void){
         MAX7219_Write(i, 0x00);
     }
 }
-# 286 "comm.c"
+# 285 "comm.c"
 void MatrizLed (void){
 
 

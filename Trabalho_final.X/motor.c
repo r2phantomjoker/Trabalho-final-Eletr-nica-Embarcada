@@ -101,7 +101,7 @@ void SENSORES_CalcularVelocidade(void){
     // Média móvel simples para estabilizar a leitura do ADC
     for(int i = 0;  i < 10; i++){
         leitura_adc += ADC_GetConversion(channel_AN2);
-        __delay_ms(100); 
+        //__delay_ms(100); 
     }
     
     // Média aritmética

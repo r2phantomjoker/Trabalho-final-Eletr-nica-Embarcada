@@ -133,7 +133,7 @@ void SENSORES_CalcularVelocidade(void);
 
 
 void Verificar_Sensores(void);
-# 41 "./motor.h"
+# 40 "./motor.h"
 void Controle_Subir(void);
 
 
@@ -147,7 +147,7 @@ void Controle_Descer(void);
 
 
 void Controle_Parar(void);
-# 64 "./motor.h"
+# 63 "./motor.h"
 _Bool Existe_Chamada_Acima(uint8_t andar_ref);
 
 
@@ -4407,7 +4407,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
 # 10 "./globals.h" 2
-# 75 "./globals.h"
+# 72 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -4882,7 +4882,7 @@ void OSCILLATOR_Initialize(void);
 # 105 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 11 "motor.c" 2
-# 46 "motor.c"
+# 44 "motor.c"
 static uint16_t total_pulsos = 0;
 
 
@@ -4890,7 +4890,7 @@ static uint16_t total_pulsos = 0;
 
 
 static uint8_t ultimo_valor_timer0 = 0;
-# 62 "motor.c"
+# 59 "motor.c"
 void SENSORES_CalcularVelocidade(void){
 
 
@@ -4936,13 +4936,13 @@ void SENSORES_CalcularVelocidade(void){
 
     for(int i = 0; i < 10; i++){
         leitura_adc += ADC_GetConversion(channel_AN2);
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+
     }
 
 
     temperatura_ponte = (uint16_t)(leitura_adc / 10);
 }
-# 122 "motor.c"
+# 119 "motor.c"
 void Controle_Subir() {
     LATAbits.LATA7 = 1;
     PWM3_LoadDutyValue(614);
@@ -4967,7 +4967,7 @@ void Controle_Parar() {
     PWM3_LoadDutyValue(0);
     estado_motor = 0;
 }
-# 158 "motor.c"
+# 155 "motor.c"
 void Verificar_Sensores() {
 
 
@@ -4992,7 +4992,7 @@ void Verificar_Sensores() {
         posicao_mm = 180;
     }
 }
-# 193 "motor.c"
+# 190 "motor.c"
 _Bool Existe_Chamada_Acima(uint8_t andar_ref) {
 
     for (int i = andar_ref + 1; i <= 3; i++) {

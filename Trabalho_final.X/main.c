@@ -56,7 +56,7 @@ void main(void) {
     Controle_Parar(); 
     
     // Inicializa e limpa a matriz de LEDs
-    MatrizInicializa();
+    //MatrizInicializa();
     
     while (1) {
         
@@ -215,7 +215,7 @@ void main(void) {
             }
             
             // Atualiza o display da Matriz de LEDs
-            MatrizLed();
+            //MatrizLed();
             
             // Reinicia o contador de tempo
             contador_telemetria = 0; 

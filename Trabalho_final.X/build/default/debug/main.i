@@ -4730,7 +4730,7 @@ void OSCILLATOR_Initialize(void);
 void WDT_Initialize(void);
 # 19 "main.c" 2
 # 1 "./globals.h" 1
-# 75 "./globals.h"
+# 72 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -4819,7 +4819,7 @@ extern char buffer_origem;
 extern char buffer_destino;
 # 20 "main.c" 2
 # 1 "./comm.h" 1
-# 20 "./comm.h"
+# 18 "./comm.h"
 extern const uint8_t LUT_Andar[];
 
 
@@ -4831,7 +4831,7 @@ extern const uint8_t LUT_dir[];
 
 
 extern const uint8_t matrix_conf[];
-# 47 "./comm.h"
+# 43 "./comm.h"
 int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 
 
@@ -4865,7 +4865,7 @@ void SENSORES_CalcularVelocidade(void);
 
 
 void Verificar_Sensores(void);
-# 41 "./motor.h"
+# 40 "./motor.h"
 void Controle_Subir(void);
 
 
@@ -4879,7 +4879,7 @@ void Controle_Descer(void);
 
 
 void Controle_Parar(void);
-# 64 "./motor.h"
+# 63 "./motor.h"
 _Bool Existe_Chamada_Acima(uint8_t andar_ref);
 
 
@@ -4931,7 +4931,6 @@ void main(void) {
     Controle_Parar();
 
 
-    MatrizInicializa();
 
 
     while (1) {
@@ -5091,12 +5090,11 @@ void main(void) {
             }
 
 
-            MatrizLed();
+
 
 
             contador_telemetria = 0;
         }
-
 
         _delay((unsigned long)((10)*(8000000/4000.0)));
     }

@@ -4358,7 +4358,7 @@ extern __bank0 __bit __timeout;
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
 # 12 "./globals.h" 2
-# 75 "./globals.h"
+# 72 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 

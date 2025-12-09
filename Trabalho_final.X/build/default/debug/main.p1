@@ -65,76 +65,70 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3851
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 3851: extern volatile SSP1CON1bits_t SSP1CON1bits __attribute__((address(0x215)));
 [v _SSP1CON1bits `VS207 ~T0 @X0 0 e@533 ]
-"53 ./motor.h
-[; ;./motor.h: 53: void Controle_Parar(void);
+"52 ./motor.h
+[; ;./motor.h: 52: void Controle_Parar(void);
 [v _Controle_Parar `(v ~T0 @X0 0 ef ]
-"68 ./comm.h
-[; ;./comm.h: 68: void MatrizInicializa(void);
-[v _MatrizInicializa `(v ~T0 @X0 0 ef ]
 "213 ./mcc_generated_files/eusart.h
 [; ;./mcc_generated_files/eusart.h: 213: _Bool EUSART_is_rx_ready(void);
 [v _EUSART_is_rx_ready `(a ~T0 @X0 0 ef ]
-"47 ./comm.h
-[; ;./comm.h: 47: int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
+"43 ./comm.h
+[; ;./comm.h: 43: int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 [v _UART_RecebePedido `(i ~T0 @X0 0 ef2`*uc`*uc ]
-"155 ./globals.h
-[; ;./globals.h: 155: extern char buffer_origem;
+"152 ./globals.h
+[; ;./globals.h: 152: extern char buffer_origem;
 [v _buffer_origem `uc ~T0 @X0 0 e ]
-"160
-[; ;./globals.h: 160: extern char buffer_destino;
+"157
+[; ;./globals.h: 157: extern char buffer_destino;
 [v _buffer_destino `uc ~T0 @X0 0 e ]
-"81
-[; ;./globals.h: 81: extern volatile uint8_t andar_destino;
+"78
+[; ;./globals.h: 78: extern volatile uint8_t andar_destino;
 [v _andar_destino `Vuc ~T0 @X0 0 e ]
-"135
-[; ;./globals.h: 135: extern _Bool chamadas_subida[4];
+"132
+[; ;./globals.h: 132: extern _Bool chamadas_subida[4];
 [v _chamadas_subida `a ~T0 @X0 -> 0 `x e ]
-"140
-[; ;./globals.h: 140: extern _Bool chamadas_descida[4];
+"137
+[; ;./globals.h: 137: extern _Bool chamadas_descida[4];
 [v _chamadas_descida `a ~T0 @X0 -> 0 `x e ]
 "31 ./motor.h
 [; ;./motor.h: 31: void Verificar_Sensores(void);
 [v _Verificar_Sensores `(v ~T0 @X0 0 ef ]
-"75 ./globals.h
-[; ;./globals.h: 75: extern volatile uint8_t andar_atual;
+"72 ./globals.h
+[; ;./globals.h: 72: extern volatile uint8_t andar_atual;
 [v _andar_atual `Vuc ~T0 @X0 0 e ]
-"76 ./motor.h
-[; ;./motor.h: 76: void Limpar_Chamada_Atual(void);
+"75 ./motor.h
+[; ;./motor.h: 75: void Limpar_Chamada_Atual(void);
 [v _Limpar_Chamada_Atual `(v ~T0 @X0 0 ef ]
-"104 main.c
-[; ;main.c: 104:                     estado_atual = ESTADO_ESPERA_PORTA;
+"103 main.c
+[; ;main.c: 103:                     estado_atual = ESTADO_ESPERA_PORTA;
 [c E2975 0 1 2 3 4 .. ]
 [n E2975 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
-"130 ./globals.h
-[; ;./globals.h: 130: extern volatile EstadoElevador estado_atual;
+"127 ./globals.h
+[; ;./globals.h: 127: extern volatile EstadoElevador estado_atual;
 [v _estado_atual `VE2975 ~T0 @X0 0 e ]
-"150
-[; ;./globals.h: 150: extern uint16_t contador_espera;
+"147
+[; ;./globals.h: 147: extern uint16_t contador_espera;
 [v _contador_espera `us ~T0 @X0 0 e ]
-"64 ./motor.h
-[; ;./motor.h: 64: _Bool Existe_Chamada_Acima(uint8_t andar_ref);
+"63 ./motor.h
+[; ;./motor.h: 63: _Bool Existe_Chamada_Acima(uint8_t andar_ref);
 [v _Existe_Chamada_Acima `(a ~T0 @X0 0 ef1`uc ]
-"41
-[; ;./motor.h: 41: void Controle_Subir(void);
+"40
+[; ;./motor.h: 40: void Controle_Subir(void);
 [v _Controle_Subir `(v ~T0 @X0 0 ef ]
-"71
-[; ;./motor.h: 71: _Bool Existe_Chamada_Abaixo(uint8_t andar_ref);
+"70
+[; ;./motor.h: 70: _Bool Existe_Chamada_Abaixo(uint8_t andar_ref);
 [v _Existe_Chamada_Abaixo `(a ~T0 @X0 0 ef1`uc ]
-"47
-[; ;./motor.h: 47: void Controle_Descer(void);
+"46
+[; ;./motor.h: 46: void Controle_Descer(void);
 [v _Controle_Descer `(v ~T0 @X0 0 ef ]
-"145 ./globals.h
-[; ;./globals.h: 145: extern uint16_t contador_telemetria;
+"142 ./globals.h
+[; ;./globals.h: 142: extern uint16_t contador_telemetria;
 [v _contador_telemetria `us ~T0 @X0 0 e ]
-"54 ./comm.h
-[; ;./comm.h: 54: void UART_EnviaDados(void);
+"50 ./comm.h
+[; ;./comm.h: 50: void UART_EnviaDados(void);
 [v _UART_EnviaDados `(v ~T0 @X0 0 ef ]
-"113 ./globals.h
-[; ;./globals.h: 113: extern volatile _Bool solicitacoes[4];
+"110 ./globals.h
+[; ;./globals.h: 110: extern volatile _Bool solicitacoes[4];
 [v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
-"61 ./comm.h
-[; ;./comm.h: 61: void MatrizLed (void);
-[v _MatrizLed `(v ~T0 @X0 0 ef ]
 [v F202 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
 [v __delay `JF202 ~T0 @X0 0 e ]
@@ -653,357 +647,354 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56
 [; ;main.c: 56:     Controle_Parar();
 [e ( _Controle_Parar ..  ]
-"59
-[; ;main.c: 59:     MatrizInicializa();
-[e ( _MatrizInicializa ..  ]
-"62
-[; ;main.c: 62:     while (1) {
+"61
+[; ;main.c: 61:     while (1) {
 [e :U 361 ]
 {
-"66
-[; ;main.c: 66:         if(EUSART_is_rx_ready()) {
+"65
+[; ;main.c: 65:         if(EUSART_is_rx_ready()) {
 [e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 363  ]
 {
-"67
-[; ;main.c: 67:             if (UART_RecebePedido(&buffer_origem, &buffer_destino) == 0) {
+"66
+[; ;main.c: 66:             if (UART_RecebePedido(&buffer_origem, &buffer_destino) == 0) {
 [e $ ! == ( _UART_RecebePedido (2 , &U _buffer_origem &U _buffer_destino -> 0 `i 364  ]
 {
-"70
-[; ;main.c: 70:                 int origem = buffer_origem - '0';
+"69
+[; ;main.c: 69:                 int origem = buffer_origem - '0';
 [v _origem `i ~T0 @X0 1 a ]
 [e = _origem -> - -> _buffer_origem `ui -> 48 `ui `i ]
-"71
-[; ;main.c: 71:                 int destino = buffer_destino - '0';
+"70
+[; ;main.c: 70:                 int destino = buffer_destino - '0';
 [v _destino `i ~T0 @X0 1 a ]
 [e = _destino -> - -> _buffer_destino `ui -> 48 `ui `i ]
-"74
-[; ;main.c: 74:                 if (origem >= 0 && origem <= 3 && destino >= 0 && destino <= 3) {
+"73
+[; ;main.c: 73:                 if (origem >= 0 && origem <= 3 && destino >= 0 && destino <= 3) {
 [e $ ! && && && >= _origem -> 0 `i <= _origem -> 3 `i >= _destino -> 0 `i <= _destino -> 3 `i 365  ]
 {
-"77
-[; ;main.c: 77:                     andar_destino = (uint8_t)destino;
+"76
+[; ;main.c: 76:                     andar_destino = (uint8_t)destino;
 [e = _andar_destino -> _destino `uc ]
-"80
-[; ;main.c: 80:                     if (origem < destino) {
+"79
+[; ;main.c: 79:                     if (origem < destino) {
 [e $ ! < _origem _destino 366  ]
 {
-"81
-[; ;main.c: 81:                         chamadas_subida[origem] = 1;
+"80
+[; ;main.c: 80:                         chamadas_subida[origem] = 1;
 [e = *U + &U _chamadas_subida * -> -> _origem `ui `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 1 `i `a ]
-"82
-[; ;main.c: 82:                         chamadas_subida[destino] = 1;
+"81
+[; ;main.c: 81:                         chamadas_subida[destino] = 1;
 [e = *U + &U _chamadas_subida * -> -> _destino `ui `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 1 `i `a ]
-"83
-[; ;main.c: 83:                     }
+"82
+[; ;main.c: 82:                     }
 }
 [e $U 367  ]
-"84
-[; ;main.c: 84:                     else if (origem > destino) {
+"83
+[; ;main.c: 83:                     else if (origem > destino) {
 [e :U 366 ]
 [e $ ! > _origem _destino 368  ]
 {
-"85
-[; ;main.c: 85:                         chamadas_descida[origem] = 1;
+"84
+[; ;main.c: 84:                         chamadas_descida[origem] = 1;
 [e = *U + &U _chamadas_descida * -> -> _origem `ui `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 1 `i `a ]
-"86
-[; ;main.c: 86:                         chamadas_descida[destino] = 1;
+"85
+[; ;main.c: 85:                         chamadas_descida[destino] = 1;
 [e = *U + &U _chamadas_descida * -> -> _destino `ui `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 1 `i `a ]
-"87
-[; ;main.c: 87:                     }
+"86
+[; ;main.c: 86:                     }
 }
 [e :U 368 ]
 [e :U 367 ]
-"88
-[; ;main.c: 88:                 }
+"87
+[; ;main.c: 87:                 }
 }
 [e :U 365 ]
-"89
-[; ;main.c: 89:             }
+"88
+[; ;main.c: 88:             }
 }
 [e :U 364 ]
-"90
-[; ;main.c: 90:         }
+"89
+[; ;main.c: 89:         }
 }
 [e :U 363 ]
-"94
-[; ;main.c: 94:         Verificar_Sensores();
+"93
+[; ;main.c: 93:         Verificar_Sensores();
 [e ( _Verificar_Sensores ..  ]
-"97
-[; ;main.c: 97:         switch (estado_atual) {
+"96
+[; ;main.c: 96:         switch (estado_atual) {
 [e $U 370  ]
 {
-"100
-[; ;main.c: 100:             case ESTADO_PARADO:
+"99
+[; ;main.c: 99:             case ESTADO_PARADO:
 [e :U 371 ]
-"102
-[; ;main.c: 102:                 if (chamadas_subida[andar_atual]) {
+"101
+[; ;main.c: 101:                 if (chamadas_subida[andar_atual]) {
 [e $ ! != -> *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i 372  ]
 {
-"103
-[; ;main.c: 103:                     Limpar_Chamada_Atual();
+"102
+[; ;main.c: 102:                     Limpar_Chamada_Atual();
 [e ( _Limpar_Chamada_Atual ..  ]
-"104
-[; ;main.c: 104:                     estado_atual = ESTADO_ESPERA_PORTA;
+"103
+[; ;main.c: 103:                     estado_atual = ESTADO_ESPERA_PORTA;
 [e = _estado_atual . `E2975 3 ]
-"105
-[; ;main.c: 105:                     contador_espera = 0;
+"104
+[; ;main.c: 104:                     contador_espera = 0;
 [e = _contador_espera -> -> 0 `i `us ]
-"106
-[; ;main.c: 106:                 }
+"105
+[; ;main.c: 105:                 }
 }
 [e $U 373  ]
-"108
-[; ;main.c: 108:                 else if (chamadas_descida[andar_atual]) {
+"107
+[; ;main.c: 107:                 else if (chamadas_descida[andar_atual]) {
 [e :U 372 ]
 [e $ ! != -> *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 374  ]
 {
-"109
-[; ;main.c: 109:                     Limpar_Chamada_Atual();
+"108
+[; ;main.c: 108:                     Limpar_Chamada_Atual();
 [e ( _Limpar_Chamada_Atual ..  ]
-"110
-[; ;main.c: 110:                     estado_atual = ESTADO_ESPERA_PORTA;
+"109
+[; ;main.c: 109:                     estado_atual = ESTADO_ESPERA_PORTA;
 [e = _estado_atual . `E2975 3 ]
-"111
-[; ;main.c: 111:                     contador_espera = 0;
+"110
+[; ;main.c: 110:                     contador_espera = 0;
 [e = _contador_espera -> -> 0 `i `us ]
-"112
-[; ;main.c: 112:                 }
+"111
+[; ;main.c: 111:                 }
 }
 [e $U 375  ]
-"114
-[; ;main.c: 114:                 else if (Existe_Chamada_Acima(andar_atual)) {
+"113
+[; ;main.c: 113:                 else if (Existe_Chamada_Acima(andar_atual)) {
 [e :U 374 ]
 [e $ ! != -> ( _Existe_Chamada_Acima (1 _andar_atual `i -> 0 `i 376  ]
 {
-"115
-[; ;main.c: 115:                     Controle_Subir();
+"114
+[; ;main.c: 114:                     Controle_Subir();
 [e ( _Controle_Subir ..  ]
-"116
-[; ;main.c: 116:                     estado_atual = ESTADO_SUBINDO;
+"115
+[; ;main.c: 115:                     estado_atual = ESTADO_SUBINDO;
 [e = _estado_atual . `E2975 1 ]
-"117
-[; ;main.c: 117:                 }
+"116
+[; ;main.c: 116:                 }
 }
 [e $U 377  ]
-"119
-[; ;main.c: 119:                 else if (Existe_Chamada_Abaixo(andar_atual)) {
+"118
+[; ;main.c: 118:                 else if (Existe_Chamada_Abaixo(andar_atual)) {
 [e :U 376 ]
 [e $ ! != -> ( _Existe_Chamada_Abaixo (1 _andar_atual `i -> 0 `i 378  ]
 {
-"120
-[; ;main.c: 120:                     Controle_Descer();
+"119
+[; ;main.c: 119:                     Controle_Descer();
 [e ( _Controle_Descer ..  ]
-"121
-[; ;main.c: 121:                     estado_atual = ESTADO_DESCENDO;
+"120
+[; ;main.c: 120:                     estado_atual = ESTADO_DESCENDO;
 [e = _estado_atual . `E2975 2 ]
-"122
-[; ;main.c: 122:                 }
+"121
+[; ;main.c: 121:                 }
 }
 [e $U 379  ]
-"124
-[; ;main.c: 124:                 else if (andar_atual != 0) {
+"123
+[; ;main.c: 123:                 else if (andar_atual != 0) {
 [e :U 378 ]
 [e $ ! != -> _andar_atual `i -> 0 `i 380  ]
 {
-"125
-[; ;main.c: 125:                     chamadas_descida[0] = 1;
+"124
+[; ;main.c: 124:                     chamadas_descida[0] = 1;
 [e = *U + &U _chamadas_descida * -> -> -> 0 `i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 1 `i `a ]
-"126
-[; ;main.c: 126:                 }
+"125
+[; ;main.c: 125:                 }
 }
 [e :U 380 ]
 [e :U 379 ]
 [e :U 377 ]
 [e :U 375 ]
 [e :U 373 ]
-"127
-[; ;main.c: 127:                 break;
+"126
+[; ;main.c: 126:                 break;
 [e $U 369  ]
-"130
-[; ;main.c: 130:             case ESTADO_SUBINDO:
+"129
+[; ;main.c: 129:             case ESTADO_SUBINDO:
 [e :U 381 ]
-"132
-[; ;main.c: 132:                 if (chamadas_subida[andar_atual]) {
+"131
+[; ;main.c: 131:                 if (chamadas_subida[andar_atual]) {
 [e $ ! != -> *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i 382  ]
 {
-"133
-[; ;main.c: 133:                     Controle_Parar();
+"132
+[; ;main.c: 132:                     Controle_Parar();
 [e ( _Controle_Parar ..  ]
-"134
-[; ;main.c: 134:                     Limpar_Chamada_Atual();
+"133
+[; ;main.c: 133:                     Limpar_Chamada_Atual();
 [e ( _Limpar_Chamada_Atual ..  ]
-"135
-[; ;main.c: 135:                     estado_atual = ESTADO_ESPERA_PORTA;
+"134
+[; ;main.c: 134:                     estado_atual = ESTADO_ESPERA_PORTA;
 [e = _estado_atual . `E2975 3 ]
-"136
-[; ;main.c: 136:                     contador_espera = 0;
+"135
+[; ;main.c: 135:                     contador_espera = 0;
 [e = _contador_espera -> -> 0 `i `us ]
-"137
-[; ;main.c: 137:                 }
+"136
+[; ;main.c: 136:                 }
 }
 [e $U 383  ]
-"139
-[; ;main.c: 139:                 else if (!Existe_Chamada_Acima(andar_atual)) {
+"138
+[; ;main.c: 138:                 else if (!Existe_Chamada_Acima(andar_atual)) {
 [e :U 382 ]
 [e $ ! ! != -> ( _Existe_Chamada_Acima (1 _andar_atual `i -> 0 `i 384  ]
 {
-"142
-[; ;main.c: 142:                     if (chamadas_descida[andar_atual]) {
+"141
+[; ;main.c: 141:                     if (chamadas_descida[andar_atual]) {
 [e $ ! != -> *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 385  ]
 {
-"143
-[; ;main.c: 143:                         Controle_Parar();
+"142
+[; ;main.c: 142:                         Controle_Parar();
 [e ( _Controle_Parar ..  ]
-"144
-[; ;main.c: 144:                         Limpar_Chamada_Atual();
+"143
+[; ;main.c: 143:                         Limpar_Chamada_Atual();
 [e ( _Limpar_Chamada_Atual ..  ]
-"145
-[; ;main.c: 145:                         estado_atual = ESTADO_ESPERA_PORTA;
+"144
+[; ;main.c: 144:                         estado_atual = ESTADO_ESPERA_PORTA;
 [e = _estado_atual . `E2975 3 ]
-"146
-[; ;main.c: 146:                         contador_espera = 0;
+"145
+[; ;main.c: 145:                         contador_espera = 0;
 [e = _contador_espera -> -> 0 `i `us ]
-"147
-[; ;main.c: 147:                     }
+"146
+[; ;main.c: 146:                     }
 }
 [e $U 386  ]
-"149
-[; ;main.c: 149:                     else {
+"148
+[; ;main.c: 148:                     else {
 [e :U 385 ]
 {
-"150
-[; ;main.c: 150:                         Controle_Parar();
+"149
+[; ;main.c: 149:                         Controle_Parar();
 [e ( _Controle_Parar ..  ]
-"151
-[; ;main.c: 151:                         estado_atual = ESTADO_PARADO;
+"150
+[; ;main.c: 150:                         estado_atual = ESTADO_PARADO;
 [e = _estado_atual . `E2975 0 ]
-"152
-[; ;main.c: 152:                     }
+"151
+[; ;main.c: 151:                     }
 }
 [e :U 386 ]
-"153
-[; ;main.c: 153:                 }
+"152
+[; ;main.c: 152:                 }
 }
 [e :U 384 ]
 [e :U 383 ]
-"154
-[; ;main.c: 154:                 break;
+"153
+[; ;main.c: 153:                 break;
 [e $U 369  ]
-"157
-[; ;main.c: 157:             case ESTADO_DESCENDO:
+"156
+[; ;main.c: 156:             case ESTADO_DESCENDO:
 [e :U 387 ]
-"159
-[; ;main.c: 159:                 if (chamadas_descida[andar_atual]) {
+"158
+[; ;main.c: 158:                 if (chamadas_descida[andar_atual]) {
 [e $ ! != -> *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 388  ]
 {
-"160
-[; ;main.c: 160:                     Controle_Parar();
+"159
+[; ;main.c: 159:                     Controle_Parar();
 [e ( _Controle_Parar ..  ]
-"161
-[; ;main.c: 161:                     Limpar_Chamada_Atual();
+"160
+[; ;main.c: 160:                     Limpar_Chamada_Atual();
 [e ( _Limpar_Chamada_Atual ..  ]
-"162
-[; ;main.c: 162:                     estado_atual = ESTADO_ESPERA_PORTA;
+"161
+[; ;main.c: 161:                     estado_atual = ESTADO_ESPERA_PORTA;
 [e = _estado_atual . `E2975 3 ]
-"163
-[; ;main.c: 163:                     contador_espera = 0;
+"162
+[; ;main.c: 162:                     contador_espera = 0;
 [e = _contador_espera -> -> 0 `i `us ]
-"164
-[; ;main.c: 164:                 }
+"163
+[; ;main.c: 163:                 }
 }
 [e $U 389  ]
-"166
-[; ;main.c: 166:                 else if (!Existe_Chamada_Abaixo(andar_atual)) {
+"165
+[; ;main.c: 165:                 else if (!Existe_Chamada_Abaixo(andar_atual)) {
 [e :U 388 ]
 [e $ ! ! != -> ( _Existe_Chamada_Abaixo (1 _andar_atual `i -> 0 `i 390  ]
 {
-"169
-[; ;main.c: 169:                     if (chamadas_subida[andar_atual]) {
+"168
+[; ;main.c: 168:                     if (chamadas_subida[andar_atual]) {
 [e $ ! != -> *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i 391  ]
 {
-"170
-[; ;main.c: 170:                          Controle_Parar();
+"169
+[; ;main.c: 169:                          Controle_Parar();
 [e ( _Controle_Parar ..  ]
-"171
-[; ;main.c: 171:                          Limpar_Chamada_Atual();
+"170
+[; ;main.c: 170:                          Limpar_Chamada_Atual();
 [e ( _Limpar_Chamada_Atual ..  ]
-"172
-[; ;main.c: 172:                          estado_atual = ESTADO_ESPERA_PORTA;
+"171
+[; ;main.c: 171:                          estado_atual = ESTADO_ESPERA_PORTA;
 [e = _estado_atual . `E2975 3 ]
-"173
-[; ;main.c: 173:                          contador_espera = 0;
+"172
+[; ;main.c: 172:                          contador_espera = 0;
 [e = _contador_espera -> -> 0 `i `us ]
-"174
-[; ;main.c: 174:                     }
+"173
+[; ;main.c: 173:                     }
 }
 [e $U 392  ]
-"176
-[; ;main.c: 176:                     else {
+"175
+[; ;main.c: 175:                     else {
 [e :U 391 ]
 {
-"177
-[; ;main.c: 177:                         Controle_Parar();
+"176
+[; ;main.c: 176:                         Controle_Parar();
 [e ( _Controle_Parar ..  ]
-"178
-[; ;main.c: 178:                         estado_atual = ESTADO_PARADO;
+"177
+[; ;main.c: 177:                         estado_atual = ESTADO_PARADO;
 [e = _estado_atual . `E2975 0 ]
-"179
-[; ;main.c: 179:                     }
+"178
+[; ;main.c: 178:                     }
 }
 [e :U 392 ]
-"180
-[; ;main.c: 180:                 }
+"179
+[; ;main.c: 179:                 }
 }
 [e :U 390 ]
 [e :U 389 ]
-"181
-[; ;main.c: 181:                 break;
+"180
+[; ;main.c: 180:                 break;
 [e $U 369  ]
-"184
-[; ;main.c: 184:             case ESTADO_ESPERA_PORTA:
+"183
+[; ;main.c: 183:             case ESTADO_ESPERA_PORTA:
 [e :U 393 ]
-"185
-[; ;main.c: 185:                 contador_espera++;
+"184
+[; ;main.c: 184:                 contador_espera++;
 [e ++ _contador_espera -> -> 1 `i `us ]
-"187
-[; ;main.c: 187:                 if (contador_espera >= 200) {
+"186
+[; ;main.c: 186:                 if (contador_espera >= 200) {
 [e $ ! >= -> _contador_espera `ui -> -> 200 `i `ui 394  ]
 {
-"188
-[; ;main.c: 188:                     estado_atual = ESTADO_REVERSAO;
+"187
+[; ;main.c: 187:                     estado_atual = ESTADO_REVERSAO;
 [e = _estado_atual . `E2975 4 ]
-"189
-[; ;main.c: 189:                     contador_espera = 0;
+"188
+[; ;main.c: 188:                     contador_espera = 0;
 [e = _contador_espera -> -> 0 `i `us ]
-"190
-[; ;main.c: 190:                 }
+"189
+[; ;main.c: 189:                 }
 }
 [e :U 394 ]
-"191
-[; ;main.c: 191:                 break;
+"190
+[; ;main.c: 190:                 break;
 [e $U 369  ]
-"194
-[; ;main.c: 194:             case ESTADO_REVERSAO:
+"193
+[; ;main.c: 193:             case ESTADO_REVERSAO:
 [e :U 395 ]
-"195
-[; ;main.c: 195:                 contador_espera++;
+"194
+[; ;main.c: 194:                 contador_espera++;
 [e ++ _contador_espera -> -> 1 `i `us ]
-"198
-[; ;main.c: 198:                 if (contador_espera >= 50) {
+"197
+[; ;main.c: 197:                 if (contador_espera >= 50) {
 [e $ ! >= -> _contador_espera `ui -> -> 50 `i `ui 396  ]
 {
-"199
-[; ;main.c: 199:                     estado_atual = ESTADO_PARADO;
+"198
+[; ;main.c: 198:                     estado_atual = ESTADO_PARADO;
 [e = _estado_atual . `E2975 0 ]
-"200
-[; ;main.c: 200:                 }
+"199
+[; ;main.c: 199:                 }
 }
 [e :U 396 ]
-"201
-[; ;main.c: 201:                 break;
+"200
+[; ;main.c: 200:                 break;
 [e $U 369  ]
-"202
-[; ;main.c: 202:         }
+"201
+[; ;main.c: 201:         }
 }
 [e $U 369  ]
 [e :U 370 ]
@@ -1014,18 +1005,18 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> . `E2975 4 `ui 395
  369 ]
 [e :U 369 ]
-"205
-[; ;main.c: 205:         contador_telemetria++;
+"204
+[; ;main.c: 204:         contador_telemetria++;
 [e ++ _contador_telemetria -> -> 1 `i `us ]
-"208
-[; ;main.c: 208:         if (contador_telemetria >= 30) {
+"207
+[; ;main.c: 207:         if (contador_telemetria >= 30) {
 [e $ ! >= -> _contador_telemetria `ui -> -> 30 `i `ui 397  ]
 {
-"211
-[; ;main.c: 211:             UART_EnviaDados();
+"210
+[; ;main.c: 210:             UART_EnviaDados();
 [e ( _UART_EnviaDados ..  ]
-"214
-[; ;main.c: 214:             for(int i=0; i<4; i++) {
+"213
+[; ;main.c: 213:             for(int i=0; i<4; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1033,36 +1024,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 399  ]
 [e :U 398 ]
 {
-"215
-[; ;main.c: 215:                 solicitacoes[i] = chamadas_subida[i] || chamadas_descida[i];
+"214
+[; ;main.c: 214:                 solicitacoes[i] = chamadas_subida[i] || chamadas_descida[i];
 [e = *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux -> -> || != -> *U + &U _chamadas_subida * -> -> _i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i != -> *U + &U _chamadas_descida * -> -> _i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i `i `a ]
-"216
-[; ;main.c: 216:             }
+"215
+[; ;main.c: 215:             }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 4 `i 398  ]
 [e :U 399 ]
 }
-"219
-[; ;main.c: 219:             MatrizLed();
-[e ( _MatrizLed ..  ]
-"222
-[; ;main.c: 222:             contador_telemetria = 0;
+"221
+[; ;main.c: 221:             contador_telemetria = 0;
 [e = _contador_telemetria -> -> 0 `i `us ]
-"223
-[; ;main.c: 223:         }
+"222
+[; ;main.c: 222:         }
 }
 [e :U 397 ]
-"226
-[; ;main.c: 226:         _delay((unsigned long)((10)*(8000000/4000.0)));
+"224
+[; ;main.c: 224:         _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"227
-[; ;main.c: 227:     }
+"225
+[; ;main.c: 225:     }
 }
 [e :U 360 ]
 [e $U 361  ]
 [e :U 362 ]
-"228
-[; ;main.c: 228: }
+"226
+[; ;main.c: 226: }
 [e :UE 359 ]
 }
